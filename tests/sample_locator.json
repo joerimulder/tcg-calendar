@@ -1,0 +1,230 @@
+{
+ "_note": "Trimmed test fixture in the shape of the locator's DataActionGetEventList response; contact data replaced.",
+ "data": {
+  "EventList": {
+   "List": [
+    {
+     "Events": {
+      "Guid": "861d765d-adfe-4416-b61a-9eac8c824276",
+      "Activity_type": "tournament",
+      "Name": "Défi de Ligue Novembre @Geek Factory",
+      "Display_id": "26-11-001597",
+      "Products": {
+       "List": [
+        "tcg"
+       ]
+      },
+      "Start_date": "2026-11-15T13:00:00Z",
+      "Address": {
+       "Name": "GEEK FACTORY MULHOUSE",
+       "Full_address": "42 AV. CLEMENCEAU, 68100 MULHOUSE, FRANCE",
+       "Latitude": "47.745426",
+       "Longitude": "7.340976",
+       "Timezone": "Europe/Paris"
+      },
+      "Event_website": "https://example.org/geek",
+      "Details": "Défi de ligue\n1 booster pour tous les participants",
+      "Admission": "10€",
+      "Contact_information": {
+       "Email": "contact@example.invalid",
+       "Phone": "000"
+      },
+      "Series": {
+       "Name": "TCG League Challenge November",
+       "Tags": {
+        "List": [
+         "championship_series",
+         "league_challenge"
+        ]
+       }
+      },
+      "Status": "sanctioned"
+     },
+     "EventTypeName": "Challenge"
+    },
+    {
+     "Events": {
+      "Guid": "6c923a2c-db1a-4fc1-bfdf-3054a16b9e23",
+      "Activity_type": "play_session",
+      "Name": "",
+      "Display_id": "",
+      "Products": {
+       "List": [
+        "tcg"
+       ]
+      },
+      "Start_date": "2026-11-15T16:30:00Z",
+      "Address": {
+       "Name": "GEEK FACTORY MULHOUSE",
+       "Full_address": "42 AV. CLEMENCEAU, 68100 MULHOUSE, FRANCE",
+       "Latitude": "47.745426",
+       "Longitude": "7.340976",
+       "Timezone": "Europe/Paris"
+      },
+      "Event_website": "",
+      "Details": "Bourse d'échange\n\n\nExchange session",
+      "Admission": "",
+      "Contact_information": {
+       "Email": "contact@example.invalid",
+       "Phone": "000"
+      },
+      "Series": {
+       "Name": "",
+       "Tags": {
+        "List": []
+       }
+      },
+      "Status": "pending"
+     },
+     "EventTypeName": "League"
+    },
+    {
+     "Events": {
+      "Guid": "1e8069c3-e89b-415d-8479-95f73bcdc27e",
+      "Activity_type": "play_session",
+      "Name": "",
+      "Display_id": "",
+      "Products": {
+       "List": [
+        "tcg"
+       ]
+      },
+      "Start_date": "2026-11-16T17:00:00Z",
+      "Address": {
+       "Name": "ANIMEVERSE",
+       "Full_address": "ROSENTALSTRASSE 26, 4058 BASEL, SWITZERLAND",
+       "Latitude": "47.564900",
+       "Longitude": "7.604151",
+       "Timezone": "Europe/Zurich"
+      },
+      "Event_website": "",
+      "Details": "Weekly league night, every Monday at 18:00.",
+      "Admission": "",
+      "Contact_information": {
+       "Email": "contact@example.invalid",
+       "Phone": "000"
+      },
+      "Series": {
+       "Name": "",
+       "Tags": {
+        "List": []
+       }
+      },
+      "Status": "pending"
+     },
+     "EventTypeName": "League"
+    },
+    {
+     "Events": {
+      "Guid": "2960fb61-65a3-439c-a522-7b3e07547db9",
+      "Activity_type": "play_session",
+      "Name": "",
+      "Display_id": "",
+      "Products": {
+       "List": [
+        "tcg"
+       ]
+      },
+      "Start_date": "2026-11-19T14:00:00Z",
+      "Address": {
+       "Name": "OWNZ TCG&GAMES SHOP",
+       "Full_address": "EICHAMTSTRASSE 6, 79618 RHEINFELDEN (BADEN), GERMANY",
+       "Latitude": "47.560823",
+       "Longitude": "7.784614",
+       "Timezone": "Europe/Berlin"
+      },
+      "Event_website": "",
+      "Details": "Wöchentliches Treffen, jeden Donnerstag.",
+      "Admission": "",
+      "Contact_information": {
+       "Email": "contact@example.invalid",
+       "Phone": "000"
+      },
+      "Series": {
+       "Name": "",
+       "Tags": {
+        "List": []
+       }
+      },
+      "Status": "pending"
+     },
+     "EventTypeName": "League"
+    },
+    {
+     "Events": {
+      "Guid": "00000000-0000-0000-0000-000000000001",
+      "Activity_type": "tournament",
+      "Name": "TEST cancelled event",
+      "Display_id": "26-11-999999",
+      "Products": {
+       "List": [
+        "tcg"
+       ]
+      },
+      "Start_date": "2026-11-20T18:00:00Z",
+      "Address": {
+       "Name": "ANIMEVERSE",
+       "Full_address": "ROSENTALSTRASSE 26, 4058 BASEL, SWITZERLAND",
+       "Latitude": "47.564900",
+       "Longitude": "7.604151",
+       "Timezone": "Europe/Zurich"
+      },
+      "Event_website": "",
+      "Details": "",
+      "Admission": "",
+      "Contact_information": {
+       "Email": "contact@example.invalid",
+       "Phone": "000"
+      },
+      "Series": {
+       "Name": "",
+       "Tags": {
+        "List": [
+         "league_challenge"
+        ]
+       }
+      },
+      "Status": "cancelled"
+     },
+     "EventTypeName": "Challenge"
+    },
+    {
+     "Events": {
+      "Guid": "00000000-0000-0000-0000-000000000002",
+      "Activity_type": "play_session",
+      "Name": "",
+      "Display_id": "",
+      "Products": {
+       "List": [
+        "tcg"
+       ]
+      },
+      "Start_date": "2026-11-21T10:00:00Z",
+      "Address": {
+       "Name": "TEST FAR AWAY SHOP",
+       "Full_address": "1 RUE TEST, 75001 PARIS, FRANCE",
+       "Latitude": "48.8566",
+       "Longitude": "2.3522",
+       "Timezone": "Europe/Paris"
+      },
+      "Event_website": "",
+      "Details": "",
+      "Admission": "",
+      "Contact_information": {
+       "Email": "contact@example.invalid",
+       "Phone": "000"
+      },
+      "Series": {
+       "Name": "",
+       "Tags": {
+        "List": []
+       }
+      },
+      "Status": "pending"
+     },
+     "EventTypeName": "League"
+    }
+   ]
+  }
+ }
+}

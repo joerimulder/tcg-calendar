@@ -28,3 +28,18 @@ Fix wrongly capitalised shop names in `venue_name_overrides` (key = name as in t
 ## Notes
 - If the feed is down, the build fails and the previous `basel.ics` stays untouched.
 - Cancelled events are not flagged by the source; they simply disappear when removed from the locator.
+
+## Official Event Locator data (optional)
+The mirror feed only has sanctioned tournaments. The official locator also lists regular
+league nights (`play_session` events), often months ahead. `build_calendar.py` merges a JSON
+export of the locator's `DataActionGetEventList` response if `data/locator_export.json`
+exists (or `--locator-json PATH` / `LOCATOR_JSON`); without the file nothing changes.
+
+- The export may be one response, a list of responses (pages), or a bare list of items.
+- Locator data wins over the mirror feed for the same event; cancelled events are dropped;
+  events further than `RADIUS_KM` (default 100) from Basel are dropped.
+- Time quirk: every `Start_date` ends in `Z`, but for tournaments it is the venue's local
+  wall-clock time, while for league nights it really is UTC. The script handles both.
+- The file is a snapshot: events cancelled or changed after the export stay as exported
+  until the file is refreshed. Contact details in the export are never published.
+- There is no automatic fetcher yet; see the project notes before adding one.
