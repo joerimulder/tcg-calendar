@@ -1,0 +1,320 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//TCGCalendar//Basel//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Pokémon TCG Basel - Tournaments
+X-WR-CALDESC:Pokémon TCG League Cups\, Challenges and Prereleases around B
+ asel (CH/FR/DE).
+X-WR-TIMEZONE:Europe/Zurich
+REFRESH-INTERVAL;VALUE=DURATION:PT6H
+X-PUBLISHED-TTL:PT6H
+BEGIN:VEVENT
+UID:26-11-001728@tcgcalendar
+DTSTAMP:20261115T101425Z
+DTSTART:20261115T100000Z
+DTEND:20261115T140000Z
+SUMMARY:KABOOOM League Cup
+DESCRIPTION:League Cup @ Kabooom Entertainment GmbH\nSource: Play! Pokémon
+  Event Locator\nhttps://www.pokemon.com/us/pokemon-trainer-club/play-pokem
+ on-tournaments/26-11-001728/
+LOCATION:Kabooom Entertainment GmbH\, 36 Dienerstrasse\, 8004 Zürich\, Swi
+ tzerland
+URL:https://www.pokemon.com/us/pokemon-trainer-club/play-pokemon-tournament
+ s/26-11-001728/
+X-DISTANCE-KM:83
+CATEGORIES:League Cup
+END:VEVENT
+BEGIN:VEVENT
+UID:26-11-001597@tcgcalendar
+DTSTAMP:20261115T101425Z
+DTSTART:20261115T120000Z
+DTEND:20261115T160000Z
+SUMMARY:Défi de Ligue Novembre @Geek Factory
+DESCRIPTION:League Challenge @ Geek Factory Mulhouse\nSource: Play! Pokémo
+ n Event Locator\nhttps://www.pokemon.com/us/pokemon-trainer-club/play-poke
+ mon-tournaments/26-11-001597/
+LOCATION:Geek Factory Mulhouse\, 42 Av. Clemenceau\, 68100 Mulhouse\, Franc
+ e
+URL:https://www.pokemon.com/us/pokemon-trainer-club/play-pokemon-tournament
+ s/26-11-001597/
+X-DISTANCE-KM:39
+CATEGORIES:League Challenge
+END:VEVENT
+BEGIN:VEVENT
+UID:26-11-004293@tcgcalendar
+DTSTAMP:20261115T101425Z
+DTSTART:20261121T094500Z
+DTEND:20261121T134500Z
+SUMMARY:CARAB Pokemon League Challenge
+DESCRIPTION:League Challenge @ Carab\nSource: Play! Pokémon Event Locator\
+ nhttps://www.pokemon.com/us/pokemon-trainer-club/play-pokemon-tournaments/
+ 26-11-004293/
+LOCATION:Carab\, Zürichstrasse 31/1. Stock\, 6004 Luzern\, Switzerland
+URL:https://www.pokemon.com/us/pokemon-trainer-club/play-pokemon-tournament
+ s/26-11-004293/
+X-DISTANCE-KM:96
+CATEGORIES:League Challenge
+END:VEVENT
+BEGIN:VEVENT
+UID:26-11-001727@tcgcalendar
+DTSTAMP:20261115T101425Z
+DTSTART:20261121T100000Z
+DTEND:20261121T140000Z
+SUMMARY:KABOOOM Challenge
+DESCRIPTION:League Challenge @ Kabooom Entertainment GmbH\nSource: Play! Po
+ kémon Event Locator\nhttps://www.pokemon.com/us/pokemon-trainer-club/play
+ -pokemon-tournaments/26-11-001727/
+LOCATION:Kabooom Entertainment GmbH\, 36 Dienerstrasse\, 8004 Zürich\, Swi
+ tzerland
+URL:https://www.pokemon.com/us/pokemon-trainer-club/play-pokemon-tournament
+ s/26-11-001727/
+X-DISTANCE-KM:83
+CATEGORIES:League Challenge
+END:VEVENT
+BEGIN:VEVENT
+UID:26-11-006072@tcgcalendar
+DTSTAMP:20261115T101425Z
+DTSTART:20261121T100000Z
+DTEND:20261121T140000Z
+SUMMARY:League Challenge November Twomoons Stettbach
+DESCRIPTION:League Challenge @ Twomoons Stettbach\nSource: Play! Pokémon E
+ vent Locator\nhttps://www.pokemon.com/us/pokemon-trainer-club/play-pokemon
+ -tournaments/26-11-006072/
+LOCATION:Twomoons Stettbach\, Zürichstrasse 137A\, 8600 Dübendorf\, Switz
+ erland
+URL:https://www.pokemon.com/us/pokemon-trainer-club/play-pokemon-tournament
+ s/26-11-006072/
+X-DISTANCE-KM:93
+CATEGORIES:League Challenge
+END:VEVENT
+BEGIN:VEVENT
+UID:26-11-002273@tcgcalendar
+DTSTAMP:20261115T101425Z
+DTSTART:20261121T120000Z
+DTEND:20261121T160000Z
+SUMMARY:Aki's TCG Challenge November
+DESCRIPTION:League Challenge @ Akicafé\nSource: Play! Pokémon Event Locat
+ or\nhttps://www.pokemon.com/us/pokemon-trainer-club/play-pokemon-tournamen
+ ts/26-11-002273/
+LOCATION:Akicafé\, Tössfeldstrasse 67B\, 8406 Winterthur\, Switzerland
+URL:https://www.pokemon.com/us/pokemon-trainer-club/play-pokemon-tournament
+ s/26-11-002273/
+X-DISTANCE-KM:105
+CATEGORIES:League Challenge
+END:VEVENT
+BEGIN:VEVENT
+UID:26-11-001886@tcgcalendar
+DTSTAMP:20261115T101425Z
+DTSTART:20261121T130000Z
+DTEND:20261121T170000Z
+SUMMARY:TCG Liga Murten Challenge November
+DESCRIPTION:League Challenge @ TCG Liga Murten\nSource: Play! Pokémon Even
+ t Locator\nhttps://www.pokemon.com/us/pokemon-trainer-club/play-pokemon-to
+ urnaments/26-11-001886/
+LOCATION:TCG Liga Murten\, 174 Baslerstrasse\, 4632 Trimbach\, Switzerland
+URL:https://www.pokemon.com/us/pokemon-trainer-club/play-pokemon-tournament
+ s/26-11-001886/
+X-DISTANCE-KM:46
+CATEGORIES:League Challenge
+END:VEVENT
+BEGIN:VEVENT
+UID:26-11-004624@tcgcalendar
+DTSTAMP:20261115T101425Z
+DTSTART:20261122T090000Z
+DTEND:20261122T130000Z
+SUMMARY:Cup Pokémon Fair-Play
+DESCRIPTION:League Cup @ Boutique Fairplay\nSource: Play! Pokémon Event Lo
+ cator\nhttps://www.pokemon.com/us/pokemon-trainer-club/play-pokemon-tourna
+ ments/26-11-004624/
+LOCATION:Boutique Fairplay\, 44 Rue du Werkhof\, 68100 Mulhouse\, France
+URL:https://www.pokemon.com/us/pokemon-trainer-club/play-pokemon-tournament
+ s/26-11-004624/
+X-DISTANCE-KM:39
+CATEGORIES:League Cup
+END:VEVENT
+BEGIN:VEVENT
+UID:26-11-007308@tcgcalendar
+DTSTAMP:20261115T101425Z
+DTSTART:20261122T094500Z
+DTEND:20261122T134500Z
+SUMMARY:GGB's League CUP
+DESCRIPTION:League Cup @ Prerelease\nSource: Play! Pokémon Event Locator\n
+ https://www.pokemon.com/us/pokemon-trainer-club/play-pokemon-tournaments/2
+ 6-11-007308/
+LOCATION:Prerelease\, Laupenstrasse 4\, 3008 Bern\, Switzerland
+URL:https://www.pokemon.com/us/pokemon-trainer-club/play-pokemon-tournament
+ s/26-11-007308/
+X-DISTANCE-KM:98
+CATEGORIES:League Cup
+END:VEVENT
+BEGIN:VEVENT
+UID:26-11-017767@tcgcalendar
+DTSTAMP:20261115T101425Z
+DTSTART:20261122T103000Z
+DTEND:20261122T143000Z
+SUMMARY:CastleGames TCG Challenge
+DESCRIPTION:League Challenge @ Castlegames\nSource: Play! Pokémon Event Lo
+ cator\nhttps://www.pokemon.com/us/pokemon-trainer-club/play-pokemon-tourna
+ ments/26-11-017767/
+LOCATION:Castlegames\, Emmentalstrasse 36\, 3414 Oberburg\, Switzerland
+URL:https://www.pokemon.com/us/pokemon-trainer-club/play-pokemon-tournament
+ s/26-11-017767/
+X-DISTANCE-KM:88
+CATEGORIES:League Challenge
+END:VEVENT
+BEGIN:VEVENT
+UID:26-11-019488@tcgcalendar
+DTSTAMP:20261115T101425Z
+DTSTART:20261123T180000Z
+DTEND:20261123T220000Z
+SUMMARY:TCG League Challenge November
+DESCRIPTION:League Challenge @ Animeverse\nSource: Play! Pokémon Event Loc
+ ator\nhttps://www.pokemon.com/us/pokemon-trainer-club/play-pokemon-tournam
+ ents/26-11-019488/
+LOCATION:Animeverse\, Lehenmattstrasse 353/353\, 4052 Basel\, Switzerland
+URL:https://www.pokemon.com/us/pokemon-trainer-club/play-pokemon-tournament
+ s/26-11-019488/
+X-DISTANCE-KM:6
+CATEGORIES:League Challenge
+END:VEVENT
+BEGIN:VEVENT
+UID:26-11-011209@tcgcalendar
+DTSTAMP:20261115T101425Z
+DTSTART:20261124T170000Z
+DTEND:20261124T210000Z
+SUMMARY:TCG League Challenge Novembre 2026
+DESCRIPTION:League Challenge @ Mille et Une Histoires\nSource: Play! Pokém
+ on Event Locator\nhttps://www.pokemon.com/us/pokemon-trainer-club/play-pok
+ emon-tournaments/26-11-011209/
+LOCATION:Mille et Une Histoires\, Rue du 23 Juin 1\, 2900 Porrentruy\, Swit
+ zerland
+URL:https://www.pokemon.com/us/pokemon-trainer-club/play-pokemon-tournament
+ s/26-11-011209/
+X-DISTANCE-KM:56
+CATEGORIES:League Challenge
+END:VEVENT
+BEGIN:VEVENT
+UID:26-11-005661@tcgcalendar
+DTSTAMP:20261115T101425Z
+DTSTART:20261125T180000Z
+DTEND:20261125T220000Z
+SUMMARY:ERUPT - Pokémon TCG Challenge
+DESCRIPTION:League Challenge @ Erupt Lounge\nSource: Play! Pokémon Event L
+ ocator\nhttps://www.pokemon.com/us/pokemon-trainer-club/play-pokemon-tourn
+ aments/26-11-005661/
+LOCATION:Erupt Lounge\, Parkterrasse 14\, 3012 Bern\, Switzerland
+URL:https://www.pokemon.com/us/pokemon-trainer-club/play-pokemon-tournament
+ s/26-11-005661/
+X-DISTANCE-KM:100
+CATEGORIES:League Challenge
+END:VEVENT
+BEGIN:VEVENT
+UID:26-11-005206@tcgcalendar
+DTSTAMP:20261115T101425Z
+DTSTART:20261125T181500Z
+DTEND:20261125T221500Z
+SUMMARY:Zadoys TCG Challenge November
+DESCRIPTION:League Challenge @ Zadoys Hobby & Card Store\nSource: Play! Pok
+ émon Event Locator\nhttps://www.pokemon.com/us/pokemon-trainer-club/play-
+ pokemon-tournaments/26-11-005206/
+LOCATION:Zadoys Hobby & Card Store\, 55E Im Surinam\, 4058 Basel\, Switzerl
+ and
+URL:https://www.pokemon.com/us/pokemon-trainer-club/play-pokemon-tournament
+ s/26-11-005206/
+X-DISTANCE-KM:3
+CATEGORIES:League Challenge
+END:VEVENT
+BEGIN:VEVENT
+UID:26-11-004530@tcgcalendar
+DTSTAMP:20261115T101425Z
+DTSTART:20261127T180000Z
+DTEND:20261127T220000Z
+SUMMARY:TCG League Challenge November -MaRo Games
+DESCRIPTION:League Challenge @ MaRo Games\nSource: Play! Pokémon Event Loc
+ ator\nhttps://www.pokemon.com/us/pokemon-trainer-club/play-pokemon-tournam
+ ents/26-11-004530/
+LOCATION:MaRo Games\, 11 Hauptstrasse\, 4127 Birsfelden\, Switzerland
+URL:https://www.pokemon.com/us/pokemon-trainer-club/play-pokemon-tournament
+ s/26-11-004530/
+X-DISTANCE-KM:7
+CATEGORIES:League Challenge
+END:VEVENT
+BEGIN:VEVENT
+UID:26-11-000229@tcgcalendar
+DTSTAMP:20261115T101425Z
+DTSTART:20261128T083000Z
+DTEND:20261128T123000Z
+SUMMARY:TCG League Cup Round 1
+DESCRIPTION:League Cup @ L'Antre des Cartes\nSource: Play! Pokémon Event L
+ ocator\nhttps://www.pokemon.com/us/pokemon-trainer-club/play-pokemon-tourn
+ aments/26-11-000229/
+LOCATION:L'Antre des Cartes\, Rue de Soleure 16\, 2525 Le Landeron\, Switze
+ rland
+URL:https://www.pokemon.com/us/pokemon-trainer-club/play-pokemon-tournament
+ s/26-11-000229/
+X-DISTANCE-KM:111
+CATEGORIES:League Cup
+END:VEVENT
+BEGIN:VEVENT
+UID:26-11-003384@tcgcalendar
+DTSTAMP:20261115T101425Z
+DTSTART:20261128T110000Z
+DTEND:20261128T150000Z
+SUMMARY:Cardmaniac League Challenge 11/26
+DESCRIPTION:League Challenge @ Cardmaniac\nSource: Play! Pokémon Event Loc
+ ator\nhttps://www.pokemon.com/us/pokemon-trainer-club/play-pokemon-tournam
+ ents/26-11-003384/
+LOCATION:Cardmaniac\, Mitteldorfstrasse 35\, 5033 Buchs\, Switzerland
+URL:https://www.pokemon.com/us/pokemon-trainer-club/play-pokemon-tournament
+ s/26-11-003384/
+X-DISTANCE-KM:55
+CATEGORIES:League Challenge
+END:VEVENT
+BEGIN:VEVENT
+UID:26-11-000741@tcgcalendar
+DTSTAMP:20261115T101425Z
+DTSTART:20261128T120000Z
+DTEND:20261128T160000Z
+SUMMARY:Pokémon League Challenge November
+DESCRIPTION:League Challenge @ Cardcollectors Store\nSource: Play! Pokémon
+  Event Locator\nhttps://www.pokemon.com/us/pokemon-trainer-club/play-pokem
+ on-tournaments/26-11-000741/
+LOCATION:Cardcollectors Store\, Florhofstrasse 2\, 8820 Wädenswil\, Switze
+ rland
+URL:https://www.pokemon.com/us/pokemon-trainer-club/play-pokemon-tournament
+ s/26-11-000741/
+X-DISTANCE-KM:108
+CATEGORIES:League Challenge
+END:VEVENT
+BEGIN:VEVENT
+UID:26-11-001009@tcgcalendar
+DTSTAMP:20261115T101425Z
+DTSTART:20261128T130000Z
+DTEND:20261128T170000Z
+SUMMARY:Défi de ligue novembre
+DESCRIPTION:League Challenge @ Tokyozyma Poké\nSource: Play! Pokémon Even
+ t Locator\nhttps://www.pokemon.com/us/pokemon-trainer-club/play-pokemon-to
+ urnaments/26-11-001009/
+LOCATION:Tokyozyma Poké\, 79 Grande Rue\, 25400 Audincourt\, France
+URL:https://www.pokemon.com/us/pokemon-trainer-club/play-pokemon-tournament
+ s/26-11-001009/
+X-DISTANCE-KM:92
+CATEGORIES:League Challenge
+END:VEVENT
+BEGIN:VEVENT
+UID:26-11-004295@tcgcalendar
+DTSTAMP:20261115T101425Z
+DTSTART:20261129T090000Z
+DTEND:20261129T130000Z
+SUMMARY:CARAB Cup Season 1
+DESCRIPTION:League Cup @ Carab\nSource: Play! Pokémon Event Locator\nhttps
+ ://www.pokemon.com/us/pokemon-trainer-club/play-pokemon-tournaments/26-11-
+ 004295/
+LOCATION:Carab\, Zürichstrasse 31/1. Stock\, 6004 Luzern\, Switzerland
+URL:https://www.pokemon.com/us/pokemon-trainer-club/play-pokemon-tournament
+ s/26-11-004295/
+X-DISTANCE-KM:96
+CATEGORIES:League Cup
+END:VEVENT
+END:VCALENDAR
