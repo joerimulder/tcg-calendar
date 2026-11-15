@@ -87,7 +87,7 @@ def smart_title(s: str) -> str:
     out = re.sub(r"\b(Du|De|La|Le|Les|Des|Of|Et)\b",
                  lambda m: m.group(1).lower() if m.start() else m.group(1), out)
     out = re.sub(r"\b(Tcg|Ptcg|Ch|Fr|De)\b", lambda m: m.group(1).upper() if m.group(1) != "De" else "de", out)
-    return out.replace("Gmbh", "GmbH")
+    return out.replace("Gmbh", "GmbH").replace("Freiburg Im Breisgau", "Freiburg im Breisgau")
 
 
 def clean_location(raw: str, venue: str) -> str:
@@ -393,6 +393,7 @@ def fold(line: str) -> str:
 # (file suffix, feed name, categories included; None = everything)
 FEEDS = [
     ("", "All events", None),
+    ("tournaments", "Tournaments", {"League Challenge", "League Cup", "Prerelease"}),
     ("challenges", "League Challenges", {"League Challenge"}),
     ("cups", "League Cups", {"League Cup"}),
     ("prereleases", "Prereleases", {"Prerelease"}),

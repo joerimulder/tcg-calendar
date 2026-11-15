@@ -204,9 +204,9 @@ footer p { max-width: 40rem; margin: 0 0 0.9rem; color: var(--muted); font-size:
     <h1>Pokémon TCG events around Basel, in your calendar</h1>
     <p class="lede">League Cups, League Challenges and Prereleases within 100 km of Basel, from Mulhouse to Zurich. Subscribe once and new events appear on their own.</p>
     <div class="actions">
-      <a class="btn" data-link="webcal" href="webcal://tcgcalendar.ch/basel.ics">Subscribe in your calendar app</a>
-      <a class="quiet" data-link="google" href="https://calendar.google.com/calendar/render?cid=webcal%3A%2F%2Ftcgcalendar.ch%2Fbasel.ics">Add to Google Calendar</a>
-      <a class="quiet" data-link="ics" href="https://tcgcalendar.ch/basel.ics">Download the .ics file</a>
+      <a class="btn" data-link="webcal" href="webcal://tcgcalendar.ch/basel-tournaments.ics">Subscribe in your calendar app</a>
+      <a class="quiet" data-link="google" href="https://calendar.google.com/calendar/render?cid=webcal%3A%2F%2Ftcgcalendar.ch%2Fbasel-tournaments.ics">Add to Google Calendar</a>
+      <a class="quiet" data-link="ics" href="https://tcgcalendar.ch/basel-tournaments.ics">Download the .ics file</a>
     </div>
     <p class="fine">Free, updated every night, and shown in your own time zone. <a href="#how">Want only challenges, cups or league nights?</a></p>
   </div>
@@ -232,10 +232,10 @@ footer p { max-width: 40rem; margin: 0 0 0.9rem; color: var(--muted); font-size:
     <h2 id="how">Choose your calendars</h2>
     <p class="note">Subscribe to everything, or only the event types you play. You can add several. If Subscribe does nothing, copy the address and follow the steps for your app.</p>
     <ul class="feeds" id="calendars">
-      <li class="feed" data-feed="basel">
-        <div class="feed-info"><strong>All events</strong><span>Every event type in one calendar.</span></div>
+      <li class="feed" data-feed="basel-tournaments">
+        <div class="feed-info"><strong>Tournaments</strong><span>League Challenges, League Cups and Prereleases. The best start.</span></div>
         <div class="feed-actions">
-          <a class="btn small" data-link="webcal" href="webcal://tcgcalendar.ch/basel.ics">Subscribe</a>
+          <a class="btn small" data-link="webcal" href="webcal://tcgcalendar.ch/basel-tournaments.ics">Subscribe</a>
           <a class="quiet" data-link="google" href="#">Google Calendar</a>
           <button class="copy" type="button">Copy address</button>
         </div>
@@ -265,9 +265,17 @@ footer p { max-width: 40rem; margin: 0 0 0.9rem; color: var(--muted); font-size:
         </div>
       </li>
       <li class="feed" data-feed="basel-leagues">
-        <div class="feed-info"><strong>League Nights</strong><span>Weekly casual play at shops. Few are listed yet.</span></div>
+        <div class="feed-info"><strong>League nights</strong><span>Weekly casual play at shops. Many entries, some venues run daily.</span></div>
         <div class="feed-actions">
           <a class="btn small" data-link="webcal" href="webcal://tcgcalendar.ch/basel-leagues.ics">Subscribe</a>
+          <a class="quiet" data-link="google" href="#">Google Calendar</a>
+          <button class="copy" type="button">Copy address</button>
+        </div>
+      </li>
+      <li class="feed" data-feed="basel">
+        <div class="feed-info"><strong>Everything</strong><span>Tournaments and league nights together.</span></div>
+        <div class="feed-actions">
+          <a class="btn small" data-link="webcal" href="webcal://tcgcalendar.ch/basel.ics">Subscribe</a>
           <a class="quiet" data-link="google" href="#">Google Calendar</a>
           <button class="copy" type="button">Copy address</button>
         </div>
@@ -323,7 +331,7 @@ footer p { max-width: 40rem; margin: 0 0 0.9rem; color: var(--muted); font-size:
     <h2 id="what">What’s in the calendar</h2>
     <div class="prose">
       <p>Official League Cups, League Challenges and Prereleases that shops register in the Play! Pokémon Event Locator, within 100 km of Basel. That covers Basel, Mulhouse, Zurich, Bern and Lucerne.</p>
-      <p>League nights are available as their own calendar, but few shops are listed so far. Casual meetups are not included. If a shop or event is missing, <a href="https://github.com/joerimulder/tcg-calendar/issues">open an issue on GitHub</a>.</p>
+      <p>League nights, the regular casual play at shops, are their own calendar and are refreshed from the Event Locator by hand, so a newly announced one can take a few days to show up. Casual meetups that are not in the locator are not included. If a shop or event is missing, <a href="https://github.com/joerimulder/tcg-calendar/issues">open an issue on GitHub</a>.</p>
     </div>
   </section>
 </main>
@@ -408,7 +416,7 @@ footer p { max-width: 40rem; margin: 0 0 0.9rem; color: var(--muted); font-size:
     });
   }
   if (served) {
-    wire(document.querySelector('header'), 'basel');
+    wire(document.querySelector('header'), 'basel-tournaments');
     [].forEach.call(document.querySelectorAll('.feed'), function (li) { wire(li, li.getAttribute('data-feed')); });
   }
 
@@ -417,20 +425,24 @@ footer p { max-width: 40rem; margin: 0 0 0.9rem; color: var(--muted); font-size:
   var state = document.getElementById('state');
   var more = document.getElementById('more');
 
+  var TOURNAMENTS = ['League Challenge', 'League Cup', 'Prerelease'];
   var TYPES = [
-    ['', 'All'], ['League Challenge', 'Challenges'], ['League Cup', 'Cups'],
-    ['Prerelease', 'Prereleases'], ['League Night', 'League nights']
+    ['tournaments', 'Tournaments', TOURNAMENTS], ['League Challenge', 'Challenges', ['League Challenge']],
+    ['League Cup', 'Cups', ['League Cup']], ['Prerelease', 'Prereleases', ['Prerelease']],
+    ['League Night', 'League nights', ['League Night']], ['', 'All', null]
   ];
-  var all = [], fType = '', fCity = '', expanded = false;
+  var all = [], fType = 'tournaments', fCity = '', expanded = false;
+  function typeList(id) { return TYPES.filter(function (t) { return t[0] === id; })[0][2]; }
+  function inType(e, id) { var l = typeList(id); return !l || l.indexOf(e.kind) >= 0; }
   var chips = document.getElementById('chips'), citySel = document.getElementById('city');
 
   function matches(e, ignoreType, ignoreCity) {
-    return (ignoreType || !fType || e.kind === fType) && (ignoreCity || !fCity || e.loc.city === fCity);
+    return (ignoreType || inType(e, fType)) && (ignoreCity || !fCity || e.loc.city === fCity);
   }
   function buildControls() {
     chips.textContent = '';
     TYPES.forEach(function (t) {
-      var n = all.filter(function (e) { return matches(e, true, false) && (!t[0] || e.kind === t[0]); }).length;
+      var n = all.filter(function (e) { return matches(e, true, false) && inType(e, t[0]); }).length;
       var b = el('button', 'chip', t[1]);
       b.type = 'button';
       b.setAttribute('aria-pressed', String(fType === t[0]));

@@ -38,6 +38,7 @@ assert "TEST Far Away" not in u and "Paris" not in u       # outside the radius
 assert "example.invalid" not in u                          # contact data never published
 assert "\n\n\n" not in u
 cats = lambda n: (tmp / n).read_bytes().decode().replace("\r\n ", "")
+assert "League Night" not in cats("with_locator-tournaments.ics") and "BEGIN:VEVENT" in cats("with_locator-tournaments.ics")
 assert cats("with_locator-leagues.ics").count("BEGIN:VEVENT") == 3
 assert cats("with_locator-challenges.ics").count("CATEGORIES:League Challenge") == cats("with_locator-challenges.ics").count("BEGIN:VEVENT") > 0
 assert "League Night" not in cats("with_locator-cups.ics")
