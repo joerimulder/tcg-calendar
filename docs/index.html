@@ -1,0 +1,377 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>TCGCalendar: Pokémon TCG events around Basel in your calendar</title>
+<meta name="description" content="League Cups, League Challenges and Prereleases within 100 km of Basel, as a calendar you subscribe to once. Updated every night.">
+<meta name="theme-color" content="#FFD23F">
+<meta property="og:type" content="website">
+<meta property="og:title" content="TCGCalendar: Pokémon TCG events around Basel">
+<meta property="og:description" content="Subscribe once and every Pokémon TCG League Cup, Challenge and Prerelease near Basel shows up in your calendar.">
+<meta property="og:url" content="https://tcgcalendar.ch/">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%23FFD23F'/%3E%3Cpath d='M7 10h18M16 10v15' stroke='%23000' stroke-width='4.5' fill='none'/%3E%3C/svg%3E">
+<style>
+:root {
+  --yellow: #FFD23F;
+  --black: #000;
+  --paper: #fff;
+  --text: #1c1c1c;
+  --muted: #595959;
+  --rule: #d6d6d6;
+  --surface: #f1f1f1;
+  --flag: #c8102e;
+  --r: 0.375rem;
+  --sans: "Helvetica Neue", Helvetica, Arial, system-ui, sans-serif;
+  color-scheme: light dark;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --paper: #16181c;
+    --text: #f1f1f1;
+    --muted: #a9aeb6;
+    --rule: #33363c;
+    --surface: #202328;
+    --flag: #ff7a82;
+  }
+}
+* { box-sizing: border-box; }
+[hidden] { display: none !important; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0;
+  font-family: var(--sans);
+  font-size: 1.0625rem;
+  line-height: 1.55;
+  color: var(--text);
+  background: var(--paper);
+}
+.wrap { max-width: 62rem; margin: 0 auto; padding: 0 1.25rem; }
+a { color: inherit; }
+:focus-visible { outline: 3px solid var(--flag); outline-offset: 3px; }
+
+/* Poster band */
+.poster { background: var(--yellow); color: var(--black); border-bottom: 0.5rem solid var(--black); }
+.poster a:focus-visible, .poster button:focus-visible { outline-color: var(--black); }
+.brand { padding: 1.25rem 0 0; font-weight: 800; font-size: 1.125rem; letter-spacing: -0.02em; }
+.poster h1 {
+  margin: clamp(2rem, 7vw, 4.5rem) 0 1.25rem;
+  font-size: clamp(2.6rem, 8.2vw, 5.75rem);
+  line-height: 0.98;
+  font-weight: 800;
+  letter-spacing: -0.035em;
+  max-width: 12em;
+  text-wrap: balance;
+}
+.lede { max-width: 36rem; margin: 0 0 2rem; font-size: 1.25rem; line-height: 1.45; }
+.actions { display: flex; flex-wrap: wrap; align-items: center; gap: 0.75rem 1.75rem; }
+.btn {
+  display: inline-block;
+  padding: 0.9rem 1.5rem;
+  min-height: 3rem;
+  background: var(--black);
+  color: var(--yellow);
+  font-weight: 700;
+  font-size: 1.0625rem;
+  text-decoration: none;
+  border-radius: var(--r);
+}
+.btn:hover { background: #222; }
+.quiet { font-weight: 600; color: var(--black); text-decoration-thickness: 2px; text-underline-offset: 0.25em; }
+.fine { margin: 1.25rem 0 0; padding-bottom: 2.5rem; font-size: 0.9375rem; }
+
+/* Sections */
+section { padding: 3rem 0 0.5rem; }
+h2 { margin: 0 0 0.35rem; font-size: 1.875rem; line-height: 1.15; font-weight: 800; letter-spacing: -0.02em; }
+.note { margin: 0 0 1.5rem; color: var(--muted); }
+
+/* Board */
+.board { list-style: none; margin: 0; padding: 0; }
+.row {
+  display: grid;
+  grid-template-columns: 9.5rem minmax(0, 1fr) 14rem;
+  gap: 0.25rem 1.5rem;
+  padding: 1.1rem 0;
+  border-top: 1px solid var(--rule);
+}
+.row:last-child { border-bottom: 1px solid var(--rule); }
+.when { display: flex; flex-direction: column; }
+.day { color: var(--muted); font-size: 0.9375rem; }
+.time { font-size: 1.625rem; line-height: 1.1; font-weight: 700; font-variant-numeric: tabular-nums; letter-spacing: -0.01em; }
+.title { font-weight: 650; text-decoration-thickness: 1px; text-underline-offset: 0.2em; }
+a.title:hover { text-decoration-thickness: 2px; }
+.kind { display: block; color: var(--muted); font-size: 0.9375rem; }
+.flag { display: inline-block; margin-left: 0.5rem; padding: 0 0.4rem; border: 1.5px solid var(--flag); color: var(--flag); font-size: 0.8125rem; font-weight: 700; line-height: 1.35; border-radius: 0.2rem; vertical-align: 0.1em; }
+.venue { font-weight: 600; }
+.place { display: block; color: var(--muted); font-size: 0.9375rem; }
+.more { margin-top: 1.25rem; font: inherit; font-weight: 600; color: inherit; background: none; border: 2px solid currentColor; border-radius: var(--r); padding: 0.6rem 1.1rem; min-height: 2.75rem; cursor: pointer; }
+.state { margin: 0; padding: 1.25rem 0; border-top: 1px solid var(--rule); border-bottom: 1px solid var(--rule); color: var(--muted); }
+
+/* How to subscribe */
+.address { display: flex; flex-wrap: wrap; gap: 0.5rem; margin: 0 0 1.75rem; }
+.address input {
+  flex: 1 1 18rem; min-width: 0; min-height: 3rem; padding: 0.6rem 0.9rem;
+  font: inherit; font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace; font-size: 0.9375rem;
+  color: var(--text); background: var(--surface); border: 1px solid var(--rule); border-radius: var(--r);
+}
+.address button { min-height: 3rem; padding: 0.6rem 1.25rem; font: inherit; font-weight: 700; color: var(--paper); background: var(--text); border: 0; border-radius: var(--r); cursor: pointer; }
+.copied { align-self: center; color: var(--muted); font-size: 0.9375rem; }
+details { border-top: 1px solid var(--rule); }
+details:last-of-type { border-bottom: 1px solid var(--rule); }
+summary { padding: 1rem 0; font-size: 1.125rem; font-weight: 700; cursor: pointer; }
+details > div { padding: 0 0 1.25rem; max-width: 40rem; }
+details ol { margin: 0.5rem 0 0; padding-left: 1.4rem; }
+details li { margin: 0.35rem 0; }
+details p { margin: 0.5rem 0 0; color: var(--muted); }
+
+.prose { max-width: 40rem; }
+.prose p { margin: 0 0 1rem; }
+
+footer { margin-top: 3.5rem; padding: 2rem 0 3rem; border-top: 0.5rem solid var(--black); }
+footer p { max-width: 40rem; margin: 0 0 0.9rem; color: var(--muted); font-size: 0.9375rem; }
+
+@media (max-width: 44rem) {
+  .row { grid-template-columns: 1fr; gap: 0.15rem; padding: 1rem 0; }
+  .when { flex-direction: row; align-items: baseline; gap: 0.75rem; }
+  .venue, .place { display: inline; }
+  .place::before { content: " "; }
+}
+</style>
+</head>
+<body>
+
+<header class="poster">
+  <div class="wrap">
+    <div class="brand">TCGCalendar</div>
+    <h1>Pokémon TCG events around Basel, in your calendar</h1>
+    <p class="lede">League Cups, League Challenges and Prereleases within 100 km of Basel, from Mulhouse to Zurich. Subscribe once and new events appear on their own.</p>
+    <div class="actions">
+      <a class="btn" data-link="webcal" href="webcal://tcgcalendar.ch/basel.ics">Subscribe in your calendar app</a>
+      <a class="quiet" data-link="google" href="https://calendar.google.com/calendar/render?cid=webcal%3A%2F%2Ftcgcalendar.ch%2Fbasel.ics">Add to Google Calendar</a>
+      <a class="quiet" data-link="ics" href="https://tcgcalendar.ch/basel.ics">Download the .ics file</a>
+    </div>
+    <p class="fine">Free, updated every night, and shown in your own time zone.</p>
+  </div>
+</header>
+
+<main class="wrap">
+  <section aria-labelledby="next">
+    <h2 id="next">Next events</h2>
+    <p class="note">Times are in Basel time.</p>
+    <ul class="board" id="board" hidden></ul>
+    <p class="state" id="state">Loading events…</p>
+    <noscript><p class="state">Turn on JavaScript to see the next events here. The calendar works without it.</p></noscript>
+    <button class="more" id="more" type="button" hidden></button>
+  </section>
+
+  <section aria-labelledby="how">
+    <h2 id="how">Subscribe to the calendar</h2>
+    <p class="note">The button at the top works for most phones and computers. If it doesn't, use the calendar address and the steps for your app.</p>
+    <div class="address">
+      <input id="feed-url" type="text" readonly value="https://tcgcalendar.ch/basel.ics" aria-label="Calendar address">
+      <button id="copy" type="button">Copy address</button>
+      <span class="copied" id="copied" role="status"></span>
+    </div>
+
+    <details>
+      <summary>Apple Calendar (iPhone, iPad, Mac)</summary>
+      <div>
+        <p>Tap or click “Subscribe in your calendar app” at the top and confirm. If nothing happens, add it by hand:</p>
+        <ol>
+          <li>On iPhone or iPad, open Settings, then Calendar, then Calendar Accounts. On newer iOS the path is Settings, Apps, Calendar, Calendar Accounts.</li>
+          <li>Choose Add Account, then Other, then Add Subscribed Calendar.</li>
+          <li>Paste the calendar address and save.</li>
+        </ol>
+        <p>On a Mac, open Calendar and choose File, then New Calendar Subscription, and paste the address.</p>
+      </div>
+    </details>
+    <details>
+      <summary>Google Calendar</summary>
+      <div>
+        <ol>
+          <li>Open Google Calendar in a web browser on a computer.</li>
+          <li>Next to “Other calendars”, choose Add (+), then From URL.</li>
+          <li>Paste the calendar address and choose Add calendar.</li>
+        </ol>
+        <p>The calendar then appears in the Google Calendar app too. Google refreshes subscribed calendars on its own schedule, often only once or twice a day.</p>
+      </div>
+    </details>
+    <details>
+      <summary>Outlook</summary>
+      <div>
+        <ol>
+          <li>Open Outlook on the web or the new Outlook app and go to Calendar.</li>
+          <li>Choose Add calendar, then Subscribe from web.</li>
+          <li>Paste the calendar address, give it a name, and import.</li>
+        </ol>
+      </div>
+    </details>
+    <details>
+      <summary>Thunderbird</summary>
+      <div>
+        <ol>
+          <li>In the Calendar tab, choose New Calendar, then On the Network.</li>
+          <li>Pick iCalendar (ICS) and paste the calendar address.</li>
+        </ol>
+      </div>
+    </details>
+  </section>
+
+  <section aria-labelledby="what">
+    <h2 id="what">What’s in the calendar</h2>
+    <div class="prose">
+      <p>Official League Cups, League Challenges and Prereleases that shops register in the Play! Pokémon Event Locator, within 100 km of Basel. That covers Basel, Mulhouse, Zurich, Bern and Lucerne.</p>
+      <p>Regular league nights and casual meetups are not included yet. If a shop or event is missing, <a href="https://github.com/joerimulder/tcg-calendar/issues">open an issue on GitHub</a>.</p>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <p>TCGCalendar is an unofficial fan project. It is not affiliated with or endorsed by The Pokémon Company, Nintendo, Creatures or GAME FREAK. Pokémon and its trademarks belong to their owners.</p>
+    <p>Event data comes from the official Play! Pokémon Event Locator, through the community mirror pokedata.ovh. This site sets no cookies and loads nothing from other sites. It is hosted on GitHub Pages, and the <a href="https://github.com/joerimulder/tcg-calendar">source code is on GitHub</a>.</p>
+  </div>
+</footer>
+
+<script>
+(function () {
+  'use strict';
+  var TZ = 'Europe/Zurich';
+  var SHOWN = 8;
+
+  /* parser:start */
+  function parseICS(text) {
+    var raw = text.replace(/\r\n/g, '\n').replace(/\r/g, '\n').split('\n'), lines = [];
+    raw.forEach(function (l) {
+      if ((l[0] === ' ' || l[0] === '\t') && lines.length) lines[lines.length - 1] += l.slice(1);
+      else if (l) lines.push(l);
+    });
+    var events = [], cur = null;
+    lines.forEach(function (l) {
+      if (l === 'BEGIN:VEVENT') { cur = {}; }
+      else if (l === 'END:VEVENT') { if (cur) events.push(cur); cur = null; }
+      else if (cur) {
+        var i = l.indexOf(':');
+        if (i > 0) cur[l.slice(0, i).split(';')[0].toUpperCase()] =
+          l.slice(i + 1).replace(/\\n/gi, '\n').replace(/\\([,;\\])/g, '$1');
+      }
+    });
+    return events;
+  }
+  function parseDT(s) {
+    var m = /^(\d{4})(\d{2})(\d{2})T(\d{2})(\d{2})(\d{2})Z$/.exec(s || '');
+    return m ? new Date(Date.UTC(+m[1], m[2] - 1, +m[3], +m[4], +m[5], +m[6])) : null;
+  }
+  function venueParts(loc) {
+    var parts = (loc || '').split(', ');
+    var cityPart = parts.filter(function (p) { return /^\d{4,5} /.test(p); })[0] || '';
+    return { venue: parts[0] || '', city: cityPart.replace(/^\d{4,5} /, '') };
+  }
+  /* parser:end */
+
+  var dayFmt = new Intl.DateTimeFormat('en-GB', { weekday: 'short', day: 'numeric', month: 'short', timeZone: TZ });
+  var timeFmt = new Intl.DateTimeFormat('en-GB', { hour: '2-digit', minute: '2-digit', hourCycle: 'h23', timeZone: TZ });
+  var keyFmt = new Intl.DateTimeFormat('en-CA', { timeZone: TZ });
+  function nextKey(key) {
+    var p = key.split('-');
+    return new Date(Date.UTC(+p[0], p[1] - 1, +p[2] + 1)).toISOString().slice(0, 10);
+  }
+  function el(tag, cls, text) {
+    var n = document.createElement(tag);
+    if (cls) n.className = cls;
+    if (text) n.textContent = text;
+    return n;
+  }
+
+  /* Links that follow wherever the page is served from */
+  var feedUrl = new URL('basel.ics', location.href).href;
+  var input = document.getElementById('feed-url');
+  if (/^https?:$/.test(location.protocol)) {
+    var webcal = feedUrl.replace(/^https?:/, 'webcal:');
+    [].forEach.call(document.querySelectorAll('[data-link=webcal]'), function (a) { a.href = webcal; });
+    [].forEach.call(document.querySelectorAll('[data-link=google]'), function (a) {
+      a.href = 'https://calendar.google.com/calendar/render?cid=' + encodeURIComponent(webcal);
+    });
+    [].forEach.call(document.querySelectorAll('[data-link=ics]'), function (a) { a.href = feedUrl; });
+    input.value = feedUrl;
+  }
+
+  /* Copy button */
+  var copied = document.getElementById('copied');
+  document.getElementById('copy').addEventListener('click', function () {
+    function fallback() { input.select(); copied.textContent = 'Address selected. Copy it with your keyboard.'; }
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(input.value).then(function () {
+        copied.textContent = 'Copied';
+        setTimeout(function () { copied.textContent = ''; }, 2500);
+      }, fallback);
+    } else { fallback(); }
+  });
+
+  /* Next events */
+  var board = document.getElementById('board');
+  var state = document.getElementById('state');
+  var more = document.getElementById('more');
+
+  function render(events) {
+    var now = new Date();
+    var today = keyFmt.format(now), tomorrow = nextKey(today);
+    var list = events.map(function (e) {
+      var start = parseDT(e.DTSTART), end = parseDT(e.DTEND) || start;
+      return { start: start, end: end, title: e.SUMMARY || 'Pokémon TCG event', kind: e.CATEGORIES || '',
+               loc: venueParts(e.LOCATION), url: /^https:\/\//.test(e.URL || '') ? e.URL : '' };
+    }).filter(function (e) { return e.start && e.end >= now; })
+      .sort(function (a, b) { return a.start - b.start; });
+
+    if (!list.length) {
+      state.textContent = 'No upcoming events right now. New events appear here as shops register them.';
+      return;
+    }
+    list.forEach(function (e, i) {
+      var li = el('li', 'row');
+      if (i >= SHOWN) li.hidden = true;
+      var when = el('div', 'when');
+      when.appendChild(el('span', 'day', dayFmt.format(e.start)));
+      when.appendChild(el('span', 'time', timeFmt.format(e.start)));
+      var what = el('div', 'what');
+      var t = e.url ? el('a', 'title', e.title) : el('span', 'title', e.title);
+      if (e.url) t.href = e.url;
+      what.appendChild(t);
+      var k = keyFmt.format(e.start);
+      if (k === today || k === tomorrow) what.appendChild(el('span', 'flag', k === today ? 'Today' : 'Tomorrow'));
+      if (e.kind) what.appendChild(el('span', 'kind', e.kind));
+      var where = el('div', 'where');
+      where.appendChild(el('span', 'venue', e.loc.venue));
+      if (e.loc.city) where.appendChild(el('span', 'place', e.loc.city));
+      li.appendChild(when); li.appendChild(what); li.appendChild(where);
+      board.appendChild(li);
+    });
+    state.hidden = true;
+    board.hidden = false;
+    if (list.length > SHOWN) {
+      var expanded = false;
+      function label() { more.textContent = expanded ? 'Show fewer events' : 'Show all ' + list.length + ' events'; }
+      label();
+      more.hidden = false;
+      more.addEventListener('click', function () {
+        expanded = !expanded;
+        [].forEach.call(board.children, function (li, i) { li.hidden = !expanded && i >= SHOWN; });
+        label();
+      });
+    }
+  }
+
+  if (/^https?:$/.test(location.protocol)) {
+    fetch(feedUrl, { cache: 'no-cache' })
+      .then(function (r) { if (!r.ok) throw new Error(r.status); return r.text(); })
+      .then(function (t) { render(parseICS(t)); })
+      .catch(function () {
+        state.textContent = 'The event list could not be loaded. The calendar itself still works: use the subscribe button above.';
+      });
+  } else {
+    state.textContent = 'Open this page from its web address to see the next events.';
+  }
+}());
+</script>
+</body>
+</html>
