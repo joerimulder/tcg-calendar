@@ -294,11 +294,20 @@ def fold(line: str) -> str:
     return "\r\n ".join(out)
 
 
-def render(events: list[dict], stamp: str) -> str:
+# (file suffix, feed name, categories included; None = everything)
+FEEDS = [
+    ("", "All events", None),
+    ("challenges", "League Challenges", {"League Challenge"}),
+    ("cups", "League Cups", {"League Cup"}),
+    ("leagues", "League Nights", {"League Night"}),
+]
+
+
+def render(events: list[dict], stamp: str, name: str = CAL_NAME, desc: str = "") -> str:
     f = lambda d: d.strftime("%Y%m%dT%H%M%SZ")
     L = ["BEGIN:VCALENDAR", "VERSION:2.0", "PRODID:-//TCGCalendar//Basel//EN",
-         "CALSCALE:GREGORIAN", "METHOD:PUBLISH", f"X-WR-CALNAME:{esc(CAL_NAME)}",
-         f"X-WR-CALDESC:{esc(CAL_DESC)}", f"X-WR-TIMEZONE:{HOME_TZ}",
+         "CALSCALE:GREGORIAN", "METHOD:PUBLISH", f"X-WR-CALNAME:{esc(name)}",
+         f"X-WR-CALDESC:{esc(desc or CAL_DESC)}", f"X-WR-TIMEZONE:{HOME_TZ}",
          "REFRESH-INTERVAL;VALUE=DURATION:PT6H", "X-PUBLISHED-TTL:PT6H"]
     for e in sorted(events, key=lambda x: (x["start"], x["uid"])):
         L += ["BEGIN:VEVENT", f"UID:{e['uid']}", f"DTSTAMP:{stamp}",
@@ -356,15 +365,21 @@ def main() -> int:
     for n in load_manual(manual_path):            # manual entries win on UID clash
         merged[n["uid"]] = n
 
-    out = Path(a.out)
-    out.parent.mkdir(parents=True, exist_ok=True)
+    events = list(merged.values())
+    stamp = datetime.now(timezone.utc).strftime("%Y%m%dT%H%M%SZ")
     stamp_re = re.compile(r"DTSTAMP:\d{8}T\d{6}Z")
-    new = render(list(merged.values()), datetime.now(timezone.utc).strftime("%Y%m%dT%H%M%SZ"))
-    if out.exists() and stamp_re.sub("", out.read_bytes().decode("utf-8")) == stamp_re.sub("", new):
-        print(f"No changes ({len(merged)} events).")   # avoids a daily commit just for DTSTAMP
-        return 0
-    out.write_text(new, encoding="utf-8", newline="")
-    print(f"Wrote {out} with {len(merged)} events.")
+    base = Path(a.out)
+    base.parent.mkdir(parents=True, exist_ok=True)
+    for suffix, name, cats in FEEDS:
+        subset = [e for e in events if cats is None or e["category"] in cats]
+        out = base if suffix == "" else base.with_name(f"{base.stem}-{suffix}{base.suffix}")
+        label = CAL_NAME if suffix == "" else f"{CAL_NAME} - {name}"
+        new = render(subset, stamp, label)
+        if out.exists() and stamp_re.sub("", out.read_bytes().decode("utf-8")) == stamp_re.sub("", new):
+            print(f"{out.name}: no changes ({len(subset)} events).")   # avoids a daily commit for DTSTAMP
+            continue
+        out.write_text(new, encoding="utf-8", newline="")
+        print(f"{out.name}: wrote {len(subset)} events.")
     return 0
 
 

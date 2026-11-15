@@ -108,14 +108,20 @@ a.title:hover { text-decoration-thickness: 2px; }
 .state { margin: 0; padding: 1.25rem 0; border-top: 1px solid var(--rule); border-bottom: 1px solid var(--rule); color: var(--muted); }
 
 /* How to subscribe */
-.address { display: flex; flex-wrap: wrap; gap: 0.5rem; margin: 0 0 1.75rem; }
-.address input {
   flex: 1 1 18rem; min-width: 0; min-height: 3rem; padding: 0.6rem 0.9rem;
   font: inherit; font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace; font-size: 0.9375rem;
   color: var(--text); background: var(--surface); border: 1px solid var(--rule); border-radius: var(--r);
 }
-.address button { min-height: 3rem; padding: 0.6rem 1.25rem; font: inherit; font-weight: 700; color: var(--paper); background: var(--text); border: 0; border-radius: var(--r); cursor: pointer; }
-.copied { align-self: center; color: var(--muted); font-size: 0.9375rem; }
+.copied { min-height: 1.4rem; margin: 0.5rem 0 1rem; color: var(--muted); font-size: 0.9375rem; }
+.feeds { list-style: none; margin: 0 0 0.5rem; padding: 0; }
+.feed { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 0.75rem 1.5rem; padding: 1rem 0; border-top: 1px solid var(--rule); }
+.feed:last-child { border-bottom: 1px solid var(--rule); }
+.feed-info { flex: 1 1 16rem; }
+.feed-info strong { display: block; font-size: 1.125rem; }
+.feed-info span { color: var(--muted); font-size: 0.9375rem; }
+.feed-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 0.5rem 1.1rem; }
+.feed .btn.small { padding: 0.55rem 1.1rem; min-height: 2.75rem; }
+.feed .copy { min-height: 2.75rem; padding: 0.5rem 1rem; font: inherit; font-weight: 600; color: inherit; background: none; border: 2px solid currentColor; border-radius: var(--r); cursor: pointer; }
 details { border-top: 1px solid var(--rule); }
 details:last-of-type { border-bottom: 1px solid var(--rule); }
 summary { padding: 1rem 0; font-size: 1.125rem; font-weight: 700; cursor: pointer; }
@@ -150,7 +156,7 @@ footer p { max-width: 40rem; margin: 0 0 0.9rem; color: var(--muted); font-size:
       <a class="quiet" data-link="google" href="https://calendar.google.com/calendar/render?cid=webcal%3A%2F%2Ftcgcalendar.ch%2Fbasel.ics">Add to Google Calendar</a>
       <a class="quiet" data-link="ics" href="https://tcgcalendar.ch/basel.ics">Download the .ics file</a>
     </div>
-    <p class="fine">Free, updated every night, and shown in your own time zone.</p>
+    <p class="fine">Free, updated every night, and shown in your own time zone. <a href="#how">Want only challenges, cups or league nights?</a></p>
   </div>
 </header>
 
@@ -165,13 +171,43 @@ footer p { max-width: 40rem; margin: 0 0 0.9rem; color: var(--muted); font-size:
   </section>
 
   <section aria-labelledby="how">
-    <h2 id="how">Subscribe to the calendar</h2>
-    <p class="note">The button at the top works for most phones and computers. If it doesn't, use the calendar address and the steps for your app.</p>
-    <div class="address">
-      <input id="feed-url" type="text" readonly value="https://tcgcalendar.ch/basel.ics" aria-label="Calendar address">
-      <button id="copy" type="button">Copy address</button>
-      <span class="copied" id="copied" role="status"></span>
-    </div>
+    <h2 id="how">Choose your calendars</h2>
+    <p class="note">Subscribe to everything, or only the event types you play. You can add several. If Subscribe does nothing, copy the address and follow the steps for your app.</p>
+    <ul class="feeds" id="calendars">
+      <li class="feed" data-feed="basel">
+        <div class="feed-info"><strong>All events</strong><span>Every event type in one calendar.</span></div>
+        <div class="feed-actions">
+          <a class="btn small" data-link="webcal" href="webcal://tcgcalendar.ch/basel.ics">Subscribe</a>
+          <a class="quiet" data-link="google" href="#">Google Calendar</a>
+          <button class="copy" type="button">Copy address</button>
+        </div>
+      </li>
+      <li class="feed" data-feed="basel-challenges">
+        <div class="feed-info"><strong>League Challenges</strong><span>The monthly challenge at your local shop.</span></div>
+        <div class="feed-actions">
+          <a class="btn small" data-link="webcal" href="webcal://tcgcalendar.ch/basel-challenges.ics">Subscribe</a>
+          <a class="quiet" data-link="google" href="#">Google Calendar</a>
+          <button class="copy" type="button">Copy address</button>
+        </div>
+      </li>
+      <li class="feed" data-feed="basel-cups">
+        <div class="feed-info"><strong>League Cups</strong><span>Bigger events with more prizes and Championship Points.</span></div>
+        <div class="feed-actions">
+          <a class="btn small" data-link="webcal" href="webcal://tcgcalendar.ch/basel-cups.ics">Subscribe</a>
+          <a class="quiet" data-link="google" href="#">Google Calendar</a>
+          <button class="copy" type="button">Copy address</button>
+        </div>
+      </li>
+      <li class="feed" data-feed="basel-leagues">
+        <div class="feed-info"><strong>League Nights</strong><span>Weekly casual play at shops. Few are listed yet.</span></div>
+        <div class="feed-actions">
+          <a class="btn small" data-link="webcal" href="webcal://tcgcalendar.ch/basel-leagues.ics">Subscribe</a>
+          <a class="quiet" data-link="google" href="#">Google Calendar</a>
+          <button class="copy" type="button">Copy address</button>
+        </div>
+      </li>
+    </ul>
+    <p class="copied" id="copied" role="status"></p>
 
     <details>
       <summary>Apple Calendar (iPhone, iPad, Mac)</summary>
@@ -180,7 +216,7 @@ footer p { max-width: 40rem; margin: 0 0 0.9rem; color: var(--muted); font-size:
         <ol>
           <li>On iPhone or iPad, open Settings, then Calendar, then Calendar Accounts. On newer iOS the path is Settings, Apps, Calendar, Calendar Accounts.</li>
           <li>Choose Add Account, then Other, then Add Subscribed Calendar.</li>
-          <li>Paste the calendar address and save.</li>
+          <li>Paste the calendar address you copied and save.</li>
         </ol>
         <p>On a Mac, open Calendar and choose File, then New Calendar Subscription, and paste the address.</p>
       </div>
@@ -191,7 +227,7 @@ footer p { max-width: 40rem; margin: 0 0 0.9rem; color: var(--muted); font-size:
         <ol>
           <li>Open Google Calendar in a web browser on a computer.</li>
           <li>Next to “Other calendars”, choose Add (+), then From URL.</li>
-          <li>Paste the calendar address and choose Add calendar.</li>
+          <li>Paste the calendar address you copied and choose Add calendar.</li>
         </ol>
         <p>The calendar then appears in the Google Calendar app too. Google refreshes subscribed calendars on its own schedule, often only once or twice a day.</p>
       </div>
@@ -202,7 +238,7 @@ footer p { max-width: 40rem; margin: 0 0 0.9rem; color: var(--muted); font-size:
         <ol>
           <li>Open Outlook on the web or the new Outlook app and go to Calendar.</li>
           <li>Choose Add calendar, then Subscribe from web.</li>
-          <li>Paste the calendar address, give it a name, and import.</li>
+          <li>Paste the calendar address you copied, give it a name, and import.</li>
         </ol>
       </div>
     </details>
@@ -221,7 +257,7 @@ footer p { max-width: 40rem; margin: 0 0 0.9rem; color: var(--muted); font-size:
     <h2 id="what">What’s in the calendar</h2>
     <div class="prose">
       <p>Official League Cups, League Challenges and Prereleases that shops register in the Play! Pokémon Event Locator, within 100 km of Basel. That covers Basel, Mulhouse, Zurich, Bern and Lucerne.</p>
-      <p>Regular league nights and casual meetups are not included yet. If a shop or event is missing, <a href="https://github.com/joerimulder/tcg-calendar/issues">open an issue on GitHub</a>.</p>
+      <p>League nights are available as their own calendar, but few shops are listed so far. Casual meetups are not included. If a shop or event is missing, <a href="https://github.com/joerimulder/tcg-calendar/issues">open an issue on GitHub</a>.</p>
     </div>
   </section>
 </main>
@@ -284,29 +320,31 @@ footer p { max-width: 40rem; margin: 0 0 0.9rem; color: var(--muted); font-size:
   }
 
   /* Links that follow wherever the page is served from */
-  var feedUrl = new URL('basel.ics', location.href).href;
-  var input = document.getElementById('feed-url');
-  if (/^https?:$/.test(location.protocol)) {
-    var webcal = feedUrl.replace(/^https?:/, 'webcal:');
-    [].forEach.call(document.querySelectorAll('[data-link=webcal]'), function (a) { a.href = webcal; });
-    [].forEach.call(document.querySelectorAll('[data-link=google]'), function (a) {
+  var served = /^https?:$/.test(location.protocol);
+  function feedHref(name) { return new URL(name + '.ics', location.href).href; }
+  var feedUrl = feedHref('basel');
+  var copied = document.getElementById('copied');
+  function wire(scope, name) {
+    var url = feedHref(name), webcal = url.replace(/^https?:/, 'webcal:');
+    [].forEach.call(scope.querySelectorAll('[data-link=webcal]'), function (a) { a.href = webcal; });
+    [].forEach.call(scope.querySelectorAll('[data-link=google]'), function (a) {
       a.href = 'https://calendar.google.com/calendar/render?cid=' + encodeURIComponent(webcal);
     });
-    [].forEach.call(document.querySelectorAll('[data-link=ics]'), function (a) { a.href = feedUrl; });
-    input.value = feedUrl;
+    [].forEach.call(scope.querySelectorAll('[data-link=ics]'), function (a) { a.href = url; });
+    var btn = scope.querySelector('.copy');
+    if (btn) btn.addEventListener('click', function () {
+      function fallback() { window.prompt('Copy this calendar address:', url); }
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(url).then(function () {
+          copied.textContent = 'Copied the address for ' + scope.querySelector('strong').textContent + '.';
+        }, fallback);
+      } else { fallback(); }
+    });
   }
-
-  /* Copy button */
-  var copied = document.getElementById('copied');
-  document.getElementById('copy').addEventListener('click', function () {
-    function fallback() { input.select(); copied.textContent = 'Address selected. Copy it with your keyboard.'; }
-    if (navigator.clipboard && navigator.clipboard.writeText) {
-      navigator.clipboard.writeText(input.value).then(function () {
-        copied.textContent = 'Copied';
-        setTimeout(function () { copied.textContent = ''; }, 2500);
-      }, fallback);
-    } else { fallback(); }
-  });
+  if (served) {
+    wire(document.querySelector('header'), 'basel');
+    [].forEach.call(document.querySelectorAll('.feed'), function (li) { wire(li, li.getAttribute('data-feed')); });
+  }
 
   /* Next events */
   var board = document.getElementById('board');
@@ -361,7 +399,7 @@ footer p { max-width: 40rem; margin: 0 0 0.9rem; color: var(--muted); font-size:
     }
   }
 
-  if (/^https?:$/.test(location.protocol)) {
+  if (served) {
     fetch(feedUrl, { cache: 'no-cache' })
       .then(function (r) { if (!r.ok) throw new Error(r.status); return r.text(); })
       .then(function (t) { render(parseICS(t)); })

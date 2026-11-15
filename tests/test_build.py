@@ -36,5 +36,10 @@ assert "TEST cancelled" not in u                           # cancelled events dr
 assert "TEST Far Away" not in u and "Paris" not in u       # outside the radius
 assert "example.invalid" not in u                          # contact data never published
 assert "\n\n\n" not in u
+cats = lambda n: (tmp / n).read_bytes().decode().replace("\r\n ", "")
+assert cats("with_locator-leagues.ics").count("BEGIN:VEVENT") == 3
+assert cats("with_locator-challenges.ics").count("CATEGORIES:League Challenge") == cats("with_locator-challenges.ics").count("BEGIN:VEVENT") > 0
+assert "League Night" not in cats("with_locator-cups.ics")
+assert "X-WR-CALNAME:Pokémon TCG Basel - League Cups" in cats("with_locator-cups.ics")
 assert all(len(l.encode()) <= 75 for l in t.split("\r\n"))
 print("OK")
