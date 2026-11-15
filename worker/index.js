@@ -76,7 +76,7 @@ export default {
         "Cache-Control": "public, max-age=3600",
         "Access-Control-Allow-Origin": "*",
         "Access-Control-Expose-Headers": "X-Worker-Version",
-        "X-Worker-Version": "2026-11-15-git",
+        "X-Worker-Version": "2026-11-15-git2",
       },
     });
   },
