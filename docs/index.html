@@ -82,6 +82,9 @@ a { color: inherit; }
 .btn:hover { background: #222; }
 .quiet { font-weight: 600; color: var(--black); text-decoration-thickness: 2px; text-underline-offset: 0.25em; }
 .fine { margin: 1.25rem 0 0; padding-bottom: calc(var(--sky) + 0.75rem); font-size: 0.9375rem; }
+.hero-copied { margin: 0.5rem 0 0; padding-bottom: 0; }
+.hero-copied:empty { min-height: 0; margin: 0; }
+.poster button.quiet { font: inherit; font-weight: 600; color: var(--black); background: none; border: 0; padding: 0.4rem 0; min-height: 2.75rem; text-decoration: underline; text-decoration-thickness: 2px; text-underline-offset: 0.25em; cursor: pointer; }
 
 /* Sections */
 section { padding: 3rem 0 0.5rem; }
@@ -207,8 +210,10 @@ footer p { max-width: 40rem; margin: 0 0 0.9rem; color: var(--muted); font-size:
     <div class="actions">
       <a class="btn" data-link="webcal" href="webcal://tcgcalendar.ch/basel-tournaments.ics">Subscribe in your calendar app</a>
       <a class="quiet" data-link="google" href="https://calendar.google.com/calendar/render?cid=webcal%3A%2F%2Ftcgcalendar.ch%2Fbasel-tournaments.ics">Add to Google Calendar</a>
+      <button class="copy quiet" type="button" hidden>Copy address</button>
       <a class="quiet" data-link="ics" href="https://tcgcalendar.ch/basel-tournaments.ics">Download the .ics file</a>
     </div>
+    <p class="fine hero-copied" id="hero-copied" role="status"></p>
     <p class="fine">Free, updated every night, and shown in your own time zone. <a href="#how">Want only challenges, cups or league nights?</a></p>
   </div>
 </header>
@@ -399,26 +404,40 @@ footer p { max-width: 40rem; margin: 0 0 0.9rem; color: var(--muted); font-size:
   function feedHref(name) { return new URL(name + '.ics', location.href).href; }
   var feedUrl = feedHref('basel');
   var copied = document.getElementById('copied');
-  function wire(scope, name) {
+  /* Which button leads depends on the device: webcal:// links only open an app where one is registered */
+  var ua = navigator.userAgent || '';
+  var isIOS = /iPhone|iPad|iPod/.test(ua) || (/Macintosh/.test(ua) && navigator.maxTouchPoints > 1);
+  var isMacSafari = /Macintosh/.test(ua) && /Safari\//.test(ua) && !/Chrome|Chromium|CriOS|Edg|OPR|Firefox|FxiOS/.test(ua);
+  var apple = isIOS || isMacSafari;
+
+  function wire(scope, name, status, label) {
     var url = feedHref(name), webcal = url.replace(/^https?:/, 'webcal:');
-    [].forEach.call(scope.querySelectorAll('[data-link=webcal]'), function (a) { a.href = webcal; });
-    [].forEach.call(scope.querySelectorAll('[data-link=google]'), function (a) {
-      a.href = 'https://calendar.google.com/calendar/render?cid=' + encodeURIComponent(webcal);
-    });
+    var w = scope.querySelector('[data-link=webcal]'), g = scope.querySelector('[data-link=google]');
+    if (w) w.href = webcal;
+    if (g) g.href = 'https://calendar.google.com/calendar/render?cid=' + encodeURIComponent(webcal);
     [].forEach.call(scope.querySelectorAll('[data-link=ics]'), function (a) { a.href = url; });
     var btn = scope.querySelector('.copy');
     if (btn) btn.addEventListener('click', function () {
       function fallback() { window.prompt('Copy this calendar address:', url); }
       if (navigator.clipboard && navigator.clipboard.writeText) {
-        navigator.clipboard.writeText(url).then(function () {
-          copied.textContent = 'Copied the address for ' + scope.querySelector('strong').textContent + '.';
-        }, fallback);
+        navigator.clipboard.writeText(url).then(function () { status.textContent = 'Copied the address for ' + label + '.'; }, fallback);
       } else { fallback(); }
     });
+    if (w && g && !apple) {                           // Google Calendar first everywhere else
+      var small = /\bsmall\b/.test(w.className), hero = scope.tagName === 'HEADER';
+      g.className = 'btn' + (small ? ' small' : '');
+      w.className = 'quiet';
+      g.textContent = 'Add to Google Calendar';
+      w.textContent = hero ? 'Open in a calendar app' : 'Other calendar app';
+      w.parentNode.insertBefore(g, w);
+      if (btn && hero) btn.hidden = false;
+    }
   }
   if (served) {
-    wire(document.querySelector('header'), 'basel-tournaments');
-    [].forEach.call(document.querySelectorAll('.feed'), function (li) { wire(li, li.getAttribute('data-feed')); });
+    wire(document.querySelector('header'), 'basel-tournaments', document.getElementById('hero-copied'), 'Tournaments');
+    [].forEach.call(document.querySelectorAll('.feed'), function (li) {
+      wire(li, li.getAttribute('data-feed'), copied, li.querySelector('strong').textContent);
+    });
   }
 
   /* Next events */
