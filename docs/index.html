@@ -72,7 +72,7 @@ a { color: inherit; }
 :focus-visible { outline: 3px solid var(--flag); outline-offset: 3px; }
 
 /* Poster band */
-.poster { position: relative; overflow: hidden; background: var(--hero); color: #fff; border-bottom: 0.75rem solid var(--red); }
+.poster { position: relative; overflow: hidden; background: var(--hero); color: #fff; border-top: 0.5rem solid var(--red); border-bottom: 0.75rem solid var(--red); }
 .poster .wrap { position: relative; }
 .poster { --sky: clamp(120px, 20vw, 250px); }
 .sk-hill { fill: var(--sk-hill); } .sk-bldg { fill: var(--sk-bldg); } .sk-river { fill: var(--sk-river); } .sk-land { fill: var(--sk-land); } .sk-land2 { fill: var(--sk-land2); } .sk-wave { stroke: var(--sk-wave); }
@@ -93,17 +93,18 @@ a { color: inherit; }
 .lang svg { display: block; box-shadow: 0 0 0 1px rgba(0,0,0,0.25); }
 .lang[aria-pressed=true] { border-color: #fff; }
 .poster .lang:focus-visible { outline-color: #fff; }
-.brand { padding: 1.25rem 0 0; font-weight: 800; font-size: 1.125rem; letter-spacing: -0.02em; }
+.brand { display: flex; align-items: center; gap: 0.6rem; padding: 1.25rem 0 0; font-weight: 800; font-size: 1.125rem; letter-spacing: -0.02em; }
+.brand img { display: block; width: 2rem; height: 2rem; border-radius: 0.5rem; }
 .poster h1 {
   margin: clamp(2rem, 7vw, 4.5rem) 0 1.25rem;
-  font-size: clamp(2.6rem, 8.2vw, 5.75rem);
+  font-size: clamp(2.5rem, 7.4vw, 5rem);
   line-height: 0.98;
   font-weight: 800;
   letter-spacing: -0.035em;
-  max-width: 12em;
+  max-width: 14em;
   text-wrap: balance;
 }
-.lede { max-width: 36rem; margin: 0 0 2rem; font-size: 1.25rem; line-height: 1.45; }
+.lede { max-width: 36rem; padding-left: 1rem; border-left: 0.3rem solid var(--red); margin: 0 0 2rem; font-size: 1.25rem; line-height: 1.45; }
 .actions { display: flex; flex-wrap: wrap; align-items: center; gap: 0.75rem 1.75rem; }
 .btn {
   display: inline-block;
@@ -129,6 +130,7 @@ a { color: inherit; }
 
 /* Sections */
 section { padding: 3rem 0 0.5rem; }
+h2::before { content: ""; display: block; width: 2.75rem; height: 0.3rem; margin: 0 0 0.85rem; background: var(--red); }
 h2 { margin: 0 0 0.35rem; font-size: 1.875rem; line-height: 1.15; font-weight: 800; letter-spacing: -0.02em; }
 .note { margin: 0 0 1.5rem; color: var(--muted); }
 
@@ -143,7 +145,7 @@ h2 { margin: 0 0 0.35rem; font-size: 1.875rem; line-height: 1.15; font-weight: 8
 }
 .row:last-child { border-bottom: 1px solid var(--rule); }
 .when { display: flex; flex-direction: column; }
-.day { color: var(--muted); font-size: 0.9375rem; }
+.day { color: var(--flag); font-size: 0.9375rem; font-weight: 600; }
 .time { font-size: 1.625rem; line-height: 1.1; font-weight: 700; font-variant-numeric: tabular-nums; letter-spacing: -0.01em; }
 .title { font-weight: 650; text-decoration-thickness: 1px; text-underline-offset: 0.2em; }
 a.title:hover { text-decoration-thickness: 2px; }
@@ -197,8 +199,15 @@ details p { margin: 0.5rem 0 0; color: var(--muted); }
 .prose { max-width: 40rem; }
 .prose p { margin: 0 0 1rem; }
 
-footer { margin-top: 3.5rem; padding: 2rem 0 3rem; border-top: 0.75rem solid var(--ink-bg); }
-footer p { max-width: 40rem; margin: 0 0 0.9rem; color: var(--muted); font-size: 0.9375rem; }
+footer { margin-top: 4rem; padding: 2.25rem 0 3rem; background: #111; color: #fff; border-top: 0.75rem solid var(--red); }
+.foot-top { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 1rem 2rem; margin: 0 0 1.5rem; padding: 0 0 1.5rem; border-bottom: 1px solid #3a3d42; }
+.foot-brand { display: flex; align-items: center; gap: 0.75rem; font-weight: 800; font-size: 1.25rem; letter-spacing: -0.02em; }
+.foot-brand img { display: block; width: 2.5rem; height: 2.5rem; border-radius: 0.6rem; box-shadow: 0 0 0 1px #3a3d42; }
+.foot-links { display: flex; flex-wrap: wrap; gap: 0.25rem 1.5rem; }
+.foot-links a { display: inline-flex; align-items: center; min-height: 2.75rem; font-weight: 600; color: #fff; text-decoration-thickness: 2px; text-underline-offset: 0.25em; text-decoration-color: var(--red); }
+footer p { max-width: 44rem; margin: 0 0 0.9rem; color: #C9CED5; font-size: 0.9375rem; }
+footer p a { color: #fff; }
+footer a:focus-visible { outline-color: #fff; }
 
 @media (max-width: 44rem) {
   .row { grid-template-columns: 1fr; gap: 0.15rem; padding: 1rem 0; }
@@ -255,7 +264,7 @@ footer p { max-width: 40rem; margin: 0 0 0.9rem; color: var(--muted); font-size:
   </svg>
   <div class="wrap">
     <div class="brand-row">
-      <div class="brand">TCGCalendar</div>
+      <div class="brand"><img src="icon.svg" width="32" height="32" alt="">TCGCalendar</div>
       <div class="hdr-tools">
       <div class="langs" role="group" aria-label="Language">
         <button class="lang" type="button" data-lang="de" lang="de" aria-label="Deutsch" title="Deutsch"><svg viewBox="0 0 5 3" width="30" height="18" aria-hidden="true" focusable="false"><rect width="5" height="3" fill="#000"/><rect y="1" width="5" height="2" fill="#DD0000"/><rect y="2" width="5" height="1" fill="#FFCE00"/></svg></button>
@@ -264,8 +273,8 @@ footer p { max-width: 40rem; margin: 0 0 0.9rem; color: var(--muted); font-size:
       <button class="theme" type="button" id="theme-toggle" aria-label="Switch to dark mode" title="Switch to dark mode"><svg class="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="4.5"/><path d="M12 2v2.5M12 19.5V22M2 12h2.5M19.5 12H22M4.9 4.9l1.8 1.8M17.3 17.3l1.8 1.8M4.9 19.1l1.8-1.8M17.3 6.7l1.8-1.8"/></svg><svg class="moon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false"><path d="M20.5 14.6A8.5 8.5 0 0 1 9.4 3.5a8.5 8.5 0 1 0 11.1 11.1z"/></svg></button>
       </div>
     </div>
-    <h1 data-de="Pokémon-TCG-Termine rund um Basel, direkt in deinem Kalender">Pokémon TCG events around Basel, in your calendar</h1>
-    <p class="lede" data-de="League Cups, League Challenges und Prereleases im Umkreis von 100 km um Basel (Strassendistanz), von Mulhouse bis Zürich. Einmal abonnieren, und neue Termine erscheinen von selbst.">League Cups, League Challenges and Prereleases within 100 km of Basel by road, from Mulhouse to Zürich. Subscribe once and new events appear on their own.</p>
+    <h1 data-de="Pokémon-TCG-Termine in deinem Kalender">Pokémon TCG events in your calendar</h1>
+    <p class="lede" data-de="League Cups, League Challenges und Prereleases rund um Basel, im Umkreis von 100 km (Strassendistanz) von Mulhouse bis Zürich. Einmal abonnieren, und neue Termine erscheinen von selbst.">League Cups, League Challenges and Prereleases around Basel, within 100 km by road from Mulhouse to Zürich. Subscribe once and new events appear on their own.</p>
     <div class="actions">
       <a class="btn" data-link="webcal" href="webcal://tcgcalendar.ch/basel-tournaments.ics" data-de="In deiner Kalender-App abonnieren">Subscribe in your calendar app</a>
       <a class="quiet" data-link="google" href="https://calendar.google.com/calendar/render?cid=webcal%3A%2F%2Ftcgcalendar.ch%2Fbasel-tournaments.ics" data-de="Zu Google Kalender hinzufügen">Add to Google Calendar</a>
@@ -456,6 +465,10 @@ footer p { max-width: 40rem; margin: 0 0 0.9rem; color: var(--muted); font-size:
 
 <footer>
   <div class="wrap">
+    <div class="foot-top">
+      <div class="foot-brand"><img src="icon.svg" width="40" height="40" alt="">TCGCalendar</div>
+      <nav class="foot-links"><a href="#how" data-de="Kalender">Calendars</a> <a href="#build" data-de="Eigener Kalender">Build your own</a> <a href="https://github.com/joerimulder/tcg-calendar" data-de="Quellcode auf GitHub">Source code on GitHub</a> <a href="https://github.com/joerimulder/tcg-calendar/issues" data-de="Problem melden">Report a problem</a></nav>
+    </div>
     <p data-de="TCGCalendar ist ein inoffizielles Fanprojekt. Es steht in keiner Verbindung zu The Pokémon Company, Nintendo, Creatures oder GAME FREAK und wird nicht von ihnen unterstützt. Pokémon und die zugehörigen Marken gehören ihren jeweiligen Inhabern.">TCGCalendar is an unofficial fan project. It is not affiliated with or endorsed by The Pokémon Company, Nintendo, Creatures or GAME FREAK. Pokémon and its trademarks belong to their owners.</p>
     <p data-de="Die Termindaten stammen vom offiziellen Play! Pokémon Event Locator, bei Turnieren über den Community-Spiegel pokedata.ovh und bei Liga-Abenden direkt aus dem Locator gelesen. Diese Seite setzt keine Cookies und lädt nichts von anderen Websites. Deine Sprachwahl wird nur in deinem eigenen Browser gespeichert. Die Kalender liegen auf GitHub Pages. Eigene Abos filtert ein kleiner Cloudflare Worker, der den öffentlichen Kalender liest und nichts speichert. Kartenlinks öffnen sich nur, wenn du sie antippst. Der &lt;a href=&quot;https://github.com/joerimulder/tcg-calendar&quot;&gt;Quellcode liegt auf GitHub&lt;/a&gt;.">Event data comes from the official Play! Pokémon Event Locator, through the community mirror pokedata.ovh for tournaments, and read from the locator directly for league nights. This site sets no cookies and loads nothing from other sites. Your language choice is remembered only in your own browser. The calendars are hosted on GitHub Pages. Custom subscriptions are filtered by a small Cloudflare Worker that reads the public calendar and stores nothing. Map links only open when you tap them. The <a href="https://github.com/joerimulder/tcg-calendar">source code is on GitHub</a>.</p>
   </div>
