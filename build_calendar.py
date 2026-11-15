@@ -430,12 +430,18 @@ def fold(line: str) -> str:
 
 # (file suffix, feed name, categories included; None = everything)
 FEEDS = [
-    ("", "All events", None),
-    ("tournaments", "Tournaments", {"League Challenge", "League Cup", "Prerelease"}),
-    ("challenges", "League Challenges", {"League Challenge"}),
-    ("cups", "League Cups", {"League Cup"}),
-    ("prereleases", "Prereleases", {"Prerelease"}),
-    ("leagues", "League Nights", {"League Night"}),
+    ("", "All events", None,
+     "League Cups, League Challenges, Prereleases and league nights within 100 km of Basel by road."),
+    ("tournaments", "Tournaments", {"League Challenge", "League Cup", "Prerelease"},
+     "League Challenges, League Cups and Prereleases within 100 km of Basel by road."),
+    ("challenges", "League Challenges", {"League Challenge"},
+     "League Challenges within 100 km of Basel by road."),
+    ("cups", "League Cups", {"League Cup"},
+     "League Cups within 100 km of Basel by road."),
+    ("prereleases", "Prereleases", {"Prerelease"},
+     "Prereleases within 100 km of Basel by road."),
+    ("leagues", "League nights", {"League Night"},
+     "Weekly league nights at shops in Basel and Birsfelden."),
 ]
 
 
@@ -558,11 +564,11 @@ def main() -> int:
     stamp_re = re.compile(r"DTSTAMP:\d{8}T\d{6}Z")
     base = Path(a.out)
     base.parent.mkdir(parents=True, exist_ok=True)
-    for suffix, name, cats in FEEDS:
+    for suffix, name, cats, fdesc in FEEDS:
         subset = [e for e in events if cats is None or e["category"] in cats]
         out = base if suffix == "" else base.with_name(f"{base.stem}-{suffix}{base.suffix}")
-        label = CAL_NAME if suffix == "" else f"{CAL_NAME} - {name}"
-        new = render(subset, stamp, label)
+        label = f"{CAL_NAME} - {name}"
+        new = render(subset, stamp, label, fdesc)
         if out.exists() and stamp_re.sub("", out.read_bytes().decode("utf-8")) == stamp_re.sub("", new):
             print(f"{out.name}: no changes ({len(subset)} events).")   # avoids a daily commit for DTSTAMP
             continue

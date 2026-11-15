@@ -1,22 +1,30 @@
 # TCGCalendar – Pokémon TCG events around Basel
 
-Nightly-built iCal feed of sanctioned Play! Pokémon TCG events (League Cups,
-League Challenges, Prereleases) within 100 km of Basel, including Mulhouse (FR)
-and the German side. Times are written in UTC so every calendar app shows them correctly.
+Live at **https://tcgcalendar.ch** (GitHub Pages, branch `main`, folder `/docs`).
+A nightly build publishes iCal feeds of Play! Pokémon TCG events within 100 km of Basel by road
+(Basel, Mulhouse, Zürich, Bern, Luzern and the German side). Times are written in UTC so every
+calendar app shows them in the subscriber's own time zone.
 
-**Feed:** `docs/basel.ics` → enable GitHub Pages (Settings → Pages → branch `main`, folder `/docs`)
-and subscribe to `https://<user>.github.io/<repo>/basel.ics` (use `webcal://` on iPhone/Mac).
+| Feed | Contents |
+|---|---|
+| `basel-tournaments.ics` | League Challenges, League Cups and Prereleases (the default) |
+| `basel-challenges.ics` / `basel-cups.ics` / `basel-prereleases.ics` | one event type each |
+| `basel-leagues.ics` | weekly league nights, Basel and Birsfelden only |
+| `basel.ics` | everything above together |
+
+Subscribe with `webcal://tcgcalendar.ch/<feed>`; the landing page picks the right button for the visitor's device.
 
 ## How it works
 1. `build_calendar.py` downloads the community feed from pokedata.ovh (a mirror of the official Event Locator).
-2. Events are cleaned: stable UIDs, UTC times, plain-text descriptions, tidy addresses.
-3. Events from `data/manual_events.json` are merged in (they win on clashes).
-4. `docs/basel.ics` is rewritten only if something actually changed.
-5. `.github/workflows/build.yml` runs this every night and commits the result.
+2. League nights from `data/scraped_league_nights.json`, an optional locator export and `data/manual_events.json` are merged in.
+3. Events are cleaned: stable UIDs, UTC times, plain-text descriptions, tidy addresses; fee, registration and Full / Waiting list notes are added from `data/event_info.json`.
+4. Driving distance from Basel is looked up (cached) and events beyond 100 km are dropped.
+5. The six `docs/*.ics` feeds are rewritten only if something actually changed.
+6. `.github/workflows/build.yml` runs this every night and commits the result.
 
 ## Local run
     python tests/test_build.py                       # offline test with tests/sample_feed.ics
-    python build_calendar.py                         # fetch live feed -> docs/basel.ics
+    python build_calendar.py                         # fetch live feed -> docs/*.ics
     python build_calendar.py --feed-file my.ics      # use a local feed
 
 Change the area with `FEED_URL` (see https://pokedata.ovh/events/api/help for latitude/longitude/radius).
@@ -26,7 +34,7 @@ Add entries to `events` in `data/manual_events.json` (format in `_example_event_
 Fix wrongly capitalised shop names in `venue_name_overrides` (key = name as in the feed, upper case).
 
 ## Notes
-- If the feed is down, the build fails and the previous `basel.ics` stays untouched.
+- If the feed is down, the build fails and the previous feeds stay untouched.
 - Cancelled events are not flagged by the source; they simply disappear when removed from the locator.
 
 ## Official Event Locator data (optional)
@@ -42,7 +50,7 @@ exists (or `--locator-json PATH` / `LOCATOR_JSON`); without the file nothing cha
   wall-clock time, while for league nights it really is UTC. The script handles both.
 - The file is a snapshot: events cancelled or changed after the export stay as exported
   until the file is refreshed. Contact details in the export are never published.
-- There is no automatic fetcher yet; see the project notes before adding one.
+- There is no automatic fetcher: the locator shows a CAPTCHA to servers (see below for the manual route).
 
 ## Distances
 Each event carries a custom `X-DISTANCE-KM` field (driving distance from Basel). The build looks up the postcode centre (zippopotam.us) and the driving route (OSRM demo server), and caches both in `data/geocodes.json` and `data/driving_km.json`, so each place is only looked up once. If a lookup fails the event simply has no distance until the next night.
