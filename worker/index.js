@@ -2,7 +2,7 @@
 // It reads the nightly basel.ics from the site, keeps the events that match the
 // query string and returns them as a calendar. Same options as the page's builder:
 //   ?types=League%20Cup,League%20Challenge,Prerelease,League%20Night
-//   &km=25|50|75  &weekend=1  &nofr=1  &node=1  &nofull=1
+//   &cities=Basel,Bern  &km=25|50|75  &weekend=1  &nofr=1  &node=1  &nofull=1
 const SOURCE = "https://tcgcalendar.ch/basel.ics";
 const TZ = "Europe/Zurich";
 const TYPES = ["League Challenge", "League Cup", "Prerelease", "League Night"];
@@ -36,13 +36,18 @@ function settings(url) {
   const asked = (q.get("types") || "League Challenge,League Cup,Prerelease").split(",");
   const types = asked.filter((t) => TYPES.includes(t));
   const km = ["25", "50", "75"].includes(q.get("km")) ? +q.get("km") : 0;
-  return { types: types.length ? types : TYPES.slice(0, 3), km,
+  const cities = (q.get("cities") || "").split(",").map((c) => c.trim()).filter(Boolean);
+  return { types: types.length ? types : TYPES.slice(0, 3), cities, km,
            weekend: q.get("weekend") === "1", nofr: q.get("nofr") === "1",
            node: q.get("node") === "1", nofull: q.get("nofull") === "1" };
 }
 
 function keep(ev, s) {
   if (!s.types.includes(ev.CATEGORIES)) return false;
+  if (s.cities.length) {
+    const city = (/(\d{4,5}) ([^,]+), (?:Switzerland|France|Germany)$/.exec(ev.LOCATION || "") || [])[2] || "";
+    if (!s.cities.includes(city)) return false;
+  }
   const km = /^\d+$/.test(ev["X-DISTANCE-KM"] || "") ? +ev["X-DISTANCE-KM"] : null;
   if (s.km && km !== null && km > s.km) return false;
   if (s.weekend) {

@@ -11,5 +11,5 @@ It needs no database and no secrets. The free Cloudflare plan is plenty.
 5. The address is already set as `LIVE_URL` in `docs/index.html` (https://tcgcalendar-custom.joeri-9eb.workers.dev).
 
 ## Options (query string)
-`types` (comma list of League Challenge, League Cup, Prerelease, League Night), `km` (25, 50 or 75),
+`cities` (comma list of place names as shown on the page, e.g. `Basel,Zürich`), `types` (comma list of League Challenge, League Cup, Prerelease, League Night), `km` (25, 50 or 75),
 `weekend=1`, `nofr=1`, `node=1`, `nofull=1`.

@@ -366,6 +366,11 @@ footer p { max-width: 40rem; margin: 0 0 0.9rem; color: var(--muted); font-size:
         </label>
       </fieldset>
       <fieldset>
+        <legend>Locations</legend>
+        <div class="opts" id="builder-cities"></div>
+        <p class="fine">Tick one or more places, or leave all unticked for every location. Nearest to Basel first.</p>
+      </fieldset>
+      <fieldset>
         <legend>Narrow it down</legend>
         <div class="opts">
           <label><input type="checkbox" name="weekend"> Weekends only</label>
@@ -606,14 +611,18 @@ footer p { max-width: 40rem; margin: 0 0 0.9rem; color: var(--muted); font-size:
   var bMsg = document.getElementById('builder-msg');
   var blocks = [], icsHead = '';
   var wdFmt = new Intl.DateTimeFormat('en-US', { weekday: 'short', timeZone: TZ });
+  function cityOf(loc) { var m = /(\d{4,5}) ([^,]+), (?:Switzerland|France|Germany)$/.exec(loc || ''); return m ? m[2] : ''; }
   function countryOf(loc) { var m = /, (Switzerland|France|Germany)$/.exec(loc || ''); return m ? m[1] : ''; }
   function settings() {
     var f = builder.elements, types = [];
     [].forEach.call(builder.querySelectorAll('input[name=type]'), function (c) { if (c.checked) types.push(c.value); });
-    return { types: types, km: +f.km.value || 0, weekend: f.weekend.checked, nofr: f.nofr.checked, node: f.node.checked, nofull: f.nofull.checked };
+    var cities = [];
+    [].forEach.call(builder.querySelectorAll('input[name=city]'), function (c) { if (c.checked) cities.push(c.value); });
+    return { types: types, cities: cities, km: +f.km.value || 0, weekend: f.weekend.checked, nofr: f.nofr.checked, node: f.node.checked, nofull: f.nofull.checked };
   }
   function keep(e, s) {
     if (s.types.indexOf(e.CATEGORIES) < 0) return false;
+    if (s.cities.length && s.cities.indexOf(cityOf(e.LOCATION)) < 0) return false;
     var km = /^\d+$/.test(e['X-DISTANCE-KM'] || '') ? +e['X-DISTANCE-KM'] : null;
     if (s.km && km !== null && km > s.km) return false;
     if (s.weekend) { var d = parseDT(e.DTSTART); if (!d || !/^(Sat|Sun)$/.test(wdFmt.format(d))) return false; }
@@ -644,6 +653,7 @@ footer p { max-width: 40rem; margin: 0 0 0.9rem; color: var(--muted); font-size:
   function builderQuery() {
     var s = settings(), p = [];
     p.push('types=' + s.types.map(encodeURIComponent).join(','));
+    if (s.cities.length) p.push('cities=' + s.cities.map(encodeURIComponent).join(','));
     if (s.km) p.push('km=' + s.km);
     ['weekend', 'nofr', 'node', 'nofull'].forEach(function (k) { if (s[k]) p.push(k + '=1'); });
     return p.join('&');
@@ -654,8 +664,31 @@ footer p { max-width: 40rem; margin: 0 0 0.9rem; color: var(--muted); font-size:
       var t = q.get('types').split(',');
       [].forEach.call(builder.querySelectorAll('input[name=type]'), function (c) { c.checked = t.indexOf(c.value) >= 0; });
     }
+    if (q.has('cities')) {
+      var cs = q.get('cities').split(',');
+      [].forEach.call(builder.querySelectorAll('input[name=city]'), function (c) { c.checked = cs.indexOf(c.value) >= 0; });
+    }
     if (['25', '50', '75'].indexOf(q.get('km')) >= 0) f.km.value = q.get('km');
     ['weekend', 'nofr', 'node', 'nofull'].forEach(function (k) { f[k].checked = q.get(k) === '1'; });
+  }
+  function buildCityBoxes() {
+    var info = {};
+    blocks.forEach(function (b) {
+      var c = cityOf(b.ev.LOCATION);
+      if (!c) return;
+      var km = /^\d+$/.test(b.ev['X-DISTANCE-KM'] || '') ? +b.ev['X-DISTANCE-KM'] : 1e9;
+      info[c] = info[c] || { n: 0, km: km };
+      info[c].n++; info[c].km = Math.min(info[c].km, km);
+    });
+    var box = document.getElementById('builder-cities');
+    box.textContent = '';
+    Object.keys(info).sort(function (a, b) { return info[a].km - info[b].km || a.localeCompare(b); }).forEach(function (c) {
+      var l = document.createElement('label'), i = document.createElement('input');
+      i.type = 'checkbox'; i.name = 'city'; i.value = c;
+      l.appendChild(i);
+      l.appendChild(document.createTextNode(' ' + c + (info[c].km < 1e9 ? ' · ' + info[c].km + ' km' : '') + ' (' + info[c].n + ')'));
+      box.appendChild(l);
+    });
   }
   function builderInit(text) {
     var re = /BEGIN:VEVENT\r?\n[\s\S]*?END:VEVENT\r?\n/g, m;
@@ -664,6 +697,7 @@ footer p { max-width: 40rem; margin: 0 0 0.9rem; color: var(--muted); font-size:
                      .replace(/^X-WR-CALDESC:.*$/m, 'X-WR-CALDESC:Custom selection (snapshot)');
     while ((m = re.exec(text))) blocks.push({ raw: m[0].replace(/\r?\n/g, '\r\n'), ev: parseICS(m[0])[0] });
     if (!blocks.length) return;
+    buildCityBoxes();
     builderRestore();
     builder.hidden = false;
     builderUpdate();
