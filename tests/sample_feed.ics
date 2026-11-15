@@ -1,0 +1,64 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//hacksw/handcal//NONSGML v1.0//EN
+BEGIN:VEVENT
+UID:861d765d-adfe-4416-b61a-9eac8c824276
+DTSTAMP:20261115T130000
+DTSTART;TZID=Europe/Paris:20261115T130000
+DTEND;TZID=Europe/Paris:20261115T170000
+SUMMARY:Défi de Ligue Novembre @Geek Factory
+DESCRIPTION:<a href="https://www.pokemon.com/us/pokemon-trainer-club/play-pokemon-tournaments/26-11-001597/">League Challenge @ GEEK FACTORY MULHOUSE</a>
+LOCATION:42 AV. CLEMENCEAU, 68100 MULHOUSE, FRANCE, , Mulhouse/FR
+URL:https://www.pokemon.com/us/pokemon-trainer-club/play-pokemon-tournaments/26-11-001597/
+END:VEVENT
+BEGIN:VEVENT
+UID:d71fc57a-8689-4054-879b-f19ee12359a1
+DTSTAMP:20261121T140000
+DTSTART;TZID=Europe/Zurich:20261121T140000
+DTEND;TZID=Europe/Zurich:20261121T180000
+SUMMARY:TCG Liga Murten Challenge November
+DESCRIPTION:<a href="https://www.pokemon.com/us/pokemon-trainer-club/play-pokemon-tournaments/26-11-001886/">League Challenge @ TCG LIGA MURTEN</a>
+LOCATION:174 BASLERSTRASSE, TRIMBACH, SO 4632, CH, , Trimbach/CH
+URL:https://www.pokemon.com/us/pokemon-trainer-club/play-pokemon-tournaments/26-11-001886/
+END:VEVENT
+BEGIN:VEVENT
+UID:b0f24a79-8aba-437c-b9b8-f08328855ef6
+DTSTAMP:20261122T100000
+DTSTART;TZID=Europe/Paris:20261122T100000
+DTEND;TZID=Europe/Paris:20261122T140000
+SUMMARY:Cup Pokémon Fair-Play
+DESCRIPTION:<a href="https://www.pokemon.com/us/pokemon-trainer-club/play-pokemon-tournaments/26-11-004624/">League Cup @ BOUTIQUE FAIRPLAY</a>
+LOCATION:44 RUE DU WERKHOF, 68100 MULHOUSE, FRANCE, , Mulhouse/FR
+URL:https://www.pokemon.com/us/pokemon-trainer-club/play-pokemon-tournaments/26-11-004624/
+END:VEVENT
+BEGIN:VEVENT
+UID:48243470-b02d-4cbe-ab7b-d75f87516056
+DTSTAMP:20261123T190000
+DTSTART;TZID=Europe/Zurich:20261123T190000
+DTEND;TZID=Europe/Zurich:20261123T230000
+SUMMARY:TCG League Challenge November
+DESCRIPTION:<a href="https://www.pokemon.com/us/pokemon-trainer-club/play-pokemon-tournaments/26-11-019488/">League Challenge @ ANIMEVERSE</a>
+LOCATION:LEHENMATTSTRASSE 353/353, 4052 BASEL, SWITZERLAND, , Basel/CH
+URL:https://www.pokemon.com/us/pokemon-trainer-club/play-pokemon-tournaments/26-11-019488/
+END:VEVENT
+BEGIN:VEVENT
+UID:89bdd0dc-1043-4c01-ae98-99a97e0ba472
+DTSTAMP:20261125T191500
+DTSTART;TZID=Europe/Zurich:20261125T191500
+DTEND;TZID=Europe/Zurich:20261125T231500
+SUMMARY:Zadoys TCG Challenge November
+DESCRIPTION:<a href="https://www.pokemon.com/us/pokemon-trainer-club/play-pokemon-tournaments/26-11-005206/">League Challenge @ ZADOYS HOBBY & CARD STORE</a>
+LOCATION:55E IM SURINAM, BASEL, BS 4058, CH, , Basel/CH
+URL:https://www.pokemon.com/us/pokemon-trainer-club/play-pokemon-tournaments/26-11-005206/
+END:VEVENT
+BEGIN:VEVENT
+UID:84744c87-8188-454c-88d0-b342978c8376
+DTSTAMP:20261127T190000
+DTSTART;TZID=Europe/Zurich:20261127T190000
+DTEND;TZID=Europe/Zurich:20261127T230000
+SUMMARY:TCG League Challenge November -MaRo Games
+DESCRIPTION:<a href="https://www.pokemon.com/us/pokemon-trainer-club/play-pokemon-tournaments/26-11-004530/">League Challenge @ MARO GAMES</a>
+LOCATION:11 HAUPTSTRASSE, BIRSFELDEN, BL 4127, CH, , Birsfelden/CH
+URL:https://www.pokemon.com/us/pokemon-trainer-club/play-pokemon-tournaments/26-11-004530/
+END:VEVENT
+END:VCALENDAR
