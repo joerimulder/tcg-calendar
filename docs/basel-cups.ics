@@ -11,7 +11,7 @@ REFRESH-INTERVAL;VALUE=DURATION:PT6H
 X-PUBLISHED-TTL:PT6H
 BEGIN:VEVENT
 UID:26-11-001728@tcgcalendar
-DTSTAMP:20261115T100000Z
+DTSTAMP:20261115T100722Z
 DTSTART:20261115T100000Z
 DTEND:20261115T140000Z
 SUMMARY:KABOOOM League Cup
@@ -22,12 +22,12 @@ LOCATION:Kabooom Entertainment GmbH\, 36 Dienerstrasse\, 8004 Zürich\, Swi
  tzerland
 URL:https://www.pokemon.com/us/pokemon-trainer-club/play-pokemon-tournament
  s/26-11-001728/
-X-DISTANCE-KM:73
+X-DISTANCE-KM:83
 CATEGORIES:League Cup
 END:VEVENT
 BEGIN:VEVENT
 UID:26-11-004624@tcgcalendar
-DTSTAMP:20261115T100000Z
+DTSTAMP:20261115T100722Z
 DTSTART:20261122T090000Z
 DTEND:20261122T130000Z
 SUMMARY:Cup Pokémon Fair-Play
@@ -37,12 +37,12 @@ DESCRIPTION:League Cup @ Boutique Fairplay\nSource: Play! Pokémon Event Lo
 LOCATION:Boutique Fairplay\, 44 Rue du Werkhof\, 68100 Mulhouse\, France
 URL:https://www.pokemon.com/us/pokemon-trainer-club/play-pokemon-tournament
  s/26-11-004624/
-X-DISTANCE-KM:29
+X-DISTANCE-KM:39
 CATEGORIES:League Cup
 END:VEVENT
 BEGIN:VEVENT
 UID:26-11-007308@tcgcalendar
-DTSTAMP:20261115T100000Z
+DTSTAMP:20261115T100722Z
 DTSTART:20261122T094500Z
 DTEND:20261122T134500Z
 SUMMARY:GGB's League CUP
@@ -52,12 +52,12 @@ DESCRIPTION:League Cup @ Prerelease\nSource: Play! Pokémon Event Locator\n
 LOCATION:Prerelease\, Laupenstrasse 4\, 3008 Bern\, Switzerland
 URL:https://www.pokemon.com/us/pokemon-trainer-club/play-pokemon-tournament
  s/26-11-007308/
-X-DISTANCE-KM:68
+X-DISTANCE-KM:98
 CATEGORIES:League Cup
 END:VEVENT
 BEGIN:VEVENT
 UID:26-11-000229@tcgcalendar
-DTSTAMP:20261115T100000Z
+DTSTAMP:20261115T100722Z
 DTSTART:20261128T083000Z
 DTEND:20261128T123000Z
 SUMMARY:TCG League Cup Round 1
@@ -68,12 +68,12 @@ LOCATION:L'Antre des Cartes\, Rue de Soleure 16\, 2525 Le Landeron\, Switze
  rland
 URL:https://www.pokemon.com/us/pokemon-trainer-club/play-pokemon-tournament
  s/26-11-000229/
-X-DISTANCE-KM:68
+X-DISTANCE-KM:111
 CATEGORIES:League Cup
 END:VEVENT
 BEGIN:VEVENT
 UID:26-11-004295@tcgcalendar
-DTSTAMP:20261115T100000Z
+DTSTAMP:20261115T100722Z
 DTSTART:20261129T090000Z
 DTEND:20261129T130000Z
 SUMMARY:CARAB Cup Season 1
@@ -83,7 +83,7 @@ DESCRIPTION:League Cup @ Carab\nSource: Play! Pokémon Event Locator\nhttps
 LOCATION:Carab\, Zürichstrasse 31/1. Stock\, 6004 Luzern\, Switzerland
 URL:https://www.pokemon.com/us/pokemon-trainer-club/play-pokemon-tournament
  s/26-11-004295/
-X-DISTANCE-KM:77
+X-DISTANCE-KM:96
 CATEGORIES:League Cup
 END:VEVENT
 END:VCALENDAR
