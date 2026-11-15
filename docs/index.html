@@ -170,7 +170,7 @@ footer p { max-width: 40rem; margin: 0 0 0.9rem; color: var(--muted); font-size:
 <main class="wrap">
   <section aria-labelledby="next">
     <h2 id="next">Next events</h2>
-    <p class="note">Times are in Basel time.</p>
+    <p class="note">Times are in Basel time. Distances are straight-line from Basel.</p>
     <div class="filters" id="filters" hidden>
       <div class="chips" role="group" aria-label="Event type" id="chips"></div>
       <label class="loc">Location
@@ -393,13 +393,21 @@ footer p { max-width: 40rem; margin: 0 0 0.9rem; color: var(--muted); font-size:
       b.addEventListener('click', function () { fType = t[0]; expanded = false; update(); });
       chips.appendChild(b);
     });
-    var counts = {};
-    all.forEach(function (e) { if (matches(e, false, true) && e.loc.city) counts[e.loc.city] = (counts[e.loc.city] || 0) + 1; });
+    var counts = {}, dist = {};
+    all.forEach(function (e) {
+      if (!matches(e, false, true) || !e.loc.city) return;
+      counts[e.loc.city] = (counts[e.loc.city] || 0) + 1;
+      if (e.km !== null && !(e.loc.city in dist && dist[e.loc.city] <= e.km)) dist[e.loc.city] = e.km;
+    });
+    function byDist(x, y) {
+      var dx = x in dist ? dist[x] : 1e9, dy = y in dist ? dist[y] : 1e9;
+      return dx - dy || x.localeCompare(y);
+    }
     var total = all.filter(function (e) { return matches(e, false, true); }).length;
     citySel.textContent = '';
     var o = el('option', '', 'All locations (' + total + ')'); o.value = ''; citySel.appendChild(o);
-    Object.keys(counts).sort(function (x, y) { return x.localeCompare(y); }).forEach(function (c) {
-      var op = el('option', '', c + ' (' + counts[c] + ')'); op.value = c; citySel.appendChild(op);
+    Object.keys(counts).sort(byDist).forEach(function (c) {
+      var op = el('option', '', c + (c in dist ? ' · ' + dist[c] + ' km' : '') + ' (' + counts[c] + ')'); op.value = c; citySel.appendChild(op);
     });
     citySel.value = fCity;
   }
@@ -429,7 +437,7 @@ footer p { max-width: 40rem; margin: 0 0 0.9rem; color: var(--muted); font-size:
       if (e.kind) what.appendChild(el('span', 'kind', e.kind));
       var where = el('div', 'where');
       where.appendChild(el('span', 'venue', e.loc.venue));
-      if (e.loc.city) where.appendChild(el('span', 'place', e.loc.city));
+      if (e.loc.city) where.appendChild(el('span', 'place', e.loc.city + (e.km !== null ? ' · ' + e.km + ' km' : '')));
       li.appendChild(when); li.appendChild(what); li.appendChild(where);
       board.appendChild(li);
     });
@@ -447,7 +455,7 @@ footer p { max-width: 40rem; margin: 0 0 0.9rem; color: var(--muted); font-size:
     all = events.map(function (e) {
       var start = parseDT(e.DTSTART), end = parseDT(e.DTEND) || start;
       return { start: start, end: end, title: e.SUMMARY || 'Pokémon TCG event', kind: e.CATEGORIES || '',
-               loc: venueParts(e.LOCATION), url: /^https:\/\//.test(e.URL || '') ? e.URL : '' };
+               loc: venueParts(e.LOCATION), km: /^\d+$/.test(e['X-DISTANCE-KM'] || '') ? +e['X-DISTANCE-KM'] : null, url: /^https:\/\//.test(e.URL || '') ? e.URL : '' };
     }).filter(function (e) { return e.start && e.end >= now; })
       .sort(function (a, b) { return a.start - b.start; });
     if (!all.length) {

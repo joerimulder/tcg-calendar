@@ -7,7 +7,8 @@ tmp = pathlib.Path(tempfile.mkdtemp())
 def build(name, *extra):
     out = tmp / name
     subprocess.run([sys.executable, str(root / "build_calendar.py"), "--feed-file", str(root / "tests/sample_feed.ics"),
-                    "--manual", str(root / "data/manual_events.json"), "--out", str(out), *extra], check=True)
+                    "--manual", str(root / "data/manual_events.json"), "--out", str(out),
+                    "--geocache", str(root / "data/geocodes.json"), "--offline", *extra], check=True)
     return out.read_bytes().decode("utf-8")
 
 
@@ -43,4 +44,8 @@ assert "League Night" not in cats("with_locator-cups.ics")
 assert "X-WR-CALNAME:Pokémon TCG Basel - League Cups" in cats("with_locator-cups.ics")
 assert all(len(l.encode()) <= 75 for l in t.split("\r\n"))
 assert (tmp / "with_locator-prereleases.ics").exists()
+import re as _re
+m = _re.search(r"Mulhouse.*?\n(?:.*\n)*?X-DISTANCE-KM:(\d+)", t)
+assert m and 25 <= int(m.group(1)) <= 40, m                # Mulhouse is about 31 km from Basel
+assert "X-DISTANCE-KM:" in cats("with_locator-leagues.ics")  # exact coordinates from the locator
 print("OK")

@@ -14,6 +14,7 @@ import json
 import os
 import re
 import sys
+import urllib.error
 import urllib.request
 from datetime import datetime, timedelta, timezone
 from pathlib import Path
@@ -163,6 +164,37 @@ def haversine_km(a: tuple, b: tuple) -> float:
     return 12742 * asin(sqrt(h))
 
 
+GEOCODE_URL = "https://api.zippopotam.us/{cc}/{zip}"
+ZIP_RE = re.compile(r"(\d{4,5}) [^,]+, (Switzerland|France|Germany)$")
+CC_BY_NAME = {v: k for k, v in COUNTRIES.items()}
+
+
+def location_zip(location: str):
+    """'Venue, Street, 4052 Basel, Switzerland' -> ('CH', '4052')."""
+    m = ZIP_RE.search(location or "")
+    return (CC_BY_NAME[m.group(2)], m.group(1)) if m else None
+
+
+def lookup_zip(cc: str, zip_: str, cache: dict, online: bool):
+    """(lat, lon) of a postcode centre, from the cache or the free zippopotam.us API."""
+    key = f"{cc}-{zip_}"
+    if key in cache:
+        return tuple(cache[key]) if cache[key] else None
+    if not online:
+        return None
+    try:
+        data = json.loads(fetch(GEOCODE_URL.format(cc=cc.lower(), zip=zip_)))
+        pl = data["places"][0]
+        cache[key] = [round(float(pl["latitude"]), 4), round(float(pl["longitude"]), 4)]
+    except urllib.error.HTTPError as exc:
+        if exc.code == 404:
+            cache[key] = None                       # unknown postcode: do not ask again
+        return None
+    except Exception:                               # network trouble: try again tomorrow
+        return None
+    return tuple(cache[key]) if cache[key] else None
+
+
 def locator_items(data) -> list[dict]:
     """Accept one DataActionGetEventList response, a list of them (pages) or a bare item list."""
     if isinstance(data, list):
@@ -188,8 +220,10 @@ def normalise_locator(item: dict, overrides: dict) -> dict | None:
     if str(ev.get("Status", "")).lower() in LOCATOR_SKIP_STATUS:
         return None
     addr = ev.get("Address") or {}
+    dist = None
     try:
-        if haversine_km(BASEL, (float(addr["Latitude"]), float(addr["Longitude"]))) > RADIUS_KM:
+        dist = haversine_km(BASEL, (float(addr["Latitude"]), float(addr["Longitude"])))
+        if dist > RADIUS_KM:
             return None
     except (KeyError, ValueError, TypeError):
         pass                                           # no usable coordinates: keep the event
@@ -233,6 +267,7 @@ def normalise_locator(item: dict, overrides: dict) -> dict | None:
         "description": "\n".join(desc),
         "location": clean_location(full, venue),
         "url": page or site, "category": category,
+        "dist_km": dist,
     }
 
 
@@ -318,6 +353,8 @@ def render(events: list[dict], stamp: str, name: str = CAL_NAME, desc: str = "")
             L.append(f"LOCATION:{esc(e['location'])}")
         if e["url"]:
             L.append(f"URL:{e['url']}")
+        if e.get("dist_km") is not None:
+            L.append(f"X-DISTANCE-KM:{round(e['dist_km'])}")
         L += [f"CATEGORIES:{esc(e['category'])}", "END:VEVENT"]
     L.append("END:VCALENDAR")
     return "\r\n".join(fold(x) for x in L) + "\r\n"
@@ -336,6 +373,9 @@ def main() -> int:
     ap.add_argument("--manual", default="data/manual_events.json")
     ap.add_argument("--locator-json", default=os.environ.get("LOCATOR_JSON", "data/locator_export.json"),
                     help="JSON export of the official locator's event list; empty string disables")
+    ap.add_argument("--geocache", default="data/geocodes.json",
+                    help="postcode -> coordinates cache used for distances from Basel")
+    ap.add_argument("--offline", action="store_true", help="never call the geocoding API (tests)")
     ap.add_argument("--out", default="docs/basel.ics")
     a = ap.parse_args()
 
@@ -367,6 +407,19 @@ def main() -> int:
         merged[n["uid"]] = n
 
     events = list(merged.values())
+    cache_path = Path(a.geocache)
+    try:
+        cache = json.loads(cache_path.read_text(encoding="utf-8")) if cache_path.exists() else {}
+    except Exception:
+        cache = {}
+    before = json.dumps(cache, sort_keys=True)
+    for e in events:
+        if e.get("dist_km") is None and (z := location_zip(e["location"])):
+            if (xy := lookup_zip(*z, cache, online=not a.offline)):
+                e["dist_km"] = haversine_km(BASEL, xy)
+    if json.dumps(cache, sort_keys=True) != before:
+        cache_path.parent.mkdir(parents=True, exist_ok=True)
+        cache_path.write_text(json.dumps(cache, indent=1, sort_keys=True, ensure_ascii=False) + "\n", encoding="utf-8")
     stamp = datetime.now(timezone.utc).strftime("%Y%m%dT%H%M%SZ")
     stamp_re = re.compile(r"DTSTAMP:\d{8}T\d{6}Z")
     base = Path(a.out)
