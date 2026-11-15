@@ -56,6 +56,12 @@ a { color: inherit; }
 .poster { --sky: clamp(120px, 20vw, 250px); }
 .skyline { position: absolute; left: 0; bottom: 0; width: 100%; height: var(--sky); pointer-events: none; }
 .poster a:focus-visible, .poster button:focus-visible { outline-color: var(--black); }
+.brand-row { display: flex; align-items: flex-end; justify-content: space-between; gap: 1rem; }
+.langs { display: flex; gap: 0.25rem; padding-top: 0.75rem; }
+.lang { display: inline-flex; align-items: center; justify-content: center; min-width: 2.75rem; min-height: 2.75rem; padding: 0.25rem 0.4rem; background: none; border: 2px solid transparent; border-radius: var(--r); cursor: pointer; }
+.lang svg { display: block; box-shadow: 0 0 0 1px rgba(0,0,0,0.25); }
+.lang[aria-pressed=true] { border-color: var(--black); }
+.poster .lang:focus-visible { outline-color: var(--black); }
 .brand { padding: 1.25rem 0 0; font-weight: 800; font-size: 1.125rem; letter-spacing: -0.02em; }
 .poster h1 {
   margin: clamp(2rem, 7vw, 4.5rem) 0 1.25rem;
@@ -212,27 +218,33 @@ footer p { max-width: 40rem; margin: 0 0 0.9rem; color: var(--muted); font-size:
     <path d="M30 228q30-8 60 0t60 0 60 0 60 0 60 0 60 0 60 0 60 0 60 0 60 0 60 0 60 0 60 0 60 0 60 0 60 0 60 0 60 0 60 0 60 0" fill="none" stroke="#F7C934" stroke-width="3" stroke-linecap="round"/>
   </svg>
   <div class="wrap">
-    <div class="brand">TCGCalendar</div>
-    <h1>Pokémon TCG events around Basel, in your calendar</h1>
-    <p class="lede">League Cups, League Challenges and Prereleases within 100 km of Basel by road, from Mulhouse to Zürich. Subscribe once and new events appear on their own.</p>
+    <div class="brand-row">
+      <div class="brand">TCGCalendar</div>
+      <div class="langs" role="group" aria-label="Language">
+        <button class="lang" type="button" data-lang="en" lang="en" aria-label="English" title="English"><svg viewBox="0 0 60 30" width="30" height="15" aria-hidden="true" focusable="false"><clipPath id="fs"><path d="M0 0v30h60V0z"/></clipPath><clipPath id="ft"><path d="M30 15h30v15zv15H0zH0V15zV0h30z"/></clipPath><g clip-path="url(#fs)"><path d="M0 0v30h60V0z" fill="#012169"/><path d="M0 0l60 30M60 0L0 30" stroke="#fff" stroke-width="6"/><path d="M0 0l60 30M60 0L0 30" clip-path="url(#ft)" stroke="#C8102E" stroke-width="4"/><path d="M30 0v30M0 15h60" stroke="#fff" stroke-width="10"/><path d="M30 0v30M0 15h60" stroke="#C8102E" stroke-width="6"/></g></svg></button>
+        <button class="lang" type="button" data-lang="de" lang="de" aria-label="Deutsch" title="Deutsch"><svg viewBox="0 0 5 3" width="30" height="18" aria-hidden="true" focusable="false"><rect width="5" height="3" fill="#000"/><rect y="1" width="5" height="2" fill="#DD0000"/><rect y="2" width="5" height="1" fill="#FFCE00"/></svg></button>
+      </div>
+    </div>
+    <h1 data-de="Pokémon-TCG-Termine rund um Basel, direkt in deinem Kalender">Pokémon TCG events around Basel, in your calendar</h1>
+    <p class="lede" data-de="League Cups, League Challenges und Prereleases im Umkreis von 100 km um Basel (Strassendistanz), von Mulhouse bis Zürich. Einmal abonnieren, und neue Termine erscheinen von selbst.">League Cups, League Challenges and Prereleases within 100 km of Basel by road, from Mulhouse to Zürich. Subscribe once and new events appear on their own.</p>
     <div class="actions">
-      <a class="btn" data-link="webcal" href="webcal://tcgcalendar.ch/basel-tournaments.ics">Subscribe in your calendar app</a>
-      <a class="quiet" data-link="google" href="https://calendar.google.com/calendar/render?cid=webcal%3A%2F%2Ftcgcalendar.ch%2Fbasel-tournaments.ics">Add to Google Calendar</a>
-      <button class="copy quiet" type="button" hidden>Copy address</button>
-      <a class="quiet" data-link="ics" href="https://tcgcalendar.ch/basel-tournaments.ics">Download the .ics file</a>
+      <a class="btn" data-link="webcal" href="webcal://tcgcalendar.ch/basel-tournaments.ics" data-de="In deiner Kalender-App abonnieren">Subscribe in your calendar app</a>
+      <a class="quiet" data-link="google" href="https://calendar.google.com/calendar/render?cid=webcal%3A%2F%2Ftcgcalendar.ch%2Fbasel-tournaments.ics" data-de="Zu Google Kalender hinzufügen">Add to Google Calendar</a>
+      <button class="copy quiet" type="button" hidden data-de="Adresse kopieren">Copy address</button>
+      <a class="quiet" data-link="ics" href="https://tcgcalendar.ch/basel-tournaments.ics" data-de=".ics-Datei herunterladen">Download the .ics file</a>
     </div>
     <p class="fine hero-copied" id="hero-copied" role="status"></p>
-    <p class="fine">Free, updated every night, and shown in your own time zone. <a href="#how">Want only challenges, cups or league nights?</a> Or <a href="#build">build your own mix</a> by distance, weekday and country.</p>
+    <p class="fine" data-de="Gratis, jede Nacht aktualisiert und in deiner eigenen Zeitzone angezeigt. &lt;a href=&quot;#how&quot;&gt;Nur Challenges, Cups oder Liga-Abende?&lt;/a&gt; Oder &lt;a href=&quot;#build&quot;&gt;stelle dir deine eigene Mischung zusammen&lt;/a&gt;, nach Distanz, Wochentag und Ort.">Free, updated every night, and shown in your own time zone. <a href="#how">Want only challenges, cups or league nights?</a> Or <a href="#build">build your own mix</a> by distance, weekday and country.</p>
   </div>
 </header>
 
 <main class="wrap">
   <section aria-labelledby="next">
-    <h2 id="next">Next events</h2>
-    <p class="note">Times are in Basel time. Distances are driving distances from Basel.</p>
+    <h2 id="next" data-de="Nächste Termine">Next events</h2>
+    <p class="note" data-de="Alle Zeiten sind in Basler Zeit. Distanzen sind Fahrdistanzen ab Basel.">Times are in Basel time. Distances are driving distances from Basel.</p>
     <div class="filters" id="filters" hidden>
       <div class="chips" role="group" aria-label="Event type" id="chips"></div>
-      <label class="loc">Location
+      <label class="loc"><span data-de="Ort">Location</span>
         <select id="city"></select>
       </label>
     </div>
@@ -243,90 +255,90 @@ footer p { max-width: 40rem; margin: 0 0 0.9rem; color: var(--muted); font-size:
   </section>
 
   <section aria-labelledby="how">
-    <h2 id="how">Choose your calendars</h2>
-    <p class="note">Subscribe to everything, or only the event types you play. You can add several. If Subscribe does nothing, copy the address and follow the steps for your app. Want a different mix? <a href="#build">Build your own calendar</a> below.</p>
+    <h2 id="how" data-de="Wähle deine Kalender">Choose your calendars</h2>
+    <p class="note" data-de="Abonniere alles oder nur die Turnierarten, die du spielst. Du kannst mehrere hinzufügen. Falls „Abonnieren“ nichts auslöst, kopiere die Adresse und folge den Schritten für deine App. Andere Mischung gewünscht? &lt;a href=&quot;#build&quot;&gt;Stelle unten deinen eigenen Kalender zusammen&lt;/a&gt;.">Subscribe to everything, or only the event types you play. You can add several. If Subscribe does nothing, copy the address and follow the steps for your app. Want a different mix? <a href="#build" data-de="Stelle deinen eigenen Kalender zusammen">Build your own calendar</a> below.</p>
     <ul class="feeds" id="calendars">
       <li class="feed" data-feed="basel-tournaments">
-        <div class="feed-info"><strong>Tournaments</strong><span>League Challenges, League Cups and Prereleases. The best start.</span></div>
+        <div class="feed-info"><strong data-de="Turniere">Tournaments</strong><span data-de="League Challenges, League Cups und Prereleases. Der beste Einstieg.">League Challenges, League Cups and Prereleases. The best start.</span></div>
         <div class="feed-actions">
-          <a class="btn small" data-link="webcal" href="webcal://tcgcalendar.ch/basel-tournaments.ics">Subscribe</a>
-          <a class="quiet" data-link="google" href="#">Google Calendar</a>
-          <button class="copy" type="button">Copy address</button>
+          <a class="btn small" data-link="webcal" href="webcal://tcgcalendar.ch/basel-tournaments.ics" data-de="Abonnieren">Subscribe</a>
+          <a class="quiet" data-link="google" href="#" data-de="Google Kalender">Google Calendar</a>
+          <button class="copy" type="button" data-de="Adresse kopieren">Copy address</button>
         </div>
       </li>
       <li class="feed" data-feed="basel-challenges">
-        <div class="feed-info"><strong>League Challenges</strong><span>The monthly challenge at your local shop.</span></div>
+        <div class="feed-info"><strong>League Challenges</strong><span data-de="Die monatliche Challenge in deinem Shop vor Ort.">The monthly challenge at your local shop.</span></div>
         <div class="feed-actions">
-          <a class="btn small" data-link="webcal" href="webcal://tcgcalendar.ch/basel-challenges.ics">Subscribe</a>
-          <a class="quiet" data-link="google" href="#">Google Calendar</a>
-          <button class="copy" type="button">Copy address</button>
+          <a class="btn small" data-link="webcal" href="webcal://tcgcalendar.ch/basel-challenges.ics" data-de="Abonnieren">Subscribe</a>
+          <a class="quiet" data-link="google" href="#" data-de="Google Kalender">Google Calendar</a>
+          <button class="copy" type="button" data-de="Adresse kopieren">Copy address</button>
         </div>
       </li>
       <li class="feed" data-feed="basel-cups">
-        <div class="feed-info"><strong>League Cups</strong><span>Bigger events with more prizes and Championship Points.</span></div>
+        <div class="feed-info"><strong>League Cups</strong><span data-de="Grössere Turniere mit mehr Preisen und Championship Points.">Bigger events with more prizes and Championship Points.</span></div>
         <div class="feed-actions">
-          <a class="btn small" data-link="webcal" href="webcal://tcgcalendar.ch/basel-cups.ics">Subscribe</a>
-          <a class="quiet" data-link="google" href="#">Google Calendar</a>
-          <button class="copy" type="button">Copy address</button>
+          <a class="btn small" data-link="webcal" href="webcal://tcgcalendar.ch/basel-cups.ics" data-de="Abonnieren">Subscribe</a>
+          <a class="quiet" data-link="google" href="#" data-de="Google Kalender">Google Calendar</a>
+          <button class="copy" type="button" data-de="Adresse kopieren">Copy address</button>
         </div>
       </li>
       <li class="feed" data-feed="basel-prereleases">
-        <div class="feed-info"><strong>Prereleases</strong><span>Launch events for new sets. Often none for weeks.</span></div>
+        <div class="feed-info"><strong>Prereleases</strong><span data-de="Launch-Events für neue Sets. Oft wochenlang keine.">Launch events for new sets. Often none for weeks.</span></div>
         <div class="feed-actions">
-          <a class="btn small" data-link="webcal" href="webcal://tcgcalendar.ch/basel-prereleases.ics">Subscribe</a>
-          <a class="quiet" data-link="google" href="#">Google Calendar</a>
-          <button class="copy" type="button">Copy address</button>
+          <a class="btn small" data-link="webcal" href="webcal://tcgcalendar.ch/basel-prereleases.ics" data-de="Abonnieren">Subscribe</a>
+          <a class="quiet" data-link="google" href="#" data-de="Google Kalender">Google Calendar</a>
+          <button class="copy" type="button" data-de="Adresse kopieren">Copy address</button>
         </div>
       </li>
       <li class="feed" data-feed="basel-leagues">
-        <div class="feed-info"><strong>League nights</strong><span>Weekly casual play at shops in Basel and Birsfelden.</span></div>
+        <div class="feed-info"><strong data-de="Liga-Abende">League nights</strong><span data-de="Wöchentliches Freizeitspiel in Shops in Basel und Birsfelden.">Weekly casual play at shops in Basel and Birsfelden.</span></div>
         <div class="feed-actions">
-          <a class="btn small" data-link="webcal" href="webcal://tcgcalendar.ch/basel-leagues.ics">Subscribe</a>
-          <a class="quiet" data-link="google" href="#">Google Calendar</a>
-          <button class="copy" type="button">Copy address</button>
+          <a class="btn small" data-link="webcal" href="webcal://tcgcalendar.ch/basel-leagues.ics" data-de="Abonnieren">Subscribe</a>
+          <a class="quiet" data-link="google" href="#" data-de="Google Kalender">Google Calendar</a>
+          <button class="copy" type="button" data-de="Adresse kopieren">Copy address</button>
         </div>
       </li>
       <li class="feed" data-feed="basel">
-        <div class="feed-info"><strong>All events</strong><span>Tournaments and league nights together.</span></div>
+        <div class="feed-info"><strong data-de="Alle Termine">All events</strong><span data-de="Turniere und Liga-Abende zusammen.">Tournaments and league nights together.</span></div>
         <div class="feed-actions">
-          <a class="btn small" data-link="webcal" href="webcal://tcgcalendar.ch/basel.ics">Subscribe</a>
-          <a class="quiet" data-link="google" href="#">Google Calendar</a>
-          <button class="copy" type="button">Copy address</button>
+          <a class="btn small" data-link="webcal" href="webcal://tcgcalendar.ch/basel.ics" data-de="Abonnieren">Subscribe</a>
+          <a class="quiet" data-link="google" href="#" data-de="Google Kalender">Google Calendar</a>
+          <button class="copy" type="button" data-de="Adresse kopieren">Copy address</button>
         </div>
       </li>
     </ul>
     <p class="copied" id="copied" role="status"></p>
 
     <details>
-      <summary>Apple Calendar (iPhone, iPad, Mac)</summary>
+      <summary data-de="Apple Kalender (iPhone, iPad, Mac)">Apple Calendar (iPhone, iPad, Mac)</summary>
       <div>
-        <p>Tap or click “Subscribe in your calendar app” at the top and confirm. If nothing happens, add it by hand:</p>
+        <p data-de="Tippe oben auf „In deiner Kalender-App abonnieren“ und bestätige. Falls nichts passiert, füge den Kalender von Hand hinzu:">Tap or click “Subscribe in your calendar app” at the top and confirm. If nothing happens, add it by hand:</p>
         <ol>
-          <li>On iPhone or iPad, open Settings, then Calendar, then Calendar Accounts. On newer iOS the path is Settings, Apps, Calendar, Calendar Accounts.</li>
-          <li>Choose Add Account, then Other, then Add Subscribed Calendar.</li>
-          <li>Paste the calendar address you copied and save.</li>
+          <li data-de="Öffne auf iPhone oder iPad Einstellungen, dann Kalender, dann Accounts. Bei neuerem iOS lautet der Pfad Einstellungen, Apps, Kalender, Kalender-Accounts.">On iPhone or iPad, open Settings, then Calendar, then Calendar Accounts. On newer iOS the path is Settings, Apps, Calendar, Calendar Accounts.</li>
+          <li data-de="Wähle Account hinzufügen, dann Andere, dann Kalenderabo hinzufügen.">Choose Add Account, then Other, then Add Subscribed Calendar.</li>
+          <li data-de="Füge die kopierte Kalenderadresse ein und speichere.">Paste the calendar address you copied and save.</li>
         </ol>
-        <p>On a Mac, open Calendar and choose File, then New Calendar Subscription, and paste the address.</p>
+        <p data-de="Öffne auf dem Mac Kalender, wähle Ablage, dann Neues Kalenderabonnement, und füge die Adresse ein.">On a Mac, open Calendar and choose File, then New Calendar Subscription, and paste the address.</p>
       </div>
     </details>
     <details>
-      <summary>Google Calendar</summary>
+      <summary data-de="Google Kalender">Google Calendar</summary>
       <div>
         <ol>
-          <li>Open Google Calendar in a web browser on a computer.</li>
-          <li>Next to “Other calendars”, choose Add (+), then From URL.</li>
-          <li>Paste the calendar address you copied and choose Add calendar.</li>
+          <li data-de="Öffne Google Kalender in einem Webbrowser auf einem Computer.">Open Google Calendar in a web browser on a computer.</li>
+          <li data-de="Wähle neben „Weitere Kalender“ das Plus (+), dann „Per URL“.">Next to “Other calendars”, choose Add (+), then From URL.</li>
+          <li data-de="Füge die kopierte Kalenderadresse ein und wähle „Kalender hinzufügen“.">Paste the calendar address you copied and choose Add calendar.</li>
         </ol>
-        <p>The calendar then appears in the Google Calendar app too. Google refreshes subscribed calendars on its own schedule, often only once or twice a day.</p>
+        <p data-de="Der Kalender erscheint danach auch in der Google-Kalender-App. Google aktualisiert abonnierte Kalender nach eigenem Zeitplan, oft nur ein- bis zweimal pro Tag.">The calendar then appears in the Google Calendar app too. Google refreshes subscribed calendars on its own schedule, often only once or twice a day.</p>
       </div>
     </details>
     <details>
       <summary>Outlook</summary>
       <div>
         <ol>
-          <li>Open Outlook on the web or the new Outlook app and go to Calendar.</li>
-          <li>Choose Add calendar, then Subscribe from web.</li>
-          <li>Paste the calendar address you copied, give it a name, and import.</li>
+          <li data-de="Öffne Outlook im Web oder die neue Outlook-App und gehe zu Kalender.">Open Outlook on the web or the new Outlook app and go to Calendar.</li>
+          <li data-de="Wähle „Kalender hinzufügen“, dann „Aus dem Web abonnieren“.">Choose Add calendar, then Subscribe from web.</li>
+          <li data-de="Füge die kopierte Kalenderadresse ein, gib ihr einen Namen und importiere sie.">Paste the calendar address you copied, give it a name, and import.</li>
         </ol>
       </div>
     </details>
@@ -334,79 +346,79 @@ footer p { max-width: 40rem; margin: 0 0 0.9rem; color: var(--muted); font-size:
       <summary>Thunderbird</summary>
       <div>
         <ol>
-          <li>In the Calendar tab, choose New Calendar, then On the Network.</li>
-          <li>Pick iCalendar (ICS) and paste the calendar address.</li>
+          <li data-de="Wähle im Reiter Kalender „Neuer Kalender“, dann „Im Netzwerk“.">In the Calendar tab, choose New Calendar, then On the Network.</li>
+          <li data-de="Wähle iCalendar (ICS) und füge die Kalenderadresse ein.">Pick iCalendar (ICS) and paste the calendar address.</li>
         </ol>
       </div>
     </details>
   </section>
 
   <section aria-labelledby="build-h" id="build">
-    <h2 id="build-h">Build your own calendar</h2>
-    <p class="note">Choose the events you want. Subscribe to your selection and new matching events appear on their own, or download a snapshot of today as a .ics file. Weekends are Saturday and Sunday in Basel time, and the distance limits are driving distances from Basel with a rough time in brackets. Your choices are kept in the page address, so you can bookmark or share them.</p>
+    <h2 id="build-h" data-de="Stelle deinen eigenen Kalender zusammen">Build your own calendar</h2>
+    <p class="note" data-de="Wähle die Termine, die du willst. Abonniere deine Auswahl, und neue passende Termine erscheinen von selbst, oder lade eine Momentaufnahme von heute als .ics-Datei herunter. Wochenende heisst Samstag und Sonntag in Basler Zeit, und die Distanzlimiten sind Fahrdistanzen ab Basel mit ungefährer Zeit in Klammern. Deine Auswahl steckt in der Seitenadresse, du kannst sie also als Lesezeichen speichern oder teilen.">Choose the events you want. Subscribe to your selection and new matching events appear on their own, or download a snapshot of today as a .ics file. Weekends are Saturday and Sunday in Basel time, and the distance limits are driving distances from Basel with a rough time in brackets. Your choices are kept in the page address, so you can bookmark or share them.</p>
     <form class="builder" id="builder" hidden>
       <fieldset>
-        <legend>Event types</legend>
+        <legend data-de="Art der Termine">Event types</legend>
         <div class="opts">
-          <label><input type="checkbox" name="type" value="League Challenge" checked> League Challenges</label>
-          <label><input type="checkbox" name="type" value="League Cup" checked> League Cups</label>
-          <label><input type="checkbox" name="type" value="Prerelease" checked> Prereleases</label>
-          <label><input type="checkbox" name="type" value="League Night"> League nights</label>
+          <label><input type="checkbox" name="type" value="League Challenge" checked> <span>League Challenges</span></label>
+          <label><input type="checkbox" name="type" value="League Cup" checked> <span>League Cups</span></label>
+          <label><input type="checkbox" name="type" value="Prerelease" checked> <span>Prereleases</span></label>
+          <label><input type="checkbox" name="type" value="League Night"> <span data-de="Liga-Abende">League nights</span></label>
         </div>
       </fieldset>
       <fieldset>
-        <legend>Distance from Basel by road</legend>
-        <label class="loc">Maximum drive
+        <legend data-de="Distanz ab Basel (Strasse)">Distance from Basel by road</legend>
+        <label class="loc"><span data-de="Maximale Fahrt">Maximum drive</span>
           <select name="km">
-            <option value="">Any distance (up to 100 km)</option>
-            <option value="25">25 km (about 25 min)</option>
-            <option value="50">50 km (about 45 min)</option>
-            <option value="75">75 km (about 70 min)</option>
+            <option value="" data-de="Beliebige Distanz (bis 100 km)">Any distance (up to 100 km)</option>
+            <option value="25" data-de="25 km (ca. 25 Min.)">25 km (about 25 min)</option>
+            <option value="50" data-de="50 km (ca. 45 Min.)">50 km (about 45 min)</option>
+            <option value="75" data-de="75 km (ca. 70 Min.)">75 km (about 70 min)</option>
           </select>
         </label>
       </fieldset>
       <fieldset>
-        <legend>Locations</legend>
+        <legend data-de="Orte">Locations</legend>
         <div class="opts" id="builder-cities"></div>
-        <p class="fine">Tick one or more places, or leave all unticked for every location. Nearest to Basel first.</p>
+        <p class="fine" data-de="Wähle einen oder mehrere Orte oder lass alle leer für jeden Ort. Die nächsten zu Basel zuerst.">Tick one or more places, or leave all unticked for every location. Nearest to Basel first.</p>
       </fieldset>
       <fieldset>
-        <legend>Narrow it down</legend>
+        <legend data-de="Weiter eingrenzen">Narrow it down</legend>
         <div class="opts">
-          <label><input type="checkbox" name="weekend"> Weekends only</label>
-          <label><input type="checkbox" name="nofr"> Leave out France</label>
-          <label><input type="checkbox" name="node"> Leave out Germany</label>
-          <label><input type="checkbox" name="nofull"> Leave out full events</label>
+          <label><input type="checkbox" name="weekend"> <span data-de="Nur Wochenenden">Weekends only</span></label>
+          <label><input type="checkbox" name="nofr"> <span data-de="Frankreich weglassen">Leave out France</span></label>
+          <label><input type="checkbox" name="node"> <span data-de="Deutschland weglassen">Leave out Germany</span></label>
+          <label><input type="checkbox" name="nofull"> <span data-de="Volle Termine weglassen">Leave out full events</span></label>
         </div>
       </fieldset>
       <p class="builder-count" id="builder-count" role="status"></p>
       <div class="builder-out" id="builder-live" hidden>
-        <a class="btn small" id="live-webcal" href="#">Subscribe to this selection</a>
-        <a class="quiet" id="live-google" href="#">Add to Google Calendar</a>
-        <button class="copy quiet" type="button" id="live-copy">Copy subscription address</button>
+        <a class="btn small" id="live-webcal" href="#" data-de="Diese Auswahl abonnieren">Subscribe to this selection</a>
+        <a class="quiet" id="live-google" href="#" data-de="Zu Google Kalender hinzufügen">Add to Google Calendar</a>
+        <button class="copy quiet" type="button" id="live-copy" data-de="Abo-Adresse kopieren">Copy subscription address</button>
       </div>
       <div class="builder-out">
-        <button class="btn small" type="button" id="builder-download">Download .ics file</button>
-        <button class="copy quiet" type="button" id="builder-link">Copy link to these settings</button>
+        <button class="btn small" type="button" id="builder-download" data-de=".ics-Datei herunterladen">Download .ics file</button>
+        <button class="copy quiet" type="button" id="builder-link" data-de="Link zu diesen Einstellungen kopieren">Copy link to these settings</button>
       </div>
       <p class="copied" id="builder-msg" role="status"></p>
     </form>
   </section>
 
   <section aria-labelledby="what">
-    <h2 id="what">What’s in the calendar</h2>
+    <h2 id="what" data-de="Was im Kalender steckt">What’s in the calendar</h2>
     <div class="prose">
-      <p>Official League Cups, League Challenges and Prereleases that shops register in the Play! Pokémon Event Locator, within 100 km of Basel by road. That covers Basel, Mulhouse, Zürich, Bern and Luzern.</p>
-      <p>League nights, the regular casual play at shops, are their own calendar. They cover shops in Basel and Birsfelden only, and are refreshed from the Event Locator by hand, so a newly announced one can take a few days to show up. Casual meetups that are not in the locator are not included. If a shop or event is missing, <a href="https://github.com/joerimulder/tcg-calendar/issues">open an issue on GitHub</a>.</p>
-      <p>Each event also lists driving directions as one-tap links for Google Maps, Apple Maps and Waze, plus a reminder to bring ID and EUR for events in France or Germany. Entry fees, registration and Full or Waiting list flags appear when we know them. The official locator does not publish player numbers, so a missing flag does not mean there is space.</p>
+      <p data-de="Offizielle League Cups, League Challenges und Prereleases, die Shops im Play! Pokémon Event Locator eintragen, im Umkreis von 100 km um Basel (Strassendistanz). Das umfasst Basel, Mulhouse, Zürich, Bern und Luzern. Die Termine selbst bleiben auf Englisch, so wie sie im Locator stehen.">Official League Cups, League Challenges and Prereleases that shops register in the Play! Pokémon Event Locator, within 100 km of Basel by road. That covers Basel, Mulhouse, Zürich, Bern and Luzern.</p>
+      <p data-de="Liga-Abende, das regelmässige Freizeitspiel in den Shops, sind ein eigener Kalender. Sie decken nur Shops in Basel und Birsfelden ab und werden von Hand aus dem Event Locator aktualisiert, ein neu angekündigter kann also einige Tage brauchen, bis er erscheint. Lockere Treffs, die nicht im Locator stehen, fehlen. Falls ein Shop oder Termin fehlt, &lt;a href=&quot;https://github.com/joerimulder/tcg-calendar/issues&quot;&gt;eröffne ein Issue auf GitHub&lt;/a&gt;.">League nights, the regular casual play at shops, are their own calendar. They cover shops in Basel and Birsfelden only, and are refreshed from the Event Locator by hand, so a newly announced one can take a few days to show up. Casual meetups that are not in the locator are not included. If a shop or event is missing, <a href="https://github.com/joerimulder/tcg-calendar/issues">open an issue on GitHub</a>.</p>
+      <p data-de="Jeder Termin enthält ausserdem Navigationslinks für Google Maps, Apple Maps und Waze sowie einen Hinweis, bei Terminen in Frankreich oder Deutschland Ausweis und EUR mitzunehmen. Startgebühren, Anmeldung und Voll- oder Warteliste-Hinweise erscheinen, sobald wir sie kennen. Der offizielle Locator veröffentlicht keine Spielerzahlen, ein fehlender Hinweis heisst also nicht, dass noch Platz ist.">Each event also lists driving directions as one-tap links for Google Maps, Apple Maps and Waze, plus a reminder to bring ID and EUR for events in France or Germany. Entry fees, registration and Full or Waiting list flags appear when we know them. The official locator does not publish player numbers, so a missing flag does not mean there is space.</p>
     </div>
   </section>
 </main>
 
 <footer>
   <div class="wrap">
-    <p>TCGCalendar is an unofficial fan project. It is not affiliated with or endorsed by The Pokémon Company, Nintendo, Creatures or GAME FREAK. Pokémon and its trademarks belong to their owners.</p>
-    <p>Event data comes from the official Play! Pokémon Event Locator, through the community mirror pokedata.ovh for tournaments, and read from the locator directly for league nights. This site sets no cookies and loads nothing from other sites. The calendars are hosted on GitHub Pages. Custom subscriptions are filtered by a small Cloudflare Worker that reads the public calendar and stores nothing. Map links only open when you tap them. The <a href="https://github.com/joerimulder/tcg-calendar">source code is on GitHub</a>.</p>
+    <p data-de="TCGCalendar ist ein inoffizielles Fanprojekt. Es steht in keiner Verbindung zu The Pokémon Company, Nintendo, Creatures oder GAME FREAK und wird nicht von ihnen unterstützt. Pokémon und die zugehörigen Marken gehören ihren jeweiligen Inhabern.">TCGCalendar is an unofficial fan project. It is not affiliated with or endorsed by The Pokémon Company, Nintendo, Creatures or GAME FREAK. Pokémon and its trademarks belong to their owners.</p>
+    <p data-de="Die Termindaten stammen vom offiziellen Play! Pokémon Event Locator, bei Turnieren über den Community-Spiegel pokedata.ovh und bei Liga-Abenden direkt aus dem Locator gelesen. Diese Seite setzt keine Cookies und lädt nichts von anderen Websites. Deine Sprachwahl wird nur in deinem eigenen Browser gespeichert. Die Kalender liegen auf GitHub Pages. Eigene Abos filtert ein kleiner Cloudflare Worker, der den öffentlichen Kalender liest und nichts speichert. Kartenlinks öffnen sich nur, wenn du sie antippst. Der &lt;a href=&quot;https://github.com/joerimulder/tcg-calendar&quot;&gt;Quellcode liegt auf GitHub&lt;/a&gt;.">Event data comes from the official Play! Pokémon Event Locator, through the community mirror pokedata.ovh for tournaments, and read from the locator directly for league nights. This site sets no cookies and loads nothing from other sites. Your language choice is remembered only in your own browser. The calendars are hosted on GitHub Pages. Custom subscriptions are filtered by a small Cloudflare Worker that reads the public calendar and stores nothing. Map links only open when you tap them. The <a href="https://github.com/joerimulder/tcg-calendar">source code is on GitHub</a>.</p>
   </div>
 </footer>
 
@@ -416,6 +428,44 @@ footer p { max-width: 40rem; margin: 0 0 0.9rem; color: var(--muted); font-size:
   var TZ = 'Europe/Zurich';
   var LIVE_URL = 'https://tcgcalendar-custom.joeri-9eb.workers.dev';   /* address of the Cloudflare Worker (see worker/README.md); empty hides the live buttons */
   var SHOWN = 8;
+
+  /* Language: German by default, English one tap away. The choice is remembered in this browser only. */
+  var STR = {
+    copyPrompt: ['Copy this calendar address:', 'Diese Kalenderadresse kopieren:'],
+    copiedFor: ['Copied the address for {x}.', 'Adresse für {x} kopiert.'],
+    tournaments: ['Tournaments', 'Turniere'], challenges: ['Challenges', 'Challenges'], cups: ['Cups', 'Cups'],
+    prereleases: ['Prereleases', 'Prereleases'], leagueNights: ['League nights', 'Liga-Abende'], all: ['All', 'Alle'],
+    allLocations: ['All locations ({n})', 'Alle Orte ({n})'],
+    noMatch: ['No events match these filters. Try another type or location.', 'Keine Termine passen zu diesen Filtern. Versuche eine andere Art oder einen anderen Ort.'],
+    today: ['Today', 'Heute'], tomorrow: ['Tomorrow', 'Morgen'], full: ['Full', 'Voll'], waitlist: ['Waiting list', 'Warteliste'],
+    fewer: ['Show fewer events', 'Weniger Termine anzeigen'], showAll: ['Show all {n} events', 'Alle {n} Termine anzeigen'],
+    none: ['No upcoming events right now. New events appear here as shops register them.', 'Im Moment gibt es keine kommenden Termine. Neue Termine erscheinen hier, sobald Shops sie eintragen.'],
+    loadFail: ['The event list could not be loaded. The calendar itself still works: use the subscribe button above.', 'Die Terminliste konnte nicht geladen werden. Der Kalender selbst funktioniert weiterhin: nutze oben die Abo-Schaltfläche.'],
+    openPage: ['Open this page from its web address to see the next events.', 'Öffne diese Seite über ihre Webadresse, um die nächsten Termine zu sehen.'],
+    loading: ['Loading events…', 'Termine werden geladen …'],
+    countOne: ['1 event matches', '1 Termin passt'], countMany: ['{n} events match', '{n} Termine passen'],
+    downloaded: ['Downloaded. Open the file to add these events to your calendar.', 'Heruntergeladen. Öffne die Datei, um diese Termine zu deinem Kalender hinzuzufügen.'],
+    copiedLink: ['Copied the link to these settings.', 'Link zu diesen Einstellungen kopiert.'],
+    copyLinkPrompt: ['Copy this link:', 'Diesen Link kopieren:'],
+    copiedSub: ['Copied the subscription address.', 'Abo-Adresse kopiert.'],
+    eventType: ['Event type', 'Art des Termins'], language: ['Language', 'Sprache'],
+    title: ['TCGCalendar: Pokémon TCG events around Basel in your calendar', 'TCGCalendar: Pokémon-TCG-Termine rund um Basel in deinem Kalender'],
+    desc: ['League Cups, League Challenges and Prereleases within 100 km of Basel by road, as a calendar you subscribe to once. Updated every night.', 'League Cups, League Challenges und Prereleases im Umkreis von 100 km um Basel, als Kalender, den du einmal abonnierst. Jede Nacht aktualisiert.'],
+    googleBtn: ['Add to Google Calendar', 'Zu Google Kalender hinzufügen'],
+    openApp: ['Open in a calendar app', 'In Kalender-App öffnen'], otherApp: ['Other calendar app', 'Andere Kalender-App']
+  };
+  var LANG = 'de';
+  try {
+    var asked = new URLSearchParams(location.search).get('lang');
+    var saved = null;
+    try { saved = localStorage.getItem('tcgcalendar-lang'); } catch (x) { /* storage can be blocked */ }
+    LANG = asked === 'en' || asked === 'de' ? asked : (saved === 'en' || saved === 'de' ? saved : 'de');
+  } catch (x) { LANG = 'de'; }
+  function tx(key, vars) {
+    var s = STR[key][LANG === 'de' ? 1 : 0];
+    if (vars) Object.keys(vars).forEach(function (k) { s = s.replace('{' + k + '}', vars[k]); });
+    return s;
+  }
 
   /* parser:start */
   function parseICS(text) {
@@ -447,8 +497,13 @@ footer p { max-width: 40rem; margin: 0 0 0.9rem; color: var(--muted); font-size:
   }
   /* parser:end */
 
-  var dayFmt = new Intl.DateTimeFormat('en-GB', { weekday: 'short', day: 'numeric', month: 'short', timeZone: TZ });
-  var timeFmt = new Intl.DateTimeFormat('en-GB', { hour: '2-digit', minute: '2-digit', hourCycle: 'h23', timeZone: TZ });
+  var dayFmt, timeFmt;
+  function makeFmt() {
+    var loc = LANG === 'de' ? 'de-CH' : 'en-GB';
+    dayFmt = new Intl.DateTimeFormat(loc, { weekday: 'short', day: 'numeric', month: 'short', timeZone: TZ });
+    timeFmt = new Intl.DateTimeFormat(loc, { hour: '2-digit', minute: '2-digit', hourCycle: 'h23', timeZone: TZ });
+  }
+  makeFmt();
   var keyFmt = new Intl.DateTimeFormat('en-CA', { timeZone: TZ });
   function nextKey(key) {
     var p = key.split('-');
@@ -480,17 +535,19 @@ footer p { max-width: 40rem; margin: 0 0 0.9rem; color: var(--muted); font-size:
     [].forEach.call(scope.querySelectorAll('[data-link=ics]'), function (a) { a.href = url; });
     var btn = scope.querySelector('.copy');
     if (btn) btn.addEventListener('click', function () {
-      function fallback() { window.prompt('Copy this calendar address:', url); }
+      function fallback() { window.prompt(tx('copyPrompt'), url); }
       if (navigator.clipboard && navigator.clipboard.writeText) {
-        navigator.clipboard.writeText(url).then(function () { status.textContent = 'Copied the address for ' + label + '.'; }, fallback);
+        navigator.clipboard.writeText(url).then(function () { status.textContent = tx('copiedFor', { x: label }); }, fallback);
       } else { fallback(); }
     });
     if (w && g && !apple) {                           // Google Calendar first everywhere else
       var small = /\bsmall\b/.test(w.className), hero = scope.tagName === 'HEADER';
       g.className = 'btn' + (small ? ' small' : '');
       w.className = 'quiet';
-      g.textContent = 'Add to Google Calendar';
-      w.textContent = hero ? 'Open in a calendar app' : 'Other calendar app';
+      g.textContent = tx('googleBtn');
+      g.dataset.en = STR.googleBtn[0]; g.dataset.de = STR.googleBtn[1];
+      w.textContent = hero ? tx('openApp') : tx('otherApp');
+      w.dataset.en = STR[hero ? 'openApp' : 'otherApp'][0]; w.dataset.de = STR[hero ? 'openApp' : 'otherApp'][1];
       w.parentNode.insertBefore(g, w);
       if (btn && hero) btn.hidden = false;
     }
@@ -514,6 +571,10 @@ footer p { max-width: 40rem; margin: 0 0 0.9rem; color: var(--muted); font-size:
     ['League Night', 'League nights', ['League Night']], ['', 'All', null]
   ];
   var all = [], fType = 'tournaments', fCity = '', expanded = false;
+  var CHIPKEY = { tournaments: 'tournaments', 'League Challenge': 'challenges', 'League Cup': 'cups', 'Prerelease': 'prereleases', 'League Night': 'leagueNights', '': 'all' };
+  function chipLabel(id) { return tx(CHIPKEY[id]); }
+  var stateKey = '';
+  function setState(key) { stateKey = key; state.textContent = tx(key); }
   function typeList(id) { return TYPES.filter(function (t) { return t[0] === id; })[0][2]; }
   function inType(e, id) { var l = typeList(id); return !l || l.indexOf(e.kind) >= 0; }
   var chips = document.getElementById('chips'), citySel = document.getElementById('city');
@@ -525,7 +586,7 @@ footer p { max-width: 40rem; margin: 0 0 0.9rem; color: var(--muted); font-size:
     chips.textContent = '';
     TYPES.forEach(function (t) {
       var n = all.filter(function (e) { return matches(e, true, false) && inType(e, t[0]); }).length;
-      var b = el('button', 'chip', t[1]);
+      var b = el('button', 'chip', chipLabel(t[0]));
       b.type = 'button';
       b.setAttribute('aria-pressed', String(fType === t[0]));
       b.appendChild(el('span', 'n', String(n)));
@@ -544,7 +605,7 @@ footer p { max-width: 40rem; margin: 0 0 0.9rem; color: var(--muted); font-size:
     }
     var total = all.filter(function (e) { return matches(e, false, true); }).length;
     citySel.textContent = '';
-    var o = el('option', '', 'All locations (' + total + ')'); o.value = ''; citySel.appendChild(o);
+    var o = el('option', '', tx('allLocations', { n: total })); o.value = ''; citySel.appendChild(o);
     Object.keys(counts).sort(byDist).forEach(function (c) {
       var op = el('option', '', c + (c in dist ? ' · ' + dist[c] + ' km' : '') + ' (' + counts[c] + ')'); op.value = c; citySel.appendChild(op);
     });
@@ -557,7 +618,7 @@ footer p { max-width: 40rem; margin: 0 0 0.9rem; color: var(--muted); font-size:
     more.hidden = true;
     if (!list.length) {
       board.hidden = true; state.hidden = false;
-      state.textContent = 'No events match these filters. Try another type or location.';
+      setState('noMatch');
       return;
     }
     state.hidden = true; board.hidden = false;
@@ -572,8 +633,8 @@ footer p { max-width: 40rem; margin: 0 0 0.9rem; color: var(--muted); font-size:
       if (e.url) t.href = e.url;
       what.appendChild(t);
       var k = keyFmt.format(e.start);
-      if (k === today || k === tomorrow) what.appendChild(el('span', 'flag', k === today ? 'Today' : 'Tomorrow'));
-      if (e.avail === 'full' || e.avail === 'waitlist') what.appendChild(el('span', 'flag full', e.avail === 'full' ? 'Full' : 'Waiting list'));
+      if (k === today || k === tomorrow) what.appendChild(el('span', 'flag', k === today ? tx('today') : tx('tomorrow')));
+      if (e.avail === 'full' || e.avail === 'waitlist') what.appendChild(el('span', 'flag full', e.avail === 'full' ? tx('full') : tx('waitlist')));
       if (e.kind) what.appendChild(el('span', 'kind', e.kind));
       var where = el('div', 'where');
       where.appendChild(el('span', 'venue', e.loc.venue));
@@ -583,7 +644,7 @@ footer p { max-width: 40rem; margin: 0 0 0.9rem; color: var(--muted); font-size:
     });
     if (list.length > SHOWN) {
       more.hidden = false;
-      more.textContent = expanded ? 'Show fewer events' : 'Show all ' + list.length + ' events';
+      more.textContent = expanded ? tx('fewer') : tx('showAll', { n: list.length });
     }
   }
   function update() { buildControls(); drawBoard(); }
@@ -599,7 +660,7 @@ footer p { max-width: 40rem; margin: 0 0 0.9rem; color: var(--muted); font-size:
     }).filter(function (e) { return e.start && e.end >= now; })
       .sort(function (a, b) { return a.start - b.start; });
     if (!all.length) {
-      state.textContent = 'No upcoming events right now. New events appear here as shops register them.';
+      setState('none');
       return;
     }
     document.getElementById('filters').hidden = false;
@@ -640,14 +701,14 @@ footer p { max-width: 40rem; margin: 0 0 0.9rem; color: var(--muted); font-size:
     document.getElementById('live-webcal').href = u.replace(/^https?:/, 'webcal:');
     document.getElementById('live-google').href = 'https://calendar.google.com/calendar/render?cid=' + encodeURIComponent(u.replace(/^https?:/, 'webcal:'));
     document.getElementById('live-copy').onclick = function () {
-      function fb() { window.prompt('Copy this calendar address:', u); }
-      if (navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(u).then(function () { bMsg.textContent = 'Copied the subscription address.'; }, fb); else fb();
+      function fb() { window.prompt(tx('copyPrompt'), u); }
+      if (navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(u).then(function () { bMsg.textContent = tx('copiedSub'); }, fb); else fb();
     };
   }
   function builderUpdate() {
     liveUpdate();
     var n = chosen().length;
-    bCount.textContent = n === 1 ? '1 event matches' : n + ' events match';
+    bCount.textContent = n === 1 ? tx('countOne') : tx('countMany', { n: n });
     document.getElementById('builder-download').disabled = n === 0;
   }
   function builderQuery() {
@@ -713,25 +774,54 @@ footer p { max-width: 40rem; margin: 0 0 0.9rem; color: var(--muted); font-size:
     a.href = url; a.download = 'tcg-basel-custom.ics';
     document.body.appendChild(a); a.click(); a.remove();
     setTimeout(function () { URL.revokeObjectURL(url); }, 1000);
-    bMsg.textContent = 'Downloaded. Open the file to add these events to your calendar.';
+    bMsg.textContent = tx('downloaded');
   });
   document.getElementById('builder-link').addEventListener('click', function () {
     var link = location.origin + location.pathname + '?' + builderQuery() + '#build';
-    function fallback() { window.prompt('Copy this link:', link); }
+    function fallback() { window.prompt(tx('copyLinkPrompt'), link); }
     if (navigator.clipboard && navigator.clipboard.writeText) {
-      navigator.clipboard.writeText(link).then(function () { bMsg.textContent = 'Copied the link to these settings.'; }, fallback);
+      navigator.clipboard.writeText(link).then(function () { bMsg.textContent = tx('copiedLink'); }, fallback);
     } else { fallback(); }
   });
+
+  function applyLang() {
+    [].forEach.call(document.querySelectorAll('[data-de]'), function (n) {
+      if (!('en' in n.dataset)) n.dataset.en = n.innerHTML;
+      n.innerHTML = LANG === 'de' ? n.dataset.de : n.dataset.en;
+    });
+    document.documentElement.lang = LANG;
+    document.title = tx('title');
+    var md = document.querySelector('meta[name=description]');
+    if (md) md.setAttribute('content', tx('desc'));
+    chips.setAttribute('aria-label', tx('eventType'));
+    document.querySelector('.langs').setAttribute('aria-label', tx('language'));
+    [].forEach.call(document.querySelectorAll('.lang'), function (b) {
+      b.setAttribute('aria-pressed', String(b.getAttribute('data-lang') === LANG));
+    });
+    makeFmt();
+    if (stateKey) setState(stateKey);
+    if (all.length) update();
+    if (blocks.length) builderUpdate();
+  }
+  [].forEach.call(document.querySelectorAll('.lang'), function (b) {
+    b.addEventListener('click', function () {
+      LANG = b.getAttribute('data-lang');
+      try { localStorage.setItem('tcgcalendar-lang', LANG); } catch (x) { /* storage can be blocked */ }
+      applyLang();
+    });
+  });
+  setState('loading');
+  applyLang();
 
   if (served) {
     fetch(feedUrl, { cache: 'no-cache' })
       .then(function (r) { if (!r.ok) throw new Error(r.status); return r.text(); })
       .then(function (t) { render(parseICS(t)); builderInit(t); })
       .catch(function () {
-        state.textContent = 'The event list could not be loaded. The calendar itself still works: use the subscribe button above.';
+        setState('loadFail');
       });
   } else {
-    state.textContent = 'Open this page from its web address to see the next events.';
+    setState('openPage');
   }
 }());
 </script>

@@ -73,3 +73,6 @@ The landing page has a "Build your own calendar" form (types, maximum drive, wee
 
 ## Venue access files
 `data/venues/<venue>.json` lists, per venue, nearby rail, tram and bus stops, Parkhaus options and free car parks, measured from OpenStreetMap (see `data/venues/README.md`). Regenerate with `python3 tools/venue_data/make_venues.py`.
+
+## Languages
+The landing page is German by default, with English one tap away (flags at the top right). Text lives in the page itself: German copy sits in `data-de` attributes next to the English text, and script messages are in the `STR` table in `docs/index.html`. The choice is remembered in the browser only (`localStorage`, no cookies); `?lang=en` or `?lang=de` forces a language. Event titles and calendar contents stay in English, as published by the locator.
