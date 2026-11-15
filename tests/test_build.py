@@ -8,7 +8,7 @@ def build(name, *extra):
     out = tmp / name
     subprocess.run([sys.executable, str(root / "build_calendar.py"), "--feed-file", str(root / "tests/sample_feed.ics"),
                     "--manual", str(root / "tests/manual_events.json"), "--out", str(out),
-                    "--geocache", str(root / "data/geocodes.json"), "--drivecache", str(root / "tests/driving_km.json"), "--offline", "--scraped", "", *extra], check=True)
+                    "--geocache", str(root / "data/geocodes.json"), "--drivecache", str(root / "tests/driving_km.json"), "--offline", "--scraped", "", "--event-info", str(root / "tests/event_info.json"), *extra], check=True)
     return out.read_bytes().decode("utf-8")
 
 
@@ -64,4 +64,8 @@ assert "DTSTART:20261116T170000Z" in sc                    # 18:00 Basel time
 assert "SUMMARY:League night @ Animeverse" in sc
 assert "+41" not in u and "TEL" not in u                   # phone numbers never published
 assert "CATEGORIES:League Night" in sc
+u1 = (tmp / "basel.ics").read_bytes().decode().replace("\r\n ", "")
+assert "SUMMARY:[Full] Défi de Ligue Novembre @Geek Factory" in u1 and "X-AVAILABILITY:full" in u1
+assert "Entry fee: CHF 5" in u1 and "Availability: FULL (as of 2026-11-15)" in u1
+assert "SUMMARY:[Waiting List] TCG Liga Murten Challenge November" in u1 and "X-AVAILABILITY:waitlist" in u1
 print("OK")

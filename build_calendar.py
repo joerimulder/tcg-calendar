@@ -352,6 +352,43 @@ def load_scraped(path: str, overrides: dict) -> list[dict]:
     return out
 
 
+STATUS_LABEL = {"full": "FULL", "waitlist": "WAITING LIST"}
+
+
+def apply_event_info(events: list[dict], path: str) -> int:
+    """Adds entry fee, registration window and a Full / Waiting list flag from data/event_info.json.
+    Keys are event ids such as '26-11-004624' (the number at the end of the event's locator URL)."""
+    if not path or not Path(path).exists():
+        return 0
+    try:
+        info = json.loads(Path(path).read_text(encoding="utf-8")).get("events", {})
+    except Exception as exc:
+        print(f"Event info unreadable, ignoring it: {exc}", file=sys.stderr)
+        return 0
+    n = 0
+    for e in events:
+        i = info.get(e["uid"].split("@")[0])
+        if not i:
+            continue
+        n += 1
+        lines = []
+        if i.get("fee"):
+            lines.append(f"Entry fee: {i['fee']}")
+        if i.get("registration"):
+            lines.append(f"Registration: {i['registration']}")
+        status = i.get("status", "")
+        if status in STATUS_LABEL:
+            when = f" (as of {i['updated']})" if i.get("updated") else ""
+            lines.append(f"Availability: {STATUS_LABEL[status]}{when}" + (f". {i['note']}" if i.get("note") else ""))
+            e["summary"] = f"[{STATUS_LABEL[status].title()}] {e['summary']}"
+            e["availability"] = status
+        elif i.get("note"):
+            lines.append(i["note"])
+        if lines:
+            e["description"] = e["description"] + "\n" + "\n".join(lines)
+    return n
+
+
 def load_manual(path: Path) -> list[dict]:
     if not path.exists():
         return []
@@ -417,6 +454,8 @@ def render(events: list[dict], stamp: str, name: str = CAL_NAME, desc: str = "")
             L.append(f"URL:{e['url']}")
         if e.get("dist_km") is not None:
             L.append(f"X-DISTANCE-KM:{round(e['dist_km'])}")
+        if e.get("availability"):
+            L.append(f"X-AVAILABILITY:{e['availability']}")
         L += [f"CATEGORIES:{esc(e['category'])}", "END:VEVENT"]
     L.append("END:VCALENDAR")
     return "\r\n".join(fold(x) for x in L) + "\r\n"
@@ -442,6 +481,8 @@ def main() -> int:
     ap.add_argument("--offline", action="store_true", help="never call the geocoding API (tests)")
     ap.add_argument("--scraped", default=os.environ.get("SCRAPED_JSON", "data/scraped_league_nights.json"),
                     help="league nights read off the official locator; empty string disables")
+    ap.add_argument("--event-info", default="data/event_info.json",
+                    help="entry fee, registration window and full / waiting list flags per event id")
     ap.add_argument("--out", default="docs/basel.ics")
     a = ap.parse_args()
 
@@ -483,6 +524,8 @@ def main() -> int:
             m = ZIP_RE.search(e["location"] or "")
             return re.sub(r"^\d{4,5} ", "", m.group(0).rsplit(", ", 1)[0]).lower() if m else ""
         events = [e for e in events if e["category"] != "League Night" or city(e) in only]
+    print(f"Event info applied to {apply_event_info(events, a.event_info)} events.")
+
     def load_cache(path):
         try:
             return json.loads(Path(path).read_text(encoding="utf-8")) if Path(path).exists() else {}

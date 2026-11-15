@@ -1,0 +1,15 @@
+{
+ "events": {
+  "26-11-001597": {
+   "fee": "CHF 5",
+   "registration": "Wed 25 Nov 17:15-19:15",
+   "status": "full",
+   "updated": "2026-11-15",
+   "note": "Join the waiting list at the shop."
+  },
+  "26-11-001886": {
+   "status": "waitlist",
+   "updated": "2026-11-15"
+  }
+ }
+}

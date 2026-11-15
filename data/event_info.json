@@ -1,0 +1,4 @@
+{
+  "_how_to": "Keys are event ids (the number at the end of an event's locator URL, e.g. 26-11-004624). status: 'full' or 'waitlist' adds a [Full] / [Waiting list] tag to the event; fee and registration are shown in the calendar description. Add 'updated' (date) so people know how fresh the status is.",
+  "events": {}
+}

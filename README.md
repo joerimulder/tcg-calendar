@@ -51,3 +51,6 @@ Each event carries a custom `X-DISTANCE-KM` field (driving distance from Basel).
 `data/scraped_league_nights.json` holds the league nights read off the official Event Locator's result list (search Basel, 100 km). The locator blocks automated access from servers (it shows a CAPTCHA), so the file is refreshed by hand from a normal browser, now and then. Times are the venue's local time as shown on the page; phone numbers are not kept. Replace the file to refresh it; set `--scraped ""` to ignore it.
 
 League nights are limited to the cities in `league_night_cities` in `data/manual_events.json` (now Basel and Birsfelden). Remove that setting to include every shop in the snapshot.
+
+## Fees, registration and Full / Waiting list
+The official locator publishes the entry fee and registration window but no player counts or capacity, so "full" and "waiting list" are entered by hand in `data/event_info.json`, keyed by event id (the number at the end of the event's locator URL, e.g. `26-11-004624`). A flagged event gets a `[Full]` or `[Waiting list]` prefix in the calendar, an Availability line in the description, and a tag on the website. Add `updated` so people can see how fresh the status is.

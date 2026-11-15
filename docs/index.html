@@ -105,6 +105,7 @@ h2 { margin: 0 0 0.35rem; font-size: 1.875rem; line-height: 1.15; font-weight: 8
 a.title:hover { text-decoration-thickness: 2px; }
 .kind { display: block; color: var(--muted); font-size: 0.9375rem; }
 .flag { display: inline-block; margin-left: 0.5rem; padding: 0 0.4rem; border: 1.5px solid var(--flag); color: var(--flag); font-size: 0.8125rem; font-weight: 700; line-height: 1.35; border-radius: 0.2rem; vertical-align: 0.1em; }
+.flag.full { color: var(--black); background: var(--yellow); border-color: var(--black); }
 .venue { font-weight: 600; }
 .place { display: block; color: var(--muted); font-size: 0.9375rem; }
 .filters { display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 0.75rem 1.5rem; margin: 0 0 1.25rem; }
@@ -491,6 +492,7 @@ footer p { max-width: 40rem; margin: 0 0 0.9rem; color: var(--muted); font-size:
       what.appendChild(t);
       var k = keyFmt.format(e.start);
       if (k === today || k === tomorrow) what.appendChild(el('span', 'flag', k === today ? 'Today' : 'Tomorrow'));
+      if (e.avail === 'full' || e.avail === 'waitlist') what.appendChild(el('span', 'flag full', e.avail === 'full' ? 'Full' : 'Waiting list'));
       if (e.kind) what.appendChild(el('span', 'kind', e.kind));
       var where = el('div', 'where');
       where.appendChild(el('span', 'venue', e.loc.venue));
@@ -511,8 +513,8 @@ footer p { max-width: 40rem; margin: 0 0 0.9rem; color: var(--muted); font-size:
     var now = new Date();
     all = events.map(function (e) {
       var start = parseDT(e.DTSTART), end = parseDT(e.DTEND) || start;
-      return { start: start, end: end, title: e.SUMMARY || 'Pokémon TCG event', kind: e.CATEGORIES || '',
-               loc: venueParts(e.LOCATION), km: /^\d+$/.test(e['X-DISTANCE-KM'] || '') ? +e['X-DISTANCE-KM'] : null, url: /^https:\/\//.test(e.URL || '') ? e.URL : '' };
+      return { start: start, end: end, title: (e.SUMMARY || 'Pokémon TCG event').replace(/^\[(Full|Waiting List)\] /, ''), kind: e.CATEGORIES || '',
+               loc: venueParts(e.LOCATION), km: /^\d+$/.test(e['X-DISTANCE-KM'] || '') ? +e['X-DISTANCE-KM'] : null, avail: e['X-AVAILABILITY'] || '', url: /^https:\/\//.test(e.URL || '') ? e.URL : '' };
     }).filter(function (e) { return e.start && e.end >= now; })
       .sort(function (a, b) { return a.start - b.start; });
     if (!all.length) {
