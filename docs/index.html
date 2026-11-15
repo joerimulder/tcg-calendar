@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>TCGCalendar: Pokémon TCG events around Basel in your calendar</title>
 <meta name="description" content="League Cups, League Challenges and Prereleases within 100 km of Basel by road, as a calendar you subscribe to once. Updated every night.">
-<meta name="theme-color" content="#D72E0C">
+<meta name="theme-color" content="#14171B">
 <meta property="og:type" content="website">
 <meta property="og:title" content="TCGCalendar: Pokémon TCG events around Basel">
 <meta property="og:description" content="Subscribe once and every Pokémon TCG League Cup, Challenge, Prerelease and Basel league night shows up in your calendar.">
@@ -13,10 +13,11 @@
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%23D72E0C'/%3E%3Cpath d='M7 10h18M16 10v15' stroke='%23fff' stroke-width='4.5' fill='none'/%3E%3C/svg%3E">
 <style>
 :root {
-  --red: #D72E0C;        /* ball red: hero, flags, focus */
+  --red: #D72E0C;        /* ball red: accent only (seam, button, tags, focus) */
+  --hero: #14171B;       /* Basel ink: hero background */
   --black: #111;         /* ink: seam, buttons */
   --ink-bg: #111; --ink-fg: #fff;
-  --sk-hill: #C6290B; --sk-bldg: #AE2209; --sk-river: #8E1B06; --sk-land: #161616; --sk-land2: #3A3A3A; --sk-wave: #E8503A;
+  --sk-hill: #1D2127; --sk-bldg: #282D34; --sk-river: #333A43; --sk-land: #D72E0C; --sk-land2: #A42208; --sk-wave: #4B535D;
   --paper: #fff;
   --text: #1c1c1c;
   --muted: #5C6670;      /* slate gray */
@@ -35,9 +36,7 @@
     --rule: #33363c;
     --surface: #202328;
     --flag: #ff7a5c;
-    --red: #B8260A;
     --ink-bg: #f1f1f1; --ink-fg: #111;
-    --sk-hill: #A62109; --sk-bldg: #8F1B07; --sk-river: #701505; --sk-land: #0f0f0f; --sk-land2: #2a2a2a; --sk-wave: #D0452E;
   }
 }
 * { box-sizing: border-box; }
@@ -56,7 +55,7 @@ a { color: inherit; }
 :focus-visible { outline: 3px solid var(--flag); outline-offset: 3px; }
 
 /* Poster band */
-.poster { position: relative; overflow: hidden; background: var(--red); color: #fff; border-bottom: 0.75rem solid #111; }
+.poster { position: relative; overflow: hidden; background: var(--hero); color: #fff; border-bottom: 0.75rem solid var(--red); }
 .poster .wrap { position: relative; }
 .poster { --sky: clamp(120px, 20vw, 250px); }
 .sk-hill { fill: var(--sk-hill); } .sk-bldg { fill: var(--sk-bldg); } .sk-river { fill: var(--sk-river); } .sk-land { fill: var(--sk-land); } .sk-land2 { fill: var(--sk-land2); } .sk-wave { stroke: var(--sk-wave); }
@@ -92,7 +91,10 @@ a { color: inherit; }
   border-radius: var(--r);
 }
 .btn:hover { background: #2b2b2b; }
-.btn:focus-visible { outline-color: #fff; box-shadow: 0 0 0 3px #111; }
+.poster .btn { background: var(--red); color: #fff; }
+.poster .btn:hover { background: #B92408; }
+.btn:focus-visible { outline-color: var(--red); }
+.poster .btn:focus-visible { outline-color: #fff; }
 .quiet { font-weight: 600; color: inherit; text-decoration-thickness: 2px; text-underline-offset: 0.25em; }
 .fine { margin: 1.25rem 0 0; padding-bottom: calc(var(--sky) + 0.75rem); font-size: 0.9375rem; }
 .hero-copied { margin: 0.5rem 0 0; padding-bottom: 0; }
