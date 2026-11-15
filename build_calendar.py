@@ -77,7 +77,8 @@ def smart_title(s: str) -> str:
     out = re.sub(r"(?<=\d)([A-Z])\b", lambda m: m.group(1).upper(), out)  # 55e -> 55E
     out = re.sub(r"\b(Du|De|La|Le|Les|Des)\b",
                  lambda m: m.group(1).lower() if m.start() else m.group(1), out)
-    return re.sub(r"\b(Tcg|Ptcg|Ch|Fr|De)\b", lambda m: m.group(1).upper() if m.group(1) != "De" else "de", out)
+    out = re.sub(r"\b(Tcg|Ptcg|Ch|Fr|De)\b", lambda m: m.group(1).upper() if m.group(1) != "De" else "de", out)
+    return out.replace("Gmbh", "GmbH")
 
 
 def clean_location(raw: str, venue: str) -> str:
