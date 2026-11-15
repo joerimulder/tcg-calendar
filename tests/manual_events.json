@@ -1,0 +1,21 @@
+{
+  "venue_name_overrides": {
+    "MARO GAMES": "MaRo Games",
+    "MARO GAMES LADEN": "MaRo Games",
+    "ERUPT AG": "Erupt AG",
+    "OWNZ TCG&GAMES SHOP": "OWNZ TCG&Games Shop"
+  },
+  "events": [],
+  "_example_event_format": {
+    "id": "optional-stable-id",
+    "title": "Weekly League Night",
+    "start": "2026-12-03T18:30",
+    "end": "2026-12-03T21:30",
+    "timezone": "Europe/Zurich",
+    "venue": "Shop name",
+    "address": "Street 1, 4051 Basel, Switzerland",
+    "url": "https://example.com",
+    "description": "Free league night, bring a deck.",
+    "category": "League Night"
+  }
+}

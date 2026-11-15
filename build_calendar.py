@@ -477,6 +477,12 @@ def main() -> int:
         merged[n["uid"]] = n
 
     events = list(merged.values())
+    only = {c.lower() for c in cfg.get("league_night_cities", [])}
+    if only:                                       # league nights: keep only the listed cities
+        def city(e):
+            m = ZIP_RE.search(e["location"] or "")
+            return re.sub(r"^\d{4,5} ", "", m.group(0).rsplit(", ", 1)[0]).lower() if m else ""
+        events = [e for e in events if e["category"] != "League Night" or city(e) in only]
     def load_cache(path):
         try:
             return json.loads(Path(path).read_text(encoding="utf-8")) if Path(path).exists() else {}

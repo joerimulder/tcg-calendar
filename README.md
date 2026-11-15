@@ -49,3 +49,5 @@ Each event carries a custom `X-DISTANCE-KM` field (driving distance from Basel).
 
 ## League nights from the official locator
 `data/scraped_league_nights.json` holds the league nights read off the official Event Locator's result list (search Basel, 100 km). The locator blocks automated access from servers (it shows a CAPTCHA), so the file is refreshed by hand from a normal browser, now and then. Times are the venue's local time as shown on the page; phone numbers are not kept. Replace the file to refresh it; set `--scraped ""` to ignore it.
+
+League nights are limited to the cities in `league_night_cities` in `data/manual_events.json` (now just Basel). Remove that setting to include every shop in the snapshot.

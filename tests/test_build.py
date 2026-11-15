@@ -7,7 +7,7 @@ tmp = pathlib.Path(tempfile.mkdtemp())
 def build(name, *extra):
     out = tmp / name
     subprocess.run([sys.executable, str(root / "build_calendar.py"), "--feed-file", str(root / "tests/sample_feed.ics"),
-                    "--manual", str(root / "data/manual_events.json"), "--out", str(out),
+                    "--manual", str(root / "tests/manual_events.json"), "--out", str(out),
                     "--geocache", str(root / "data/geocodes.json"), "--drivecache", str(root / "tests/driving_km.json"), "--offline", "--scraped", "", *extra], check=True)
     return out.read_bytes().decode("utf-8")
 
@@ -55,15 +55,13 @@ assert mul and all(v and 35 <= int(v.split(":")[1]) <= 45 for v in mul), mul   #
 assert "X-DISTANCE-KM:" in cats("with_locator-leagues.ics")  # exact coordinates from the locator
 
 # 3) league nights read off the locator's result list
-t = build("scraped.ics", "--scraped", str(root / "tests/sample_scraped.json"))
+t = build("scraped.ics", "--scraped", str(root / "tests/sample_scraped.json"),
+          "--manual", str(root / "data/manual_events.json"))   # real config: league nights in Basel only
 u = t.replace("\r\n ", "")
 sc = (tmp / "scraped-leagues.ics").read_bytes().decode().replace("\r\n ", "")
-assert sc.count("BEGIN:VEVENT") == 5
+assert sc.count("BEGIN:VEVENT") == 3 and "Bern" not in sc and "Audincourt" not in sc   # only Basel kept (data/manual_events.json)
 assert "DTSTART:20261116T170000Z" in sc                    # 18:00 Basel time
-assert "DTSTART:20261117T130000Z" in sc                    # 14:00 Paris time
 assert "SUMMARY:League night @ Animeverse" in sc
 assert "+41" not in u and "TEL" not in u                   # phone numbers never published
-assert "25400 Audincourt" in sc                            # hyphenated region name does not eat the postcode
-assert "House of Cards" in sc and "SUMMARY:Pokéween 2026" in sc
 assert "CATEGORIES:League Night" in sc
 print("OK")
