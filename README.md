@@ -67,3 +67,6 @@ Events more than 100 km from Basel by road (`MAX_DRIVE_KM`) are dropped after th
 
 ## Event details: navigation and cross-border notes
 Every event description ends with one-tap **Navigate** links (Google Maps, Apple Maps, Waze) built from the venue's exact coordinates when known, otherwise from its address. Events in France or Germany also get a **Cross-border** reminder: bring ID/passport, check the low-emission-zone rules (Crit'Air in France, Umweltzone in Germany) and carry EUR cash/card. No motorway vignette is needed in either country; the Swiss vignette only matters for Swiss motorways.
+
+## Custom calendar builder
+The landing page has a "Build your own calendar" form (types, maximum drive, weekends only, leave out France or Germany, leave out full events). It filters the nightly `basel.ics` in the browser and downloads the result as a snapshot `.ics`; nothing is sent anywhere. Settings live in the page address (`?types=...&km=50&weekend=1`), so a link restores them. GitHub Pages is static, so a custom *subscription* URL that keeps updating would need a small server-side function; the fixed feeds remain the live subscriptions.

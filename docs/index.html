@@ -122,10 +122,18 @@ a.title:hover { text-decoration-thickness: 2px; }
 .state { margin: 0; padding: 1.25rem 0; border-top: 1px solid var(--rule); border-bottom: 1px solid var(--rule); color: var(--muted); }
 
 /* How to subscribe */
-  flex: 1 1 18rem; min-width: 0; min-height: 3rem; padding: 0.6rem 0.9rem;
-  font: inherit; font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace; font-size: 0.9375rem;
-  color: var(--text); background: var(--surface); border: 1px solid var(--rule); border-radius: var(--r);
-}
+/* Custom calendar builder */
+.builder { max-width: 44rem; }
+.builder fieldset { margin: 0 0 1.25rem; padding: 0; border: 0; min-width: 0; }
+.builder legend { padding: 0; margin: 0 0 0.5rem; font-weight: 700; }
+.opts { display: flex; flex-wrap: wrap; gap: 0.5rem 1.25rem; }
+.opts label { display: inline-flex; align-items: center; gap: 0.5rem; min-height: 2.75rem; cursor: pointer; }
+.opts input[type=checkbox] { width: 1.25rem; height: 1.25rem; accent-color: var(--black); }
+.builder select { min-height: 2.75rem; min-width: 14rem; padding: 0.4rem 0.7rem; font: inherit; color: var(--text); background: var(--surface); border: 2px solid var(--rule); border-radius: var(--r); }
+.builder-out { display: flex; flex-wrap: wrap; align-items: center; gap: 0.75rem 1.1rem; margin-top: 0.5rem; }
+.builder .copy { min-height: 2.75rem; padding: 0.5rem 1rem; font: inherit; font-weight: 600; color: inherit; background: none; border: 2px solid currentColor; border-radius: var(--r); cursor: pointer; }
+.builder .btn:disabled { opacity: 0.5; cursor: not-allowed; }
+.builder-count { margin: 0 0 0.75rem; font-weight: 700; }
 .copied { min-height: 1.4rem; margin: 0.5rem 0 1rem; color: var(--muted); font-size: 0.9375rem; }
 .feeds { list-style: none; margin: 0 0 0.5rem; padding: 0; }
 .feed { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 0.75rem 1.5rem; padding: 1rem 0; border-top: 1px solid var(--rule); }
@@ -331,6 +339,48 @@ footer p { max-width: 40rem; margin: 0 0 0.9rem; color: var(--muted); font-size:
         </ol>
       </div>
     </details>
+  </section>
+
+  <section aria-labelledby="build-h" id="build">
+    <h2 id="build-h">Build your own calendar</h2>
+    <p class="note">Pick the events you want and download them as a .ics file. The file is a snapshot of today, so it does not update by itself. For events that appear on their own, subscribe to one of the calendars above.</p>
+    <form class="builder" id="builder" hidden>
+      <fieldset>
+        <legend>Event types</legend>
+        <div class="opts">
+          <label><input type="checkbox" name="type" value="League Challenge" checked> League Challenges</label>
+          <label><input type="checkbox" name="type" value="League Cup" checked> League Cups</label>
+          <label><input type="checkbox" name="type" value="Prerelease" checked> Prereleases</label>
+          <label><input type="checkbox" name="type" value="League Night"> League nights</label>
+        </div>
+      </fieldset>
+      <fieldset>
+        <legend>Distance from Basel by road</legend>
+        <label class="loc">Maximum drive
+          <select name="km">
+            <option value="">Any distance (up to 100 km)</option>
+            <option value="25">25 km (about 25 min)</option>
+            <option value="50">50 km (about 45 min)</option>
+            <option value="75">75 km (about 70 min)</option>
+          </select>
+        </label>
+      </fieldset>
+      <fieldset>
+        <legend>Narrow it down</legend>
+        <div class="opts">
+          <label><input type="checkbox" name="weekend"> Weekends only</label>
+          <label><input type="checkbox" name="nofr"> Leave out France</label>
+          <label><input type="checkbox" name="node"> Leave out Germany</label>
+          <label><input type="checkbox" name="nofull"> Leave out full events</label>
+        </div>
+      </fieldset>
+      <p class="builder-count" id="builder-count" role="status"></p>
+      <div class="builder-out">
+        <button class="btn small" type="button" id="builder-download">Download .ics file</button>
+        <button class="copy quiet" type="button" id="builder-link">Copy link to these settings</button>
+      </div>
+      <p class="copied" id="builder-msg" role="status"></p>
+    </form>
   </section>
 
   <section aria-labelledby="what">
@@ -544,10 +594,85 @@ footer p { max-width: 40rem; margin: 0 0 0.9rem; color: var(--muted); font-size:
     update();
   }
 
+  /* Custom calendar builder: filters the nightly feed in the browser */
+  var builder = document.getElementById('builder'), bCount = document.getElementById('builder-count');
+  var bMsg = document.getElementById('builder-msg');
+  var blocks = [], icsHead = '';
+  var wdFmt = new Intl.DateTimeFormat('en-US', { weekday: 'short', timeZone: TZ });
+  function countryOf(loc) { var m = /, (Switzerland|France|Germany)$/.exec(loc || ''); return m ? m[1] : ''; }
+  function settings() {
+    var f = builder.elements, types = [];
+    [].forEach.call(builder.querySelectorAll('input[name=type]'), function (c) { if (c.checked) types.push(c.value); });
+    return { types: types, km: +f.km.value || 0, weekend: f.weekend.checked, nofr: f.nofr.checked, node: f.node.checked, nofull: f.nofull.checked };
+  }
+  function keep(e, s) {
+    if (s.types.indexOf(e.CATEGORIES) < 0) return false;
+    var km = /^\d+$/.test(e['X-DISTANCE-KM'] || '') ? +e['X-DISTANCE-KM'] : null;
+    if (s.km && km !== null && km > s.km) return false;
+    if (s.weekend) { var d = parseDT(e.DTSTART); if (!d || !/^(Sat|Sun)$/.test(wdFmt.format(d))) return false; }
+    var c = countryOf(e.LOCATION);
+    if ((s.nofr && c === 'France') || (s.node && c === 'Germany')) return false;
+    if (s.nofull && (e['X-AVAILABILITY'] === 'full' || e['X-AVAILABILITY'] === 'waitlist')) return false;
+    return true;
+  }
+  function chosen() { var s = settings(); return blocks.filter(function (b) { return keep(b.ev, s); }); }
+  function builderUpdate() {
+    var n = chosen().length;
+    bCount.textContent = n === 1 ? '1 event matches' : n + ' events match';
+    document.getElementById('builder-download').disabled = n === 0;
+  }
+  function builderQuery() {
+    var s = settings(), p = [];
+    p.push('types=' + s.types.map(encodeURIComponent).join(','));
+    if (s.km) p.push('km=' + s.km);
+    ['weekend', 'nofr', 'node', 'nofull'].forEach(function (k) { if (s[k]) p.push(k + '=1'); });
+    return p.join('&');
+  }
+  function builderRestore() {
+    var q = new URLSearchParams(location.search), f = builder.elements;
+    if (q.has('types')) {
+      var t = q.get('types').split(',');
+      [].forEach.call(builder.querySelectorAll('input[name=type]'), function (c) { c.checked = t.indexOf(c.value) >= 0; });
+    }
+    if (['25', '50', '75'].indexOf(q.get('km')) >= 0) f.km.value = q.get('km');
+    ['weekend', 'nofr', 'node', 'nofull'].forEach(function (k) { f[k].checked = q.get(k) === '1'; });
+  }
+  function builderInit(text) {
+    var re = /BEGIN:VEVENT\r?\n[\s\S]*?END:VEVENT\r?\n/g, m;
+    icsHead = text.slice(0, text.indexOf('BEGIN:VEVENT'));
+    icsHead = icsHead.replace(/^X-WR-CALNAME:.*$/m, 'X-WR-CALNAME:Pokémon TCG Basel - Custom')
+                     .replace(/^X-WR-CALDESC:.*$/m, 'X-WR-CALDESC:Custom selection (snapshot)');
+    while ((m = re.exec(text))) blocks.push({ raw: m[0].replace(/\r?\n/g, '\r\n'), ev: parseICS(m[0])[0] });
+    if (!blocks.length) return;
+    builderRestore();
+    builder.hidden = false;
+    builderUpdate();
+  }
+  builder.addEventListener('change', function () {
+    builderUpdate(); bMsg.textContent = '';
+    try { history.replaceState(null, '', '?' + builderQuery() + '#build'); } catch (x) { /* ignore */ }
+  });
+  document.getElementById('builder-download').addEventListener('click', function () {
+    var body = icsHead.replace(/\r?\n/g, '\r\n') + chosen().map(function (b) { return b.raw; }).join('') + 'END:VCALENDAR\r\n';
+    var url = URL.createObjectURL(new Blob([body], { type: 'text/calendar;charset=utf-8' }));
+    var a = document.createElement('a');
+    a.href = url; a.download = 'tcg-basel-custom.ics';
+    document.body.appendChild(a); a.click(); a.remove();
+    setTimeout(function () { URL.revokeObjectURL(url); }, 1000);
+    bMsg.textContent = 'Downloaded. Open the file to add these events to your calendar.';
+  });
+  document.getElementById('builder-link').addEventListener('click', function () {
+    var link = location.origin + location.pathname + '?' + builderQuery() + '#build';
+    function fallback() { window.prompt('Copy this link:', link); }
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(link).then(function () { bMsg.textContent = 'Copied the link to these settings.'; }, fallback);
+    } else { fallback(); }
+  });
+
   if (served) {
     fetch(feedUrl, { cache: 'no-cache' })
       .then(function (r) { if (!r.ok) throw new Error(r.status); return r.text(); })
-      .then(function (t) { render(parseICS(t)); })
+      .then(function (t) { render(parseICS(t)); builderInit(t); })
       .catch(function () {
         state.textContent = 'The event list could not be loaded. The calendar itself still works: use the subscribe button above.';
       });
