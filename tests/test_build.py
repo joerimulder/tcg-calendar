@@ -54,6 +54,18 @@ mul = [v for k, v in dist.items() if "Mulhouse" in k]
 assert mul and all(v and 35 <= int(v.split(":")[1]) <= 45 for v in mul), mul   # about 39 km by road
 assert "X-DISTANCE-KM:" in cats("with_locator-leagues.ics")  # exact coordinates from the locator
 
+# cross-border notes and navigation links
+u1 = t.replace("\r\n ", "")
+assert u1.count("Navigate:") == u1.count("BEGIN:VEVENT")
+assert "google.com/maps/dir/?api=1&destination=" in u1 and "maps.apple.com/?daddr=" in u1 and "waze.com/ul?" in u1
+assert "Cross-border (France)" in u1                       # Mulhouse event
+assert "Cross-border (Germany)" in cats("with_locator-leagues.ics")   # Rheinfelden (Baden)
+for ev in u1.split("BEGIN:VEVENT")[1:]:
+    if "Cross-border" in ev:
+        assert ", France" in ev or ", Germany" in ev
+    else:
+        assert ", Switzerland" in ev or "LOCATION" not in ev
+
 # 3) league nights read off the locator's result list
 t = build("scraped.ics", "--scraped", str(root / "tests/sample_scraped.json"),
           "--manual", str(root / "data/manual_events.json"))   # real config: league nights in Basel only

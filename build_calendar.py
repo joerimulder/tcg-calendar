@@ -17,6 +17,7 @@ import re
 import sys
 import time
 import urllib.error
+import urllib.parse
 import urllib.request
 from datetime import datetime, timedelta, timezone
 from pathlib import Path
@@ -353,6 +354,28 @@ def load_scraped(path: str, overrides: dict) -> list[dict]:
     return out
 
 
+def nav_links(e: dict) -> str:
+    """Google Maps, Apple Maps and Waze links to the venue (exact coordinates when known)."""
+    if e.get("geo"):
+        q = f"{e['geo'][0]:.6f},{e['geo'][1]:.6f}"
+        waze = f"https://waze.com/ul?ll={q}&navigate=yes"
+    elif e.get("location"):
+        q = urllib.parse.quote(e["location"], safe="")
+        waze = f"https://waze.com/ul?q={q}&navigate=yes"
+    else:
+        return ""
+    return ("Navigate:\n"
+            f"Google Maps: https://www.google.com/maps/dir/?api=1&destination={q}\n"
+            f"Apple Maps: https://maps.apple.com/?daddr={q}\n"
+            f"Waze: {waze}")
+
+
+CROSS_BORDER = {
+    "France": "Cross-border (France): bring ID/passport, check Crit'Air rules in French cities, "
+              "EUR cash/card (not CHF).",
+    "Germany": "Cross-border (Germany): bring ID/passport, check the Umweltzone sticker rules in "
+               "German cities, EUR cash/card (not CHF).",
+}
 STATUS_LABEL = {"full": "FULL", "waitlist": "WAITING LIST"}
 
 
@@ -554,6 +577,13 @@ def main() -> int:
         else:
             continue
         e["dist_km"] = lookup_drive_km(key, xy, drive_cache, online=not a.offline)
+    for e in events:                                       # note for trips abroad
+        for country, note in CROSS_BORDER.items():
+            if (e["location"] or "").rstrip().endswith(", " + country) and note not in e["description"]:
+                e["description"] += "\n" + note
+        links = nav_links(e)                               # one-tap navigation
+        if links and "Navigate:" not in e["description"]:
+            e["description"] += "\n" + links
     far = [e for e in events if e.get("dist_km") is not None and e["dist_km"] > MAX_DRIVE_KM]
     if far:
         print(f"Dropped {len(far)} events more than {MAX_DRIVE_KM:.0f} km away by road.")

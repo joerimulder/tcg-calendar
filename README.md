@@ -64,3 +64,6 @@ League nights are limited to the cities in `league_night_cities` in `data/manual
 The official locator publishes the entry fee and registration window but no player counts or capacity, so "full" and "waiting list" are entered by hand in `data/event_info.json`, keyed by event id (the number at the end of the event's locator URL, e.g. `26-11-004624`). A flagged event gets a `[Full]` or `[Waiting list]` prefix in the calendar, an Availability line in the description, and a tag on the website. Add `updated` so people can see how fresh the status is.
 
 Events more than 100 km from Basel by road (`MAX_DRIVE_KM`) are dropped after the driving distance is looked up. Events whose distance could not be looked up are kept.
+
+## Event details: navigation and cross-border notes
+Every event description ends with one-tap **Navigate** links (Google Maps, Apple Maps, Waze) built from the venue's exact coordinates when known, otherwise from its address. Events in France or Germany also get a **Cross-border** reminder: bring ID/passport, check the low-emission-zone rules (Crit'Air in France, Umweltzone in Germany) and carry EUR cash/card. No motorway vignette is needed in either country; the Swiss vignette only matters for Swiss motorways.
