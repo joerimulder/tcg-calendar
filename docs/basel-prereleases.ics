@@ -4,8 +4,7 @@ PRODID:-//TCGCalendar//Basel//EN
 CALSCALE:GREGORIAN
 METHOD:PUBLISH
 X-WR-CALNAME:Pokémon TCG Basel - Prereleases
-X-WR-CALDESC:Pokémon TCG League Cups\, Challenges and Prereleases around B
- asel (CH/FR/DE).
+X-WR-CALDESC:Prereleases within 100 km of Basel by road.
 X-WR-TIMEZONE:Europe/Zurich
 REFRESH-INTERVAL;VALUE=DURATION:PT6H
 X-PUBLISHED-TTL:PT6H
