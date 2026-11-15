@@ -10,6 +10,7 @@ Standard library only (Python 3.9+).
 from __future__ import annotations
 
 import argparse
+import hashlib
 import json
 import os
 import re
@@ -83,7 +84,7 @@ def to_utc(value: str, params: dict) -> datetime:
 def smart_title(s: str) -> str:
     out = s.title()
     out = re.sub(r"(?<=\d)([A-Z])\b", lambda m: m.group(1).upper(), out)  # 55e -> 55E
-    out = re.sub(r"\b(Du|De|La|Le|Les|Des)\b",
+    out = re.sub(r"\b(Du|De|La|Le|Les|Des|Of|Et)\b",
                  lambda m: m.group(1).lower() if m.start() else m.group(1), out)
     out = re.sub(r"\b(Tcg|Ptcg|Ch|Fr|De)\b", lambda m: m.group(1).upper() if m.group(1) != "De" else "de", out)
     return out.replace("Gmbh", "GmbH")
@@ -108,7 +109,7 @@ def clean_location(raw: str, venue: str) -> str:
     for p in parts[1:]:
         if p.upper() in COUNTRY_TOKENS:
             continue
-        if m := re.fullmatch(r"(?:[A-Z][A-Z ]*\s)?(\d{4,5})", p):   # 'BS 4058' / 'GRAND EST 68100' / '4058'
+        if m := re.fullmatch(r"(?:[A-ZÀ-ÝŒ][A-ZÀ-ÝŒ \-]*\s)?(\d{4,5})", p):   # 'BS 4058' / 'GRAND EST 68100' / '4058'
             zip_ = m.group(1)
         elif m := re.fullmatch(r"(\d{4,5})\s+(.+)", p):               # '68100 MULHOUSE'
             zip_, city = m.group(1), m.group(2)
@@ -314,6 +315,43 @@ def load_locator(path: str, overrides: dict) -> list[dict]:
     return out
 
 
+def load_scraped(path: str, overrides: dict) -> list[dict]:
+    """League nights read off the official locator's result list (see README).
+    Times are the venue's local time as the locator shows them."""
+    if not path or not Path(path).exists():
+        return []
+    try:
+        data = json.loads(Path(path).read_text(encoding="utf-8"))
+    except Exception as exc:
+        print(f"Scraped file unreadable, ignoring it: {exc}", file=sys.stderr)
+        return []
+    out = []
+    for v in data.get("venues", []):
+        try:
+            raw_addr = re.sub(r"\s*TEL\.?\s*\+?[\d\s]+", "", v["address"])
+            venue_raw = (v.get("venue") or v["name"]).strip()
+            venue = overrides.get(venue_raw, smart_title(venue_raw))
+            location = clean_location(raw_addr, venue)
+            cc = next((COUNTRY_NAMES[t] for t in (x.strip().upper() for x in raw_addr.split(","))
+                       if t in COUNTRY_NAMES), None) or next(
+                (t for t in (x.strip().upper() for x in raw_addr.split(",")) if t in COUNTRIES), "CH")
+            tz = ZoneInfo(COUNTRY_TZ.get(cc, HOME_TZ))
+            same = v["name"].strip() == venue_raw
+            title = f"League night @ {venue}" if same else v["name"].strip()
+            for st in v["starts"]:
+                start = datetime.fromisoformat(st).replace(tzinfo=tz).astimezone(timezone.utc)
+                key = hashlib.sha1(f"{venue_raw}|{raw_addr}|{st}|{title}".encode()).hexdigest()[:16]
+                out.append({
+                    "uid": f"ln-{key}@{UID_DOMAIN}", "start": start, "end": start + timedelta(hours=3),
+                    "summary": title,
+                    "description": f"League Night @ {venue}\nSource: Play! Pokémon Event Locator (snapshot {data.get('scraped', '')})",
+                    "location": location, "url": "", "category": "League Night",
+                })
+        except Exception as exc:
+            print(f"Skipping malformed scraped venue: {exc}", file=sys.stderr)
+    return out
+
+
 def load_manual(path: Path) -> list[dict]:
     if not path.exists():
         return []
@@ -401,6 +439,8 @@ def main() -> int:
     ap.add_argument("--drivecache", default="data/driving_km.json",
                     help="cache of driving distances from Basel (km)")
     ap.add_argument("--offline", action="store_true", help="never call the geocoding API (tests)")
+    ap.add_argument("--scraped", default=os.environ.get("SCRAPED_JSON", "data/scraped_league_nights.json"),
+                    help="league nights read off the official locator; empty string disables")
     ap.add_argument("--out", default="docs/basel.ics")
     a = ap.parse_args()
 
@@ -424,6 +464,10 @@ def main() -> int:
         except Exception as exc:
             print(f"Skipping malformed event: {exc}", file=sys.stderr)
     n_feed = len(merged)
+    scraped = load_scraped(a.scraped, overrides)
+    for n in scraped:
+        merged[n["uid"]] = n
+    print(f"Scraped league nights: {len(scraped)}.")
     located = load_locator(a.locator_json, overrides)
     for n in located:                             # official locator data wins over the mirror
         merged[n["uid"]] = n

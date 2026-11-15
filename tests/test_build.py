@@ -8,7 +8,7 @@ def build(name, *extra):
     out = tmp / name
     subprocess.run([sys.executable, str(root / "build_calendar.py"), "--feed-file", str(root / "tests/sample_feed.ics"),
                     "--manual", str(root / "data/manual_events.json"), "--out", str(out),
-                    "--geocache", str(root / "data/geocodes.json"), "--drivecache", str(root / "tests/driving_km.json"), "--offline", *extra], check=True)
+                    "--geocache", str(root / "data/geocodes.json"), "--drivecache", str(root / "tests/driving_km.json"), "--offline", "--scraped", "", *extra], check=True)
     return out.read_bytes().decode("utf-8")
 
 
@@ -52,4 +52,17 @@ for ev in (tmp / "basel.ics").read_bytes().decode().replace("\r\n ", "").split("
 mul = [v for k, v in dist.items() if "Mulhouse" in k]
 assert mul and all(v and 35 <= int(v.split(":")[1]) <= 45 for v in mul), mul   # about 39 km by road
 assert "X-DISTANCE-KM:" in cats("with_locator-leagues.ics")  # exact coordinates from the locator
+
+# 3) league nights read off the locator's result list
+t = build("scraped.ics", "--scraped", str(root / "tests/sample_scraped.json"))
+u = t.replace("\r\n ", "")
+sc = (tmp / "scraped-leagues.ics").read_bytes().decode().replace("\r\n ", "")
+assert sc.count("BEGIN:VEVENT") == 5
+assert "DTSTART:20261116T170000Z" in sc                    # 18:00 Basel time
+assert "DTSTART:20261117T130000Z" in sc                    # 14:00 Paris time
+assert "SUMMARY:League night @ Animeverse" in sc
+assert "+41" not in u and "TEL" not in u                   # phone numbers never published
+assert "25400 Audincourt" in sc                            # hyphenated region name does not eat the postcode
+assert "House of Cards" in sc and "SUMMARY:Pokéween 2026" in sc
+assert "CATEGORIES:League Night" in sc
 print("OK")

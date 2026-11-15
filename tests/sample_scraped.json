@@ -1,0 +1,35 @@
+{
+ "scraped": "2026-11-15",
+ "venues": [
+  {
+   "name": "ANIMEVERSE",
+   "address": "ROSENTALSTRASSE 26, 4058 BASEL, SWITZERLAND",
+   "starts": [
+    "2026-11-16T18:00",
+    "2026-11-23T18:00"
+   ]
+  },
+  {
+   "name": "ZADOYS HOBBY & CARD STORE",
+   "address": "55E IM SURINAM TEL. +41786598233, BASEL, BS 4058, CH",
+   "starts": [
+    "2026-11-18T18:30"
+   ]
+  },
+  {
+   "name": "TOKYOZYMA POKÉ",
+   "address": "79 GRANDE RUE, AUDINCOURT, BOURGOGNE-FRANCHE-COMTÉ 25400, FR",
+   "starts": [
+    "2026-11-17T14:00"
+   ]
+  },
+  {
+   "name": "Pokéween 2026",
+   "venue": "HOUSE OF CARDS",
+   "address": "13 LANDHAUSWEG, BERN, BE 3007, CH",
+   "starts": [
+    "2026-11-28T13:30"
+   ]
+  }
+ ]
+}

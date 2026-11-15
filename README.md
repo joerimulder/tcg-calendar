@@ -46,3 +46,6 @@ exists (or `--locator-json PATH` / `LOCATOR_JSON`); without the file nothing cha
 
 ## Distances
 Each event carries a custom `X-DISTANCE-KM` field (driving distance from Basel). The build looks up the postcode centre (zippopotam.us) and the driving route (OSRM demo server), and caches both in `data/geocodes.json` and `data/driving_km.json`, so each place is only looked up once. If a lookup fails the event simply has no distance until the next night.
+
+## League nights from the official locator
+`data/scraped_league_nights.json` holds the league nights read off the official Event Locator's result list (search Basel, 100 km). The locator blocks automated access from servers (it shows a CAPTCHA), so the file is refreshed by hand from a normal browser, now and then. Times are the venue's local time as shown on the page; phone numbers are not kept. Replace the file to refresh it; set `--scraped ""` to ignore it.
