@@ -54,3 +54,5 @@ League nights are limited to the cities in `league_night_cities` in `data/manual
 
 ## Fees, registration and Full / Waiting list
 The official locator publishes the entry fee and registration window but no player counts or capacity, so "full" and "waiting list" are entered by hand in `data/event_info.json`, keyed by event id (the number at the end of the event's locator URL, e.g. `26-11-004624`). A flagged event gets a `[Full]` or `[Waiting list]` prefix in the calendar, an Availability line in the description, and a tag on the website. Add `updated` so people can see how fresh the status is.
+
+Events more than 100 km from Basel by road (`MAX_DRIVE_KM`) are dropped after the driving distance is looked up. Events whose distance could not be looked up are kept.

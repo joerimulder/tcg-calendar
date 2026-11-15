@@ -68,4 +68,13 @@ u1 = (tmp / "basel.ics").read_bytes().decode().replace("\r\n ", "")
 assert "SUMMARY:[Full] Défi de Ligue Novembre @Geek Factory" in u1 and "X-AVAILABILITY:full" in u1
 assert "Entry fee: CHF 5" in u1 and "Availability: FULL (as of 2026-11-15)" in u1
 assert "SUMMARY:[Waiting List] TCG Liga Murten Challenge November" in u1 and "X-AVAILABILITY:waitlist" in u1
+# 4) driving-distance cutoff
+import json as _json, subprocess as _sp
+dc = _json.loads((root / "tests/driving_km.json").read_text()); dc["CH-4632"] = 150.0   # pretend Trimbach is 150 km away by road
+(tmp / "far.json").write_text(_json.dumps(dc))
+_sp.run([sys.executable, str(root / "build_calendar.py"), "--feed-file", str(root / "tests/sample_feed.ics"),
+         "--manual", str(root / "tests/manual_events.json"), "--out", str(tmp / "far.ics"), "--geocache", str(root / "data/geocodes.json"),
+         "--drivecache", str(tmp / "far.json"), "--offline", "--scraped", "", "--locator-json", ""], check=True)
+far = (tmp / "far.ics").read_bytes().decode()
+assert far.count("BEGIN:VEVENT") == 5 and "Trimbach" not in far   # the far event is dropped, the rest stay
 print("OK")

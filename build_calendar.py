@@ -36,7 +36,8 @@ COUNTRY_TOKENS = {"SWITZERLAND", "FRANCE", "GERMANY", "CH", "FR", "DE", "SCHWEIZ
 COUNTRY_NAMES = {"SWITZERLAND": "CH", "SCHWEIZ": "CH", "FRANCE": "FR", "GERMANY": "DE", "DEUTSCHLAND": "DE"}
 COUNTRY_TZ = {"CH": "Europe/Zurich", "FR": "Europe/Paris", "DE": "Europe/Berlin"}
 BASEL = (47.5596, 7.5886)
-RADIUS_KM = float(os.environ.get("RADIUS_KM", "100"))   # applied to locator data only
+RADIUS_KM = float(os.environ.get("RADIUS_KM", "100"))
+MAX_DRIVE_KM = float(os.environ.get("MAX_DRIVE_KM", "100"))   # driving distance from Basel; events beyond it are dropped   # applied to locator data only
 
 
 # ---------------------------------------------------------------- parsing
@@ -547,6 +548,10 @@ def main() -> int:
         else:
             continue
         e["dist_km"] = lookup_drive_km(key, xy, drive_cache, online=not a.offline)
+    far = [e for e in events if e.get("dist_km") is not None and e["dist_km"] > MAX_DRIVE_KM]
+    if far:
+        print(f"Dropped {len(far)} events more than {MAX_DRIVE_KM:.0f} km away by road.")
+        events = [e for e in events if e not in far]
     save_cache(a.geocache, geo_cache, geo_before)
     save_cache(a.drivecache, drive_cache, drive_before)
     stamp = datetime.now(timezone.utc).strftime("%Y%m%dT%H%M%SZ")
