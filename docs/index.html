@@ -51,7 +51,10 @@ a { color: inherit; }
 :focus-visible { outline: 3px solid var(--flag); outline-offset: 3px; }
 
 /* Poster band */
-.poster { background: var(--yellow); color: var(--black); border-bottom: 0.5rem solid var(--black); }
+.poster { position: relative; overflow: hidden; background: var(--yellow); color: var(--black); border-bottom: 0.5rem solid var(--black); }
+.poster .wrap { position: relative; }
+.poster { --sky: clamp(120px, 20vw, 250px); }
+.skyline { position: absolute; left: 0; bottom: 0; width: 100%; height: var(--sky); pointer-events: none; }
 .poster a:focus-visible, .poster button:focus-visible { outline-color: var(--black); }
 .brand { padding: 1.25rem 0 0; font-weight: 800; font-size: 1.125rem; letter-spacing: -0.02em; }
 .poster h1 {
@@ -78,7 +81,7 @@ a { color: inherit; }
 }
 .btn:hover { background: #222; }
 .quiet { font-weight: 600; color: var(--black); text-decoration-thickness: 2px; text-underline-offset: 0.25em; }
-.fine { margin: 1.25rem 0 0; padding-bottom: 2.5rem; font-size: 0.9375rem; }
+.fine { margin: 1.25rem 0 0; padding-bottom: calc(var(--sky) + 0.75rem); font-size: 0.9375rem; }
 
 /* Sections */
 section { padding: 3rem 0 0.5rem; }
@@ -154,6 +157,48 @@ footer p { max-width: 40rem; margin: 0 0 0.9rem; color: var(--muted); font-size:
 <body>
 
 <header class="poster">
+  <svg class="skyline" viewBox="0 0 1200 240" preserveAspectRatio="xMaxYMax slice" aria-hidden="true" focusable="false">
+    <!-- Jura hills -->
+    <path d="M0 150 C120 118 240 138 380 122 S600 110 760 128 S1040 112 1200 126 V210 H0Z" fill="#F7C934"/>
+    <!-- Kleinbasel riverfront -->
+    <g fill="#E9B424">
+      <path d="M0 200V132l26-22 26 22v68zM58 200v-58h34v58zM92 200v-70l24-20 24 20v70zM146 200v-52h30v52zM182 200v-84l28-24 28 24v84zM244 200v-60h26v60z"/>
+      <path d="M0 200V170h300v30z"/>
+    </g>
+    <!-- Mittlere Brucke -->
+    <g fill="#E9B424">
+      <path d="M270 188h300v10H270z"/>
+      <path d="M290 198a22 22 0 0 1 44 0zM346 198a22 22 0 0 1 44 0zM402 198a22 22 0 0 1 44 0zM458 198a22 22 0 0 1 44 0zM514 198a22 22 0 0 1 44 0z" fill="#D9A518"/>
+      <path d="M262 188v-24h10v24zM562 188v-24h10v24z"/>
+    </g>
+    <!-- Grossbasel hill and old town -->
+    <g fill="#E9B424">
+      <path d="M570 200V168l30-6 20-14 40-4 30-18 80-8 70-4 80 6 70 14 40 14 70 4V200z"/>
+      <path d="M590 168v-34l16-14 16 14v34zM630 156v-44l20-18 20 18v44zM676 150v-36h26v36zM706 146V96l14-16 14 16v50zM934 142v-34l18-16 18 16v34zM982 146v-46l16-14 16 14v46z"/>
+    </g>
+    <!-- Rathaus -->
+    <g fill="#B5362F">
+      <path d="M620 168v-34h70v34z"/>
+      <path d="M626 134h8v-6h8v6h8v-6h8v6h8v-6h8v6h8v-6h8v6h6v-4h-70z"/>
+      <path d="M648 134v-40l12-14 12 14v40z"/>
+    </g>
+    <!-- Munster -->
+    <g fill="#B5362F">
+      <path d="M770 170v-52l55-34 55 34v52z"/>
+      <path d="M770 118h110v6H770z" fill="#9C2B25"/>
+      <path d="M766 170v-96h26v96zM848 170v-100h26v100z"/>
+      <path d="M764 76l15-64 15 64zM846 72l17-68 17 68z"/>
+      <path d="M772 74h18v6h-18zM850 70h22v6h-22z" fill="#9C2B25"/>
+    </g>
+    <!-- Roche Tower -->
+    <g fill="#E9B424">
+      <path d="M1040 200v-62h92v62zM1050 138v-42h72v42zM1060 96v-34h52v34zM1070 62V30h32v32z"/>
+    </g>
+    <!-- Rhine -->
+    <path d="M0 198h1200v42H0z" fill="#D9A518"/>
+    <path d="M0 212q30-8 60 0t60 0 60 0 60 0 60 0 60 0 60 0 60 0 60 0 60 0 60 0 60 0 60 0 60 0 60 0 60 0 60 0 60 0 60 0 60 0" fill="none" stroke="#F7C934" stroke-width="3" stroke-linecap="round"/>
+    <path d="M30 228q30-8 60 0t60 0 60 0 60 0 60 0 60 0 60 0 60 0 60 0 60 0 60 0 60 0 60 0 60 0 60 0 60 0 60 0 60 0 60 0 60 0" fill="none" stroke="#F7C934" stroke-width="3" stroke-linecap="round"/>
+  </svg>
   <div class="wrap">
     <div class="brand">TCGCalendar</div>
     <h1>Pokémon TCG events around Basel, in your calendar</h1>
