@@ -11,6 +11,7 @@
 <meta property="og:description" content="Subscribe once and every Pokémon TCG League Cup, Challenge, Prerelease and Basel league night shows up in your calendar.">
 <meta property="og:url" content="https://tcgcalendar.ch/">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%23D72E0C'/%3E%3Cpath d='M7 10h18M16 10v15' stroke='%23fff' stroke-width='4.5' fill='none'/%3E%3C/svg%3E">
+<script>try{var th=localStorage.getItem("tcgcalendar-theme");if(th==="light"||th==="dark")document.documentElement.setAttribute("data-theme",th)}catch(e){}</script>
 <style>
 :root {
   --red: #D72E0C;        /* ball red: accent only (seam, button, tags, focus) */
@@ -20,8 +21,9 @@
   --sk-hill: #1D2127; --sk-bldg: #282D34; --sk-river: #333A43; --sk-land: #D72E0C; --sk-land2: #A42208; --sk-wave: #4B535D;
   --paper: #fff;
   --text: #1c1c1c;
-  --muted: #5C6670;      /* slate gray */
+  --muted: #4F5862;      /* slate gray */
   --rule: #D8DBDF;
+  --line: #868D96;       /* borders of controls, 3:1 on the page */
   --surface: #F3F4F5;
   --flag: #D72E0C;
   --r: 0.375rem;
@@ -29,16 +31,29 @@
   color-scheme: light dark;
 }
 @media (prefers-color-scheme: dark) {
-  :root {
+  :root:not([data-theme=light]) {
     --paper: #16181c;
     --text: #f1f1f1;
-    --muted: #a9aeb6;
+    --muted: #b4b9c1;
     --rule: #33363c;
+    --line: #7C838D;
     --surface: #202328;
     --flag: #ff7a5c;
     --ink-bg: #f1f1f1; --ink-fg: #111;
   }
 }
+:root[data-theme=dark] {
+  --paper: #16181c;
+  --text: #f1f1f1;
+  --muted: #b4b9c1;
+  --rule: #33363c;
+  --line: #7C838D;
+  --surface: #202328;
+  --flag: #ff7a5c;
+  --ink-bg: #f1f1f1; --ink-fg: #111;
+  color-scheme: dark;
+}
+:root[data-theme=light] { color-scheme: light; }
 * { box-sizing: border-box; }
 [hidden] { display: none !important; }
 html { -webkit-text-size-adjust: 100%; }
@@ -62,8 +77,17 @@ a { color: inherit; }
 .skyline { position: absolute; left: 0; bottom: 0; width: 100%; height: var(--sky); pointer-events: none; }
 .poster a:focus-visible, .poster button:focus-visible { outline-color: #fff; }
 .brand-row { display: flex; align-items: flex-end; justify-content: space-between; gap: 1rem; }
-.langs { display: flex; gap: 0.25rem; padding-top: 0.75rem; }
+.hdr-tools { display: flex; align-items: center; gap: 0.25rem; padding-top: 0.75rem; }
+.langs { display: flex; gap: 0.25rem; }
 .lang { display: inline-flex; align-items: center; justify-content: center; min-width: 2.75rem; min-height: 2.75rem; padding: 0.25rem 0.4rem; background: none; border: 2px solid transparent; border-radius: var(--r); cursor: pointer; }
+.theme { display: inline-flex; align-items: center; justify-content: center; min-width: 2.75rem; min-height: 2.75rem; padding: 0.25rem; margin-left: 0.25rem; color: #fff; background: none; border: 2px solid transparent; border-radius: var(--r); cursor: pointer; }
+.theme:hover { border-color: rgba(255,255,255,0.5); }
+.poster .theme:focus-visible { outline-color: #fff; }
+.theme svg { display: block; width: 22px; height: 22px; }
+.theme .sun { display: none; }
+@media (prefers-color-scheme: dark) { :root:not([data-theme=light]) .theme .sun { display: block; } :root:not([data-theme=light]) .theme .moon { display: none; } }
+:root[data-theme=dark] .theme .sun { display: block; }
+:root[data-theme=dark] .theme .moon { display: none; }
 .lang svg { display: block; box-shadow: 0 0 0 1px rgba(0,0,0,0.25); }
 .lang[aria-pressed=true] { border-color: #fff; }
 .poster .lang:focus-visible { outline-color: #fff; }
@@ -128,11 +152,12 @@ a.title:hover { text-decoration-thickness: 2px; }
 .place { display: block; color: var(--muted); font-size: 0.9375rem; }
 .filters { display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 0.75rem 1.5rem; margin: 0 0 1.25rem; }
 .chips { display: flex; flex-wrap: wrap; gap: 0.5rem; }
-.chip { min-height: 2.75rem; padding: 0.4rem 0.95rem; font: inherit; font-weight: 600; color: inherit; background: none; border: 2px solid var(--rule); border-radius: 999px; cursor: pointer; }
+.chip { min-height: 2.75rem; padding: 0.4rem 0.95rem; font: inherit; font-weight: 600; color: inherit; background: none; border: 2px solid var(--line); border-radius: 999px; cursor: pointer; }
 .chip[aria-pressed=true] { color: var(--ink-fg); background: var(--ink-bg); border-color: var(--ink-bg); }
-.chip .n { font-weight: 500; opacity: 0.7; margin-left: 0.3rem; }
+.chip .n { font-weight: 500; color: var(--muted); margin-left: 0.3rem; }
+.chip[aria-pressed=true] .n { color: inherit; }
 .loc { display: flex; flex-direction: column; gap: 0.25rem; font-size: 0.9375rem; color: var(--muted); }
-.loc select { min-height: 2.75rem; min-width: 12rem; padding: 0.4rem 0.7rem; font: inherit; color: var(--text); background: var(--surface); border: 2px solid var(--rule); border-radius: var(--r); }
+.loc select { min-height: 2.75rem; min-width: 12rem; padding: 0.4rem 0.7rem; font: inherit; color: var(--text); background: var(--surface); border: 2px solid var(--line); border-radius: var(--r); }
 .more { margin-top: 1.25rem; font: inherit; font-weight: 600; color: inherit; background: none; border: 2px solid currentColor; border-radius: var(--r); padding: 0.6rem 1.1rem; min-height: 2.75rem; cursor: pointer; }
 .state { margin: 0; padding: 1.25rem 0; border-top: 1px solid var(--rule); border-bottom: 1px solid var(--rule); color: var(--muted); }
 
@@ -144,7 +169,7 @@ a.title:hover { text-decoration-thickness: 2px; }
 .opts { display: flex; flex-wrap: wrap; gap: 0.5rem 1.25rem; }
 .opts label { display: inline-flex; align-items: center; gap: 0.5rem; min-height: 2.75rem; cursor: pointer; }
 .opts input[type=checkbox] { width: 1.25rem; height: 1.25rem; accent-color: var(--red); }
-.builder select { min-height: 2.75rem; min-width: 14rem; padding: 0.4rem 0.7rem; font: inherit; color: var(--text); background: var(--surface); border: 2px solid var(--rule); border-radius: var(--r); }
+.builder select { min-height: 2.75rem; min-width: 14rem; padding: 0.4rem 0.7rem; font: inherit; color: var(--text); background: var(--surface); border: 2px solid var(--line); border-radius: var(--r); }
 .builder-out { display: flex; flex-wrap: wrap; align-items: center; gap: 0.75rem 1.1rem; margin-top: 0.5rem; }
 .builder .copy { min-height: 2.75rem; padding: 0.5rem 1rem; font: inherit; font-weight: 600; color: inherit; background: none; border: 2px solid currentColor; border-radius: var(--r); cursor: pointer; }
 .builder .btn:disabled { opacity: 0.5; cursor: not-allowed; }
@@ -229,9 +254,12 @@ footer p { max-width: 40rem; margin: 0 0 0.9rem; color: var(--muted); font-size:
   <div class="wrap">
     <div class="brand-row">
       <div class="brand">TCGCalendar</div>
+      <div class="hdr-tools">
       <div class="langs" role="group" aria-label="Language">
         <button class="lang" type="button" data-lang="de" lang="de" aria-label="Deutsch" title="Deutsch"><svg viewBox="0 0 5 3" width="30" height="18" aria-hidden="true" focusable="false"><rect width="5" height="3" fill="#000"/><rect y="1" width="5" height="2" fill="#DD0000"/><rect y="2" width="5" height="1" fill="#FFCE00"/></svg></button>
         <button class="lang" type="button" data-lang="en" lang="en" aria-label="English" title="English"><svg viewBox="0 0 60 30" width="36" height="18" aria-hidden="true" focusable="false"><clipPath id="uk-s"><path d="M0,0 v30 h60 v-30 z"/></clipPath><clipPath id="uk-t"><path d="M30,15 h30 v15 z v15 h-30 z h-30 v-15 z v-15 h30 z"/></clipPath><g clip-path="url(#uk-s)"><path d="M0,0 v30 h60 v-30 z" fill="#012169"/><path d="M0,0 L60,30 M60,0 L0,30" stroke="#fff" stroke-width="6"/><path d="M0,0 L60,30 M60,0 L0,30" clip-path="url(#uk-t)" stroke="#C8102E" stroke-width="4"/><path d="M30,0 v30 M0,15 h60" stroke="#fff" stroke-width="10"/><path d="M30,0 v30 M0,15 h60" stroke="#C8102E" stroke-width="6"/></g></svg></button>
+      </div>
+      <button class="theme" type="button" id="theme-toggle" aria-label="Switch to dark mode" title="Switch to dark mode"><svg class="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="4.5"/><path d="M12 2v2.5M12 19.5V22M2 12h2.5M19.5 12H22M4.9 4.9l1.8 1.8M17.3 17.3l1.8 1.8M4.9 19.1l1.8-1.8M17.3 6.7l1.8-1.8"/></svg><svg class="moon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false"><path d="M20.5 14.6A8.5 8.5 0 0 1 9.4 3.5a8.5 8.5 0 1 0 11.1 11.1z"/></svg></button>
       </div>
     </div>
     <h1 data-de="Pokémon-TCG-Termine rund um Basel, direkt in deinem Kalender">Pokémon TCG events around Basel, in your calendar</h1>
@@ -461,6 +489,7 @@ footer p { max-width: 40rem; margin: 0 0 0.9rem; color: var(--muted); font-size:
     title: ['TCGCalendar: Pokémon TCG events around Basel in your calendar', 'TCGCalendar: Pokémon-TCG-Termine rund um Basel in deinem Kalender'],
     desc: ['League Cups, League Challenges and Prereleases within 100 km of Basel by road, as a calendar you subscribe to once. Updated every night.', 'League Cups, League Challenges und Prereleases im Umkreis von 100 km um Basel, als Kalender, den du einmal abonnierst. Jede Nacht aktualisiert.'],
     googleBtn: ['Add to Google Calendar', 'Zu Google Kalender hinzufügen'],
+    toDark: ['Switch to dark mode', 'Zum dunklen Modus wechseln'], toLight: ['Switch to light mode', 'Zum hellen Modus wechseln'],
     openApp: ['Open in a calendar app', 'In Kalender-App öffnen'], otherApp: ['Other calendar app', 'Andere Kalender-App']
   };
   var LANG = 'de';
@@ -793,6 +822,25 @@ footer p { max-width: 40rem; margin: 0 0 0.9rem; color: var(--muted); font-size:
     } else { fallback(); }
   });
 
+  var rootEl = document.documentElement;
+  function isDark() {
+    var d = rootEl.getAttribute('data-theme');
+    return d ? d === 'dark' : !!(window.matchMedia && matchMedia('(prefers-color-scheme: dark)').matches);
+  }
+  function setThemeLabel() {
+    var b = document.getElementById('theme-toggle'), txt = tx(isDark() ? 'toLight' : 'toDark');
+    b.setAttribute('aria-label', txt); b.setAttribute('title', txt);
+  }
+  document.getElementById('theme-toggle').addEventListener('click', function () {
+    var next = isDark() ? 'light' : 'dark';
+    rootEl.setAttribute('data-theme', next);
+    try { localStorage.setItem('tcgcalendar-theme', next); } catch (x) { /* storage can be blocked */ }
+    setThemeLabel();
+  });
+  if (window.matchMedia) {
+    var mq = matchMedia('(prefers-color-scheme: dark)');
+    if (mq.addEventListener) mq.addEventListener('change', setThemeLabel);
+  }
   function applyLang() {
     [].forEach.call(document.querySelectorAll('[data-de]'), function (n) {
       if (!('en' in n.dataset)) n.dataset.en = n.innerHTML;
@@ -804,6 +852,7 @@ footer p { max-width: 40rem; margin: 0 0 0.9rem; color: var(--muted); font-size:
     if (md) md.setAttribute('content', tx('desc'));
     chips.setAttribute('aria-label', tx('eventType'));
     document.querySelector('.langs').setAttribute('aria-label', tx('language'));
+    setThemeLabel();
     [].forEach.call(document.querySelectorAll('.lang'), function (b) {
       b.setAttribute('aria-pressed', String(b.getAttribute('data-lang') === LANG));
     });

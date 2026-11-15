@@ -76,3 +76,6 @@ The landing page has a "Build your own calendar" form (types, maximum drive, wee
 
 ## Languages
 The landing page is German by default, with English one tap away (flags at the top right). Text lives in the page itself: German copy sits in `data-de` attributes next to the English text, and script messages are in the `STR` table in `docs/index.html`. The choice is remembered in the browser only (`localStorage`, no cookies); `?lang=en` or `?lang=de` forces a language. Event titles and calendar contents stay in English, as published by the locator.
+
+## Light and dark mode
+The page follows the device's light or dark setting. The sun/moon button at the top right overrides it (remembered in the browser only). Colours are CSS variables at the top of `docs/index.html`; control borders use `--line` so they stay visible on both backgrounds, and all text was checked for at least 4.5:1 contrast (3:1 for large text) in both modes on phone and desktop widths.
