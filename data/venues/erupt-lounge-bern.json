@@ -1,0 +1,131 @@
+{
+  "id": "erupt-lounge-bern",
+  "name": "Erupt Lounge",
+  "address": "Parkterrasse 14, 3012 Bern",
+  "country": "CH",
+  "coordinates": {
+    "lat": 46.949146,
+    "lon": 7.43782,
+    "note": ""
+  },
+  "summary": {
+    "public_transit": "Easy: Bern rail station 164 m; tram stop Bern Bahnhof (D) 246 m; bus stop Bern Hauptbahnhof 48 m",
+    "parkhaus": "Bahnhof-Parking (underground, 107 m)",
+    "free_parking": "Free car park mapped 253 m away (OSM fee=no)"
+  },
+  "public_transit": {
+    "rating": "easy",
+    "rating_rule": "easy = rail station within 500 m or tram stop within 300 m; fair = rail within 1000 m, tram within 500 m or bus within 300 m; else limited. Service frequency and S-Bahn lines are not assessed.",
+    "rail_stations": [
+      {
+        "name": "Bern",
+        "metres": 164,
+        "network_tag": "SBB"
+      },
+      {
+        "name": "Bern DMB",
+        "metres": 490,
+        "network_tag": "Libero"
+      },
+      {
+        "name": "Marzili",
+        "metres": 591,
+        "network_tag": "Libero"
+      }
+    ],
+    "tram_stops": [
+      {
+        "name": "Bern Bahnhof (D)",
+        "metres": 246
+      },
+      {
+        "name": "Bern Bahnhof (C)",
+        "metres": 248
+      },
+      {
+        "name": "Bern Bahnhof",
+        "metres": 253
+      }
+    ],
+    "bus_stops": [
+      {
+        "name": "Bern Hauptbahnhof",
+        "metres": 48
+      },
+      {
+        "name": "Bern, Hauptbahnhof",
+        "metres": 85
+      },
+      {
+        "name": "Schanzenstrasse",
+        "metres": 127
+      }
+    ]
+  },
+  "parking": {
+    "venue_own_parking": "unknown (ask the shop)",
+    "parkhaus_within_500m": [
+      {
+        "name": "Bahnhof-Parking",
+        "metres": 107,
+        "type": "underground",
+        "fee": "yes",
+        "capacity": "unknown",
+        "osm": "n1443327555"
+      },
+      {
+        "name": "City-West",
+        "metres": 378,
+        "type": "underground",
+        "fee": "yes",
+        "capacity": "430",
+        "osm": "r9150199"
+      },
+      {
+        "name": "Mobiliar Parking",
+        "metres": 450,
+        "type": "underground",
+        "fee": "yes",
+        "capacity": "90",
+        "osm": "r18451643"
+      }
+    ],
+    "free_car_park_within_500m": [
+      {
+        "name": "Car park",
+        "metres": 253,
+        "type": "surface",
+        "fee": "no",
+        "capacity": "1",
+        "osm": "w1349282016"
+      }
+    ],
+    "free_street_parking_tagged_within_500m": [],
+    "paid_car_parks_within_500m": [
+      {
+        "name": "Kurzparking PostParc",
+        "metres": 48,
+        "type": "surface",
+        "fee": "yes",
+        "capacity": "43",
+        "osm": "w676234162"
+      },
+      {
+        "name": "Car park",
+        "metres": 134,
+        "type": "surface",
+        "fee": "yes",
+        "capacity": "unknown",
+        "osm": "w25335699"
+      }
+    ],
+    "street_parking_mapped_within_500m": true
+  },
+  "source": {
+    "data": "OpenStreetMap via Overpass API",
+    "retrieved": "2026-11-15",
+    "licence": "ODbL 1.0, (c) OpenStreetMap contributors, https://www.openstreetmap.org/copyright",
+    "distances": "straight-line metres from the venue coordinates",
+    "caveat": "OpenStreetMap is volunteer-mapped. Missing entries mean 'not mapped', not 'does not exist'. Prices and opening hours are not included."
+  }
+}

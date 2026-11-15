@@ -343,7 +343,7 @@ footer p { max-width: 40rem; margin: 0 0 0.9rem; color: var(--muted); font-size:
 
   <section aria-labelledby="build-h" id="build">
     <h2 id="build-h">Build your own calendar</h2>
-    <p class="note">Pick the events you want and download them as a .ics file. The file is a snapshot of today, so it does not update by itself. For events that appear on their own, subscribe to one of the calendars above.</p>
+    <p class="note">Pick the events you want and download them as a .ics file. The download is a snapshot of today and does not update by itself. For events that appear on their own, subscribe to one of the calendars above.</p>
     <form class="builder" id="builder" hidden>
       <fieldset>
         <legend>Event types</legend>
@@ -375,6 +375,11 @@ footer p { max-width: 40rem; margin: 0 0 0.9rem; color: var(--muted); font-size:
         </div>
       </fieldset>
       <p class="builder-count" id="builder-count" role="status"></p>
+      <div class="builder-out" id="builder-live" hidden>
+        <a class="btn small" id="live-webcal" href="#">Subscribe to this selection</a>
+        <a class="quiet" id="live-google" href="#">Add to Google Calendar</a>
+        <button class="copy quiet" type="button" id="live-copy">Copy subscription address</button>
+      </div>
       <div class="builder-out">
         <button class="btn small" type="button" id="builder-download">Download .ics file</button>
         <button class="copy quiet" type="button" id="builder-link">Copy link to these settings</button>
@@ -403,6 +408,7 @@ footer p { max-width: 40rem; margin: 0 0 0.9rem; color: var(--muted); font-size:
 (function () {
   'use strict';
   var TZ = 'Europe/Zurich';
+  var LIVE_URL = '';   /* address of the Cloudflare Worker (see worker/README.md); empty hides the live buttons */
   var SHOWN = 8;
 
   /* parser:start */
@@ -616,7 +622,20 @@ footer p { max-width: 40rem; margin: 0 0 0.9rem; color: var(--muted); font-size:
     return true;
   }
   function chosen() { var s = settings(); return blocks.filter(function (b) { return keep(b.ev, s); }); }
+  function liveUpdate() {
+    var live = document.getElementById('builder-live');
+    if (!LIVE_URL) return;
+    var u = LIVE_URL.replace(/\/$/, '') + '/?' + builderQuery();
+    live.hidden = false;
+    document.getElementById('live-webcal').href = u.replace(/^https?:/, 'webcal:');
+    document.getElementById('live-google').href = 'https://calendar.google.com/calendar/render?cid=' + encodeURIComponent(u.replace(/^https?:/, 'webcal:'));
+    document.getElementById('live-copy').onclick = function () {
+      function fb() { window.prompt('Copy this calendar address:', u); }
+      if (navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(u).then(function () { bMsg.textContent = 'Copied the subscription address.'; }, fb); else fb();
+    };
+  }
   function builderUpdate() {
+    liveUpdate();
     var n = chosen().length;
     bCount.textContent = n === 1 ? '1 event matches' : n + ' events match';
     document.getElementById('builder-download').disabled = n === 0;

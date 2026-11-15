@@ -90,3 +90,14 @@ _sp.run([sys.executable, str(root / "build_calendar.py"), "--feed-file", str(roo
 far = (tmp / "far.ics").read_bytes().decode()
 assert far.count("BEGIN:VEVENT") == 5 and "Trimbach" not in far   # the far event is dropped, the rest stay
 print("OK")
+
+# venue access files
+import json as _json
+vd = sorted((root / "data/venues").glob("*.json"))
+assert len(vd) >= 16
+for f in vd:
+    d = _json.loads(f.read_text(encoding="utf-8"))
+    assert d["id"] == f.stem and d["public_transit"]["rating"] in ("easy", "fair", "limited")
+    assert d["parking"]["venue_own_parking"].startswith("unknown")
+    assert "OpenStreetMap" in d["source"]["licence"]
+print("OK venues")

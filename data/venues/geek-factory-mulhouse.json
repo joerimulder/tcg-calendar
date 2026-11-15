@@ -1,0 +1,154 @@
+{
+  "id": "geek-factory-mulhouse",
+  "name": "Geek Factory Mulhouse",
+  "address": "42 Avenue Clemenceau, 68100 Mulhouse",
+  "country": "FR",
+  "coordinates": {
+    "lat": 47.745411,
+    "lon": 7.340949,
+    "note": "Street-level geocode; the exact entrance may be some metres off."
+  },
+  "summary": {
+    "public_transit": "Easy: Mulhouse-Ville rail station 398 m; tram stop République 73 m; bus stop Wicky 90 m",
+    "parkhaus": "Car park (underground, 356 m)",
+    "free_parking": "Free car park mapped 380 m away (OSM fee=no)"
+  },
+  "public_transit": {
+    "rating": "easy",
+    "rating_rule": "easy = rail station within 500 m or tram stop within 300 m; fair = rail within 1000 m, tram within 500 m or bus within 300 m; else limited. Service frequency and S-Bahn lines are not assessed.",
+    "rail_stations": [
+      {
+        "name": "Mulhouse-Ville",
+        "metres": 398,
+        "network_tag": "TER Grand Est"
+      }
+    ],
+    "tram_stops": [
+      {
+        "name": "République",
+        "metres": 73
+      },
+      {
+        "name": "République",
+        "metres": 77
+      },
+      {
+        "name": "Gare Centrale",
+        "metres": 324
+      }
+    ],
+    "bus_stops": [
+      {
+        "name": "Wicky",
+        "metres": 90
+      },
+      {
+        "name": "République",
+        "metres": 124
+      },
+      {
+        "name": "Bonnes Gens",
+        "metres": 246
+      }
+    ]
+  },
+  "parking": {
+    "venue_own_parking": "unknown (ask the shop)",
+    "parkhaus_within_500m": [
+      {
+        "name": "Car park",
+        "metres": 356,
+        "type": "underground",
+        "fee": "yes",
+        "capacity": "447",
+        "osm": "w480970030"
+      },
+      {
+        "name": "Parking Gare Centrale 1",
+        "metres": 415,
+        "type": "underground",
+        "fee": "yes",
+        "capacity": "433",
+        "osm": "w1283228317"
+      },
+      {
+        "name": "Centre",
+        "metres": 433,
+        "type": "underground",
+        "fee": "yes",
+        "capacity": "648",
+        "osm": "n2548561598"
+      }
+    ],
+    "free_car_park_within_500m": [
+      {
+        "name": "Place Salvator",
+        "metres": 380,
+        "type": "surface",
+        "fee": "no",
+        "capacity": "unknown",
+        "osm": "w28549372"
+      },
+      {
+        "name": "Car park",
+        "metres": 443,
+        "type": "surface",
+        "fee": "no",
+        "capacity": "unknown",
+        "osm": "n6395843485"
+      }
+    ],
+    "free_street_parking_tagged_within_500m": [
+      {
+        "name": "Car park",
+        "metres": 324,
+        "type": "lane",
+        "fee": "no",
+        "capacity": "23",
+        "osm": "w1269855933"
+      },
+      {
+        "name": "Car park",
+        "metres": 374,
+        "type": "street_side",
+        "fee": "no",
+        "capacity": "22",
+        "osm": "w1167318177"
+      }
+    ],
+    "paid_car_parks_within_500m": [
+      {
+        "name": "Place des Cordiers",
+        "metres": 154,
+        "type": "surface",
+        "fee": "yes",
+        "capacity": "unknown",
+        "osm": "w183669995"
+      },
+      {
+        "name": "Car park",
+        "metres": 276,
+        "type": "surface",
+        "fee": "yes",
+        "capacity": "unknown",
+        "osm": "w275265254"
+      },
+      {
+        "name": "Bâle",
+        "metres": 311,
+        "type": "surface",
+        "fee": "yes",
+        "capacity": "300",
+        "osm": "n315546645"
+      }
+    ],
+    "street_parking_mapped_within_500m": true
+  },
+  "source": {
+    "data": "OpenStreetMap via Overpass API",
+    "retrieved": "2026-11-15",
+    "licence": "ODbL 1.0, (c) OpenStreetMap contributors, https://www.openstreetmap.org/copyright",
+    "distances": "straight-line metres from the venue coordinates",
+    "caveat": "OpenStreetMap is volunteer-mapped. Missing entries mean 'not mapped', not 'does not exist'. Prices and opening hours are not included."
+  }
+}

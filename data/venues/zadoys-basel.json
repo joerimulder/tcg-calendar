@@ -1,0 +1,108 @@
+{
+  "id": "zadoys-basel",
+  "name": "Zadoys Hobby & Card Store",
+  "address": "Im Surinam 55E, 4058 Basel",
+  "country": "CH",
+  "coordinates": {
+    "lat": 47.568054,
+    "lon": 7.609649,
+    "note": ""
+  },
+  "summary": {
+    "public_transit": "Easy: Basel Badischer Bahnhof rail station 187 m; tram stop Hirzbrunnen/Claraspital 154 m; bus stop Surinam 180 m",
+    "parkhaus": "Car park (underground, 346 m)",
+    "free_parking": "No free car park mapped within 500 m (street parking and the shop's own spaces may still exist)"
+  },
+  "public_transit": {
+    "rating": "easy",
+    "rating_rule": "easy = rail station within 500 m or tram stop within 300 m; fair = rail within 1000 m, tram within 500 m or bus within 300 m; else limited. Service frequency and S-Bahn lines are not assessed.",
+    "rail_stations": [
+      {
+        "name": "Basel Badischer Bahnhof",
+        "metres": 187,
+        "network_tag": "DB InfraGO AG"
+      }
+    ],
+    "tram_stops": [
+      {
+        "name": "Hirzbrunnen/Claraspital",
+        "metres": 154
+      },
+      {
+        "name": "Badischer Bahnhof",
+        "metres": 242
+      },
+      {
+        "name": "Badischer Bahnhof",
+        "metres": 304
+      }
+    ],
+    "bus_stops": [
+      {
+        "name": "Surinam",
+        "metres": 180
+      },
+      {
+        "name": "Badischer Bahnhof",
+        "metres": 232
+      }
+    ]
+  },
+  "parking": {
+    "venue_own_parking": "unknown (ask the shop)",
+    "parkhaus_within_500m": [
+      {
+        "name": "Car park",
+        "metres": 346,
+        "type": "underground",
+        "fee": "yes",
+        "capacity": "unknown",
+        "osm": "n2812453913"
+      },
+      {
+        "name": "Parkhaus Badischer Bahnhof",
+        "metres": 395,
+        "type": "multi-storey",
+        "fee": "yes",
+        "capacity": "300",
+        "osm": "r1439566"
+      },
+      {
+        "name": "Car park",
+        "metres": 454,
+        "type": "underground",
+        "fee": "unknown",
+        "capacity": "unknown",
+        "osm": "n12116779679"
+      }
+    ],
+    "free_car_park_within_500m": [],
+    "free_street_parking_tagged_within_500m": [],
+    "paid_car_parks_within_500m": [
+      {
+        "name": "Car park",
+        "metres": 188,
+        "type": "surface",
+        "fee": "yes",
+        "capacity": "unknown",
+        "osm": "w1513914400"
+      },
+      {
+        "name": "Car park",
+        "metres": 264,
+        "type": "surface",
+        "fee": "yes",
+        "capacity": "17",
+        "osm": "w237256991"
+      }
+    ],
+    "street_parking_mapped_within_500m": true
+  },
+  "source": {
+    "data": "OpenStreetMap via Overpass API",
+    "retrieved": "2026-11-15",
+    "licence": "ODbL 1.0, (c) OpenStreetMap contributors, https://www.openstreetmap.org/copyright",
+    "distances": "straight-line metres from the venue coordinates",
+    "caveat": "OpenStreetMap is volunteer-mapped. Missing entries mean 'not mapped', not 'does not exist'. Prices and opening hours are not included."
+  }
+}

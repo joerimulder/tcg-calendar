@@ -1,0 +1,96 @@
+{
+  "id": "cardmaniac-buchs",
+  "name": "Cardmaniac",
+  "address": "Mitteldorfstrasse 35, 5033 Buchs AG",
+  "country": "CH",
+  "coordinates": {
+    "lat": 47.390221,
+    "lon": 8.069717,
+    "note": ""
+  },
+  "summary": {
+    "public_transit": "Easy: Buchs rail station 56 m; bus stop Brauerei 45 m",
+    "parkhaus": "Car park (multi-storey, 494 m)",
+    "free_parking": "No free car park mapped within 500 m (street parking and the shop's own spaces may still exist)"
+  },
+  "public_transit": {
+    "rating": "easy",
+    "rating_rule": "easy = rail station within 500 m or tram stop within 300 m; fair = rail within 1000 m, tram within 500 m or bus within 300 m; else limited. Service frequency and S-Bahn lines are not assessed.",
+    "rail_stations": [
+      {
+        "name": "Buchs",
+        "metres": 56,
+        "network_tag": "AVA"
+      },
+      {
+        "name": "Aarau Torfeld",
+        "metres": 651,
+        "network_tag": "AVA"
+      }
+    ],
+    "tram_stops": [],
+    "bus_stops": [
+      {
+        "name": "Brauerei",
+        "metres": 45
+      },
+      {
+        "name": "Brauerei",
+        "metres": 79
+      },
+      {
+        "name": "Torfeld",
+        "metres": 264
+      }
+    ]
+  },
+  "parking": {
+    "venue_own_parking": "unknown (ask the shop)",
+    "parkhaus_within_500m": [
+      {
+        "name": "Car park",
+        "metres": 494,
+        "type": "multi-storey",
+        "fee": "unknown",
+        "capacity": "unknown",
+        "osm": "w692624349"
+      }
+    ],
+    "free_car_park_within_500m": [],
+    "free_street_parking_tagged_within_500m": [],
+    "paid_car_parks_within_500m": [
+      {
+        "name": "Car park",
+        "metres": 302,
+        "type": "surface",
+        "fee": "yes",
+        "capacity": "unknown",
+        "osm": "w289636660"
+      },
+      {
+        "name": "Car park",
+        "metres": 388,
+        "type": "surface",
+        "fee": "yes",
+        "capacity": "unknown",
+        "osm": "w113525613"
+      },
+      {
+        "name": "Car park",
+        "metres": 480,
+        "type": "surface",
+        "fee": "yes",
+        "capacity": "unknown",
+        "osm": "w113525391"
+      }
+    ],
+    "street_parking_mapped_within_500m": true
+  },
+  "source": {
+    "data": "OpenStreetMap via Overpass API",
+    "retrieved": "2026-11-15",
+    "licence": "ODbL 1.0, (c) OpenStreetMap contributors, https://www.openstreetmap.org/copyright",
+    "distances": "straight-line metres from the venue coordinates",
+    "caveat": "OpenStreetMap is volunteer-mapped. Missing entries mean 'not mapped', not 'does not exist'. Prices and opening hours are not included."
+  }
+}

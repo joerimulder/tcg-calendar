@@ -1,0 +1,101 @@
+{
+  "id": "tokyozyma-poke-audincourt",
+  "name": "Tokyozyma Poké",
+  "address": "79 Grande Rue, 25400 Audincourt",
+  "country": "FR",
+  "coordinates": {
+    "lat": 47.48174,
+    "lon": 6.840135,
+    "note": "Street-level geocode; the exact entrance may be some metres off."
+  },
+  "summary": {
+    "public_transit": "Fair: bus stop Briand 107 m",
+    "parkhaus": "No multi-storey or underground car park mapped within 500 m",
+    "free_parking": "Free car park mapped 250 m away (OSM fee=no)"
+  },
+  "public_transit": {
+    "rating": "fair",
+    "rating_rule": "easy = rail station within 500 m or tram stop within 300 m; fair = rail within 1000 m, tram within 500 m or bus within 300 m; else limited. Service frequency and S-Bahn lines are not assessed.",
+    "rail_stations": [],
+    "tram_stops": [],
+    "bus_stops": [
+      {
+        "name": "Briand",
+        "metres": 107
+      },
+      {
+        "name": "Briand",
+        "metres": 125
+      },
+      {
+        "name": "Temple (Quai 3)",
+        "metres": 129
+      }
+    ]
+  },
+  "parking": {
+    "venue_own_parking": "unknown (ask the shop)",
+    "parkhaus_within_500m": [],
+    "free_car_park_within_500m": [
+      {
+        "name": "Car park",
+        "metres": 250,
+        "type": "surface",
+        "fee": "no",
+        "capacity": "unknown",
+        "osm": "n1460503626"
+      },
+      {
+        "name": "Car park",
+        "metres": 252,
+        "type": "surface",
+        "fee": "no",
+        "capacity": "unknown",
+        "osm": "w324788057"
+      },
+      {
+        "name": "Place du Marché",
+        "metres": 288,
+        "type": "surface",
+        "fee": "no",
+        "capacity": "unknown",
+        "osm": "w591765874"
+      }
+    ],
+    "free_street_parking_tagged_within_500m": [],
+    "paid_car_parks_within_500m": [
+      {
+        "name": "Car park",
+        "metres": 45,
+        "type": "surface",
+        "fee": "yes",
+        "capacity": "unknown",
+        "osm": "n6013822115"
+      },
+      {
+        "name": "Car park",
+        "metres": 78,
+        "type": "surface",
+        "fee": "yes",
+        "capacity": "unknown",
+        "osm": "n6013822114"
+      },
+      {
+        "name": "Car park",
+        "metres": 137,
+        "type": "surface",
+        "fee": "yes",
+        "capacity": "unknown",
+        "osm": "n6013822116"
+      }
+    ],
+    "street_parking_mapped_within_500m": true
+  },
+  "source": {
+    "data": "OpenStreetMap via Overpass API",
+    "retrieved": "2026-11-15",
+    "licence": "ODbL 1.0, (c) OpenStreetMap contributors, https://www.openstreetmap.org/copyright",
+    "distances": "straight-line metres from the venue coordinates",
+    "caveat": "OpenStreetMap is volunteer-mapped. Missing entries mean 'not mapped', not 'does not exist'. Prices and opening hours are not included."
+  }
+}

@@ -1,0 +1,121 @@
+{
+  "id": "boutique-fairplay-mulhouse",
+  "name": "Boutique Fairplay",
+  "address": "44 Rue du Werkhof, 68100 Mulhouse",
+  "country": "FR",
+  "coordinates": {
+    "lat": 47.747704,
+    "lon": 7.337714,
+    "note": "Street-level geocode; the exact entrance may be some metres off."
+  },
+  "summary": {
+    "public_transit": "Easy: Mulhouse-Ville rail station 739 m; tram stop Mairie 239 m; bus stop Pierre et Marie Curie 313 m",
+    "parkhaus": "Centre (underground, 374 m)",
+    "free_parking": "Free car park mapped 444 m away (OSM fee=no)"
+  },
+  "public_transit": {
+    "rating": "easy",
+    "rating_rule": "easy = rail station within 500 m or tram stop within 300 m; fair = rail within 1000 m, tram within 500 m or bus within 300 m; else limited. Service frequency and S-Bahn lines are not assessed.",
+    "rail_stations": [
+      {
+        "name": "Mulhouse-Ville",
+        "metres": 739,
+        "network_tag": "TER Grand Est"
+      }
+    ],
+    "tram_stops": [
+      {
+        "name": "Mairie",
+        "metres": 239
+      },
+      {
+        "name": "Porte Jeune",
+        "metres": 272
+      },
+      {
+        "name": "République",
+        "metres": 330
+      }
+    ],
+    "bus_stops": [
+      {
+        "name": "Pierre et Marie Curie",
+        "metres": 313
+      },
+      {
+        "name": "République",
+        "metres": 370
+      },
+      {
+        "name": "Wicky",
+        "metres": 383
+      }
+    ]
+  },
+  "parking": {
+    "venue_own_parking": "unknown (ask the shop)",
+    "parkhaus_within_500m": [
+      {
+        "name": "Centre",
+        "metres": 374,
+        "type": "underground",
+        "fee": "yes",
+        "capacity": "648",
+        "osm": "n2548561598"
+      }
+    ],
+    "free_car_park_within_500m": [
+      {
+        "name": "Place Salvator",
+        "metres": 444,
+        "type": "surface",
+        "fee": "no",
+        "capacity": "unknown",
+        "osm": "w28549372"
+      },
+      {
+        "name": "Car park",
+        "metres": 466,
+        "type": "surface",
+        "fee": "no",
+        "capacity": "unknown",
+        "osm": "w833278042"
+      }
+    ],
+    "free_street_parking_tagged_within_500m": [],
+    "paid_car_parks_within_500m": [
+      {
+        "name": "Maréchaux",
+        "metres": 151,
+        "type": "unknown",
+        "fee": "yes",
+        "capacity": "558",
+        "osm": "n339395761"
+      },
+      {
+        "name": "Place des Cordiers",
+        "metres": 203,
+        "type": "surface",
+        "fee": "yes",
+        "capacity": "unknown",
+        "osm": "w183669995"
+      },
+      {
+        "name": "Car park",
+        "metres": 221,
+        "type": "surface",
+        "fee": "yes",
+        "capacity": "unknown",
+        "osm": "w28851727"
+      }
+    ],
+    "street_parking_mapped_within_500m": true
+  },
+  "source": {
+    "data": "OpenStreetMap via Overpass API",
+    "retrieved": "2026-11-15",
+    "licence": "ODbL 1.0, (c) OpenStreetMap contributors, https://www.openstreetmap.org/copyright",
+    "distances": "straight-line metres from the venue coordinates",
+    "caveat": "OpenStreetMap is volunteer-mapped. Missing entries mean 'not mapped', not 'does not exist'. Prices and opening hours are not included."
+  }
+}

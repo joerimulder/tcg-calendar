@@ -1,0 +1,96 @@
+{
+  "id": "animeverse-rosental",
+  "name": "Animeverse (Rosental)",
+  "address": "Rosentalstrasse 26, 4058 Basel",
+  "country": "CH",
+  "coordinates": {
+    "lat": 47.564915,
+    "lon": 7.604129,
+    "note": ""
+  },
+  "summary": {
+    "public_transit": "Easy: Basel Badischer Bahnhof rail station 370 m; tram stop Gewerbeschule 87 m; bus stop Badischer Bahnhof 288 m",
+    "parkhaus": "Parkhaus Messe Basel (multi-storey, 247 m)",
+    "free_parking": "No free car park mapped within 500 m (street parking and the shop's own spaces may still exist)"
+  },
+  "public_transit": {
+    "rating": "easy",
+    "rating_rule": "easy = rail station within 500 m or tram stop within 300 m; fair = rail within 1000 m, tram within 500 m or bus within 300 m; else limited. Service frequency and S-Bahn lines are not assessed.",
+    "rail_stations": [
+      {
+        "name": "Basel Badischer Bahnhof",
+        "metres": 370,
+        "network_tag": "DB InfraGO AG"
+      }
+    ],
+    "tram_stops": [
+      {
+        "name": "Gewerbeschule",
+        "metres": 87
+      },
+      {
+        "name": "Badischer Bahnhof",
+        "metres": 238
+      },
+      {
+        "name": "Messeplatz",
+        "metres": 299
+      }
+    ],
+    "bus_stops": [
+      {
+        "name": "Badischer Bahnhof",
+        "metres": 288
+      }
+    ]
+  },
+  "parking": {
+    "venue_own_parking": "unknown (ask the shop)",
+    "parkhaus_within_500m": [
+      {
+        "name": "Parkhaus Messe Basel",
+        "metres": 247,
+        "type": "multi-storey",
+        "fee": "yes",
+        "capacity": "752",
+        "osm": "w315916608"
+      },
+      {
+        "name": "Parkhaus Badischer Bahnhof",
+        "metres": 400,
+        "type": "multi-storey",
+        "fee": "yes",
+        "capacity": "300",
+        "osm": "r1439566"
+      }
+    ],
+    "free_car_park_within_500m": [],
+    "free_street_parking_tagged_within_500m": [],
+    "paid_car_parks_within_500m": [
+      {
+        "name": "Car park",
+        "metres": 377,
+        "type": "surface",
+        "fee": "yes",
+        "capacity": "17",
+        "osm": "w237256991"
+      },
+      {
+        "name": "Car park",
+        "metres": 421,
+        "type": "surface",
+        "fee": "yes",
+        "capacity": "4",
+        "osm": "w488279625"
+      }
+    ],
+    "street_parking_mapped_within_500m": true
+  },
+  "source": {
+    "data": "OpenStreetMap via Overpass API",
+    "retrieved": "2026-11-15",
+    "licence": "ODbL 1.0, (c) OpenStreetMap contributors, https://www.openstreetmap.org/copyright",
+    "distances": "straight-line metres from the venue coordinates",
+    "caveat": "OpenStreetMap is volunteer-mapped. Missing entries mean 'not mapped', not 'does not exist'. Prices and opening hours are not included."
+  }
+}

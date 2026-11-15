@@ -1,0 +1,91 @@
+{
+  "id": "carab-luzern",
+  "name": "Carab",
+  "address": "Zürichstrasse 31, 6004 Luzern",
+  "country": "CH",
+  "coordinates": {
+    "lat": 47.057329,
+    "lon": 8.309957,
+    "note": ""
+  },
+  "summary": {
+    "public_transit": "Fair: Luzern rail station 789 m; bus stop Löwenplatz 78 m",
+    "parkhaus": "Parkhaus National (multi-storey, 492 m)",
+    "free_parking": "No free car park mapped within 500 m (street parking and the shop's own spaces may still exist)"
+  },
+  "public_transit": {
+    "rating": "fair",
+    "rating_rule": "easy = rail station within 500 m or tram stop within 300 m; fair = rail within 1000 m, tram within 500 m or bus within 300 m; else limited. Service frequency and S-Bahn lines are not assessed.",
+    "rail_stations": [
+      {
+        "name": "Luzern",
+        "metres": 789,
+        "network_tag": "TVLU"
+      }
+    ],
+    "tram_stops": [],
+    "bus_stops": [
+      {
+        "name": "Löwenplatz",
+        "metres": 78
+      },
+      {
+        "name": "Löwenplatz",
+        "metres": 131
+      },
+      {
+        "name": "Wesemlinrain",
+        "metres": 164
+      }
+    ]
+  },
+  "parking": {
+    "venue_own_parking": "unknown (ask the shop)",
+    "parkhaus_within_500m": [
+      {
+        "name": "Parkhaus National",
+        "metres": 492,
+        "type": "multi-storey",
+        "fee": "yes",
+        "capacity": "300",
+        "osm": "w1071370497"
+      }
+    ],
+    "free_car_park_within_500m": [],
+    "free_street_parking_tagged_within_500m": [],
+    "paid_car_parks_within_500m": [
+      {
+        "name": "Car park",
+        "metres": 206,
+        "type": "surface",
+        "fee": "yes",
+        "capacity": "8",
+        "osm": "w606430507"
+      },
+      {
+        "name": "Car park",
+        "metres": 238,
+        "type": "surface",
+        "fee": "yes",
+        "capacity": "6",
+        "osm": "w364075865"
+      },
+      {
+        "name": "Car park",
+        "metres": 269,
+        "type": "surface",
+        "fee": "yes",
+        "capacity": "3",
+        "osm": "w1080996451"
+      }
+    ],
+    "street_parking_mapped_within_500m": true
+  },
+  "source": {
+    "data": "OpenStreetMap via Overpass API",
+    "retrieved": "2026-11-15",
+    "licence": "ODbL 1.0, (c) OpenStreetMap contributors, https://www.openstreetmap.org/copyright",
+    "distances": "straight-line metres from the venue coordinates",
+    "caveat": "OpenStreetMap is volunteer-mapped. Missing entries mean 'not mapped', not 'does not exist'. Prices and opening hours are not included."
+  }
+}

@@ -1,0 +1,108 @@
+{
+  "id": "maro-games-birsfelden",
+  "name": "MaRo Games",
+  "address": "Hauptstrasse 11, 4127 Birsfelden",
+  "country": "CH",
+  "coordinates": {
+    "lat": 47.554769,
+    "lon": 7.619016,
+    "note": ""
+  },
+  "summary": {
+    "public_transit": "Easy: tram stop Bären 16 m; bus stop Bären 101 m",
+    "parkhaus": "Car park (underground, 242 m)",
+    "free_parking": "Free car park mapped 314 m away (OSM fee=no)"
+  },
+  "public_transit": {
+    "rating": "easy",
+    "rating_rule": "easy = rail station within 500 m or tram stop within 300 m; fair = rail within 1000 m, tram within 500 m or bus within 300 m; else limited. Service frequency and S-Bahn lines are not assessed.",
+    "rail_stations": [],
+    "tram_stops": [
+      {
+        "name": "Bären",
+        "metres": 16
+      },
+      {
+        "name": "Bären",
+        "metres": 103
+      },
+      {
+        "name": "Schulstrasse",
+        "metres": 266
+      }
+    ],
+    "bus_stops": [
+      {
+        "name": "Bären",
+        "metres": 101
+      },
+      {
+        "name": "Nasenweg",
+        "metres": 156
+      },
+      {
+        "name": "Breite",
+        "metres": 245
+      }
+    ]
+  },
+  "parking": {
+    "venue_own_parking": "unknown (ask the shop)",
+    "parkhaus_within_500m": [
+      {
+        "name": "Car park",
+        "metres": 242,
+        "type": "underground",
+        "fee": "unknown",
+        "capacity": "unknown",
+        "osm": "n1785824083"
+      },
+      {
+        "name": "Car park",
+        "metres": 434,
+        "type": "underground",
+        "fee": "unknown",
+        "capacity": "unknown",
+        "osm": "n1784478396"
+      }
+    ],
+    "free_car_park_within_500m": [
+      {
+        "name": "Car park",
+        "metres": 314,
+        "type": "surface",
+        "fee": "no",
+        "capacity": "unknown",
+        "osm": "w149012349"
+      }
+    ],
+    "free_street_parking_tagged_within_500m": [
+      {
+        "name": "Car park",
+        "metres": 447,
+        "type": "lane",
+        "fee": "no",
+        "capacity": "7",
+        "osm": "w1087782444"
+      }
+    ],
+    "paid_car_parks_within_500m": [
+      {
+        "name": "Car park",
+        "metres": 294,
+        "type": "surface",
+        "fee": "yes",
+        "capacity": "unknown",
+        "osm": "w194645572"
+      }
+    ],
+    "street_parking_mapped_within_500m": true
+  },
+  "source": {
+    "data": "OpenStreetMap via Overpass API",
+    "retrieved": "2026-11-15",
+    "licence": "ODbL 1.0, (c) OpenStreetMap contributors, https://www.openstreetmap.org/copyright",
+    "distances": "straight-line metres from the venue coordinates",
+    "caveat": "OpenStreetMap is volunteer-mapped. Missing entries mean 'not mapped', not 'does not exist'. Prices and opening hours are not included."
+  }
+}

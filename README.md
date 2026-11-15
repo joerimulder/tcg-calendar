@@ -70,3 +70,6 @@ Every event description ends with one-tap **Navigate** links (Google Maps, Apple
 
 ## Custom calendar builder
 The landing page has a "Build your own calendar" form (types, maximum drive, weekends only, leave out France or Germany, leave out full events). It filters the nightly `basel.ics` in the browser and downloads the result as a snapshot `.ics`; nothing is sent anywhere. Settings live in the page address (`?types=...&km=50&weekend=1`), so a link restores them. GitHub Pages is static, so a custom *subscription* URL that keeps updating would need a small server-side function; the fixed feeds remain the live subscriptions.
+
+## Venue access files
+`data/venues/<venue>.json` lists, per venue, nearby rail, tram and bus stops, Parkhaus options and free car parks, measured from OpenStreetMap (see `data/venues/README.md`). Regenerate with `python3 tools/venue_data/make_venues.py`.

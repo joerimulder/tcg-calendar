@@ -1,0 +1,122 @@
+{
+  "id": "kabooom-zuerich",
+  "name": "Kabooom Entertainment GmbH",
+  "address": "Dienerstrasse 36, 8004 Zürich",
+  "country": "CH",
+  "coordinates": {
+    "lat": 47.378406,
+    "lon": 8.527339,
+    "note": ""
+  },
+  "summary": {
+    "public_transit": "Easy: Zürich Selnau rail station 743 m; tram stop Helvetiaplatz 255 m; bus stop Militär-/Langstrasse 107 m",
+    "parkhaus": "Car park (underground, 196 m)",
+    "free_parking": "No free car park mapped within 500 m (street parking and the shop's own spaces may still exist)"
+  },
+  "public_transit": {
+    "rating": "easy",
+    "rating_rule": "easy = rail station within 500 m or tram stop within 300 m; fair = rail within 1000 m, tram within 500 m or bus within 300 m; else limited. Service frequency and S-Bahn lines are not assessed.",
+    "rail_stations": [
+      {
+        "name": "Zürich Selnau",
+        "metres": 743,
+        "network_tag": "ZVV"
+      },
+      {
+        "name": "Zürich Wiedikon",
+        "metres": 811,
+        "network_tag": "ZVV"
+      },
+      {
+        "name": "Zürich Hauptbahnhof",
+        "metres": 906,
+        "network_tag": "ZVV"
+      }
+    ],
+    "tram_stops": [
+      {
+        "name": "Helvetiaplatz",
+        "metres": 255
+      },
+      {
+        "name": "Helvetiaplatz",
+        "metres": 276
+      },
+      {
+        "name": "Bäckeranlage",
+        "metres": 331
+      }
+    ],
+    "bus_stops": [
+      {
+        "name": "Militär-/Langstrasse",
+        "metres": 107
+      },
+      {
+        "name": "Militär-/Langstrasse",
+        "metres": 137
+      },
+      {
+        "name": "Militär-/Langstrasse",
+        "metres": 177
+      }
+    ]
+  },
+  "parking": {
+    "venue_own_parking": "unknown (ask the shop)",
+    "parkhaus_within_500m": [
+      {
+        "name": "Car park",
+        "metres": 196,
+        "type": "underground",
+        "fee": "unknown",
+        "capacity": "unknown",
+        "osm": "n13687905439"
+      },
+      {
+        "name": "Helvetiaplatz",
+        "metres": 248,
+        "type": "underground",
+        "fee": "yes",
+        "capacity": "66",
+        "osm": "w1169311485"
+      }
+    ],
+    "free_car_park_within_500m": [],
+    "free_street_parking_tagged_within_500m": [
+      {
+        "name": "Car park",
+        "metres": 71,
+        "type": "lane",
+        "fee": "no",
+        "capacity": "4",
+        "osm": "w1156102001"
+      },
+      {
+        "name": "Car park",
+        "metres": 80,
+        "type": "lane",
+        "fee": "no",
+        "capacity": "3",
+        "osm": "w1156102002"
+      },
+      {
+        "name": "Car park",
+        "metres": 82,
+        "type": "lane",
+        "fee": "no",
+        "capacity": "3",
+        "osm": "w1156102003"
+      }
+    ],
+    "paid_car_parks_within_500m": [],
+    "street_parking_mapped_within_500m": true
+  },
+  "source": {
+    "data": "OpenStreetMap via Overpass API",
+    "retrieved": "2026-11-15",
+    "licence": "ODbL 1.0, (c) OpenStreetMap contributors, https://www.openstreetmap.org/copyright",
+    "distances": "straight-line metres from the venue coordinates",
+    "caveat": "OpenStreetMap is volunteer-mapped. Missing entries mean 'not mapped', not 'does not exist'. Prices and opening hours are not included."
+  }
+}

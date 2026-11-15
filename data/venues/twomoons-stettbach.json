@@ -1,0 +1,79 @@
+{
+  "id": "twomoons-stettbach",
+  "name": "Twomoons Stettbach",
+  "address": "Zürichstrasse 137A, 8600 Dübendorf",
+  "country": "CH",
+  "coordinates": {
+    "lat": 47.395742,
+    "lon": 8.597245,
+    "note": ""
+  },
+  "summary": {
+    "public_transit": "Easy: Stettbach rail station 179 m; tram stop Bahnhof Stettbach 155 m; bus stop Bahnhof Stettbach 142 m",
+    "parkhaus": "No multi-storey or underground car park mapped within 500 m",
+    "free_parking": "No free car park mapped within 500 m (street parking and the shop's own spaces may still exist)"
+  },
+  "public_transit": {
+    "rating": "easy",
+    "rating_rule": "easy = rail station within 500 m or tram stop within 300 m; fair = rail within 1000 m, tram within 500 m or bus within 300 m; else limited. Service frequency and S-Bahn lines are not assessed.",
+    "rail_stations": [
+      {
+        "name": "Stettbach",
+        "metres": 179,
+        "network_tag": "ZVV"
+      }
+    ],
+    "tram_stops": [
+      {
+        "name": "Bahnhof Stettbach",
+        "metres": 155
+      },
+      {
+        "name": "Bahnhof Stettbach",
+        "metres": 177
+      },
+      {
+        "name": "Bahnhof Stettbach",
+        "metres": 232
+      }
+    ],
+    "bus_stops": [
+      {
+        "name": "Bahnhof Stettbach",
+        "metres": 142
+      },
+      {
+        "name": "Bahnhof Stettbach",
+        "metres": 180
+      },
+      {
+        "name": "Hoffnung",
+        "metres": 188
+      }
+    ]
+  },
+  "parking": {
+    "venue_own_parking": "unknown (ask the shop)",
+    "parkhaus_within_500m": [],
+    "free_car_park_within_500m": [],
+    "free_street_parking_tagged_within_500m": [],
+    "paid_car_parks_within_500m": [
+      {
+        "name": "Bahnhof Stettbach",
+        "metres": 168,
+        "type": "surface",
+        "fee": "yes",
+        "capacity": "13",
+        "osm": "w187045834"
+      }
+    ],
+    "street_parking_mapped_within_500m": true
+  },
+  "source": {
+    "data": "OpenStreetMap via Overpass API",
+    "retrieved": "2026-11-15",
+    "licence": "ODbL 1.0, (c) OpenStreetMap contributors, https://www.openstreetmap.org/copyright",
+    "distances": "straight-line metres from the venue coordinates",
+    "caveat": "OpenStreetMap is volunteer-mapped. Missing entries mean 'not mapped', not 'does not exist'. Prices and opening hours are not included."
+  }
+}
