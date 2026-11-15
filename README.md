@@ -43,3 +43,6 @@ exists (or `--locator-json PATH` / `LOCATOR_JSON`); without the file nothing cha
 - The file is a snapshot: events cancelled or changed after the export stay as exported
   until the file is refreshed. Contact details in the export are never published.
 - There is no automatic fetcher yet; see the project notes before adding one.
+
+## Distances
+Each event carries a custom `X-DISTANCE-KM` field (driving distance from Basel). The build looks up the postcode centre (zippopotam.us) and the driving route (OSRM demo server), and caches both in `data/geocodes.json` and `data/driving_km.json`, so each place is only looked up once. If a lookup fails the event simply has no distance until the next night.

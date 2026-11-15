@@ -8,7 +8,7 @@ def build(name, *extra):
     out = tmp / name
     subprocess.run([sys.executable, str(root / "build_calendar.py"), "--feed-file", str(root / "tests/sample_feed.ics"),
                     "--manual", str(root / "data/manual_events.json"), "--out", str(out),
-                    "--geocache", str(root / "data/geocodes.json"), "--offline", *extra], check=True)
+                    "--geocache", str(root / "data/geocodes.json"), "--drivecache", str(root / "tests/driving_km.json"), "--offline", *extra], check=True)
     return out.read_bytes().decode("utf-8")
 
 
@@ -44,8 +44,12 @@ assert "League Night" not in cats("with_locator-cups.ics")
 assert "X-WR-CALNAME:Pokémon TCG Basel - League Cups" in cats("with_locator-cups.ics")
 assert all(len(l.encode()) <= 75 for l in t.split("\r\n"))
 assert (tmp / "with_locator-prereleases.ics").exists()
-import re as _re
-m = _re.search(r"Mulhouse.*?\n(?:.*\n)*?X-DISTANCE-KM:(\d+)", t)
-assert m and 25 <= int(m.group(1)) <= 40, m                # Mulhouse is about 31 km from Basel
+dist = {}
+for ev in (tmp / "basel.ics").read_bytes().decode().replace("\r\n ", "").split("BEGIN:VEVENT")[1:]:
+    loc = next(l for l in ev.split("\r\n") if l.startswith("LOCATION:"))
+    km = next((l for l in ev.split("\r\n") if l.startswith("X-DISTANCE-KM:")), None)
+    dist[loc] = km
+mul = [v for k, v in dist.items() if "Mulhouse" in k]
+assert mul and all(v and 35 <= int(v.split(":")[1]) <= 45 for v in mul), mul   # about 39 km by road
 assert "X-DISTANCE-KM:" in cats("with_locator-leagues.ics")  # exact coordinates from the locator
 print("OK")

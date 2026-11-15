@@ -14,6 +14,7 @@ import json
 import os
 import re
 import sys
+import time
 import urllib.error
 import urllib.request
 from datetime import datetime, timedelta, timezone
@@ -195,6 +196,28 @@ def lookup_zip(cc: str, zip_: str, cache: dict, online: bool):
     return tuple(cache[key]) if cache[key] else None
 
 
+ROUTE_URL = "https://router.project-osrm.org/route/v1/driving/{o};{d}?overview=false"
+
+
+def lookup_drive_km(key: str, xy, cache: dict, online: bool):
+    """Driving distance in km from Basel to xy, cached under key (free OSRM demo server)."""
+    if key in cache:
+        return cache[key]
+    if not online or xy is None:
+        return None
+    try:
+        url = ROUTE_URL.format(o=f"{BASEL[1]},{BASEL[0]}", d=f"{xy[1]},{xy[0]}")
+        data = json.loads(fetch(url))
+        if data.get("code") == "NoRoute":
+            cache[key] = None
+            return None
+        cache[key] = round(data["routes"][0]["distance"] / 1000, 1)
+        time.sleep(1.1)                              # be polite to the shared demo server
+    except Exception:
+        return None                                  # try again tomorrow
+    return cache[key]
+
+
 def locator_items(data) -> list[dict]:
     """Accept one DataActionGetEventList response, a list of them (pages) or a bare item list."""
     if isinstance(data, list):
@@ -220,10 +243,10 @@ def normalise_locator(item: dict, overrides: dict) -> dict | None:
     if str(ev.get("Status", "")).lower() in LOCATOR_SKIP_STATUS:
         return None
     addr = ev.get("Address") or {}
-    dist = None
+    geo = None
     try:
-        dist = haversine_km(BASEL, (float(addr["Latitude"]), float(addr["Longitude"])))
-        if dist > RADIUS_KM:
+        geo = (float(addr["Latitude"]), float(addr["Longitude"]))
+        if haversine_km(BASEL, geo) > RADIUS_KM:
             return None
     except (KeyError, ValueError, TypeError):
         pass                                           # no usable coordinates: keep the event
@@ -267,7 +290,7 @@ def normalise_locator(item: dict, overrides: dict) -> dict | None:
         "description": "\n".join(desc),
         "location": clean_location(full, venue),
         "url": page or site, "category": category,
-        "dist_km": dist,
+        "geo": geo,
     }
 
 
@@ -375,6 +398,8 @@ def main() -> int:
                     help="JSON export of the official locator's event list; empty string disables")
     ap.add_argument("--geocache", default="data/geocodes.json",
                     help="postcode -> coordinates cache used for distances from Basel")
+    ap.add_argument("--drivecache", default="data/driving_km.json",
+                    help="cache of driving distances from Basel (km)")
     ap.add_argument("--offline", action="store_true", help="never call the geocoding API (tests)")
     ap.add_argument("--out", default="docs/basel.ics")
     a = ap.parse_args()
@@ -407,19 +432,29 @@ def main() -> int:
         merged[n["uid"]] = n
 
     events = list(merged.values())
-    cache_path = Path(a.geocache)
-    try:
-        cache = json.loads(cache_path.read_text(encoding="utf-8")) if cache_path.exists() else {}
-    except Exception:
-        cache = {}
-    before = json.dumps(cache, sort_keys=True)
+    def load_cache(path):
+        try:
+            return json.loads(Path(path).read_text(encoding="utf-8")) if Path(path).exists() else {}
+        except Exception:
+            return {}
+
+    def save_cache(path, cache, before):
+        if json.dumps(cache, sort_keys=True) != before:
+            Path(path).parent.mkdir(parents=True, exist_ok=True)
+            Path(path).write_text(json.dumps(cache, indent=1, sort_keys=True, ensure_ascii=False) + "\n", encoding="utf-8")
+
+    geo_cache, drive_cache = load_cache(a.geocache), load_cache(a.drivecache)
+    geo_before, drive_before = json.dumps(geo_cache, sort_keys=True), json.dumps(drive_cache, sort_keys=True)
     for e in events:
-        if e.get("dist_km") is None and (z := location_zip(e["location"])):
-            if (xy := lookup_zip(*z, cache, online=not a.offline)):
-                e["dist_km"] = haversine_km(BASEL, xy)
-    if json.dumps(cache, sort_keys=True) != before:
-        cache_path.parent.mkdir(parents=True, exist_ok=True)
-        cache_path.write_text(json.dumps(cache, indent=1, sort_keys=True, ensure_ascii=False) + "\n", encoding="utf-8")
+        if e.get("geo"):                                   # exact coordinates from the official locator
+            key, xy = f"{e['geo'][0]:.3f},{e['geo'][1]:.3f}", e["geo"]
+        elif z := location_zip(e["location"]):             # otherwise the postcode centre
+            key, xy = f"{z[0]}-{z[1]}", lookup_zip(*z, geo_cache, online=not a.offline)
+        else:
+            continue
+        e["dist_km"] = lookup_drive_km(key, xy, drive_cache, online=not a.offline)
+    save_cache(a.geocache, geo_cache, geo_before)
+    save_cache(a.drivecache, drive_cache, drive_before)
     stamp = datetime.now(timezone.utc).strftime("%Y%m%dT%H%M%SZ")
     stamp_re = re.compile(r"DTSTAMP:\d{8}T\d{6}Z")
     base = Path(a.out)
