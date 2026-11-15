@@ -299,6 +299,7 @@ FEEDS = [
     ("", "All events", None),
     ("challenges", "League Challenges", {"League Challenge"}),
     ("cups", "League Cups", {"League Cup"}),
+    ("prereleases", "Prereleases", {"Prerelease"}),
     ("leagues", "League Nights", {"League Night"}),
 ]
 
