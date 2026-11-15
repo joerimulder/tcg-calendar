@@ -28,16 +28,24 @@ with sync_playwright() as p:
             report["responses"].append(entry)
     pg.on("response", on_response)
 
-    resp = pg.goto(url, wait_until="networkidle", timeout=90000)
-    report["page_status"] = resp.status if resp else None
-    pg.wait_for_timeout(8000)
-    report["title"] = pg.title()
-    txt = pg.inner_text("body")
-    report["body_head"] = txt[:300]
     import re
-    m = re.search(r"(\d+)\s+Play! Pok.mon event", txt)
-    report["found_text"] = m.group(0) if m else None
-    pg.screenshot(path=str(out / "page.png"), full_page=False)
+    pg.on("requestfailed", lambda r: report.setdefault("failed", []).append(
+        f"{r.url[:120]} {r.failure}") if len(report.get("failed", [])) < 15 else None)
+    try:
+        resp = pg.goto(url, wait_until="domcontentloaded", timeout=60000)
+        report["page_status"] = resp.status if resp else None
+        pg.wait_for_timeout(25000)
+    except Exception as e:
+        report["goto_error"] = repr(e)[:300]
+    try:
+        report["title"] = pg.title()
+        txt = pg.inner_text("body")
+        report["body_head"] = txt[:300]
+        m = re.search(r"(\d+)\s+Play! Pok.mon event", txt)
+        report["found_text"] = m.group(0) if m else None
+        pg.screenshot(path=str(out / "page.png"))
+    except Exception as e:
+        report["inspect_error"] = repr(e)[:300]
     b.close()
 
 (out / "report.json").write_text(json.dumps(report, indent=2), encoding="utf-8")
