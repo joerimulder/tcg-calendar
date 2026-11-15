@@ -2,3 +2,8 @@ name = "tcgcalendar-custom"
 main = "index.js"
 compatibility_date = "2026-11-01"
 workers_dev = true
+
+# Optional: serve the worker on your own domain instead of *.workers.dev.
+# This only works once tcgcalendar.ch's DNS is managed by Cloudflare (add the site
+# in the dashboard and switch the nameservers at the registrar). Then uncomment:
+# routes = [{ pattern = "custom.tcgcalendar.ch", custom_domain = true }]
