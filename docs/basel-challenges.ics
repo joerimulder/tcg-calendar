@@ -10,13 +10,20 @@ REFRESH-INTERVAL;VALUE=DURATION:PT6H
 X-PUBLISHED-TTL:PT6H
 BEGIN:VEVENT
 UID:26-11-001597@tcgcalendar
-DTSTAMP:20261115T111458Z
+DTSTAMP:20261115T113339Z
 DTSTART:20261115T120000Z
 DTEND:20261115T160000Z
 SUMMARY:Défi de Ligue Novembre @Geek Factory
 DESCRIPTION:League Challenge @ Geek Factory Mulhouse\nSource: Play! Pokémo
  n Event Locator\nhttps://www.pokemon.com/us/pokemon-trainer-club/play-poke
- mon-tournaments/26-11-001597/
+ mon-tournaments/26-11-001597/\nCross-border (France): bring ID/passport\, 
+ check Crit'Air rules in French cities\, EUR cash/card (not CHF).\nNavigate
+ :\nGoogle Maps: https://www.google.com/maps/dir/?api=1&destination=Geek%20
+ Factory%20Mulhouse%2C%2042%20Av.%20Clemenceau%2C%2068100%20Mulhouse%2C%20F
+ rance\nApple Maps: https://maps.apple.com/?daddr=Geek%20Factory%20Mulhouse
+ %2C%2042%20Av.%20Clemenceau%2C%2068100%20Mulhouse%2C%20France\nWaze: https
+ ://waze.com/ul?q=Geek%20Factory%20Mulhouse%2C%2042%20Av.%20Clemenceau%2C%2
+ 068100%20Mulhouse%2C%20France&navigate=yes
 LOCATION:Geek Factory Mulhouse\, 42 Av. Clemenceau\, 68100 Mulhouse\, Franc
  e
 URL:https://www.pokemon.com/us/pokemon-trainer-club/play-pokemon-tournament
@@ -26,13 +33,18 @@ CATEGORIES:League Challenge
 END:VEVENT
 BEGIN:VEVENT
 UID:26-11-004293@tcgcalendar
-DTSTAMP:20261115T111458Z
+DTSTAMP:20261115T113339Z
 DTSTART:20261121T094500Z
 DTEND:20261121T134500Z
 SUMMARY:CARAB Pokemon League Challenge
 DESCRIPTION:League Challenge @ Carab\nSource: Play! Pokémon Event Locator\
  nhttps://www.pokemon.com/us/pokemon-trainer-club/play-pokemon-tournaments/
- 26-11-004293/
+ 26-11-004293/\nNavigate:\nGoogle Maps: https://www.google.com/maps/dir/?ap
+ i=1&destination=Carab%2C%20Z%C3%BCrichstrasse%2031%2F1.%20Stock%2C%206004%
+ 20Luzern%2C%20Switzerland\nApple Maps: https://maps.apple.com/?daddr=Carab
+ %2C%20Z%C3%BCrichstrasse%2031%2F1.%20Stock%2C%206004%20Luzern%2C%20Switzer
+ land\nWaze: https://waze.com/ul?q=Carab%2C%20Z%C3%BCrichstrasse%2031%2F1.%
+ 20Stock%2C%206004%20Luzern%2C%20Switzerland&navigate=yes
 LOCATION:Carab\, Zürichstrasse 31/1. Stock\, 6004 Luzern\, Switzerland
 URL:https://www.pokemon.com/us/pokemon-trainer-club/play-pokemon-tournament
  s/26-11-004293/
@@ -41,13 +53,19 @@ CATEGORIES:League Challenge
 END:VEVENT
 BEGIN:VEVENT
 UID:26-11-001727@tcgcalendar
-DTSTAMP:20261115T111458Z
+DTSTAMP:20261115T113339Z
 DTSTART:20261121T100000Z
 DTEND:20261121T140000Z
 SUMMARY:KABOOOM Challenge
 DESCRIPTION:League Challenge @ Kabooom Entertainment GmbH\nSource: Play! Po
  kémon Event Locator\nhttps://www.pokemon.com/us/pokemon-trainer-club/play
- -pokemon-tournaments/26-11-001727/
+ -pokemon-tournaments/26-11-001727/\nNavigate:\nGoogle Maps: https://www.go
+ ogle.com/maps/dir/?api=1&destination=Kabooom%20Entertainment%20GmbH%2C%203
+ 6%20Dienerstrasse%2C%208004%20Z%C3%BCrich%2C%20Switzerland\nApple Maps: ht
+ tps://maps.apple.com/?daddr=Kabooom%20Entertainment%20GmbH%2C%2036%20Diene
+ rstrasse%2C%208004%20Z%C3%BCrich%2C%20Switzerland\nWaze: https://waze.com/
+ ul?q=Kabooom%20Entertainment%20GmbH%2C%2036%20Dienerstrasse%2C%208004%20Z%
+ C3%BCrich%2C%20Switzerland&navigate=yes
 LOCATION:Kabooom Entertainment GmbH\, 36 Dienerstrasse\, 8004 Zürich\, Swi
  tzerland
 URL:https://www.pokemon.com/us/pokemon-trainer-club/play-pokemon-tournament
@@ -57,13 +75,19 @@ CATEGORIES:League Challenge
 END:VEVENT
 BEGIN:VEVENT
 UID:26-11-006072@tcgcalendar
-DTSTAMP:20261115T111458Z
+DTSTAMP:20261115T113339Z
 DTSTART:20261121T100000Z
 DTEND:20261121T140000Z
 SUMMARY:League Challenge November Twomoons Stettbach
 DESCRIPTION:League Challenge @ Twomoons Stettbach\nSource: Play! Pokémon E
  vent Locator\nhttps://www.pokemon.com/us/pokemon-trainer-club/play-pokemon
- -tournaments/26-11-006072/
+ -tournaments/26-11-006072/\nNavigate:\nGoogle Maps: https://www.google.com
+ /maps/dir/?api=1&destination=Twomoons%20Stettbach%2C%20Z%C3%BCrichstrasse%
+ 20137A%2C%208600%20D%C3%BCbendorf%2C%20Switzerland\nApple Maps: https://ma
+ ps.apple.com/?daddr=Twomoons%20Stettbach%2C%20Z%C3%BCrichstrasse%20137A%2C
+ %208600%20D%C3%BCbendorf%2C%20Switzerland\nWaze: https://waze.com/ul?q=Two
+ moons%20Stettbach%2C%20Z%C3%BCrichstrasse%20137A%2C%208600%20D%C3%BCbendor
+ f%2C%20Switzerland&navigate=yes
 LOCATION:Twomoons Stettbach\, Zürichstrasse 137A\, 8600 Dübendorf\, Switz
  erland
 URL:https://www.pokemon.com/us/pokemon-trainer-club/play-pokemon-tournament
@@ -73,13 +97,18 @@ CATEGORIES:League Challenge
 END:VEVENT
 BEGIN:VEVENT
 UID:26-11-001886@tcgcalendar
-DTSTAMP:20261115T111458Z
+DTSTAMP:20261115T113339Z
 DTSTART:20261121T130000Z
 DTEND:20261121T170000Z
 SUMMARY:TCG Liga Murten Challenge November
 DESCRIPTION:League Challenge @ TCG Liga Murten\nSource: Play! Pokémon Even
  t Locator\nhttps://www.pokemon.com/us/pokemon-trainer-club/play-pokemon-to
- urnaments/26-11-001886/
+ urnaments/26-11-001886/\nNavigate:\nGoogle Maps: https://www.google.com/ma
+ ps/dir/?api=1&destination=TCG%20Liga%20Murten%2C%20174%20Baslerstrasse%2C%
+ 204632%20Trimbach%2C%20Switzerland\nApple Maps: https://maps.apple.com/?da
+ ddr=TCG%20Liga%20Murten%2C%20174%20Baslerstrasse%2C%204632%20Trimbach%2C%2
+ 0Switzerland\nWaze: https://waze.com/ul?q=TCG%20Liga%20Murten%2C%20174%20B
+ aslerstrasse%2C%204632%20Trimbach%2C%20Switzerland&navigate=yes
 LOCATION:TCG Liga Murten\, 174 Baslerstrasse\, 4632 Trimbach\, Switzerland
 URL:https://www.pokemon.com/us/pokemon-trainer-club/play-pokemon-tournament
  s/26-11-001886/
@@ -88,13 +117,18 @@ CATEGORIES:League Challenge
 END:VEVENT
 BEGIN:VEVENT
 UID:26-11-017767@tcgcalendar
-DTSTAMP:20261115T111458Z
+DTSTAMP:20261115T113339Z
 DTSTART:20261122T103000Z
 DTEND:20261122T143000Z
 SUMMARY:CastleGames TCG Challenge
 DESCRIPTION:League Challenge @ Castlegames\nSource: Play! Pokémon Event Lo
  cator\nhttps://www.pokemon.com/us/pokemon-trainer-club/play-pokemon-tourna
- ments/26-11-017767/
+ ments/26-11-017767/\nNavigate:\nGoogle Maps: https://www.google.com/maps/d
+ ir/?api=1&destination=Castlegames%2C%20Emmentalstrasse%2036%2C%203414%20Ob
+ erburg%2C%20Switzerland\nApple Maps: https://maps.apple.com/?daddr=Castleg
+ ames%2C%20Emmentalstrasse%2036%2C%203414%20Oberburg%2C%20Switzerland\nWaze
+ : https://waze.com/ul?q=Castlegames%2C%20Emmentalstrasse%2036%2C%203414%20
+ Oberburg%2C%20Switzerland&navigate=yes
 LOCATION:Castlegames\, Emmentalstrasse 36\, 3414 Oberburg\, Switzerland
 URL:https://www.pokemon.com/us/pokemon-trainer-club/play-pokemon-tournament
  s/26-11-017767/
@@ -103,13 +137,18 @@ CATEGORIES:League Challenge
 END:VEVENT
 BEGIN:VEVENT
 UID:26-11-019488@tcgcalendar
-DTSTAMP:20261115T111458Z
+DTSTAMP:20261115T113339Z
 DTSTART:20261123T180000Z
 DTEND:20261123T220000Z
 SUMMARY:TCG League Challenge November
 DESCRIPTION:League Challenge @ Animeverse\nSource: Play! Pokémon Event Loc
  ator\nhttps://www.pokemon.com/us/pokemon-trainer-club/play-pokemon-tournam
- ents/26-11-019488/
+ ents/26-11-019488/\nNavigate:\nGoogle Maps: https://www.google.com/maps/di
+ r/?api=1&destination=Animeverse%2C%20Lehenmattstrasse%20353%2F353%2C%20405
+ 2%20Basel%2C%20Switzerland\nApple Maps: https://maps.apple.com/?daddr=Anim
+ everse%2C%20Lehenmattstrasse%20353%2F353%2C%204052%20Basel%2C%20Switzerlan
+ d\nWaze: https://waze.com/ul?q=Animeverse%2C%20Lehenmattstrasse%20353%2F35
+ 3%2C%204052%20Basel%2C%20Switzerland&navigate=yes
 LOCATION:Animeverse\, Lehenmattstrasse 353/353\, 4052 Basel\, Switzerland
 URL:https://www.pokemon.com/us/pokemon-trainer-club/play-pokemon-tournament
  s/26-11-019488/
@@ -118,13 +157,19 @@ CATEGORIES:League Challenge
 END:VEVENT
 BEGIN:VEVENT
 UID:26-11-011209@tcgcalendar
-DTSTAMP:20261115T111458Z
+DTSTAMP:20261115T113339Z
 DTSTART:20261124T170000Z
 DTEND:20261124T210000Z
 SUMMARY:TCG League Challenge Novembre 2026
 DESCRIPTION:League Challenge @ Mille et Une Histoires\nSource: Play! Pokém
  on Event Locator\nhttps://www.pokemon.com/us/pokemon-trainer-club/play-pok
- emon-tournaments/26-11-011209/
+ emon-tournaments/26-11-011209/\nNavigate:\nGoogle Maps: https://www.google
+ .com/maps/dir/?api=1&destination=Mille%20et%20Une%20Histoires%2C%20Rue%20d
+ u%2023%20Juin%201%2C%202900%20Porrentruy%2C%20Switzerland\nApple Maps: htt
+ ps://maps.apple.com/?daddr=Mille%20et%20Une%20Histoires%2C%20Rue%20du%2023
+ %20Juin%201%2C%202900%20Porrentruy%2C%20Switzerland\nWaze: https://waze.co
+ m/ul?q=Mille%20et%20Une%20Histoires%2C%20Rue%20du%2023%20Juin%201%2C%20290
+ 0%20Porrentruy%2C%20Switzerland&navigate=yes
 LOCATION:Mille et Une Histoires\, Rue du 23 Juin 1\, 2900 Porrentruy\, Swit
  zerland
 URL:https://www.pokemon.com/us/pokemon-trainer-club/play-pokemon-tournament
@@ -134,13 +179,18 @@ CATEGORIES:League Challenge
 END:VEVENT
 BEGIN:VEVENT
 UID:26-11-005661@tcgcalendar
-DTSTAMP:20261115T111458Z
+DTSTAMP:20261115T113339Z
 DTSTART:20261125T180000Z
 DTEND:20261125T220000Z
 SUMMARY:ERUPT - Pokémon TCG Challenge
 DESCRIPTION:League Challenge @ Erupt Lounge\nSource: Play! Pokémon Event L
  ocator\nhttps://www.pokemon.com/us/pokemon-trainer-club/play-pokemon-tourn
- aments/26-11-005661/
+ aments/26-11-005661/\nNavigate:\nGoogle Maps: https://www.google.com/maps/
+ dir/?api=1&destination=Erupt%20Lounge%2C%20Parkterrasse%2014%2C%203012%20B
+ ern%2C%20Switzerland\nApple Maps: https://maps.apple.com/?daddr=Erupt%20Lo
+ unge%2C%20Parkterrasse%2014%2C%203012%20Bern%2C%20Switzerland\nWaze: https
+ ://waze.com/ul?q=Erupt%20Lounge%2C%20Parkterrasse%2014%2C%203012%20Bern%2C
+ %20Switzerland&navigate=yes
 LOCATION:Erupt Lounge\, Parkterrasse 14\, 3012 Bern\, Switzerland
 URL:https://www.pokemon.com/us/pokemon-trainer-club/play-pokemon-tournament
  s/26-11-005661/
@@ -149,13 +199,19 @@ CATEGORIES:League Challenge
 END:VEVENT
 BEGIN:VEVENT
 UID:26-11-005206@tcgcalendar
-DTSTAMP:20261115T111458Z
+DTSTAMP:20261115T113339Z
 DTSTART:20261125T181500Z
 DTEND:20261125T221500Z
 SUMMARY:Zadoys TCG Challenge November
 DESCRIPTION:League Challenge @ Zadoys Hobby & Card Store\nSource: Play! Pok
  émon Event Locator\nhttps://www.pokemon.com/us/pokemon-trainer-club/play-
- pokemon-tournaments/26-11-005206/
+ pokemon-tournaments/26-11-005206/\nNavigate:\nGoogle Maps: https://www.goo
+ gle.com/maps/dir/?api=1&destination=Zadoys%20Hobby%20%26%20Card%20Store%2C
+ %2055E%20Im%20Surinam%2C%204058%20Basel%2C%20Switzerland\nApple Maps: http
+ s://maps.apple.com/?daddr=Zadoys%20Hobby%20%26%20Card%20Store%2C%2055E%20I
+ m%20Surinam%2C%204058%20Basel%2C%20Switzerland\nWaze: https://waze.com/ul?
+ q=Zadoys%20Hobby%20%26%20Card%20Store%2C%2055E%20Im%20Surinam%2C%204058%20
+ Basel%2C%20Switzerland&navigate=yes
 LOCATION:Zadoys Hobby & Card Store\, 55E Im Surinam\, 4058 Basel\, Switzerl
  and
 URL:https://www.pokemon.com/us/pokemon-trainer-club/play-pokemon-tournament
@@ -165,13 +221,18 @@ CATEGORIES:League Challenge
 END:VEVENT
 BEGIN:VEVENT
 UID:26-11-004530@tcgcalendar
-DTSTAMP:20261115T111458Z
+DTSTAMP:20261115T113339Z
 DTSTART:20261127T180000Z
 DTEND:20261127T220000Z
 SUMMARY:TCG League Challenge November -MaRo Games
 DESCRIPTION:League Challenge @ MaRo Games\nSource: Play! Pokémon Event Loc
  ator\nhttps://www.pokemon.com/us/pokemon-trainer-club/play-pokemon-tournam
- ents/26-11-004530/
+ ents/26-11-004530/\nNavigate:\nGoogle Maps: https://www.google.com/maps/di
+ r/?api=1&destination=MaRo%20Games%2C%2011%20Hauptstrasse%2C%204127%20Birsf
+ elden%2C%20Switzerland\nApple Maps: https://maps.apple.com/?daddr=MaRo%20G
+ ames%2C%2011%20Hauptstrasse%2C%204127%20Birsfelden%2C%20Switzerland\nWaze:
+  https://waze.com/ul?q=MaRo%20Games%2C%2011%20Hauptstrasse%2C%204127%20Bir
+ sfelden%2C%20Switzerland&navigate=yes
 LOCATION:MaRo Games\, 11 Hauptstrasse\, 4127 Birsfelden\, Switzerland
 URL:https://www.pokemon.com/us/pokemon-trainer-club/play-pokemon-tournament
  s/26-11-004530/
@@ -180,13 +241,18 @@ CATEGORIES:League Challenge
 END:VEVENT
 BEGIN:VEVENT
 UID:26-11-003384@tcgcalendar
-DTSTAMP:20261115T111458Z
+DTSTAMP:20261115T113339Z
 DTSTART:20261128T110000Z
 DTEND:20261128T150000Z
 SUMMARY:Cardmaniac League Challenge 11/26
 DESCRIPTION:League Challenge @ Cardmaniac\nSource: Play! Pokémon Event Loc
  ator\nhttps://www.pokemon.com/us/pokemon-trainer-club/play-pokemon-tournam
- ents/26-11-003384/
+ ents/26-11-003384/\nNavigate:\nGoogle Maps: https://www.google.com/maps/di
+ r/?api=1&destination=Cardmaniac%2C%20Mitteldorfstrasse%2035%2C%205033%20Bu
+ chs%2C%20Switzerland\nApple Maps: https://maps.apple.com/?daddr=Cardmaniac
+ %2C%20Mitteldorfstrasse%2035%2C%205033%20Buchs%2C%20Switzerland\nWaze: htt
+ ps://waze.com/ul?q=Cardmaniac%2C%20Mitteldorfstrasse%2035%2C%205033%20Buch
+ s%2C%20Switzerland&navigate=yes
 LOCATION:Cardmaniac\, Mitteldorfstrasse 35\, 5033 Buchs\, Switzerland
 URL:https://www.pokemon.com/us/pokemon-trainer-club/play-pokemon-tournament
  s/26-11-003384/
@@ -195,13 +261,20 @@ CATEGORIES:League Challenge
 END:VEVENT
 BEGIN:VEVENT
 UID:26-11-001009@tcgcalendar
-DTSTAMP:20261115T111458Z
+DTSTAMP:20261115T113339Z
 DTSTART:20261128T130000Z
 DTEND:20261128T170000Z
 SUMMARY:Défi de ligue novembre
 DESCRIPTION:League Challenge @ Tokyozyma Poké\nSource: Play! Pokémon Even
  t Locator\nhttps://www.pokemon.com/us/pokemon-trainer-club/play-pokemon-to
- urnaments/26-11-001009/
+ urnaments/26-11-001009/\nCross-border (France): bring ID/passport\, check 
+ Crit'Air rules in French cities\, EUR cash/card (not CHF).\nNavigate:\nGoo
+ gle Maps: https://www.google.com/maps/dir/?api=1&destination=Tokyozyma%20P
+ ok%C3%A9%2C%2079%20Grande%20Rue%2C%2025400%20Audincourt%2C%20France\nApple
+  Maps: https://maps.apple.com/?daddr=Tokyozyma%20Pok%C3%A9%2C%2079%20Grand
+ e%20Rue%2C%2025400%20Audincourt%2C%20France\nWaze: https://waze.com/ul?q=T
+ okyozyma%20Pok%C3%A9%2C%2079%20Grande%20Rue%2C%2025400%20Audincourt%2C%20F
+ rance&navigate=yes
 LOCATION:Tokyozyma Poké\, 79 Grande Rue\, 25400 Audincourt\, France
 URL:https://www.pokemon.com/us/pokemon-trainer-club/play-pokemon-tournament
  s/26-11-001009/

@@ -10,24 +10,35 @@ REFRESH-INTERVAL;VALUE=DURATION:PT6H
 X-PUBLISHED-TTL:PT6H
 BEGIN:VEVENT
 UID:ln-ca7c969d8d20bfc9@tcgcalendar
-DTSTAMP:20261115T111458Z
+DTSTAMP:20261115T113339Z
 DTSTART:20261116T170000Z
 DTEND:20261116T200000Z
 SUMMARY:League night @ Animeverse
 DESCRIPTION:League Night @ Animeverse\nSource: Play! Pokémon Event Locator
-  (snapshot 2026-11-15)
+  (snapshot 2026-11-15)\nNavigate:\nGoogle Maps: https://www.google.com/map
+ s/dir/?api=1&destination=Animeverse%2C%20Rosentalstrasse%2026%2C%204058%20
+ Basel%2C%20Switzerland\nApple Maps: https://maps.apple.com/?daddr=Animever
+ se%2C%20Rosentalstrasse%2026%2C%204058%20Basel%2C%20Switzerland\nWaze: htt
+ ps://waze.com/ul?q=Animeverse%2C%20Rosentalstrasse%2026%2C%204058%20Basel%
+ 2C%20Switzerland&navigate=yes
 LOCATION:Animeverse\, Rosentalstrasse 26\, 4058 Basel\, Switzerland
 X-DISTANCE-KM:3
 CATEGORIES:League Night
 END:VEVENT
 BEGIN:VEVENT
 UID:ln-9fa178407bb20680@tcgcalendar
-DTSTAMP:20261115T111458Z
+DTSTAMP:20261115T113339Z
 DTSTART:20261118T173000Z
 DTEND:20261118T203000Z
 SUMMARY:League night @ Zadoys Hobby & Card Store
 DESCRIPTION:League Night @ Zadoys Hobby & Card Store\nSource: Play! Pokémo
- n Event Locator (snapshot 2026-11-15)
+ n Event Locator (snapshot 2026-11-15)\nNavigate:\nGoogle Maps: https://www
+ .google.com/maps/dir/?api=1&destination=Zadoys%20Hobby%20%26%20Card%20Stor
+ e%2C%2055E%20Im%20Surinam%2C%204058%20Basel%2C%20Switzerland\nApple Maps: 
+ https://maps.apple.com/?daddr=Zadoys%20Hobby%20%26%20Card%20Store%2C%2055E
+ %20Im%20Surinam%2C%204058%20Basel%2C%20Switzerland\nWaze: https://waze.com
+ /ul?q=Zadoys%20Hobby%20%26%20Card%20Store%2C%2055E%20Im%20Surinam%2C%20405
+ 8%20Basel%2C%20Switzerland&navigate=yes
 LOCATION:Zadoys Hobby & Card Store\, 55E Im Surinam\, 4058 Basel\, Switzerl
  and
 X-DISTANCE-KM:3
@@ -35,36 +46,52 @@ CATEGORIES:League Night
 END:VEVENT
 BEGIN:VEVENT
 UID:ln-7e45438abb4c82aa@tcgcalendar
-DTSTAMP:20261115T111458Z
+DTSTAMP:20261115T113339Z
 DTSTART:20261120T180000Z
 DTEND:20261120T210000Z
 SUMMARY:League night @ MaRo Games
 DESCRIPTION:League Night @ MaRo Games\nSource: Play! Pokémon Event Locator
-  (snapshot 2026-11-15)
+  (snapshot 2026-11-15)\nNavigate:\nGoogle Maps: https://www.google.com/map
+ s/dir/?api=1&destination=MaRo%20Games%2C%2011%20Hauptstrasse%2C%204127%20B
+ irsfelden%2C%20Switzerland\nApple Maps: https://maps.apple.com/?daddr=MaRo
+ %20Games%2C%2011%20Hauptstrasse%2C%204127%20Birsfelden%2C%20Switzerland\nW
+ aze: https://waze.com/ul?q=MaRo%20Games%2C%2011%20Hauptstrasse%2C%204127%2
+ 0Birsfelden%2C%20Switzerland&navigate=yes
 LOCATION:MaRo Games\, 11 Hauptstrasse\, 4127 Birsfelden\, Switzerland
 X-DISTANCE-KM:7
 CATEGORIES:League Night
 END:VEVENT
 BEGIN:VEVENT
 UID:ln-3d4a2b52ee728a47@tcgcalendar
-DTSTAMP:20261115T111458Z
+DTSTAMP:20261115T113339Z
 DTSTART:20261123T170000Z
 DTEND:20261123T200000Z
 SUMMARY:League night @ Animeverse
 DESCRIPTION:League Night @ Animeverse\nSource: Play! Pokémon Event Locator
-  (snapshot 2026-11-15)
+  (snapshot 2026-11-15)\nNavigate:\nGoogle Maps: https://www.google.com/map
+ s/dir/?api=1&destination=Animeverse%2C%20Rosentalstrasse%2026%2C%204058%20
+ Basel%2C%20Switzerland\nApple Maps: https://maps.apple.com/?daddr=Animever
+ se%2C%20Rosentalstrasse%2026%2C%204058%20Basel%2C%20Switzerland\nWaze: htt
+ ps://waze.com/ul?q=Animeverse%2C%20Rosentalstrasse%2026%2C%204058%20Basel%
+ 2C%20Switzerland&navigate=yes
 LOCATION:Animeverse\, Rosentalstrasse 26\, 4058 Basel\, Switzerland
 X-DISTANCE-KM:3
 CATEGORIES:League Night
 END:VEVENT
 BEGIN:VEVENT
 UID:ln-015d471eef98a79c@tcgcalendar
-DTSTAMP:20261115T111458Z
+DTSTAMP:20261115T113339Z
 DTSTART:20261125T173000Z
 DTEND:20261125T203000Z
 SUMMARY:League night @ Zadoys Hobby & Card Store
 DESCRIPTION:League Night @ Zadoys Hobby & Card Store\nSource: Play! Pokémo
- n Event Locator (snapshot 2026-11-15)
+ n Event Locator (snapshot 2026-11-15)\nNavigate:\nGoogle Maps: https://www
+ .google.com/maps/dir/?api=1&destination=Zadoys%20Hobby%20%26%20Card%20Stor
+ e%2C%2055E%20Im%20Surinam%2C%204058%20Basel%2C%20Switzerland\nApple Maps: 
+ https://maps.apple.com/?daddr=Zadoys%20Hobby%20%26%20Card%20Store%2C%2055E
+ %20Im%20Surinam%2C%204058%20Basel%2C%20Switzerland\nWaze: https://waze.com
+ /ul?q=Zadoys%20Hobby%20%26%20Card%20Store%2C%2055E%20Im%20Surinam%2C%20405
+ 8%20Basel%2C%20Switzerland&navigate=yes
 LOCATION:Zadoys Hobby & Card Store\, 55E Im Surinam\, 4058 Basel\, Switzerl
  and
 X-DISTANCE-KM:3
@@ -72,252 +99,357 @@ CATEGORIES:League Night
 END:VEVENT
 BEGIN:VEVENT
 UID:ln-8a013d23039015e7@tcgcalendar
-DTSTAMP:20261115T111458Z
+DTSTAMP:20261115T113339Z
 DTSTART:20261127T180000Z
 DTEND:20261127T210000Z
 SUMMARY:League night @ MaRo Games
 DESCRIPTION:League Night @ MaRo Games\nSource: Play! Pokémon Event Locator
-  (snapshot 2026-11-15)
+  (snapshot 2026-11-15)\nNavigate:\nGoogle Maps: https://www.google.com/map
+ s/dir/?api=1&destination=MaRo%20Games%2C%2011%20Hauptstrasse%2C%204127%20B
+ irsfelden%2C%20Switzerland\nApple Maps: https://maps.apple.com/?daddr=MaRo
+ %20Games%2C%2011%20Hauptstrasse%2C%204127%20Birsfelden%2C%20Switzerland\nW
+ aze: https://waze.com/ul?q=MaRo%20Games%2C%2011%20Hauptstrasse%2C%204127%2
+ 0Birsfelden%2C%20Switzerland&navigate=yes
 LOCATION:MaRo Games\, 11 Hauptstrasse\, 4127 Birsfelden\, Switzerland
 X-DISTANCE-KM:7
 CATEGORIES:League Night
 END:VEVENT
 BEGIN:VEVENT
 UID:ln-2da5434a059e8c41@tcgcalendar
-DTSTAMP:20261115T111458Z
+DTSTAMP:20261115T113339Z
 DTSTART:20261130T170000Z
 DTEND:20261130T200000Z
 SUMMARY:League night @ Animeverse
 DESCRIPTION:League Night @ Animeverse\nSource: Play! Pokémon Event Locator
-  (snapshot 2026-11-15)
+  (snapshot 2026-11-15)\nNavigate:\nGoogle Maps: https://www.google.com/map
+ s/dir/?api=1&destination=Animeverse%2C%20Rosentalstrasse%2026%2C%204058%20
+ Basel%2C%20Switzerland\nApple Maps: https://maps.apple.com/?daddr=Animever
+ se%2C%20Rosentalstrasse%2026%2C%204058%20Basel%2C%20Switzerland\nWaze: htt
+ ps://waze.com/ul?q=Animeverse%2C%20Rosentalstrasse%2026%2C%204058%20Basel%
+ 2C%20Switzerland&navigate=yes
 LOCATION:Animeverse\, Rosentalstrasse 26\, 4058 Basel\, Switzerland
 X-DISTANCE-KM:3
 CATEGORIES:League Night
 END:VEVENT
 BEGIN:VEVENT
 UID:ln-6de95ca103577b5e@tcgcalendar
-DTSTAMP:20261115T111458Z
+DTSTAMP:20261115T113339Z
 DTSTART:20261204T173000Z
 DTEND:20261204T203000Z
 SUMMARY:League night @ MaRo Games
 DESCRIPTION:League Night @ MaRo Games\nSource: Play! Pokémon Event Locator
-  (snapshot 2026-11-15)
+  (snapshot 2026-11-15)\nNavigate:\nGoogle Maps: https://www.google.com/map
+ s/dir/?api=1&destination=MaRo%20Games%2C%2011%20Hauptstrasse%2C%204127%20B
+ irsfelden%2C%20Switzerland\nApple Maps: https://maps.apple.com/?daddr=MaRo
+ %20Games%2C%2011%20Hauptstrasse%2C%204127%20Birsfelden%2C%20Switzerland\nW
+ aze: https://waze.com/ul?q=MaRo%20Games%2C%2011%20Hauptstrasse%2C%204127%2
+ 0Birsfelden%2C%20Switzerland&navigate=yes
 LOCATION:MaRo Games\, 11 Hauptstrasse\, 4127 Birsfelden\, Switzerland
 X-DISTANCE-KM:7
 CATEGORIES:League Night
 END:VEVENT
 BEGIN:VEVENT
 UID:ln-69be5c878d126dd9@tcgcalendar
-DTSTAMP:20261115T111458Z
+DTSTAMP:20261115T113339Z
 DTSTART:20261207T170000Z
 DTEND:20261207T200000Z
 SUMMARY:League night @ Animeverse
 DESCRIPTION:League Night @ Animeverse\nSource: Play! Pokémon Event Locator
-  (snapshot 2026-11-15)
+  (snapshot 2026-11-15)\nNavigate:\nGoogle Maps: https://www.google.com/map
+ s/dir/?api=1&destination=Animeverse%2C%20Rosentalstrasse%2026%2C%204058%20
+ Basel%2C%20Switzerland\nApple Maps: https://maps.apple.com/?daddr=Animever
+ se%2C%20Rosentalstrasse%2026%2C%204058%20Basel%2C%20Switzerland\nWaze: htt
+ ps://waze.com/ul?q=Animeverse%2C%20Rosentalstrasse%2026%2C%204058%20Basel%
+ 2C%20Switzerland&navigate=yes
 LOCATION:Animeverse\, Rosentalstrasse 26\, 4058 Basel\, Switzerland
 X-DISTANCE-KM:3
 CATEGORIES:League Night
 END:VEVENT
 BEGIN:VEVENT
 UID:ln-dccd257446bf1aec@tcgcalendar
-DTSTAMP:20261115T111458Z
+DTSTAMP:20261115T113339Z
 DTSTART:20261211T173000Z
 DTEND:20261211T203000Z
 SUMMARY:League night @ MaRo Games
 DESCRIPTION:League Night @ MaRo Games\nSource: Play! Pokémon Event Locator
-  (snapshot 2026-11-15)
+  (snapshot 2026-11-15)\nNavigate:\nGoogle Maps: https://www.google.com/map
+ s/dir/?api=1&destination=MaRo%20Games%2C%2011%20Hauptstrasse%2C%204127%20B
+ irsfelden%2C%20Switzerland\nApple Maps: https://maps.apple.com/?daddr=MaRo
+ %20Games%2C%2011%20Hauptstrasse%2C%204127%20Birsfelden%2C%20Switzerland\nW
+ aze: https://waze.com/ul?q=MaRo%20Games%2C%2011%20Hauptstrasse%2C%204127%2
+ 0Birsfelden%2C%20Switzerland&navigate=yes
 LOCATION:MaRo Games\, 11 Hauptstrasse\, 4127 Birsfelden\, Switzerland
 X-DISTANCE-KM:7
 CATEGORIES:League Night
 END:VEVENT
 BEGIN:VEVENT
 UID:ln-701c03de18ed1857@tcgcalendar
-DTSTAMP:20261115T111458Z
+DTSTAMP:20261115T113339Z
 DTSTART:20261214T170000Z
 DTEND:20261214T200000Z
 SUMMARY:League night @ Animeverse
 DESCRIPTION:League Night @ Animeverse\nSource: Play! Pokémon Event Locator
-  (snapshot 2026-11-15)
+  (snapshot 2026-11-15)\nNavigate:\nGoogle Maps: https://www.google.com/map
+ s/dir/?api=1&destination=Animeverse%2C%20Rosentalstrasse%2026%2C%204058%20
+ Basel%2C%20Switzerland\nApple Maps: https://maps.apple.com/?daddr=Animever
+ se%2C%20Rosentalstrasse%2026%2C%204058%20Basel%2C%20Switzerland\nWaze: htt
+ ps://waze.com/ul?q=Animeverse%2C%20Rosentalstrasse%2026%2C%204058%20Basel%
+ 2C%20Switzerland&navigate=yes
 LOCATION:Animeverse\, Rosentalstrasse 26\, 4058 Basel\, Switzerland
 X-DISTANCE-KM:3
 CATEGORIES:League Night
 END:VEVENT
 BEGIN:VEVENT
 UID:ln-bb3a5083cf35801e@tcgcalendar
-DTSTAMP:20261115T111458Z
+DTSTAMP:20261115T113339Z
 DTSTART:20261218T173000Z
 DTEND:20261218T203000Z
 SUMMARY:League night @ MaRo Games
 DESCRIPTION:League Night @ MaRo Games\nSource: Play! Pokémon Event Locator
-  (snapshot 2026-11-15)
+  (snapshot 2026-11-15)\nNavigate:\nGoogle Maps: https://www.google.com/map
+ s/dir/?api=1&destination=MaRo%20Games%2C%2011%20Hauptstrasse%2C%204127%20B
+ irsfelden%2C%20Switzerland\nApple Maps: https://maps.apple.com/?daddr=MaRo
+ %20Games%2C%2011%20Hauptstrasse%2C%204127%20Birsfelden%2C%20Switzerland\nW
+ aze: https://waze.com/ul?q=MaRo%20Games%2C%2011%20Hauptstrasse%2C%204127%2
+ 0Birsfelden%2C%20Switzerland&navigate=yes
 LOCATION:MaRo Games\, 11 Hauptstrasse\, 4127 Birsfelden\, Switzerland
 X-DISTANCE-KM:7
 CATEGORIES:League Night
 END:VEVENT
 BEGIN:VEVENT
 UID:ln-ba0f1a825770d029@tcgcalendar
-DTSTAMP:20261115T111458Z
+DTSTAMP:20261115T113339Z
 DTSTART:20261221T170000Z
 DTEND:20261221T200000Z
 SUMMARY:League night @ Animeverse
 DESCRIPTION:League Night @ Animeverse\nSource: Play! Pokémon Event Locator
-  (snapshot 2026-11-15)
+  (snapshot 2026-11-15)\nNavigate:\nGoogle Maps: https://www.google.com/map
+ s/dir/?api=1&destination=Animeverse%2C%20Rosentalstrasse%2026%2C%204058%20
+ Basel%2C%20Switzerland\nApple Maps: https://maps.apple.com/?daddr=Animever
+ se%2C%20Rosentalstrasse%2026%2C%204058%20Basel%2C%20Switzerland\nWaze: htt
+ ps://waze.com/ul?q=Animeverse%2C%20Rosentalstrasse%2026%2C%204058%20Basel%
+ 2C%20Switzerland&navigate=yes
 LOCATION:Animeverse\, Rosentalstrasse 26\, 4058 Basel\, Switzerland
 X-DISTANCE-KM:3
 CATEGORIES:League Night
 END:VEVENT
 BEGIN:VEVENT
 UID:ln-be8aac75f195ebda@tcgcalendar
-DTSTAMP:20261115T111458Z
+DTSTAMP:20261115T113339Z
 DTSTART:20261225T173000Z
 DTEND:20261225T203000Z
 SUMMARY:League night @ MaRo Games
 DESCRIPTION:League Night @ MaRo Games\nSource: Play! Pokémon Event Locator
-  (snapshot 2026-11-15)
+  (snapshot 2026-11-15)\nNavigate:\nGoogle Maps: https://www.google.com/map
+ s/dir/?api=1&destination=MaRo%20Games%2C%2011%20Hauptstrasse%2C%204127%20B
+ irsfelden%2C%20Switzerland\nApple Maps: https://maps.apple.com/?daddr=MaRo
+ %20Games%2C%2011%20Hauptstrasse%2C%204127%20Birsfelden%2C%20Switzerland\nW
+ aze: https://waze.com/ul?q=MaRo%20Games%2C%2011%20Hauptstrasse%2C%204127%2
+ 0Birsfelden%2C%20Switzerland&navigate=yes
 LOCATION:MaRo Games\, 11 Hauptstrasse\, 4127 Birsfelden\, Switzerland
 X-DISTANCE-KM:7
 CATEGORIES:League Night
 END:VEVENT
 BEGIN:VEVENT
 UID:ln-f7de2658405c1e63@tcgcalendar
-DTSTAMP:20261115T111458Z
+DTSTAMP:20261115T113339Z
 DTSTART:20261228T170000Z
 DTEND:20261228T200000Z
 SUMMARY:League night @ Animeverse
 DESCRIPTION:League Night @ Animeverse\nSource: Play! Pokémon Event Locator
-  (snapshot 2026-11-15)
+  (snapshot 2026-11-15)\nNavigate:\nGoogle Maps: https://www.google.com/map
+ s/dir/?api=1&destination=Animeverse%2C%20Rosentalstrasse%2026%2C%204058%20
+ Basel%2C%20Switzerland\nApple Maps: https://maps.apple.com/?daddr=Animever
+ se%2C%20Rosentalstrasse%2026%2C%204058%20Basel%2C%20Switzerland\nWaze: htt
+ ps://waze.com/ul?q=Animeverse%2C%20Rosentalstrasse%2026%2C%204058%20Basel%
+ 2C%20Switzerland&navigate=yes
 LOCATION:Animeverse\, Rosentalstrasse 26\, 4058 Basel\, Switzerland
 X-DISTANCE-KM:3
 CATEGORIES:League Night
 END:VEVENT
 BEGIN:VEVENT
 UID:ln-fb5d2998190364ea@tcgcalendar
-DTSTAMP:20261115T111458Z
+DTSTAMP:20261115T113339Z
 DTSTART:20270101T173000Z
 DTEND:20270101T203000Z
 SUMMARY:League night @ MaRo Games
 DESCRIPTION:League Night @ MaRo Games\nSource: Play! Pokémon Event Locator
-  (snapshot 2026-11-15)
+  (snapshot 2026-11-15)\nNavigate:\nGoogle Maps: https://www.google.com/map
+ s/dir/?api=1&destination=MaRo%20Games%2C%2011%20Hauptstrasse%2C%204127%20B
+ irsfelden%2C%20Switzerland\nApple Maps: https://maps.apple.com/?daddr=MaRo
+ %20Games%2C%2011%20Hauptstrasse%2C%204127%20Birsfelden%2C%20Switzerland\nW
+ aze: https://waze.com/ul?q=MaRo%20Games%2C%2011%20Hauptstrasse%2C%204127%2
+ 0Birsfelden%2C%20Switzerland&navigate=yes
 LOCATION:MaRo Games\, 11 Hauptstrasse\, 4127 Birsfelden\, Switzerland
 X-DISTANCE-KM:7
 CATEGORIES:League Night
 END:VEVENT
 BEGIN:VEVENT
 UID:ln-7243efc2a02e23dd@tcgcalendar
-DTSTAMP:20261115T111458Z
+DTSTAMP:20261115T113339Z
 DTSTART:20270104T170000Z
 DTEND:20270104T200000Z
 SUMMARY:League night @ Animeverse
 DESCRIPTION:League Night @ Animeverse\nSource: Play! Pokémon Event Locator
-  (snapshot 2026-11-15)
+  (snapshot 2026-11-15)\nNavigate:\nGoogle Maps: https://www.google.com/map
+ s/dir/?api=1&destination=Animeverse%2C%20Rosentalstrasse%2026%2C%204058%20
+ Basel%2C%20Switzerland\nApple Maps: https://maps.apple.com/?daddr=Animever
+ se%2C%20Rosentalstrasse%2026%2C%204058%20Basel%2C%20Switzerland\nWaze: htt
+ ps://waze.com/ul?q=Animeverse%2C%20Rosentalstrasse%2026%2C%204058%20Basel%
+ 2C%20Switzerland&navigate=yes
 LOCATION:Animeverse\, Rosentalstrasse 26\, 4058 Basel\, Switzerland
 X-DISTANCE-KM:3
 CATEGORIES:League Night
 END:VEVENT
 BEGIN:VEVENT
 UID:ln-4c1a8897b00f0e3e@tcgcalendar
-DTSTAMP:20261115T111458Z
+DTSTAMP:20261115T113339Z
 DTSTART:20270108T173000Z
 DTEND:20270108T203000Z
 SUMMARY:League night @ MaRo Games
 DESCRIPTION:League Night @ MaRo Games\nSource: Play! Pokémon Event Locator
-  (snapshot 2026-11-15)
+  (snapshot 2026-11-15)\nNavigate:\nGoogle Maps: https://www.google.com/map
+ s/dir/?api=1&destination=MaRo%20Games%2C%2011%20Hauptstrasse%2C%204127%20B
+ irsfelden%2C%20Switzerland\nApple Maps: https://maps.apple.com/?daddr=MaRo
+ %20Games%2C%2011%20Hauptstrasse%2C%204127%20Birsfelden%2C%20Switzerland\nW
+ aze: https://waze.com/ul?q=MaRo%20Games%2C%2011%20Hauptstrasse%2C%204127%2
+ 0Birsfelden%2C%20Switzerland&navigate=yes
 LOCATION:MaRo Games\, 11 Hauptstrasse\, 4127 Birsfelden\, Switzerland
 X-DISTANCE-KM:7
 CATEGORIES:League Night
 END:VEVENT
 BEGIN:VEVENT
 UID:ln-3bb7d612c20b49e5@tcgcalendar
-DTSTAMP:20261115T111458Z
+DTSTAMP:20261115T113339Z
 DTSTART:20270111T170000Z
 DTEND:20270111T200000Z
 SUMMARY:League night @ Animeverse
 DESCRIPTION:League Night @ Animeverse\nSource: Play! Pokémon Event Locator
-  (snapshot 2026-11-15)
+  (snapshot 2026-11-15)\nNavigate:\nGoogle Maps: https://www.google.com/map
+ s/dir/?api=1&destination=Animeverse%2C%20Rosentalstrasse%2026%2C%204058%20
+ Basel%2C%20Switzerland\nApple Maps: https://maps.apple.com/?daddr=Animever
+ se%2C%20Rosentalstrasse%2026%2C%204058%20Basel%2C%20Switzerland\nWaze: htt
+ ps://waze.com/ul?q=Animeverse%2C%20Rosentalstrasse%2026%2C%204058%20Basel%
+ 2C%20Switzerland&navigate=yes
 LOCATION:Animeverse\, Rosentalstrasse 26\, 4058 Basel\, Switzerland
 X-DISTANCE-KM:3
 CATEGORIES:League Night
 END:VEVENT
 BEGIN:VEVENT
 UID:ln-e9e8181a5a32e5e1@tcgcalendar
-DTSTAMP:20261115T111458Z
+DTSTAMP:20261115T113339Z
 DTSTART:20270115T173000Z
 DTEND:20270115T203000Z
 SUMMARY:League night @ MaRo Games
 DESCRIPTION:League Night @ MaRo Games\nSource: Play! Pokémon Event Locator
-  (snapshot 2026-11-15)
+  (snapshot 2026-11-15)\nNavigate:\nGoogle Maps: https://www.google.com/map
+ s/dir/?api=1&destination=MaRo%20Games%2C%2011%20Hauptstrasse%2C%204127%20B
+ irsfelden%2C%20Switzerland\nApple Maps: https://maps.apple.com/?daddr=MaRo
+ %20Games%2C%2011%20Hauptstrasse%2C%204127%20Birsfelden%2C%20Switzerland\nW
+ aze: https://waze.com/ul?q=MaRo%20Games%2C%2011%20Hauptstrasse%2C%204127%2
+ 0Birsfelden%2C%20Switzerland&navigate=yes
 LOCATION:MaRo Games\, 11 Hauptstrasse\, 4127 Birsfelden\, Switzerland
 X-DISTANCE-KM:7
 CATEGORIES:League Night
 END:VEVENT
 BEGIN:VEVENT
 UID:ln-b15443a91ba270ec@tcgcalendar
-DTSTAMP:20261115T111458Z
+DTSTAMP:20261115T113339Z
 DTSTART:20270118T170000Z
 DTEND:20270118T200000Z
 SUMMARY:League night @ Animeverse
 DESCRIPTION:League Night @ Animeverse\nSource: Play! Pokémon Event Locator
-  (snapshot 2026-11-15)
+  (snapshot 2026-11-15)\nNavigate:\nGoogle Maps: https://www.google.com/map
+ s/dir/?api=1&destination=Animeverse%2C%20Rosentalstrasse%2026%2C%204058%20
+ Basel%2C%20Switzerland\nApple Maps: https://maps.apple.com/?daddr=Animever
+ se%2C%20Rosentalstrasse%2026%2C%204058%20Basel%2C%20Switzerland\nWaze: htt
+ ps://waze.com/ul?q=Animeverse%2C%20Rosentalstrasse%2026%2C%204058%20Basel%
+ 2C%20Switzerland&navigate=yes
 LOCATION:Animeverse\, Rosentalstrasse 26\, 4058 Basel\, Switzerland
 X-DISTANCE-KM:3
 CATEGORIES:League Night
 END:VEVENT
 BEGIN:VEVENT
 UID:ln-d0c43c5eed81883f@tcgcalendar
-DTSTAMP:20261115T111458Z
+DTSTAMP:20261115T113339Z
 DTSTART:20270122T173000Z
 DTEND:20270122T203000Z
 SUMMARY:League night @ MaRo Games
 DESCRIPTION:League Night @ MaRo Games\nSource: Play! Pokémon Event Locator
-  (snapshot 2026-11-15)
+  (snapshot 2026-11-15)\nNavigate:\nGoogle Maps: https://www.google.com/map
+ s/dir/?api=1&destination=MaRo%20Games%2C%2011%20Hauptstrasse%2C%204127%20B
+ irsfelden%2C%20Switzerland\nApple Maps: https://maps.apple.com/?daddr=MaRo
+ %20Games%2C%2011%20Hauptstrasse%2C%204127%20Birsfelden%2C%20Switzerland\nW
+ aze: https://waze.com/ul?q=MaRo%20Games%2C%2011%20Hauptstrasse%2C%204127%2
+ 0Birsfelden%2C%20Switzerland&navigate=yes
 LOCATION:MaRo Games\, 11 Hauptstrasse\, 4127 Birsfelden\, Switzerland
 X-DISTANCE-KM:7
 CATEGORIES:League Night
 END:VEVENT
 BEGIN:VEVENT
 UID:ln-2afe69fb1d783e88@tcgcalendar
-DTSTAMP:20261115T111458Z
+DTSTAMP:20261115T113339Z
 DTSTART:20270125T170000Z
 DTEND:20270125T200000Z
 SUMMARY:League night @ Animeverse
 DESCRIPTION:League Night @ Animeverse\nSource: Play! Pokémon Event Locator
-  (snapshot 2026-11-15)
+  (snapshot 2026-11-15)\nNavigate:\nGoogle Maps: https://www.google.com/map
+ s/dir/?api=1&destination=Animeverse%2C%20Rosentalstrasse%2026%2C%204058%20
+ Basel%2C%20Switzerland\nApple Maps: https://maps.apple.com/?daddr=Animever
+ se%2C%20Rosentalstrasse%2026%2C%204058%20Basel%2C%20Switzerland\nWaze: htt
+ ps://waze.com/ul?q=Animeverse%2C%20Rosentalstrasse%2026%2C%204058%20Basel%
+ 2C%20Switzerland&navigate=yes
 LOCATION:Animeverse\, Rosentalstrasse 26\, 4058 Basel\, Switzerland
 X-DISTANCE-KM:3
 CATEGORIES:League Night
 END:VEVENT
 BEGIN:VEVENT
 UID:ln-332d37cf92bdda54@tcgcalendar
-DTSTAMP:20261115T111458Z
+DTSTAMP:20261115T113339Z
 DTSTART:20270129T173000Z
 DTEND:20270129T203000Z
 SUMMARY:League night @ MaRo Games
 DESCRIPTION:League Night @ MaRo Games\nSource: Play! Pokémon Event Locator
-  (snapshot 2026-11-15)
+  (snapshot 2026-11-15)\nNavigate:\nGoogle Maps: https://www.google.com/map
+ s/dir/?api=1&destination=MaRo%20Games%2C%2011%20Hauptstrasse%2C%204127%20B
+ irsfelden%2C%20Switzerland\nApple Maps: https://maps.apple.com/?daddr=MaRo
+ %20Games%2C%2011%20Hauptstrasse%2C%204127%20Birsfelden%2C%20Switzerland\nW
+ aze: https://waze.com/ul?q=MaRo%20Games%2C%2011%20Hauptstrasse%2C%204127%2
+ 0Birsfelden%2C%20Switzerland&navigate=yes
 LOCATION:MaRo Games\, 11 Hauptstrasse\, 4127 Birsfelden\, Switzerland
 X-DISTANCE-KM:7
 CATEGORIES:League Night
 END:VEVENT
 BEGIN:VEVENT
 UID:ln-60ecab60afa87ada@tcgcalendar
-DTSTAMP:20261115T111458Z
+DTSTAMP:20261115T113339Z
 DTSTART:20270201T170000Z
 DTEND:20270201T200000Z
 SUMMARY:League night @ Animeverse
 DESCRIPTION:League Night @ Animeverse\nSource: Play! Pokémon Event Locator
-  (snapshot 2026-11-15)
+  (snapshot 2026-11-15)\nNavigate:\nGoogle Maps: https://www.google.com/map
+ s/dir/?api=1&destination=Animeverse%2C%20Rosentalstrasse%2026%2C%204058%20
+ Basel%2C%20Switzerland\nApple Maps: https://maps.apple.com/?daddr=Animever
+ se%2C%20Rosentalstrasse%2026%2C%204058%20Basel%2C%20Switzerland\nWaze: htt
+ ps://waze.com/ul?q=Animeverse%2C%20Rosentalstrasse%2026%2C%204058%20Basel%
+ 2C%20Switzerland&navigate=yes
 LOCATION:Animeverse\, Rosentalstrasse 26\, 4058 Basel\, Switzerland
 X-DISTANCE-KM:3
 CATEGORIES:League Night
 END:VEVENT
 BEGIN:VEVENT
 UID:ln-665f7f8f43f437ee@tcgcalendar
-DTSTAMP:20261115T111458Z
+DTSTAMP:20261115T113339Z
 DTSTART:20270208T170000Z
 DTEND:20270208T200000Z
 SUMMARY:League night @ Animeverse
 DESCRIPTION:League Night @ Animeverse\nSource: Play! Pokémon Event Locator
-  (snapshot 2026-11-15)
+  (snapshot 2026-11-15)\nNavigate:\nGoogle Maps: https://www.google.com/map
+ s/dir/?api=1&destination=Animeverse%2C%20Rosentalstrasse%2026%2C%204058%20
+ Basel%2C%20Switzerland\nApple Maps: https://maps.apple.com/?daddr=Animever
+ se%2C%20Rosentalstrasse%2026%2C%204058%20Basel%2C%20Switzerland\nWaze: htt
+ ps://waze.com/ul?q=Animeverse%2C%20Rosentalstrasse%2026%2C%204058%20Basel%
+ 2C%20Switzerland&navigate=yes
 LOCATION:Animeverse\, Rosentalstrasse 26\, 4058 Basel\, Switzerland
 X-DISTANCE-KM:3
 CATEGORIES:League Night
