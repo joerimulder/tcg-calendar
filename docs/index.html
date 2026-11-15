@@ -104,6 +104,13 @@ a.title:hover { text-decoration-thickness: 2px; }
 .flag { display: inline-block; margin-left: 0.5rem; padding: 0 0.4rem; border: 1.5px solid var(--flag); color: var(--flag); font-size: 0.8125rem; font-weight: 700; line-height: 1.35; border-radius: 0.2rem; vertical-align: 0.1em; }
 .venue { font-weight: 600; }
 .place { display: block; color: var(--muted); font-size: 0.9375rem; }
+.filters { display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 0.75rem 1.5rem; margin: 0 0 1.25rem; }
+.chips { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+.chip { min-height: 2.75rem; padding: 0.4rem 0.95rem; font: inherit; font-weight: 600; color: inherit; background: none; border: 2px solid var(--rule); border-radius: 999px; cursor: pointer; }
+.chip[aria-pressed=true] { color: var(--black); background: var(--yellow); border-color: var(--black); }
+.chip .n { font-weight: 500; opacity: 0.7; margin-left: 0.3rem; }
+.loc { display: flex; flex-direction: column; gap: 0.25rem; font-size: 0.9375rem; color: var(--muted); }
+.loc select { min-height: 2.75rem; min-width: 12rem; padding: 0.4rem 0.7rem; font: inherit; color: var(--text); background: var(--surface); border: 2px solid var(--rule); border-radius: var(--r); }
 .more { margin-top: 1.25rem; font: inherit; font-weight: 600; color: inherit; background: none; border: 2px solid currentColor; border-radius: var(--r); padding: 0.6rem 1.1rem; min-height: 2.75rem; cursor: pointer; }
 .state { margin: 0; padding: 1.25rem 0; border-top: 1px solid var(--rule); border-bottom: 1px solid var(--rule); color: var(--muted); }
 
@@ -164,6 +171,12 @@ footer p { max-width: 40rem; margin: 0 0 0.9rem; color: var(--muted); font-size:
   <section aria-labelledby="next">
     <h2 id="next">Next events</h2>
     <p class="note">Times are in Basel time.</p>
+    <div class="filters" id="filters" hidden>
+      <div class="chips" role="group" aria-label="Event type" id="chips"></div>
+      <label class="loc">Location
+        <select id="city"></select>
+      </label>
+    </div>
     <ul class="board" id="board" hidden></ul>
     <p class="state" id="state">Loading events…</p>
     <noscript><p class="state">Turn on JavaScript to see the next events here. The calendar works without it.</p></noscript>
@@ -359,23 +372,51 @@ footer p { max-width: 40rem; margin: 0 0 0.9rem; color: var(--muted); font-size:
   var state = document.getElementById('state');
   var more = document.getElementById('more');
 
-  function render(events) {
-    var now = new Date();
-    var today = keyFmt.format(now), tomorrow = nextKey(today);
-    var list = events.map(function (e) {
-      var start = parseDT(e.DTSTART), end = parseDT(e.DTEND) || start;
-      return { start: start, end: end, title: e.SUMMARY || 'Pokémon TCG event', kind: e.CATEGORIES || '',
-               loc: venueParts(e.LOCATION), url: /^https:\/\//.test(e.URL || '') ? e.URL : '' };
-    }).filter(function (e) { return e.start && e.end >= now; })
-      .sort(function (a, b) { return a.start - b.start; });
+  var TYPES = [
+    ['', 'All'], ['League Challenge', 'Challenges'], ['League Cup', 'Cups'],
+    ['Prerelease', 'Prereleases'], ['League Night', 'League nights']
+  ];
+  var all = [], fType = '', fCity = '', expanded = false;
+  var chips = document.getElementById('chips'), citySel = document.getElementById('city');
 
+  function matches(e, ignoreType, ignoreCity) {
+    return (ignoreType || !fType || e.kind === fType) && (ignoreCity || !fCity || e.loc.city === fCity);
+  }
+  function buildControls() {
+    chips.textContent = '';
+    TYPES.forEach(function (t) {
+      var n = all.filter(function (e) { return matches(e, true, false) && (!t[0] || e.kind === t[0]); }).length;
+      var b = el('button', 'chip', t[1]);
+      b.type = 'button';
+      b.setAttribute('aria-pressed', String(fType === t[0]));
+      b.appendChild(el('span', 'n', String(n)));
+      b.addEventListener('click', function () { fType = t[0]; expanded = false; update(); });
+      chips.appendChild(b);
+    });
+    var counts = {};
+    all.forEach(function (e) { if (matches(e, false, true) && e.loc.city) counts[e.loc.city] = (counts[e.loc.city] || 0) + 1; });
+    var total = all.filter(function (e) { return matches(e, false, true); }).length;
+    citySel.textContent = '';
+    var o = el('option', '', 'All locations (' + total + ')'); o.value = ''; citySel.appendChild(o);
+    Object.keys(counts).sort(function (x, y) { return x.localeCompare(y); }).forEach(function (c) {
+      var op = el('option', '', c + ' (' + counts[c] + ')'); op.value = c; citySel.appendChild(op);
+    });
+    citySel.value = fCity;
+  }
+  function drawBoard() {
+    var list = all.filter(function (e) { return matches(e); });
+    var now = new Date(), today = keyFmt.format(now), tomorrow = nextKey(today);
+    board.textContent = '';
+    more.hidden = true;
     if (!list.length) {
-      state.textContent = 'No upcoming events right now. New events appear here as shops register them.';
+      board.hidden = true; state.hidden = false;
+      state.textContent = 'No events match these filters. Try another type or location.';
       return;
     }
+    state.hidden = true; board.hidden = false;
     list.forEach(function (e, i) {
       var li = el('li', 'row');
-      if (i >= SHOWN) li.hidden = true;
+      if (!expanded && i >= SHOWN) li.hidden = true;
       var when = el('div', 'when');
       when.appendChild(el('span', 'day', dayFmt.format(e.start)));
       when.appendChild(el('span', 'time', timeFmt.format(e.start)));
@@ -392,19 +433,29 @@ footer p { max-width: 40rem; margin: 0 0 0.9rem; color: var(--muted); font-size:
       li.appendChild(when); li.appendChild(what); li.appendChild(where);
       board.appendChild(li);
     });
-    state.hidden = true;
-    board.hidden = false;
     if (list.length > SHOWN) {
-      var expanded = false;
-      function label() { more.textContent = expanded ? 'Show fewer events' : 'Show all ' + list.length + ' events'; }
-      label();
       more.hidden = false;
-      more.addEventListener('click', function () {
-        expanded = !expanded;
-        [].forEach.call(board.children, function (li, i) { li.hidden = !expanded && i >= SHOWN; });
-        label();
-      });
+      more.textContent = expanded ? 'Show fewer events' : 'Show all ' + list.length + ' events';
     }
+  }
+  function update() { buildControls(); drawBoard(); }
+  citySel.addEventListener('change', function () { fCity = citySel.value; expanded = false; update(); });
+  more.addEventListener('click', function () { expanded = !expanded; drawBoard(); });
+
+  function render(events) {
+    var now = new Date();
+    all = events.map(function (e) {
+      var start = parseDT(e.DTSTART), end = parseDT(e.DTEND) || start;
+      return { start: start, end: end, title: e.SUMMARY || 'Pokémon TCG event', kind: e.CATEGORIES || '',
+               loc: venueParts(e.LOCATION), url: /^https:\/\//.test(e.URL || '') ? e.URL : '' };
+    }).filter(function (e) { return e.start && e.end >= now; })
+      .sort(function (a, b) { return a.start - b.start; });
+    if (!all.length) {
+      state.textContent = 'No upcoming events right now. New events appear here as shops register them.';
+      return;
+    }
+    document.getElementById('filters').hidden = false;
+    update();
   }
 
   if (served) {
