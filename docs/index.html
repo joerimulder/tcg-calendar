@@ -343,7 +343,7 @@ footer p { max-width: 40rem; margin: 0 0 0.9rem; color: var(--muted); font-size:
 
   <section aria-labelledby="build-h" id="build">
     <h2 id="build-h">Build your own calendar</h2>
-    <p class="note">Pick the events you want and download them as a .ics file. The download is a snapshot of today and does not update by itself. For events that appear on their own, subscribe to one of the calendars above.</p>
+    <p class="note" id="builder-note">Pick the events you want and download them as a .ics file. The download is a snapshot of today and does not update by itself. For events that appear on their own, subscribe to one of the calendars above.</p>
     <form class="builder" id="builder" hidden>
       <fieldset>
         <legend>Event types</legend>
@@ -625,8 +625,9 @@ footer p { max-width: 40rem; margin: 0 0 0.9rem; color: var(--muted); font-size:
   function liveUpdate() {
     var live = document.getElementById('builder-live');
     if (!LIVE_URL) return;
+    live.hidden = settings().types.length === 0;   /* the worker would fall back to its defaults */
+    if (live.hidden) return;
     var u = LIVE_URL.replace(/\/$/, '') + '/?' + builderQuery();
-    live.hidden = false;
     document.getElementById('live-webcal').href = u.replace(/^https?:/, 'webcal:');
     document.getElementById('live-google').href = 'https://calendar.google.com/calendar/render?cid=' + encodeURIComponent(u.replace(/^https?:/, 'webcal:'));
     document.getElementById('live-copy').onclick = function () {
@@ -664,6 +665,7 @@ footer p { max-width: 40rem; margin: 0 0 0.9rem; color: var(--muted); font-size:
     while ((m = re.exec(text))) blocks.push({ raw: m[0].replace(/\r?\n/g, '\r\n'), ev: parseICS(m[0])[0] });
     if (!blocks.length) return;
     builderRestore();
+    if (LIVE_URL) document.getElementById('builder-note').textContent = 'Pick the events you want, then subscribe to your selection: it updates every night like the calendars above. Or download it once as a .ics file, a snapshot of today.';
     builder.hidden = false;
     builderUpdate();
   }
