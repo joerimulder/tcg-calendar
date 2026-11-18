@@ -11,7 +11,7 @@ REFRESH-INTERVAL;VALUE=DURATION:PT6H
 X-PUBLISHED-TTL:PT6H
 BEGIN:VEVENT
 UID:26-11-004293@tcgcalendar
-DTSTAMP:20261116T111115Z
+DTSTAMP:20261118T113708Z
 DTSTART:20261121T094500Z
 DTEND:20261121T134500Z
 SUMMARY:CARAB Pokemon League Challenge
@@ -31,7 +31,7 @@ CATEGORIES:League Challenge
 END:VEVENT
 BEGIN:VEVENT
 UID:26-11-001727@tcgcalendar
-DTSTAMP:20261116T111115Z
+DTSTAMP:20261118T113708Z
 DTSTART:20261121T100000Z
 DTEND:20261121T140000Z
 SUMMARY:KABOOOM Challenge
@@ -53,7 +53,7 @@ CATEGORIES:League Challenge
 END:VEVENT
 BEGIN:VEVENT
 UID:26-11-006072@tcgcalendar
-DTSTAMP:20261116T111115Z
+DTSTAMP:20261118T113708Z
 DTSTART:20261121T100000Z
 DTEND:20261121T140000Z
 SUMMARY:League Challenge November Twomoons Stettbach
@@ -75,7 +75,7 @@ CATEGORIES:League Challenge
 END:VEVENT
 BEGIN:VEVENT
 UID:26-11-001886@tcgcalendar
-DTSTAMP:20261116T111115Z
+DTSTAMP:20261118T113708Z
 DTSTART:20261121T130000Z
 DTEND:20261121T170000Z
 SUMMARY:TCG Liga Murten Challenge November
@@ -95,7 +95,7 @@ CATEGORIES:League Challenge
 END:VEVENT
 BEGIN:VEVENT
 UID:26-11-004624@tcgcalendar
-DTSTAMP:20261116T111115Z
+DTSTAMP:20261118T113708Z
 DTSTART:20261122T090000Z
 DTEND:20261122T130000Z
 SUMMARY:Cup Pokémon Fair-Play
@@ -117,7 +117,7 @@ CATEGORIES:League Cup
 END:VEVENT
 BEGIN:VEVENT
 UID:26-11-007308@tcgcalendar
-DTSTAMP:20261116T111115Z
+DTSTAMP:20261118T113708Z
 DTSTART:20261122T094500Z
 DTEND:20261122T134500Z
 SUMMARY:GGB's League CUP
@@ -137,7 +137,7 @@ CATEGORIES:League Cup
 END:VEVENT
 BEGIN:VEVENT
 UID:26-11-017767@tcgcalendar
-DTSTAMP:20261116T111115Z
+DTSTAMP:20261118T113708Z
 DTSTART:20261122T103000Z
 DTEND:20261122T143000Z
 SUMMARY:CastleGames TCG Challenge
@@ -157,7 +157,7 @@ CATEGORIES:League Challenge
 END:VEVENT
 BEGIN:VEVENT
 UID:26-11-019488@tcgcalendar
-DTSTAMP:20261116T111115Z
+DTSTAMP:20261118T113708Z
 DTSTART:20261123T180000Z
 DTEND:20261123T220000Z
 SUMMARY:TCG League Challenge November
@@ -177,7 +177,7 @@ CATEGORIES:League Challenge
 END:VEVENT
 BEGIN:VEVENT
 UID:26-11-011209@tcgcalendar
-DTSTAMP:20261116T111115Z
+DTSTAMP:20261118T113708Z
 DTSTART:20261124T170000Z
 DTEND:20261124T210000Z
 SUMMARY:TCG League Challenge Novembre 2026
@@ -199,7 +199,7 @@ CATEGORIES:League Challenge
 END:VEVENT
 BEGIN:VEVENT
 UID:26-11-005661@tcgcalendar
-DTSTAMP:20261116T111115Z
+DTSTAMP:20261118T113708Z
 DTSTART:20261125T180000Z
 DTEND:20261125T220000Z
 SUMMARY:ERUPT - Pokémon TCG Challenge
@@ -219,7 +219,7 @@ CATEGORIES:League Challenge
 END:VEVENT
 BEGIN:VEVENT
 UID:26-11-005206@tcgcalendar
-DTSTAMP:20261116T111115Z
+DTSTAMP:20261118T113708Z
 DTSTART:20261125T181500Z
 DTEND:20261125T221500Z
 SUMMARY:Zadoys TCG Challenge November
@@ -241,7 +241,7 @@ CATEGORIES:League Challenge
 END:VEVENT
 BEGIN:VEVENT
 UID:26-11-004530@tcgcalendar
-DTSTAMP:20261116T111115Z
+DTSTAMP:20261118T113708Z
 DTSTART:20261127T180000Z
 DTEND:20261127T220000Z
 SUMMARY:TCG League Challenge November -MaRo Games
@@ -261,7 +261,7 @@ CATEGORIES:League Challenge
 END:VEVENT
 BEGIN:VEVENT
 UID:26-11-003384@tcgcalendar
-DTSTAMP:20261116T111115Z
+DTSTAMP:20261118T113708Z
 DTSTART:20261128T110000Z
 DTEND:20261128T150000Z
 SUMMARY:Cardmaniac League Challenge 11/26
@@ -281,7 +281,7 @@ CATEGORIES:League Challenge
 END:VEVENT
 BEGIN:VEVENT
 UID:26-11-001009@tcgcalendar
-DTSTAMP:20261116T111115Z
+DTSTAMP:20261118T113708Z
 DTSTART:20261128T130000Z
 DTEND:20261128T170000Z
 SUMMARY:Défi de ligue novembre
@@ -303,7 +303,7 @@ CATEGORIES:League Challenge
 END:VEVENT
 BEGIN:VEVENT
 UID:26-11-004295@tcgcalendar
-DTSTAMP:20261116T111115Z
+DTSTAMP:20261118T113708Z
 DTSTART:20261129T090000Z
 DTEND:20261129T130000Z
 SUMMARY:CARAB Cup Season 1
@@ -319,6 +319,226 @@ LOCATION:Carab\, Zürichstrasse 31/1. Stock\, 6004 Luzern\, Switzerland
 URL:https://www.pokemon.com/us/pokemon-trainer-club/play-pokemon-tournament
  s/26-11-004295/
 X-DISTANCE-KM:96
+CATEGORIES:League Cup
+END:VEVENT
+BEGIN:VEVENT
+UID:26-12-002636@tcgcalendar
+DTSTAMP:20261118T113708Z
+DTSTART:20261214T173000Z
+DTEND:20261214T213000Z
+SUMMARY:League Challenge December
+DESCRIPTION:League Challenge @ Twomoons Stettbach\nSource: Play! Pokémon E
+ vent Locator\nhttps://www.pokemon.com/us/pokemon-trainer-club/play-pokemon
+ -tournaments/26-12-002636/\nNavigate:\nGoogle Maps: https://www.google.com
+ /maps/dir/?api=1&destination=Twomoons%20Stettbach%2C%20Z%C3%BCrichstrasse%
+ 20137A%2C%208600%20D%C3%BCbendorf%2C%20Switzerland\nApple Maps: https://ma
+ ps.apple.com/?daddr=Twomoons%20Stettbach%2C%20Z%C3%BCrichstrasse%20137A%2C
+ %208600%20D%C3%BCbendorf%2C%20Switzerland\nWaze: https://waze.com/ul?q=Two
+ moons%20Stettbach%2C%20Z%C3%BCrichstrasse%20137A%2C%208600%20D%C3%BCbendor
+ f%2C%20Switzerland&navigate=yes
+LOCATION:Twomoons Stettbach\, Zürichstrasse 137A\, 8600 Dübendorf\, Switz
+ erland
+URL:https://www.pokemon.com/us/pokemon-trainer-club/play-pokemon-tournament
+ s/26-12-002636/
+X-DISTANCE-KM:93
+CATEGORIES:League Challenge
+END:VEVENT
+BEGIN:VEVENT
+UID:26-12-002487@tcgcalendar
+DTSTAMP:20261118T113708Z
+DTSTART:20261219T130000Z
+DTEND:20261219T170000Z
+SUMMARY:Ligue Mensuelle Fairplay Décembre
+DESCRIPTION:League Challenge @ Boutique Fairplay\nSource: Play! Pokémon Ev
+ ent Locator\nhttps://www.pokemon.com/us/pokemon-trainer-club/play-pokemon-
+ tournaments/26-12-002487/\nCross-border (France): bring ID/passport\, chec
+ k Crit'Air rules in French cities\, EUR cash/card (not CHF).\nNavigate:\nG
+ oogle Maps: https://www.google.com/maps/dir/?api=1&destination=Boutique%20
+ Fairplay%2C%2044%20Rue%20du%20Werkhof%2C%2068100%20Mulhouse%2C%20France\nA
+ pple Maps: https://maps.apple.com/?daddr=Boutique%20Fairplay%2C%2044%20Rue
+ %20du%20Werkhof%2C%2068100%20Mulhouse%2C%20France\nWaze: https://waze.com/
+ ul?q=Boutique%20Fairplay%2C%2044%20Rue%20du%20Werkhof%2C%2068100%20Mulhous
+ e%2C%20France&navigate=yes
+LOCATION:Boutique Fairplay\, 44 Rue du Werkhof\, 68100 Mulhouse\, France
+URL:https://www.pokemon.com/us/pokemon-trainer-club/play-pokemon-tournament
+ s/26-12-002487/
+X-DISTANCE-KM:39
+CATEGORIES:League Challenge
+END:VEVENT
+BEGIN:VEVENT
+UID:26-12-002572@tcgcalendar
+DTSTAMP:20261118T113708Z
+DTSTART:20261219T130000Z
+DTEND:20261219T170000Z
+SUMMARY:Defi de ligue decembre
+DESCRIPTION:League Challenge @ Tokyozyma Poké\nSource: Play! Pokémon Even
+ t Locator\nhttps://www.pokemon.com/us/pokemon-trainer-club/play-pokemon-to
+ urnaments/26-12-002572/\nCross-border (France): bring ID/passport\, check 
+ Crit'Air rules in French cities\, EUR cash/card (not CHF).\nNavigate:\nGoo
+ gle Maps: https://www.google.com/maps/dir/?api=1&destination=Tokyozyma%20P
+ ok%C3%A9%2C%2079%20Grande%20Rue%2C%2025400%20Audincourt%2C%20France\nApple
+  Maps: https://maps.apple.com/?daddr=Tokyozyma%20Pok%C3%A9%2C%2079%20Grand
+ e%20Rue%2C%2025400%20Audincourt%2C%20France\nWaze: https://waze.com/ul?q=T
+ okyozyma%20Pok%C3%A9%2C%2079%20Grande%20Rue%2C%2025400%20Audincourt%2C%20F
+ rance&navigate=yes
+LOCATION:Tokyozyma Poké\, 79 Grande Rue\, 25400 Audincourt\, France
+URL:https://www.pokemon.com/us/pokemon-trainer-club/play-pokemon-tournament
+ s/26-12-002572/
+X-DISTANCE-KM:92
+CATEGORIES:League Challenge
+END:VEVENT
+BEGIN:VEVENT
+UID:26-12-002491@tcgcalendar
+DTSTAMP:20261118T113708Z
+DTSTART:20261230T090000Z
+DTEND:20261230T130000Z
+SUMMARY:Cup fairplay de Noël
+DESCRIPTION:League Cup @ Boutique Fairplay\nSource: Play! Pokémon Event Lo
+ cator\nhttps://www.pokemon.com/us/pokemon-trainer-club/play-pokemon-tourna
+ ments/26-12-002491/\nCross-border (France): bring ID/passport\, check Crit
+ 'Air rules in French cities\, EUR cash/card (not CHF).\nNavigate:\nGoogle 
+ Maps: https://www.google.com/maps/dir/?api=1&destination=Boutique%20Fairpl
+ ay%2C%2044%20Rue%20du%20Werkhof%2C%2068100%20Mulhouse%2C%20France\nApple M
+ aps: https://maps.apple.com/?daddr=Boutique%20Fairplay%2C%2044%20Rue%20du%
+ 20Werkhof%2C%2068100%20Mulhouse%2C%20France\nWaze: https://waze.com/ul?q=B
+ outique%20Fairplay%2C%2044%20Rue%20du%20Werkhof%2C%2068100%20Mulhouse%2C%2
+ 0France&navigate=yes
+LOCATION:Boutique Fairplay\, 44 Rue du Werkhof\, 68100 Mulhouse\, France
+URL:https://www.pokemon.com/us/pokemon-trainer-club/play-pokemon-tournament
+ s/26-12-002491/
+X-DISTANCE-KM:39
+CATEGORIES:League Cup
+END:VEVENT
+BEGIN:VEVENT
+UID:27-01-000775@tcgcalendar
+DTSTAMP:20261118T113708Z
+DTSTART:20270102T130000Z
+DTEND:20270102T170000Z
+SUMMARY:Défi de ligue janvier
+DESCRIPTION:League Challenge @ Tokyozyma Poké\nSource: Play! Pokémon Even
+ t Locator\nhttps://www.pokemon.com/us/pokemon-trainer-club/play-pokemon-to
+ urnaments/27-01-000775/\nCross-border (France): bring ID/passport\, check 
+ Crit'Air rules in French cities\, EUR cash/card (not CHF).\nNavigate:\nGoo
+ gle Maps: https://www.google.com/maps/dir/?api=1&destination=Tokyozyma%20P
+ ok%C3%A9%2C%2079%20Grande%20Rue%2C%2025400%20Audincourt%2C%20France\nApple
+  Maps: https://maps.apple.com/?daddr=Tokyozyma%20Pok%C3%A9%2C%2079%20Grand
+ e%20Rue%2C%2025400%20Audincourt%2C%20France\nWaze: https://waze.com/ul?q=T
+ okyozyma%20Pok%C3%A9%2C%2079%20Grande%20Rue%2C%2025400%20Audincourt%2C%20F
+ rance&navigate=yes
+LOCATION:Tokyozyma Poké\, 79 Grande Rue\, 25400 Audincourt\, France
+URL:https://www.pokemon.com/us/pokemon-trainer-club/play-pokemon-tournament
+ s/27-01-000775/
+X-DISTANCE-KM:92
+CATEGORIES:League Challenge
+END:VEVENT
+BEGIN:VEVENT
+UID:27-01-000805@tcgcalendar
+DTSTAMP:20261118T113708Z
+DTSTART:20270116T100000Z
+DTEND:20270116T140000Z
+SUMMARY:League Cup Season 2 Twomoons Stettbach
+DESCRIPTION:League Cup @ Twomoons Stettbach\nSource: Play! Pokémon Event L
+ ocator\nhttps://www.pokemon.com/us/pokemon-trainer-club/play-pokemon-tourn
+ aments/27-01-000805/\nNavigate:\nGoogle Maps: https://www.google.com/maps/
+ dir/?api=1&destination=Twomoons%20Stettbach%2C%20Z%C3%BCrichstrasse%20137A
+ %2C%208600%20D%C3%BCbendorf%2C%20Switzerland\nApple Maps: https://maps.app
+ le.com/?daddr=Twomoons%20Stettbach%2C%20Z%C3%BCrichstrasse%20137A%2C%20860
+ 0%20D%C3%BCbendorf%2C%20Switzerland\nWaze: https://waze.com/ul?q=Twomoons%
+ 20Stettbach%2C%20Z%C3%BCrichstrasse%20137A%2C%208600%20D%C3%BCbendorf%2C%2
+ 0Switzerland&navigate=yes
+LOCATION:Twomoons Stettbach\, Zürichstrasse 137A\, 8600 Dübendorf\, Switz
+ erland
+URL:https://www.pokemon.com/us/pokemon-trainer-club/play-pokemon-tournament
+ s/27-01-000805/
+X-DISTANCE-KM:93
+CATEGORIES:League Cup
+END:VEVENT
+BEGIN:VEVENT
+UID:27-01-000803@tcgcalendar
+DTSTAMP:20261118T113708Z
+DTSTART:20270123T140000Z
+DTEND:20270123T180000Z
+SUMMARY:League Challenge January
+DESCRIPTION:League Challenge @ Twomoons Stettbach\nSource: Play! Pokémon E
+ vent Locator\nhttps://www.pokemon.com/us/pokemon-trainer-club/play-pokemon
+ -tournaments/27-01-000803/\nNavigate:\nGoogle Maps: https://www.google.com
+ /maps/dir/?api=1&destination=Twomoons%20Stettbach%2C%20Z%C3%BCrichstrasse%
+ 20137A%2C%208600%20D%C3%BCbendorf%2C%20Switzerland\nApple Maps: https://ma
+ ps.apple.com/?daddr=Twomoons%20Stettbach%2C%20Z%C3%BCrichstrasse%20137A%2C
+ %208600%20D%C3%BCbendorf%2C%20Switzerland\nWaze: https://waze.com/ul?q=Two
+ moons%20Stettbach%2C%20Z%C3%BCrichstrasse%20137A%2C%208600%20D%C3%BCbendor
+ f%2C%20Switzerland&navigate=yes
+LOCATION:Twomoons Stettbach\, Zürichstrasse 137A\, 8600 Dübendorf\, Switz
+ erland
+URL:https://www.pokemon.com/us/pokemon-trainer-club/play-pokemon-tournament
+ s/27-01-000803/
+X-DISTANCE-KM:93
+CATEGORIES:League Challenge
+END:VEVENT
+BEGIN:VEVENT
+UID:27-02-000567@tcgcalendar
+DTSTAMP:20261118T113708Z
+DTSTART:20270201T173000Z
+DTEND:20270201T213000Z
+SUMMARY:League Challenge February
+DESCRIPTION:League Challenge @ Twomoons Stettbach\nSource: Play! Pokémon E
+ vent Locator\nhttps://www.pokemon.com/us/pokemon-trainer-club/play-pokemon
+ -tournaments/27-02-000567/\nNavigate:\nGoogle Maps: https://www.google.com
+ /maps/dir/?api=1&destination=Twomoons%20Stettbach%2C%20Z%C3%BCrichstrasse%
+ 20137A%2C%208600%20D%C3%BCbendorf%2C%20Switzerland\nApple Maps: https://ma
+ ps.apple.com/?daddr=Twomoons%20Stettbach%2C%20Z%C3%BCrichstrasse%20137A%2C
+ %208600%20D%C3%BCbendorf%2C%20Switzerland\nWaze: https://waze.com/ul?q=Two
+ moons%20Stettbach%2C%20Z%C3%BCrichstrasse%20137A%2C%208600%20D%C3%BCbendor
+ f%2C%20Switzerland&navigate=yes
+LOCATION:Twomoons Stettbach\, Zürichstrasse 137A\, 8600 Dübendorf\, Switz
+ erland
+URL:https://www.pokemon.com/us/pokemon-trainer-club/play-pokemon-tournament
+ s/27-02-000567/
+X-DISTANCE-KM:93
+CATEGORIES:League Challenge
+END:VEVENT
+BEGIN:VEVENT
+UID:27-02-000545@tcgcalendar
+DTSTAMP:20261118T113708Z
+DTSTART:20270213T130000Z
+DTEND:20270213T170000Z
+SUMMARY:defi de ligue février
+DESCRIPTION:League Challenge @ Tokyozyma Poké\nSource: Play! Pokémon Even
+ t Locator\nhttps://www.pokemon.com/us/pokemon-trainer-club/play-pokemon-to
+ urnaments/27-02-000545/\nCross-border (France): bring ID/passport\, check 
+ Crit'Air rules in French cities\, EUR cash/card (not CHF).\nNavigate:\nGoo
+ gle Maps: https://www.google.com/maps/dir/?api=1&destination=Tokyozyma%20P
+ ok%C3%A9%2C%2079%20Grande%20Rue%2C%2025400%20Audincourt%2C%20France\nApple
+  Maps: https://maps.apple.com/?daddr=Tokyozyma%20Pok%C3%A9%2C%2079%20Grand
+ e%20Rue%2C%2025400%20Audincourt%2C%20France\nWaze: https://waze.com/ul?q=T
+ okyozyma%20Pok%C3%A9%2C%2079%20Grande%20Rue%2C%2025400%20Audincourt%2C%20F
+ rance&navigate=yes
+LOCATION:Tokyozyma Poké\, 79 Grande Rue\, 25400 Audincourt\, France
+URL:https://www.pokemon.com/us/pokemon-trainer-club/play-pokemon-tournament
+ s/27-02-000545/
+X-DISTANCE-KM:92
+CATEGORIES:League Challenge
+END:VEVENT
+BEGIN:VEVENT
+UID:27-02-000548@tcgcalendar
+DTSTAMP:20261118T113708Z
+DTSTART:20270214T090000Z
+DTEND:20270214T130000Z
+SUMMARY:Cup du 14 février
+DESCRIPTION:League Cup @ Tokyozyma Poké\nSource: Play! Pokémon Event Loca
+ tor\nhttps://www.pokemon.com/us/pokemon-trainer-club/play-pokemon-tourname
+ nts/27-02-000548/\nCross-border (France): bring ID/passport\, check Crit'A
+ ir rules in French cities\, EUR cash/card (not CHF).\nNavigate:\nGoogle Ma
+ ps: https://www.google.com/maps/dir/?api=1&destination=Tokyozyma%20Pok%C3%
+ A9%2C%2079%20Grande%20Rue%2C%2025400%20Audincourt%2C%20France\nApple Maps:
+  https://maps.apple.com/?daddr=Tokyozyma%20Pok%C3%A9%2C%2079%20Grande%20Ru
+ e%2C%2025400%20Audincourt%2C%20France\nWaze: https://waze.com/ul?q=Tokyozy
+ ma%20Pok%C3%A9%2C%2079%20Grande%20Rue%2C%2025400%20Audincourt%2C%20France&
+ navigate=yes
+LOCATION:Tokyozyma Poké\, 79 Grande Rue\, 25400 Audincourt\, France
+URL:https://www.pokemon.com/us/pokemon-trainer-club/play-pokemon-tournament
+ s/27-02-000548/
+X-DISTANCE-KM:92
 CATEGORIES:League Cup
 END:VEVENT
 END:VCALENDAR
