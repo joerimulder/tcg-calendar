@@ -9,92 +9,8 @@ X-WR-TIMEZONE:Europe/Zurich
 REFRESH-INTERVAL;VALUE=DURATION:PT6H
 X-PUBLISHED-TTL:PT6H
 BEGIN:VEVENT
-UID:26-11-004293@tcgcalendar
-DTSTAMP:20261118T113708Z
-DTSTART:20261121T094500Z
-DTEND:20261121T134500Z
-SUMMARY:CARAB Pokemon League Challenge
-DESCRIPTION:League Challenge @ Carab\nSource: Play! Pokémon Event Locator\
- nhttps://www.pokemon.com/us/pokemon-trainer-club/play-pokemon-tournaments/
- 26-11-004293/\nNavigate:\nGoogle Maps: https://www.google.com/maps/dir/?ap
- i=1&destination=Carab%2C%20Z%C3%BCrichstrasse%2031%2F1.%20Stock%2C%206004%
- 20Luzern%2C%20Switzerland\nApple Maps: https://maps.apple.com/?daddr=Carab
- %2C%20Z%C3%BCrichstrasse%2031%2F1.%20Stock%2C%206004%20Luzern%2C%20Switzer
- land\nWaze: https://waze.com/ul?q=Carab%2C%20Z%C3%BCrichstrasse%2031%2F1.%
- 20Stock%2C%206004%20Luzern%2C%20Switzerland&navigate=yes
-LOCATION:Carab\, Zürichstrasse 31/1. Stock\, 6004 Luzern\, Switzerland
-URL:https://www.pokemon.com/us/pokemon-trainer-club/play-pokemon-tournament
- s/26-11-004293/
-X-DISTANCE-KM:96
-CATEGORIES:League Challenge
-END:VEVENT
-BEGIN:VEVENT
-UID:26-11-001727@tcgcalendar
-DTSTAMP:20261118T113708Z
-DTSTART:20261121T100000Z
-DTEND:20261121T140000Z
-SUMMARY:KABOOOM Challenge
-DESCRIPTION:League Challenge @ Kabooom Entertainment GmbH\nSource: Play! Po
- kémon Event Locator\nhttps://www.pokemon.com/us/pokemon-trainer-club/play
- -pokemon-tournaments/26-11-001727/\nNavigate:\nGoogle Maps: https://www.go
- ogle.com/maps/dir/?api=1&destination=Kabooom%20Entertainment%20GmbH%2C%203
- 6%20Dienerstrasse%2C%208004%20Z%C3%BCrich%2C%20Switzerland\nApple Maps: ht
- tps://maps.apple.com/?daddr=Kabooom%20Entertainment%20GmbH%2C%2036%20Diene
- rstrasse%2C%208004%20Z%C3%BCrich%2C%20Switzerland\nWaze: https://waze.com/
- ul?q=Kabooom%20Entertainment%20GmbH%2C%2036%20Dienerstrasse%2C%208004%20Z%
- C3%BCrich%2C%20Switzerland&navigate=yes
-LOCATION:Kabooom Entertainment GmbH\, 36 Dienerstrasse\, 8004 Zürich\, Swi
- tzerland
-URL:https://www.pokemon.com/us/pokemon-trainer-club/play-pokemon-tournament
- s/26-11-001727/
-X-DISTANCE-KM:83
-CATEGORIES:League Challenge
-END:VEVENT
-BEGIN:VEVENT
-UID:26-11-006072@tcgcalendar
-DTSTAMP:20261118T113708Z
-DTSTART:20261121T100000Z
-DTEND:20261121T140000Z
-SUMMARY:League Challenge November Twomoons Stettbach
-DESCRIPTION:League Challenge @ Twomoons Stettbach\nSource: Play! Pokémon E
- vent Locator\nhttps://www.pokemon.com/us/pokemon-trainer-club/play-pokemon
- -tournaments/26-11-006072/\nNavigate:\nGoogle Maps: https://www.google.com
- /maps/dir/?api=1&destination=Twomoons%20Stettbach%2C%20Z%C3%BCrichstrasse%
- 20137A%2C%208600%20D%C3%BCbendorf%2C%20Switzerland\nApple Maps: https://ma
- ps.apple.com/?daddr=Twomoons%20Stettbach%2C%20Z%C3%BCrichstrasse%20137A%2C
- %208600%20D%C3%BCbendorf%2C%20Switzerland\nWaze: https://waze.com/ul?q=Two
- moons%20Stettbach%2C%20Z%C3%BCrichstrasse%20137A%2C%208600%20D%C3%BCbendor
- f%2C%20Switzerland&navigate=yes
-LOCATION:Twomoons Stettbach\, Zürichstrasse 137A\, 8600 Dübendorf\, Switz
- erland
-URL:https://www.pokemon.com/us/pokemon-trainer-club/play-pokemon-tournament
- s/26-11-006072/
-X-DISTANCE-KM:93
-CATEGORIES:League Challenge
-END:VEVENT
-BEGIN:VEVENT
-UID:26-11-001886@tcgcalendar
-DTSTAMP:20261118T113708Z
-DTSTART:20261121T130000Z
-DTEND:20261121T170000Z
-SUMMARY:TCG Liga Murten Challenge November
-DESCRIPTION:League Challenge @ TCG Liga Murten\nSource: Play! Pokémon Even
- t Locator\nhttps://www.pokemon.com/us/pokemon-trainer-club/play-pokemon-to
- urnaments/26-11-001886/\nNavigate:\nGoogle Maps: https://www.google.com/ma
- ps/dir/?api=1&destination=TCG%20Liga%20Murten%2C%20174%20Baslerstrasse%2C%
- 204632%20Trimbach%2C%20Switzerland\nApple Maps: https://maps.apple.com/?da
- ddr=TCG%20Liga%20Murten%2C%20174%20Baslerstrasse%2C%204632%20Trimbach%2C%2
- 0Switzerland\nWaze: https://waze.com/ul?q=TCG%20Liga%20Murten%2C%20174%20B
- aslerstrasse%2C%204632%20Trimbach%2C%20Switzerland&navigate=yes
-LOCATION:TCG Liga Murten\, 174 Baslerstrasse\, 4632 Trimbach\, Switzerland
-URL:https://www.pokemon.com/us/pokemon-trainer-club/play-pokemon-tournament
- s/26-11-001886/
-X-DISTANCE-KM:46
-CATEGORIES:League Challenge
-END:VEVENT
-BEGIN:VEVENT
 UID:26-11-017767@tcgcalendar
-DTSTAMP:20261118T113708Z
+DTSTAMP:20261122T111734Z
 DTSTART:20261122T103000Z
 DTEND:20261122T143000Z
 SUMMARY:CastleGames TCG Challenge
@@ -114,7 +30,7 @@ CATEGORIES:League Challenge
 END:VEVENT
 BEGIN:VEVENT
 UID:26-11-019488@tcgcalendar
-DTSTAMP:20261118T113708Z
+DTSTAMP:20261122T111734Z
 DTSTART:20261123T180000Z
 DTEND:20261123T220000Z
 SUMMARY:TCG League Challenge November
@@ -134,7 +50,7 @@ CATEGORIES:League Challenge
 END:VEVENT
 BEGIN:VEVENT
 UID:26-11-011209@tcgcalendar
-DTSTAMP:20261118T113708Z
+DTSTAMP:20261122T111734Z
 DTSTART:20261124T170000Z
 DTEND:20261124T210000Z
 SUMMARY:TCG League Challenge Novembre 2026
@@ -156,7 +72,7 @@ CATEGORIES:League Challenge
 END:VEVENT
 BEGIN:VEVENT
 UID:26-11-005661@tcgcalendar
-DTSTAMP:20261118T113708Z
+DTSTAMP:20261122T111734Z
 DTSTART:20261125T180000Z
 DTEND:20261125T220000Z
 SUMMARY:ERUPT - Pokémon TCG Challenge
@@ -176,7 +92,7 @@ CATEGORIES:League Challenge
 END:VEVENT
 BEGIN:VEVENT
 UID:26-11-005206@tcgcalendar
-DTSTAMP:20261118T113708Z
+DTSTAMP:20261122T111734Z
 DTSTART:20261125T181500Z
 DTEND:20261125T221500Z
 SUMMARY:Zadoys TCG Challenge November
@@ -198,7 +114,7 @@ CATEGORIES:League Challenge
 END:VEVENT
 BEGIN:VEVENT
 UID:26-11-004530@tcgcalendar
-DTSTAMP:20261118T113708Z
+DTSTAMP:20261122T111734Z
 DTSTART:20261127T180000Z
 DTEND:20261127T220000Z
 SUMMARY:TCG League Challenge November -MaRo Games
@@ -218,7 +134,7 @@ CATEGORIES:League Challenge
 END:VEVENT
 BEGIN:VEVENT
 UID:26-11-003384@tcgcalendar
-DTSTAMP:20261118T113708Z
+DTSTAMP:20261122T111734Z
 DTSTART:20261128T110000Z
 DTEND:20261128T150000Z
 SUMMARY:Cardmaniac League Challenge 11/26
@@ -238,7 +154,7 @@ CATEGORIES:League Challenge
 END:VEVENT
 BEGIN:VEVENT
 UID:26-11-001009@tcgcalendar
-DTSTAMP:20261118T113708Z
+DTSTAMP:20261122T111734Z
 DTSTART:20261128T130000Z
 DTEND:20261128T170000Z
 SUMMARY:Défi de ligue novembre
@@ -259,8 +175,30 @@ X-DISTANCE-KM:92
 CATEGORIES:League Challenge
 END:VEVENT
 BEGIN:VEVENT
+UID:26-12-004730@tcgcalendar
+DTSTAMP:20261122T111734Z
+DTSTART:20261212T100000Z
+DTEND:20261212T140000Z
+SUMMARY:KABOOOM Challenge
+DESCRIPTION:League Challenge @ Kabooom Entertainment GmbH\nSource: Play! Po
+ kémon Event Locator\nhttps://www.pokemon.com/us/pokemon-trainer-club/play
+ -pokemon-tournaments/26-12-004730/\nNavigate:\nGoogle Maps: https://www.go
+ ogle.com/maps/dir/?api=1&destination=Kabooom%20Entertainment%20GmbH%2C%203
+ 6%20Dienerstrasse%2C%208004%20Z%C3%BCrich%2C%20Switzerland\nApple Maps: ht
+ tps://maps.apple.com/?daddr=Kabooom%20Entertainment%20GmbH%2C%2036%20Diene
+ rstrasse%2C%208004%20Z%C3%BCrich%2C%20Switzerland\nWaze: https://waze.com/
+ ul?q=Kabooom%20Entertainment%20GmbH%2C%2036%20Dienerstrasse%2C%208004%20Z%
+ C3%BCrich%2C%20Switzerland&navigate=yes
+LOCATION:Kabooom Entertainment GmbH\, 36 Dienerstrasse\, 8004 Zürich\, Swi
+ tzerland
+URL:https://www.pokemon.com/us/pokemon-trainer-club/play-pokemon-tournament
+ s/26-12-004730/
+X-DISTANCE-KM:83
+CATEGORIES:League Challenge
+END:VEVENT
+BEGIN:VEVENT
 UID:26-12-002636@tcgcalendar
-DTSTAMP:20261118T113708Z
+DTSTAMP:20261122T111734Z
 DTSTART:20261214T173000Z
 DTEND:20261214T213000Z
 SUMMARY:League Challenge December
@@ -281,8 +219,28 @@ X-DISTANCE-KM:93
 CATEGORIES:League Challenge
 END:VEVENT
 BEGIN:VEVENT
+UID:26-12-004773@tcgcalendar
+DTSTAMP:20261122T111734Z
+DTSTART:20261218T060000Z
+DTEND:20261218T100000Z
+SUMMARY:TCG League Challenge December - MaRo Games
+DESCRIPTION:League Challenge @ MaRo Games\nSource: Play! Pokémon Event Loc
+ ator\nhttps://www.pokemon.com/us/pokemon-trainer-club/play-pokemon-tournam
+ ents/26-12-004773/\nNavigate:\nGoogle Maps: https://www.google.com/maps/di
+ r/?api=1&destination=MaRo%20Games%2C%2011%20Hauptstrasse%2C%204127%20Birsf
+ elden%2C%20Switzerland\nApple Maps: https://maps.apple.com/?daddr=MaRo%20G
+ ames%2C%2011%20Hauptstrasse%2C%204127%20Birsfelden%2C%20Switzerland\nWaze:
+  https://waze.com/ul?q=MaRo%20Games%2C%2011%20Hauptstrasse%2C%204127%20Bir
+ sfelden%2C%20Switzerland&navigate=yes
+LOCATION:MaRo Games\, 11 Hauptstrasse\, 4127 Birsfelden\, Switzerland
+URL:https://www.pokemon.com/us/pokemon-trainer-club/play-pokemon-tournament
+ s/26-12-004773/
+X-DISTANCE-KM:7
+CATEGORIES:League Challenge
+END:VEVENT
+BEGIN:VEVENT
 UID:26-12-002487@tcgcalendar
-DTSTAMP:20261118T113708Z
+DTSTAMP:20261122T111734Z
 DTSTART:20261219T130000Z
 DTEND:20261219T170000Z
 SUMMARY:Ligue Mensuelle Fairplay Décembre
@@ -304,7 +262,7 @@ CATEGORIES:League Challenge
 END:VEVENT
 BEGIN:VEVENT
 UID:26-12-002572@tcgcalendar
-DTSTAMP:20261118T113708Z
+DTSTAMP:20261122T111734Z
 DTSTART:20261219T130000Z
 DTEND:20261219T170000Z
 SUMMARY:Defi de ligue decembre
@@ -326,7 +284,7 @@ CATEGORIES:League Challenge
 END:VEVENT
 BEGIN:VEVENT
 UID:27-01-000775@tcgcalendar
-DTSTAMP:20261118T113708Z
+DTSTAMP:20261122T111734Z
 DTSTART:20270102T130000Z
 DTEND:20270102T170000Z
 SUMMARY:Défi de ligue janvier
@@ -347,8 +305,50 @@ X-DISTANCE-KM:92
 CATEGORIES:League Challenge
 END:VEVENT
 BEGIN:VEVENT
+UID:27-01-002178@tcgcalendar
+DTSTAMP:20261122T111734Z
+DTSTART:20270116T100000Z
+DTEND:20270116T140000Z
+SUMMARY:KABOOOM Challenge
+DESCRIPTION:League Challenge @ Kabooom Entertainment GmbH\nSource: Play! Po
+ kémon Event Locator\nhttps://www.pokemon.com/us/pokemon-trainer-club/play
+ -pokemon-tournaments/27-01-002178/\nNavigate:\nGoogle Maps: https://www.go
+ ogle.com/maps/dir/?api=1&destination=Kabooom%20Entertainment%20GmbH%2C%203
+ 6%20Dienerstrasse%2C%208004%20Z%C3%BCrich%2C%20Switzerland\nApple Maps: ht
+ tps://maps.apple.com/?daddr=Kabooom%20Entertainment%20GmbH%2C%2036%20Diene
+ rstrasse%2C%208004%20Z%C3%BCrich%2C%20Switzerland\nWaze: https://waze.com/
+ ul?q=Kabooom%20Entertainment%20GmbH%2C%2036%20Dienerstrasse%2C%208004%20Z%
+ C3%BCrich%2C%20Switzerland&navigate=yes
+LOCATION:Kabooom Entertainment GmbH\, 36 Dienerstrasse\, 8004 Zürich\, Swi
+ tzerland
+URL:https://www.pokemon.com/us/pokemon-trainer-club/play-pokemon-tournament
+ s/27-01-002178/
+X-DISTANCE-KM:83
+CATEGORIES:League Challenge
+END:VEVENT
+BEGIN:VEVENT
+UID:27-01-002210@tcgcalendar
+DTSTAMP:20261122T111734Z
+DTSTART:20270122T060000Z
+DTEND:20270122T100000Z
+SUMMARY:TCG League Challenge January - MaRo Games
+DESCRIPTION:League Challenge @ MaRo Games\nSource: Play! Pokémon Event Loc
+ ator\nhttps://www.pokemon.com/us/pokemon-trainer-club/play-pokemon-tournam
+ ents/27-01-002210/\nNavigate:\nGoogle Maps: https://www.google.com/maps/di
+ r/?api=1&destination=MaRo%20Games%2C%2011%20Hauptstrasse%2C%204127%20Birsf
+ elden%2C%20Switzerland\nApple Maps: https://maps.apple.com/?daddr=MaRo%20G
+ ames%2C%2011%20Hauptstrasse%2C%204127%20Birsfelden%2C%20Switzerland\nWaze:
+  https://waze.com/ul?q=MaRo%20Games%2C%2011%20Hauptstrasse%2C%204127%20Bir
+ sfelden%2C%20Switzerland&navigate=yes
+LOCATION:MaRo Games\, 11 Hauptstrasse\, 4127 Birsfelden\, Switzerland
+URL:https://www.pokemon.com/us/pokemon-trainer-club/play-pokemon-tournament
+ s/27-01-002210/
+X-DISTANCE-KM:7
+CATEGORIES:League Challenge
+END:VEVENT
+BEGIN:VEVENT
 UID:27-01-000803@tcgcalendar
-DTSTAMP:20261118T113708Z
+DTSTAMP:20261122T111734Z
 DTSTART:20270123T140000Z
 DTEND:20270123T180000Z
 SUMMARY:League Challenge January
@@ -370,7 +370,7 @@ CATEGORIES:League Challenge
 END:VEVENT
 BEGIN:VEVENT
 UID:27-02-000567@tcgcalendar
-DTSTAMP:20261118T113708Z
+DTSTAMP:20261122T111734Z
 DTSTART:20270201T173000Z
 DTEND:20270201T213000Z
 SUMMARY:League Challenge February
@@ -391,8 +391,30 @@ X-DISTANCE-KM:93
 CATEGORIES:League Challenge
 END:VEVENT
 BEGIN:VEVENT
+UID:27-02-001855@tcgcalendar
+DTSTAMP:20261122T111734Z
+DTSTART:20270213T100000Z
+DTEND:20270213T140000Z
+SUMMARY:KABOOOM Challenge
+DESCRIPTION:League Challenge @ Kabooom Entertainment GmbH\nSource: Play! Po
+ kémon Event Locator\nhttps://www.pokemon.com/us/pokemon-trainer-club/play
+ -pokemon-tournaments/27-02-001855/\nNavigate:\nGoogle Maps: https://www.go
+ ogle.com/maps/dir/?api=1&destination=Kabooom%20Entertainment%20GmbH%2C%203
+ 6%20Dienerstrasse%2C%208004%20Z%C3%BCrich%2C%20Switzerland\nApple Maps: ht
+ tps://maps.apple.com/?daddr=Kabooom%20Entertainment%20GmbH%2C%2036%20Diene
+ rstrasse%2C%208004%20Z%C3%BCrich%2C%20Switzerland\nWaze: https://waze.com/
+ ul?q=Kabooom%20Entertainment%20GmbH%2C%2036%20Dienerstrasse%2C%208004%20Z%
+ C3%BCrich%2C%20Switzerland&navigate=yes
+LOCATION:Kabooom Entertainment GmbH\, 36 Dienerstrasse\, 8004 Zürich\, Swi
+ tzerland
+URL:https://www.pokemon.com/us/pokemon-trainer-club/play-pokemon-tournament
+ s/27-02-001855/
+X-DISTANCE-KM:83
+CATEGORIES:League Challenge
+END:VEVENT
+BEGIN:VEVENT
 UID:27-02-000545@tcgcalendar
-DTSTAMP:20261118T113708Z
+DTSTAMP:20261122T111734Z
 DTSTART:20270213T130000Z
 DTEND:20270213T170000Z
 SUMMARY:defi de ligue février
@@ -410,6 +432,26 @@ LOCATION:Tokyozyma Poké\, 79 Grande Rue\, 25400 Audincourt\, France
 URL:https://www.pokemon.com/us/pokemon-trainer-club/play-pokemon-tournament
  s/27-02-000545/
 X-DISTANCE-KM:92
+CATEGORIES:League Challenge
+END:VEVENT
+BEGIN:VEVENT
+UID:27-02-001895@tcgcalendar
+DTSTAMP:20261122T111734Z
+DTSTART:20270225T230000Z
+DTEND:20270226T030000Z
+SUMMARY:TCG League Challenge February - MaRo Games
+DESCRIPTION:League Challenge @ MaRo Games\nSource: Play! Pokémon Event Loc
+ ator\nhttps://www.pokemon.com/us/pokemon-trainer-club/play-pokemon-tournam
+ ents/27-02-001895/\nNavigate:\nGoogle Maps: https://www.google.com/maps/di
+ r/?api=1&destination=MaRo%20Games%2C%2011%20Hauptstrasse%2C%204127%20Birsf
+ elden%2C%20Switzerland\nApple Maps: https://maps.apple.com/?daddr=MaRo%20G
+ ames%2C%2011%20Hauptstrasse%2C%204127%20Birsfelden%2C%20Switzerland\nWaze:
+  https://waze.com/ul?q=MaRo%20Games%2C%2011%20Hauptstrasse%2C%204127%20Bir
+ sfelden%2C%20Switzerland&navigate=yes
+LOCATION:MaRo Games\, 11 Hauptstrasse\, 4127 Birsfelden\, Switzerland
+URL:https://www.pokemon.com/us/pokemon-trainer-club/play-pokemon-tournament
+ s/27-02-001895/
+X-DISTANCE-KM:7
 CATEGORIES:League Challenge
 END:VEVENT
 END:VCALENDAR

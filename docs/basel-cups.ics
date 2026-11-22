@@ -10,7 +10,7 @@ REFRESH-INTERVAL;VALUE=DURATION:PT6H
 X-PUBLISHED-TTL:PT6H
 BEGIN:VEVENT
 UID:26-11-004624@tcgcalendar
-DTSTAMP:20261118T113708Z
+DTSTAMP:20261122T111734Z
 DTSTART:20261122T090000Z
 DTEND:20261122T130000Z
 SUMMARY:Cup Pokémon Fair-Play
@@ -32,7 +32,7 @@ CATEGORIES:League Cup
 END:VEVENT
 BEGIN:VEVENT
 UID:26-11-007308@tcgcalendar
-DTSTAMP:20261118T113708Z
+DTSTAMP:20261122T111734Z
 DTSTART:20261122T094500Z
 DTEND:20261122T134500Z
 SUMMARY:GGB's League CUP
@@ -52,7 +52,7 @@ CATEGORIES:League Cup
 END:VEVENT
 BEGIN:VEVENT
 UID:26-11-004295@tcgcalendar
-DTSTAMP:20261118T113708Z
+DTSTAMP:20261122T111734Z
 DTSTART:20261129T090000Z
 DTEND:20261129T130000Z
 SUMMARY:CARAB Cup Season 1
@@ -72,7 +72,7 @@ CATEGORIES:League Cup
 END:VEVENT
 BEGIN:VEVENT
 UID:26-12-002491@tcgcalendar
-DTSTAMP:20261118T113708Z
+DTSTAMP:20261122T111734Z
 DTSTART:20261230T090000Z
 DTEND:20261230T130000Z
 SUMMARY:Cup fairplay de Noël
@@ -94,7 +94,7 @@ CATEGORIES:League Cup
 END:VEVENT
 BEGIN:VEVENT
 UID:27-01-000805@tcgcalendar
-DTSTAMP:20261118T113708Z
+DTSTAMP:20261122T111734Z
 DTSTART:20270116T100000Z
 DTEND:20270116T140000Z
 SUMMARY:League Cup Season 2 Twomoons Stettbach
@@ -115,8 +115,28 @@ X-DISTANCE-KM:93
 CATEGORIES:League Cup
 END:VEVENT
 BEGIN:VEVENT
+UID:27-02-001904@tcgcalendar
+DTSTAMP:20261122T111734Z
+DTSTART:20270207T100000Z
+DTEND:20270207T140000Z
+SUMMARY:TCG League Cup Season 2 - MaRo Games
+DESCRIPTION:League Cup @ MaRo Games\nSource: Play! Pokémon Event Locator\n
+ https://www.pokemon.com/us/pokemon-trainer-club/play-pokemon-tournaments/2
+ 7-02-001904/\nNavigate:\nGoogle Maps: https://www.google.com/maps/dir/?api
+ =1&destination=MaRo%20Games%2C%2011%20Hauptstrasse%2C%204127%20Birsfelden%
+ 2C%20Switzerland\nApple Maps: https://maps.apple.com/?daddr=MaRo%20Games%2
+ C%2011%20Hauptstrasse%2C%204127%20Birsfelden%2C%20Switzerland\nWaze: https
+ ://waze.com/ul?q=MaRo%20Games%2C%2011%20Hauptstrasse%2C%204127%20Birsfelde
+ n%2C%20Switzerland&navigate=yes
+LOCATION:MaRo Games\, 11 Hauptstrasse\, 4127 Birsfelden\, Switzerland
+URL:https://www.pokemon.com/us/pokemon-trainer-club/play-pokemon-tournament
+ s/27-02-001904/
+X-DISTANCE-KM:7
+CATEGORIES:League Cup
+END:VEVENT
+BEGIN:VEVENT
 UID:27-02-000548@tcgcalendar
-DTSTAMP:20261118T113708Z
+DTSTAMP:20261122T111734Z
 DTSTART:20270214T090000Z
 DTEND:20270214T130000Z
 SUMMARY:Cup du 14 février
@@ -134,6 +154,28 @@ LOCATION:Tokyozyma Poké\, 79 Grande Rue\, 25400 Audincourt\, France
 URL:https://www.pokemon.com/us/pokemon-trainer-club/play-pokemon-tournament
  s/27-02-000548/
 X-DISTANCE-KM:92
+CATEGORIES:League Cup
+END:VEVENT
+BEGIN:VEVENT
+UID:27-02-001856@tcgcalendar
+DTSTAMP:20261122T111734Z
+DTSTART:20270221T100000Z
+DTEND:20270221T140000Z
+SUMMARY:KABOOOM League Cup
+DESCRIPTION:League Cup @ Kabooom Entertainment GmbH\nSource: Play! Pokémon
+  Event Locator\nhttps://www.pokemon.com/us/pokemon-trainer-club/play-pokem
+ on-tournaments/27-02-001856/\nNavigate:\nGoogle Maps: https://www.google.c
+ om/maps/dir/?api=1&destination=Kabooom%20Entertainment%20GmbH%2C%2036%20Di
+ enerstrasse%2C%208004%20Z%C3%BCrich%2C%20Switzerland\nApple Maps: https://
+ maps.apple.com/?daddr=Kabooom%20Entertainment%20GmbH%2C%2036%20Dienerstras
+ se%2C%208004%20Z%C3%BCrich%2C%20Switzerland\nWaze: https://waze.com/ul?q=K
+ abooom%20Entertainment%20GmbH%2C%2036%20Dienerstrasse%2C%208004%20Z%C3%BCr
+ ich%2C%20Switzerland&navigate=yes
+LOCATION:Kabooom Entertainment GmbH\, 36 Dienerstrasse\, 8004 Zürich\, Swi
+ tzerland
+URL:https://www.pokemon.com/us/pokemon-trainer-club/play-pokemon-tournament
+ s/27-02-001856/
+X-DISTANCE-KM:83
 CATEGORIES:League Cup
 END:VEVENT
 END:VCALENDAR
