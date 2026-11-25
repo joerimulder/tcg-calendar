@@ -10,30 +10,8 @@ X-WR-TIMEZONE:Europe/Zurich
 REFRESH-INTERVAL;VALUE=DURATION:PT6H
 X-PUBLISHED-TTL:PT6H
 BEGIN:VEVENT
-UID:26-11-011209@tcgcalendar
-DTSTAMP:20261124T133905Z
-DTSTART:20261124T170000Z
-DTEND:20261124T210000Z
-SUMMARY:TCG League Challenge Novembre 2026
-DESCRIPTION:League Challenge @ Mille et Une Histoires\nSource: Play! Pokém
- on Event Locator\nhttps://www.pokemon.com/us/pokemon-trainer-club/play-pok
- emon-tournaments/26-11-011209/\nNavigate:\nGoogle Maps: https://www.google
- .com/maps/dir/?api=1&destination=Mille%20et%20Une%20Histoires%2C%20Rue%20d
- u%2023%20Juin%201%2C%202900%20Porrentruy%2C%20Switzerland\nApple Maps: htt
- ps://maps.apple.com/?daddr=Mille%20et%20Une%20Histoires%2C%20Rue%20du%2023
- %20Juin%201%2C%202900%20Porrentruy%2C%20Switzerland\nWaze: https://waze.co
- m/ul?q=Mille%20et%20Une%20Histoires%2C%20Rue%20du%2023%20Juin%201%2C%20290
- 0%20Porrentruy%2C%20Switzerland&navigate=yes
-LOCATION:Mille et Une Histoires\, Rue du 23 Juin 1\, 2900 Porrentruy\, Swit
- zerland
-URL:https://www.pokemon.com/us/pokemon-trainer-club/play-pokemon-tournament
- s/26-11-011209/
-X-DISTANCE-KM:56
-CATEGORIES:League Challenge
-END:VEVENT
-BEGIN:VEVENT
 UID:26-11-005661@tcgcalendar
-DTSTAMP:20261124T133905Z
+DTSTAMP:20261125T124844Z
 DTSTART:20261125T180000Z
 DTEND:20261125T220000Z
 SUMMARY:ERUPT - Pokémon TCG Challenge
@@ -53,7 +31,7 @@ CATEGORIES:League Challenge
 END:VEVENT
 BEGIN:VEVENT
 UID:26-11-005206@tcgcalendar
-DTSTAMP:20261124T133905Z
+DTSTAMP:20261125T124844Z
 DTSTART:20261125T181500Z
 DTEND:20261125T221500Z
 SUMMARY:Zadoys TCG Challenge November
@@ -75,7 +53,7 @@ CATEGORIES:League Challenge
 END:VEVENT
 BEGIN:VEVENT
 UID:26-11-004530@tcgcalendar
-DTSTAMP:20261124T133905Z
+DTSTAMP:20261125T124844Z
 DTSTART:20261127T180000Z
 DTEND:20261127T220000Z
 SUMMARY:TCG League Challenge November -MaRo Games
@@ -95,7 +73,7 @@ CATEGORIES:League Challenge
 END:VEVENT
 BEGIN:VEVENT
 UID:26-11-003384@tcgcalendar
-DTSTAMP:20261124T133905Z
+DTSTAMP:20261125T124844Z
 DTSTART:20261128T110000Z
 DTEND:20261128T150000Z
 SUMMARY:Cardmaniac League Challenge 11/26
@@ -115,7 +93,7 @@ CATEGORIES:League Challenge
 END:VEVENT
 BEGIN:VEVENT
 UID:26-11-001009@tcgcalendar
-DTSTAMP:20261124T133905Z
+DTSTAMP:20261125T124844Z
 DTSTART:20261128T130000Z
 DTEND:20261128T170000Z
 SUMMARY:Défi de ligue novembre
@@ -137,7 +115,7 @@ CATEGORIES:League Challenge
 END:VEVENT
 BEGIN:VEVENT
 UID:26-11-004295@tcgcalendar
-DTSTAMP:20261124T133905Z
+DTSTAMP:20261125T124844Z
 DTSTART:20261129T090000Z
 DTEND:20261129T130000Z
 SUMMARY:CARAB Cup Season 1
@@ -157,7 +135,7 @@ CATEGORIES:League Cup
 END:VEVENT
 BEGIN:VEVENT
 UID:26-12-004730@tcgcalendar
-DTSTAMP:20261124T133905Z
+DTSTAMP:20261125T124844Z
 DTSTART:20261212T100000Z
 DTEND:20261212T140000Z
 SUMMARY:KABOOOM Challenge
@@ -178,8 +156,51 @@ X-DISTANCE-KM:83
 CATEGORIES:League Challenge
 END:VEVENT
 BEGIN:VEVENT
+UID:26-12-006053@tcgcalendar
+DTSTAMP:20261125T124844Z
+DTSTART:20261212T110000Z
+DTEND:20261212T150000Z
+SUMMARY:Cardmaniac League Challenge 12/26
+DESCRIPTION:League Challenge @ Cardmaniac\nSource: Play! Pokémon Event Loc
+ ator\nhttps://www.pokemon.com/us/pokemon-trainer-club/play-pokemon-tournam
+ ents/26-12-006053/\nNavigate:\nGoogle Maps: https://www.google.com/maps/di
+ r/?api=1&destination=Cardmaniac%2C%20Mitteldorfstrasse%2035%2C%205033%20Bu
+ chs%2C%20Switzerland\nApple Maps: https://maps.apple.com/?daddr=Cardmaniac
+ %2C%20Mitteldorfstrasse%2035%2C%205033%20Buchs%2C%20Switzerland\nWaze: htt
+ ps://waze.com/ul?q=Cardmaniac%2C%20Mitteldorfstrasse%2035%2C%205033%20Buch
+ s%2C%20Switzerland&navigate=yes
+LOCATION:Cardmaniac\, Mitteldorfstrasse 35\, 5033 Buchs\, Switzerland
+URL:https://www.pokemon.com/us/pokemon-trainer-club/play-pokemon-tournament
+ s/26-12-006053/
+X-DISTANCE-KM:55
+CATEGORIES:League Challenge
+END:VEVENT
+BEGIN:VEVENT
+UID:26-12-006538@tcgcalendar
+DTSTAMP:20261125T124844Z
+DTSTART:20261213T120000Z
+DTEND:20261213T160000Z
+SUMMARY:Défi de Ligue Décembre @Geek Factory
+DESCRIPTION:League Challenge @ Geek Factory Mulhouse\nSource: Play! Pokémo
+ n Event Locator\nhttps://www.pokemon.com/us/pokemon-trainer-club/play-poke
+ mon-tournaments/26-12-006538/\nCross-border (France): bring ID/passport\, 
+ check Crit'Air rules in French cities\, EUR cash/card (not CHF).\nNavigate
+ :\nGoogle Maps: https://www.google.com/maps/dir/?api=1&destination=Geek%20
+ Factory%20Mulhouse%2C%2042%20Av.%20Clemenceau%2C%2068100%20Mulhouse%2C%20F
+ rance\nApple Maps: https://maps.apple.com/?daddr=Geek%20Factory%20Mulhouse
+ %2C%2042%20Av.%20Clemenceau%2C%2068100%20Mulhouse%2C%20France\nWaze: https
+ ://waze.com/ul?q=Geek%20Factory%20Mulhouse%2C%2042%20Av.%20Clemenceau%2C%2
+ 068100%20Mulhouse%2C%20France&navigate=yes
+LOCATION:Geek Factory Mulhouse\, 42 Av. Clemenceau\, 68100 Mulhouse\, Franc
+ e
+URL:https://www.pokemon.com/us/pokemon-trainer-club/play-pokemon-tournament
+ s/26-12-006538/
+X-DISTANCE-KM:39
+CATEGORIES:League Challenge
+END:VEVENT
+BEGIN:VEVENT
 UID:26-12-002636@tcgcalendar
-DTSTAMP:20261124T133905Z
+DTSTAMP:20261125T124844Z
 DTSTART:20261214T173000Z
 DTEND:20261214T213000Z
 SUMMARY:League Challenge December
@@ -201,7 +222,7 @@ CATEGORIES:League Challenge
 END:VEVENT
 BEGIN:VEVENT
 UID:26-12-005505@tcgcalendar
-DTSTAMP:20261124T133905Z
+DTSTAMP:20261125T124844Z
 DTSTART:20261217T180000Z
 DTEND:20261217T220000Z
 SUMMARY:League Challenge Dezember
@@ -221,7 +242,7 @@ CATEGORIES:League Challenge
 END:VEVENT
 BEGIN:VEVENT
 UID:26-12-004773@tcgcalendar
-DTSTAMP:20261124T133905Z
+DTSTAMP:20261125T124844Z
 DTSTART:20261218T060000Z
 DTEND:20261218T100000Z
 SUMMARY:TCG League Challenge December - MaRo Games
@@ -241,7 +262,7 @@ CATEGORIES:League Challenge
 END:VEVENT
 BEGIN:VEVENT
 UID:26-12-002487@tcgcalendar
-DTSTAMP:20261124T133905Z
+DTSTAMP:20261125T124844Z
 DTSTART:20261219T130000Z
 DTEND:20261219T170000Z
 SUMMARY:Ligue Mensuelle Fairplay Décembre
@@ -263,7 +284,7 @@ CATEGORIES:League Challenge
 END:VEVENT
 BEGIN:VEVENT
 UID:26-12-002572@tcgcalendar
-DTSTAMP:20261124T133905Z
+DTSTAMP:20261125T124844Z
 DTSTART:20261219T130000Z
 DTEND:20261219T170000Z
 SUMMARY:Defi de ligue decembre
@@ -285,7 +306,7 @@ CATEGORIES:League Challenge
 END:VEVENT
 BEGIN:VEVENT
 UID:26-12-002491@tcgcalendar
-DTSTAMP:20261124T133905Z
+DTSTAMP:20261125T124844Z
 DTSTART:20261230T090000Z
 DTEND:20261230T130000Z
 SUMMARY:Cup fairplay de Noël
@@ -307,7 +328,7 @@ CATEGORIES:League Cup
 END:VEVENT
 BEGIN:VEVENT
 UID:27-01-000775@tcgcalendar
-DTSTAMP:20261124T133905Z
+DTSTAMP:20261125T124844Z
 DTSTART:20270102T130000Z
 DTEND:20270102T170000Z
 SUMMARY:Défi de ligue janvier
@@ -328,8 +349,28 @@ X-DISTANCE-KM:92
 CATEGORIES:League Challenge
 END:VEVENT
 BEGIN:VEVENT
+UID:27-01-002807@tcgcalendar
+DTSTAMP:20261125T124844Z
+DTSTART:20270109T110000Z
+DTEND:20270109T150000Z
+SUMMARY:Cardmaniac League Challenge 01/27
+DESCRIPTION:League Challenge @ Cardmaniac\nSource: Play! Pokémon Event Loc
+ ator\nhttps://www.pokemon.com/us/pokemon-trainer-club/play-pokemon-tournam
+ ents/27-01-002807/\nNavigate:\nGoogle Maps: https://www.google.com/maps/di
+ r/?api=1&destination=Cardmaniac%2C%20Mitteldorfstrasse%2035%2C%205033%20Bu
+ chs%2C%20Switzerland\nApple Maps: https://maps.apple.com/?daddr=Cardmaniac
+ %2C%20Mitteldorfstrasse%2035%2C%205033%20Buchs%2C%20Switzerland\nWaze: htt
+ ps://waze.com/ul?q=Cardmaniac%2C%20Mitteldorfstrasse%2035%2C%205033%20Buch
+ s%2C%20Switzerland&navigate=yes
+LOCATION:Cardmaniac\, Mitteldorfstrasse 35\, 5033 Buchs\, Switzerland
+URL:https://www.pokemon.com/us/pokemon-trainer-club/play-pokemon-tournament
+ s/27-01-002807/
+X-DISTANCE-KM:55
+CATEGORIES:League Challenge
+END:VEVENT
+BEGIN:VEVENT
 UID:27-01-002585@tcgcalendar
-DTSTAMP:20261124T133905Z
+DTSTAMP:20261125T124844Z
 DTSTART:20270114T180000Z
 DTEND:20270114T220000Z
 SUMMARY:League Challenge 2027 January
@@ -349,7 +390,7 @@ CATEGORIES:League Challenge
 END:VEVENT
 BEGIN:VEVENT
 UID:27-01-000805@tcgcalendar
-DTSTAMP:20261124T133905Z
+DTSTAMP:20261125T124844Z
 DTSTART:20270116T100000Z
 DTEND:20270116T140000Z
 SUMMARY:League Cup Season 2 Twomoons Stettbach
@@ -371,7 +412,7 @@ CATEGORIES:League Cup
 END:VEVENT
 BEGIN:VEVENT
 UID:27-01-002178@tcgcalendar
-DTSTAMP:20261124T133905Z
+DTSTAMP:20261125T124844Z
 DTSTART:20270116T100000Z
 DTEND:20270116T140000Z
 SUMMARY:KABOOOM Challenge
@@ -392,8 +433,51 @@ X-DISTANCE-KM:83
 CATEGORIES:League Challenge
 END:VEVENT
 BEGIN:VEVENT
+UID:27-01-002808@tcgcalendar
+DTSTAMP:20261125T124844Z
+DTSTART:20270116T100000Z
+DTEND:20270116T140000Z
+SUMMARY:Cardmaniac League Cup S2 26-27
+DESCRIPTION:League Cup @ Cardmaniac\nSource: Play! Pokémon Event Locator\n
+ https://www.pokemon.com/us/pokemon-trainer-club/play-pokemon-tournaments/2
+ 7-01-002808/\nNavigate:\nGoogle Maps: https://www.google.com/maps/dir/?api
+ =1&destination=Cardmaniac%2C%20Mitteldorfstrasse%2035%2C%205033%20Buchs%2C
+ %20Switzerland\nApple Maps: https://maps.apple.com/?daddr=Cardmaniac%2C%20
+ Mitteldorfstrasse%2035%2C%205033%20Buchs%2C%20Switzerland\nWaze: https://w
+ aze.com/ul?q=Cardmaniac%2C%20Mitteldorfstrasse%2035%2C%205033%20Buchs%2C%2
+ 0Switzerland&navigate=yes
+LOCATION:Cardmaniac\, Mitteldorfstrasse 35\, 5033 Buchs\, Switzerland
+URL:https://www.pokemon.com/us/pokemon-trainer-club/play-pokemon-tournament
+ s/27-01-002808/
+X-DISTANCE-KM:55
+CATEGORIES:League Cup
+END:VEVENT
+BEGIN:VEVENT
+UID:27-01-003005@tcgcalendar
+DTSTAMP:20261125T124844Z
+DTSTART:20270117T120000Z
+DTEND:20270117T160000Z
+SUMMARY:Défi de Ligue janvier @Geek Factory
+DESCRIPTION:League Challenge @ Geek Factory Mulhouse\nSource: Play! Pokémo
+ n Event Locator\nhttps://www.pokemon.com/us/pokemon-trainer-club/play-poke
+ mon-tournaments/27-01-003005/\nCross-border (France): bring ID/passport\, 
+ check Crit'Air rules in French cities\, EUR cash/card (not CHF).\nNavigate
+ :\nGoogle Maps: https://www.google.com/maps/dir/?api=1&destination=Geek%20
+ Factory%20Mulhouse%2C%2042%20Av.%20Clemenceau%2C%2068100%20Mulhouse%2C%20F
+ rance\nApple Maps: https://maps.apple.com/?daddr=Geek%20Factory%20Mulhouse
+ %2C%2042%20Av.%20Clemenceau%2C%2068100%20Mulhouse%2C%20France\nWaze: https
+ ://waze.com/ul?q=Geek%20Factory%20Mulhouse%2C%2042%20Av.%20Clemenceau%2C%2
+ 068100%20Mulhouse%2C%20France&navigate=yes
+LOCATION:Geek Factory Mulhouse\, 42 Av. Clemenceau\, 68100 Mulhouse\, Franc
+ e
+URL:https://www.pokemon.com/us/pokemon-trainer-club/play-pokemon-tournament
+ s/27-01-003005/
+X-DISTANCE-KM:39
+CATEGORIES:League Challenge
+END:VEVENT
+BEGIN:VEVENT
 UID:27-01-002210@tcgcalendar
-DTSTAMP:20261124T133905Z
+DTSTAMP:20261125T124844Z
 DTSTART:20270122T060000Z
 DTEND:20270122T100000Z
 SUMMARY:TCG League Challenge January - MaRo Games
@@ -413,7 +497,7 @@ CATEGORIES:League Challenge
 END:VEVENT
 BEGIN:VEVENT
 UID:27-01-000803@tcgcalendar
-DTSTAMP:20261124T133905Z
+DTSTAMP:20261125T124844Z
 DTSTART:20270123T140000Z
 DTEND:20270123T180000Z
 SUMMARY:League Challenge January
@@ -435,7 +519,7 @@ CATEGORIES:League Challenge
 END:VEVENT
 BEGIN:VEVENT
 UID:27-02-000567@tcgcalendar
-DTSTAMP:20261124T133905Z
+DTSTAMP:20261125T124844Z
 DTSTART:20270201T173000Z
 DTEND:20270201T213000Z
 SUMMARY:League Challenge February
@@ -456,8 +540,31 @@ X-DISTANCE-KM:93
 CATEGORIES:League Challenge
 END:VEVENT
 BEGIN:VEVENT
+UID:27-02-002568@tcgcalendar
+DTSTAMP:20261125T124844Z
+DTSTART:20270206T120000Z
+DTEND:20270206T160000Z
+SUMMARY:Défi de Ligue février @Geek Factory
+DESCRIPTION:League Challenge @ Geek Factory Mulhouse\nSource: Play! Pokémo
+ n Event Locator\nhttps://www.pokemon.com/us/pokemon-trainer-club/play-poke
+ mon-tournaments/27-02-002568/\nCross-border (France): bring ID/passport\, 
+ check Crit'Air rules in French cities\, EUR cash/card (not CHF).\nNavigate
+ :\nGoogle Maps: https://www.google.com/maps/dir/?api=1&destination=Geek%20
+ Factory%20Mulhouse%2C%2042%20Av.%20Clemenceau%2C%2068100%20Mulhouse%2C%20F
+ rance\nApple Maps: https://maps.apple.com/?daddr=Geek%20Factory%20Mulhouse
+ %2C%2042%20Av.%20Clemenceau%2C%2068100%20Mulhouse%2C%20France\nWaze: https
+ ://waze.com/ul?q=Geek%20Factory%20Mulhouse%2C%2042%20Av.%20Clemenceau%2C%2
+ 068100%20Mulhouse%2C%20France&navigate=yes
+LOCATION:Geek Factory Mulhouse\, 42 Av. Clemenceau\, 68100 Mulhouse\, Franc
+ e
+URL:https://www.pokemon.com/us/pokemon-trainer-club/play-pokemon-tournament
+ s/27-02-002568/
+X-DISTANCE-KM:39
+CATEGORIES:League Challenge
+END:VEVENT
+BEGIN:VEVENT
 UID:27-02-001904@tcgcalendar
-DTSTAMP:20261124T133905Z
+DTSTAMP:20261125T124844Z
 DTSTART:20270207T100000Z
 DTEND:20270207T140000Z
 SUMMARY:TCG League Cup Season 2 - MaRo Games
@@ -477,7 +584,7 @@ CATEGORIES:League Cup
 END:VEVENT
 BEGIN:VEVENT
 UID:27-02-002215@tcgcalendar
-DTSTAMP:20261124T133905Z
+DTSTAMP:20261125T124844Z
 DTSTART:20270213T094500Z
 DTEND:20270213T134500Z
 SUMMARY:League CUP GGBs 2027
@@ -497,7 +604,7 @@ CATEGORIES:League Cup
 END:VEVENT
 BEGIN:VEVENT
 UID:27-02-001855@tcgcalendar
-DTSTAMP:20261124T133905Z
+DTSTAMP:20261125T124844Z
 DTSTART:20270213T100000Z
 DTEND:20270213T140000Z
 SUMMARY:KABOOOM Challenge
@@ -518,8 +625,28 @@ X-DISTANCE-KM:83
 CATEGORIES:League Challenge
 END:VEVENT
 BEGIN:VEVENT
+UID:27-02-002409@tcgcalendar
+DTSTAMP:20261125T124844Z
+DTSTART:20270213T110000Z
+DTEND:20270213T150000Z
+SUMMARY:Cardmaniac League Challenge 02/27
+DESCRIPTION:League Challenge @ Cardmaniac\nSource: Play! Pokémon Event Loc
+ ator\nhttps://www.pokemon.com/us/pokemon-trainer-club/play-pokemon-tournam
+ ents/27-02-002409/\nNavigate:\nGoogle Maps: https://www.google.com/maps/di
+ r/?api=1&destination=Cardmaniac%2C%20Mitteldorfstrasse%2035%2C%205033%20Bu
+ chs%2C%20Switzerland\nApple Maps: https://maps.apple.com/?daddr=Cardmaniac
+ %2C%20Mitteldorfstrasse%2035%2C%205033%20Buchs%2C%20Switzerland\nWaze: htt
+ ps://waze.com/ul?q=Cardmaniac%2C%20Mitteldorfstrasse%2035%2C%205033%20Buch
+ s%2C%20Switzerland&navigate=yes
+LOCATION:Cardmaniac\, Mitteldorfstrasse 35\, 5033 Buchs\, Switzerland
+URL:https://www.pokemon.com/us/pokemon-trainer-club/play-pokemon-tournament
+ s/27-02-002409/
+X-DISTANCE-KM:55
+CATEGORIES:League Challenge
+END:VEVENT
+BEGIN:VEVENT
 UID:27-02-000545@tcgcalendar
-DTSTAMP:20261124T133905Z
+DTSTAMP:20261125T124844Z
 DTSTART:20270213T130000Z
 DTEND:20270213T170000Z
 SUMMARY:defi de ligue février
@@ -541,7 +668,7 @@ CATEGORIES:League Challenge
 END:VEVENT
 BEGIN:VEVENT
 UID:27-02-000548@tcgcalendar
-DTSTAMP:20261124T133905Z
+DTSTAMP:20261125T124844Z
 DTSTART:20270214T090000Z
 DTEND:20270214T130000Z
 SUMMARY:Cup du 14 février
@@ -562,8 +689,31 @@ X-DISTANCE-KM:92
 CATEGORIES:League Cup
 END:VEVENT
 BEGIN:VEVENT
+UID:27-02-002567@tcgcalendar
+DTSTAMP:20261125T124844Z
+DTSTART:20270214T120000Z
+DTEND:20270214T160000Z
+SUMMARY:Coupe de la Ligue
+DESCRIPTION:League Cup @ Geek Factory Mulhouse\nSource: Play! Pokémon Even
+ t Locator\nhttps://www.pokemon.com/us/pokemon-trainer-club/play-pokemon-to
+ urnaments/27-02-002567/\nCross-border (France): bring ID/passport\, check 
+ Crit'Air rules in French cities\, EUR cash/card (not CHF).\nNavigate:\nGoo
+ gle Maps: https://www.google.com/maps/dir/?api=1&destination=Geek%20Factor
+ y%20Mulhouse%2C%2042%20Av.%20Clemenceau%2C%2068100%20Mulhouse%2C%20France\
+ nApple Maps: https://maps.apple.com/?daddr=Geek%20Factory%20Mulhouse%2C%20
+ 42%20Av.%20Clemenceau%2C%2068100%20Mulhouse%2C%20France\nWaze: https://waz
+ e.com/ul?q=Geek%20Factory%20Mulhouse%2C%2042%20Av.%20Clemenceau%2C%2068100
+ %20Mulhouse%2C%20France&navigate=yes
+LOCATION:Geek Factory Mulhouse\, 42 Av. Clemenceau\, 68100 Mulhouse\, Franc
+ e
+URL:https://www.pokemon.com/us/pokemon-trainer-club/play-pokemon-tournament
+ s/27-02-002567/
+X-DISTANCE-KM:39
+CATEGORIES:League Cup
+END:VEVENT
+BEGIN:VEVENT
 UID:27-02-002207@tcgcalendar
-DTSTAMP:20261124T133905Z
+DTSTAMP:20261125T124844Z
 DTSTART:20270218T181500Z
 DTEND:20270218T221500Z
 SUMMARY:League Challenge 2027 Februar
@@ -583,7 +733,7 @@ CATEGORIES:League Challenge
 END:VEVENT
 BEGIN:VEVENT
 UID:27-02-001856@tcgcalendar
-DTSTAMP:20261124T133905Z
+DTSTAMP:20261125T124844Z
 DTSTART:20270221T100000Z
 DTEND:20270221T140000Z
 SUMMARY:KABOOOM League Cup
@@ -605,7 +755,7 @@ CATEGORIES:League Cup
 END:VEVENT
 BEGIN:VEVENT
 UID:27-02-001895@tcgcalendar
-DTSTAMP:20261124T133905Z
+DTSTAMP:20261125T124844Z
 DTSTART:20270225T230000Z
 DTEND:20270226T030000Z
 SUMMARY:TCG League Challenge February - MaRo Games
